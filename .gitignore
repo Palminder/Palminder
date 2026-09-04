@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment files — never commit local environment or secrets
+.env
+.env.*
+!.env.example
+
+# Test output
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Local tooling
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Unredacted source material must never be committed
+source-material/
+private/

@@ -1,0 +1,45 @@
+{
+  "name": "palminder-dhariwal-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-led technical portfolio for Palminder Dhariwal \u2014 static Astro site.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/pagefind-index.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify:dist": "node scripts/verify-dist.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "serve:dist": "node scripts/serve-dist.mjs",
+    "test": "playwright test",
+    "qa": "npm run format:check && npm run check && npm run build && npm run verify:dist && npm run check:links && npm run test",
+    "assets:brand": "node scripts/generate-brand-assets.mjs",
+    "assets:shiki": "node scripts/generate-shiki-css.mjs",
+    "test:report": "playwright show-report"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.0",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.1",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "1.56.1",
+    "pagefind": "^1.5.2",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "shiki": "^4.4.3",
+    "typescript": "~5.9.3"
+  },
+  "overrides": {
+    "playwright-core": "1.56.1"
+  }
+}
