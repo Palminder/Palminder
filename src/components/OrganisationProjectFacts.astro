@@ -1,0 +1,130 @@
+---
+import { relationshipTypes } from '@/data/taxonomy';
+import type { OrganisationProject } from '@/lib/content';
+import { formatDate, isoDate } from '@/lib/format';
+
+/**
+ * Structured sections required for every external organisation project.
+ * Rendered above the optional Markdown narrative.
+ */
+interface Props {
+  entry: OrganisationProject;
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const relationship =
+  data.relationshipType === 'other' && data.relationshipDescription
+    ? data.relationshipDescription
+    : relationshipTypes[data.relationshipType];
+
+const sections: Array<{ heading: string; text: string }> = [
+  { heading: 'Technical problem', text: data.problem },
+  { heading: 'Business context', text: data.businessContext },
+  { heading: 'Scope', text: data.scope },
+  { heading: 'Exclusions', text: data.exclusions },
+  { heading: 'Environment', text: data.environment },
+  { heading: 'Access model', text: data.accessModel },
+  { heading: 'Assessment and findings', text: data.assessmentAndFindings },
+  { heading: 'Design and options considered', text: data.designAndOptions },
+  { heading: 'Authorised implementation', text: data.implementation },
+  { heading: 'Security and data-handling controls', text: data.securityAndDataHandling },
+  { heading: 'Testing and acceptance criteria', text: data.testingAndAcceptance },
+  { heading: 'Change-control process', text: data.changeControl },
+  { heading: 'Rollback and recovery plan', text: data.rollbackAndRecovery },
+  { heading: 'Measured result', text: data.measuredResult },
+  { heading: 'Documentation and handover', text: data.documentationAndHandover },
+];
+---
+
+<section class="project-facts" aria-labelledby="project-facts-heading">
+  <h2 id="project-facts-heading">Engagement facts</h2>
+  <dl class="facts">
+    <dt>Organisation</dt>
+    <dd>{data.organisation.name}</dd>
+    {
+      data.organisation.type && (
+        <>
+          <dt>Organisation type</dt>
+          <dd>{data.organisation.type}</dd>
+        </>
+      )
+    }
+    {
+      data.organisation.size && (
+        <>
+          <dt>Approximate size</dt>
+          <dd>{data.organisation.size}</dd>
+        </>
+      )
+    }
+    <dt>Relationship</dt>
+    <dd>{relationship} ({data.paid ? 'paid' : 'unpaid'})</dd>
+    <dt>Publication permission</dt>
+    <dd>
+      Granted{
+        data.publication.approvedDate && (
+          <>
+            {' '}
+            on{' '}
+            <time datetime={isoDate(data.publication.approvedDate)}>
+              {formatDate(data.publication.approvedDate)}
+            </time>
+          </>
+        )
+      }
+      {data.publication.approvedBy && <> by {data.publication.approvedBy}</>}
+    </dd>
+    <dt>Disclosure restrictions</dt>
+    <dd>{data.publication.disclosureRestrictions}</dd>
+    <dt>Reference</dt>
+    <dd>
+      {
+        data.referenceAvailable
+          ? 'A professional reference for this project is available during recruitment.'
+          : 'No reference is offered for this project.'
+      }
+    </dd>
+  </dl>
+</section>
+
+<div class="prose project-sections">
+  {
+    sections.map((section) => (
+      <>
+        <h2>{section.heading}</h2>
+        <p>{section.text}</p>
+      </>
+    ))
+  }
+  {
+    data.feedback && data.feedback.permissionGranted && (
+      <>
+        <h2>Organisation feedback</h2>
+        <blockquote>
+          <p>{data.feedback.quote}</p>
+          <footer>— {data.feedback.attribution}</footer>
+        </blockquote>
+      </>
+    )
+  }
+</div>
+
+<style>
+  .project-facts {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    max-width: 52rem;
+    margin-bottom: var(--space-6);
+  }
+
+  .project-facts h2 {
+    font-size: var(--text-md);
+  }
+
+  .project-sections {
+    margin-bottom: var(--space-6);
+  }
+</style>

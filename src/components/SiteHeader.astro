@@ -1,0 +1,239 @@
+---
+import { site } from '@/data/site';
+
+export type NavKey =
+  | 'home'
+  | 'evidence'
+  | 'labs'
+  | 'experience'
+  | 'credentials'
+  | 'about'
+  | 'contact'
+  | 'recruiter-pack';
+
+interface Props {
+  current?: NavKey | undefined;
+}
+
+const { current } = Astro.props;
+
+const items: Array<{ key: NavKey; label: string; href: string }> = [
+  { key: 'evidence', label: 'Evidence', href: '/evidence/' },
+  { key: 'labs', label: 'Labs', href: '/labs/' },
+  { key: 'experience', label: 'Experience', href: '/experience/' },
+  { key: 'credentials', label: 'Credentials', href: '/credentials/' },
+  { key: 'about', label: 'About', href: '/about/' },
+  { key: 'contact', label: 'Contact', href: '/contact/' },
+];
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="/" aria-current={current === 'home' ? 'page' : undefined}>
+      <span class="site-header__wordmark" aria-hidden="true">{site.wordmark}</span>
+      <span class="site-header__name">{site.name}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul class="site-nav__list site-nav__list--desktop">
+        {
+          items.map((item) => (
+            <li>
+              <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            class="button button--secondary button--small site-nav__cta"
+            href="/recruiter-pack/"
+            aria-current={current === 'recruiter-pack' ? 'page' : undefined}
+          >
+            Recruiter pack
+          </a>
+        </li>
+      </ul>
+
+      <details class="site-nav__mobile">
+        <summary class="site-nav__toggle">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <span>Menu</span>
+        </summary>
+        <ul class="site-nav__list site-nav__list--mobile">
+          {
+            items.map((item) => (
+              <li>
+                <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <a
+              href="/recruiter-pack/"
+              aria-current={current === 'recruiter-pack' ? 'page' : undefined}
+            >
+              Recruiter pack
+            </a>
+          </li>
+        </ul>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    min-height: 4rem;
+  }
+
+  .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-height: var(--touch-target);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 650;
+  }
+
+  .site-header__brand:hover .site-header__name {
+    color: var(--color-accent);
+  }
+
+  .site-header__wordmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--radius);
+    background: var(--color-accent);
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: 0.05em;
+  }
+
+  .site-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .site-nav__list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
+    padding: 0 var(--space-3);
+    border-radius: var(--radius);
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .site-nav__list a:hover {
+    background: var(--color-surface-muted);
+    color: var(--color-accent);
+  }
+
+  .site-nav__list a[aria-current='page'] {
+    font-weight: 650;
+    box-shadow: inset 0 -3px 0 var(--color-accent);
+  }
+
+  .site-nav__list a.site-nav__cta {
+    margin-left: var(--space-2);
+  }
+
+  .site-nav__list a.site-nav__cta[aria-current='page'] {
+    box-shadow: none;
+    background: var(--color-accent-soft);
+  }
+
+  .site-nav__list--desktop {
+    display: none;
+  }
+
+  .site-nav__mobile {
+    position: relative;
+  }
+
+  .site-nav__toggle {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--touch-target);
+    padding: 0 var(--space-3);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .site-nav__toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-nav__mobile[open] .site-nav__toggle {
+    background: var(--color-surface-muted);
+  }
+
+  .site-nav__list--mobile {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    min-width: 14rem;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-2);
+  }
+
+  .site-nav__list--mobile a {
+    width: 100%;
+  }
+
+  @media (min-width: 56rem) {
+    .site-nav__list--desktop {
+      display: flex;
+    }
+
+    .site-nav__mobile {
+      display: none;
+    }
+  }
+</style>

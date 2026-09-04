@@ -1,0 +1,77 @@
+---
+/**
+ * Small icons for code, diagram and test evidence. Rendered only for evidence that exists.
+ * Each icon is decorative; the visible text carries the meaning.
+ */
+interface Props {
+  proof: { code: boolean; diagram: boolean; tests: boolean };
+  repositoryUrl?: string | undefined;
+}
+
+const { proof, repositoryUrl } = Astro.props;
+const any = proof.code || proof.diagram || proof.tests;
+---
+
+{
+  any && (
+    <ul class="proof-list" aria-label="Evidence available">
+      {proof.code && (
+        <li class="proof">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" />
+          </svg>
+          {repositoryUrl ? (
+            <a href={repositoryUrl} rel="noopener">
+              Code
+            </a>
+          ) : (
+            <span>Code</span>
+          )}
+        </li>
+      )}
+      {proof.diagram && (
+        <li class="proof">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="7" height="6" rx="1" />
+            <rect x="14" y="15" width="7" height="6" rx="1" />
+            <path d="M6.5 9v6h11" />
+          </svg>
+          <span>Diagram</span>
+        </li>
+      )}
+      {proof.tests && (
+        <li class="proof">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M9 11l3 3L22 4" />
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+          </svg>
+          <span>Tests</span>
+        </li>
+      )}
+    </ul>
+  )
+}

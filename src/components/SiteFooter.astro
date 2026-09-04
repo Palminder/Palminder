@@ -1,0 +1,109 @@
+---
+import { site, suppliedContactRoutes } from '@/data/site';
+
+const year = new Date().getUTCFullYear();
+const routes = suppliedContactRoutes();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__about">
+      <p class="site-footer__name">{site.name}</p>
+      <p class="site-footer__line">{site.availability}</p>
+      <p class="site-footer__integrity">
+        Every item on this site is labelled as a lab, an earned credential or authorised
+        organisational work, and is published only after it has been completed, reviewed and
+        sanitised.
+      </p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <ul>
+        <li><a href="/evidence/">Technical evidence</a></li>
+        <li><a href="/labs/">Lab library</a></li>
+        <li><a href="/recruiter-pack/">Recruiter pack</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy notice</a></li>
+        {
+          routes
+            .filter((route) => route.key !== 'email')
+            .map((route) => (
+              <li>
+                <a href={route.href} rel="me noopener">
+                  {route.label}
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </nav>
+
+    <p class="site-footer__legal">
+      © {year}
+      {site.name}. Static site with no analytics, no cookies set by site code and no third-party
+      scripts.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+    margin-top: var(--space-8);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .site-footer__inner {
+    display: grid;
+    gap: var(--space-5);
+    padding-block: var(--space-6);
+  }
+
+  .site-footer__name {
+    font-weight: 650;
+    color: var(--color-text);
+    margin: 0 0 var(--space-1);
+  }
+
+  .site-footer__line {
+    margin: 0 0 var(--space-3);
+  }
+
+  .site-footer__integrity {
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  .site-footer__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+  }
+
+  .site-footer__nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
+    color: var(--color-text);
+  }
+
+  .site-footer__legal {
+    margin: 0;
+  }
+
+  @media (min-width: 56rem) {
+    .site-footer__inner {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+    }
+
+    .site-footer__legal {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

@@ -1,0 +1,172 @@
+---
+import EvidenceCard from './EvidenceCard.astro';
+import Pagination from './Pagination.astro';
+import { categories, technologies, type CategoryKey, type TechnologyKey } from '@/data/taxonomy';
+import { routes, type LibraryFacets, type LibraryItem } from '@/lib/content';
+import type { PageInfo } from '@/lib/paginate';
+import { pluralise } from '@/lib/format';
+
+/**
+ * Server-rendered listing used by the lab library, its pagination pages, and the
+ * category and technology pages. Works without JavaScript.
+ */
+interface Props {
+  page: PageInfo<LibraryItem>;
+  facets: LibraryFacets;
+  heading: string;
+  /** Show the browse-by-category and browse-by-technology navigation. */
+  browse?: boolean | undefined;
+  activeCategory?: CategoryKey | undefined;
+  activeTechnology?: TechnologyKey | undefined;
+}
+
+const { page, facets, heading, browse = true, activeCategory, activeTechnology } = Astro.props;
+---
+
+<div class="container library">
+  {
+    browse && (facets.categories.length > 0 || facets.technologies.length > 0) && (
+      <nav class="library__browse" aria-label="Browse by category">
+        {facets.categories.length > 0 && (
+          <>
+            <h2 class="library__browse-heading">Browse by category</h2>
+            <ul class="library__chips">
+              <li>
+                <a
+                  class="tag"
+                  href="/labs/"
+                  aria-current={!activeCategory && !activeTechnology ? 'page' : undefined}
+                >
+                  All ({page.totalItems})
+                </a>
+              </li>
+              {facets.categories.map((facet) => (
+                <li>
+                  <a
+                    class="tag"
+                    href={routes.category(facet.key)}
+                    aria-current={activeCategory === facet.key ? 'page' : undefined}
+                  >
+                    {facet.label} ({facet.count})
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+        {facets.technologies.length > 0 && (
+          <details class="library__technologies" open={Boolean(activeTechnology)}>
+            <summary>Browse by technology</summary>
+            <ul class="library__chips">
+              {facets.technologies.map((facet) => (
+                <li>
+                  <a
+                    class="tag"
+                    href={routes.technology(facet.key)}
+                    aria-current={activeTechnology === facet.key ? 'page' : undefined}
+                  >
+                    {facet.label} ({facet.count})
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+      </nav>
+    )
+  }
+
+  <section class="library__results" aria-labelledby="results-heading">
+    <div class="section-heading">
+      <h2 id="results-heading">
+        {heading}
+        <span class="library__count">({pluralise(page.totalItems, 'item')})</span>
+      </h2>
+      {
+        activeCategory && (
+          <p class="section-heading__lede">{categories[activeCategory].description}</p>
+        )
+      }
+      {
+        activeTechnology && (
+          <p class="section-heading__lede">
+            Published labs and case studies that demonstrate {technologies[activeTechnology]}.
+          </p>
+        )
+      }
+    </div>
+
+    <div id="library-list" class="grid grid--3">
+      {
+        page.items.length > 0 ? (
+          page.items.map((item) => <EvidenceCard item={item} />)
+        ) : (
+          <div class="empty-state">
+            <p>
+              <strong>No published labs yet.</strong> Items appear here only after they have been
+              completed, reviewed and sanitised. Draft work is never listed.
+            </p>
+          </div>
+        )
+      }
+    </div>
+
+    <div id="library-pagination">
+      <Pagination page={page} label="Lab library pages" />
+    </div>
+  </section>
+</div>
+
+<style>
+  .library {
+    padding-block: var(--space-6);
+  }
+
+  .library__browse {
+    margin-bottom: var(--space-6);
+  }
+
+  .library__browse-heading {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    margin-bottom: var(--space-2);
+  }
+
+  .library__chips {
+    list-style: none;
+    margin: 0 0 var(--space-3);
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .library__chips .tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding-inline: var(--space-3);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .library__chips .tag[aria-current='page'] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .library__technologies summary {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  .library__count {
+    font-weight: 400;
+    color: var(--color-muted);
+    font-size: var(--text-md);
+  }
+</style>

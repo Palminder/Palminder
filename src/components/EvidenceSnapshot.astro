@@ -1,0 +1,80 @@
+---
+import type { EvidenceMetric } from '@/lib/content';
+
+/**
+ * Evidence snapshot strip. Metrics are computed from published content and any
+ * zero-value metric has already been removed, so an empty list renders nothing.
+ */
+interface Props {
+  metrics: EvidenceMetric[];
+}
+
+const { metrics } = Astro.props;
+---
+
+{
+  metrics.length > 0 && (
+    <section class="snapshot" aria-labelledby="snapshot-heading">
+      <div class="container">
+        <h2 id="snapshot-heading" class="visually-hidden">
+          Evidence snapshot
+        </h2>
+        <ul class="snapshot__list">
+          {metrics.map((metric) => (
+            <li class="snapshot__item">
+              <a href={metric.href}>
+                <span class="snapshot__value" data-metric-value={metric.value}>
+                  {metric.value}
+                </span>
+                <span class="snapshot__label">
+                  {metric.value === 1 ? metric.singular : metric.label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .snapshot {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .snapshot__list {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-4) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-6);
+  }
+
+  .snapshot__item a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    min-height: var(--touch-target);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .snapshot__item a:hover .snapshot__label {
+    text-decoration: underline;
+  }
+
+  .snapshot__value {
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 650;
+    color: var(--color-accent-strong);
+  }
+
+  .snapshot__label {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+</style>

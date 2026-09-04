@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import type { NavKey } from '@/components/SiteHeader.astro';
+import { breadcrumbJsonLd, type BreadcrumbItem } from '@/lib/seo';
+
+interface Props {
+  title: string;
+  /** Visible H1 when it should differ from the document title. */
+  heading?: string | undefined;
+  description: string;
+  eyebrow?: string | undefined;
+  lede?: string | undefined;
+  breadcrumbs?: BreadcrumbItem[] | undefined;
+  currentNav?: NavKey | undefined;
+  noindex?: boolean | undefined;
+  jsonLd?: Array<Record<string, unknown>> | undefined;
+  ogType?: 'website' | 'article' | undefined;
+  bodyClass?: string | undefined;
+  /** Hide the standard page intro when the page renders its own header. */
+  bare?: boolean | undefined;
+}
+
+const {
+  title,
+  heading = title,
+  description,
+  eyebrow,
+  lede,
+  breadcrumbs,
+  currentNav,
+  noindex,
+  jsonLd = [],
+  ogType,
+  bodyClass,
+  bare = false,
+} = Astro.props;
+
+const structuredData =
+  breadcrumbs && breadcrumbs.length > 1
+    ? [...jsonLd, breadcrumbJsonLd(breadcrumbs, Astro.site)]
+    : jsonLd;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  noindex={noindex}
+  jsonLd={structuredData}
+  currentNav={currentNav}
+  ogType={ogType}
+  bodyClass={bodyClass}
+>
+  {
+    !bare && (
+      <header class="page-intro">
+        <div class="container">
+          {breadcrumbs && breadcrumbs.length > 1 && <Breadcrumbs items={breadcrumbs} />}
+          {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+          <h1>{heading}</h1>
+          {lede && <p class="lede">{lede}</p>}
+          <slot name="intro" />
+        </div>
+      </header>
+    )
+  }
+  <slot />
+</BaseLayout>
+
+<style>
+  .page-intro {
+    padding-block: var(--space-6) var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .page-intro h1 {
+    max-width: 30ch;
+  }
+
+  .page-intro .lede {
+    margin-bottom: 0;
+  }
+</style>

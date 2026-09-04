@@ -1,0 +1,45 @@
+---
+import type { PageInfo } from '@/lib/paginate';
+
+interface Props {
+  page: PageInfo<unknown>;
+  label?: string | undefined;
+}
+
+const { page, label = 'Pagination' } = Astro.props;
+const pages = Array.from({ length: page.totalPages }, (_, i) => i + 1);
+---
+
+{
+  page.totalPages > 1 && (
+    <nav class="pagination" aria-label={label}>
+      {page.prevUrl ? (
+        <a href={page.prevUrl} rel="prev">
+          Previous
+        </a>
+      ) : (
+        <span class="visually-hidden">No previous page</span>
+      )}
+      <ul>
+        {pages.map((n) => (
+          <li>
+            {n === page.currentPage ? (
+              <span aria-current="page">{n}</span>
+            ) : (
+              <a href={page.urlFor(n)} aria-label={`Page ${n}`}>
+                {n}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+      {page.nextUrl ? (
+        <a href={page.nextUrl} rel="next">
+          Next
+        </a>
+      ) : (
+        <span class="visually-hidden">No next page</span>
+      )}
+    </nav>
+  )
+}

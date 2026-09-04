@@ -1,0 +1,66 @@
+---
+import { site } from '@/data/site';
+
+interface Props {
+  headingLevel?: 'h2' | 'h3' | undefined;
+}
+
+const { headingLevel = 'h2' } = Astro.props;
+const Heading = headingLevel;
+---
+
+<section class="cta-band" aria-labelledby="cta-recruiter-heading">
+  <div class="container cta-band__inner">
+    <div class="cta-band__block">
+      <Heading id="cta-recruiter-heading">Recruiter pack</Heading>
+      <p>
+        A two-page summary of evidence, credentials, experience and availability, designed to print
+        to A4 or save as PDF. Last updated <time datetime={site.recruiterPack.lastUpdated}
+          >{site.recruiterPack.lastUpdated}</time
+        >.
+      </p>
+      <div class="cluster">
+        <a class="button" href="/recruiter-pack/">Open recruiter pack</a>
+        {
+          site.downloads.recruiterPackPdf && (
+            <a class="button button--secondary" href={site.downloads.recruiterPackPdf}>
+              Download recruiter pack (PDF)
+            </a>
+          )
+        }
+      </div>
+    </div>
+    <div class="cta-band__block">
+      <h2 id="cta-contact-heading">Contact</h2>
+      <p>{site.availability}. Recruitment enquiries are welcome.</p>
+      <div class="cluster">
+        <a class="button button--secondary" href="/contact/">Contact routes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cta-band__inner {
+    display: grid;
+    gap: var(--space-5);
+    padding-block: var(--space-6);
+  }
+
+  .cta-band__block p {
+    max-width: 52ch;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 56rem) {
+    .cta-band__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

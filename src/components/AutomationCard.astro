@@ -1,0 +1,125 @@
+---
+import Badge from './Badge.astro';
+import { evidenceTypeLabel, technologyLabel } from '@/data/taxonomy';
+import type { AutomationProject } from '@/lib/content';
+import { formatMonthYear, isoDate } from '@/lib/format';
+
+interface Props {
+  project: AutomationProject;
+  headingLevel?: 'h2' | 'h3' | undefined;
+  /** Compact cards (home page) hide the detailed facts. */
+  compact?: boolean | undefined;
+}
+
+const { project, headingLevel = 'h3', compact = false } = Astro.props;
+const Heading = headingLevel;
+const data = project.data;
+const repositoryHost = data.repositoryUrl
+  ? new URL(data.repositoryUrl).hostname.replace(/^www\./, '')
+  : undefined;
+const hasBody = Astro.slots.has('default');
+---
+
+<article class="card automation-card">
+  <div class="card__meta">
+    <Badge variant={data.evidenceType} label={evidenceTypeLabel(data.evidenceType)} />
+    <span>Automation repository</span>
+    {data.archived && <Badge variant="archived" label="Archived evidence" />}
+  </div>
+  <Heading
+    >{
+      data.repositoryUrl ? (
+        <a href={data.repositoryUrl} rel="noopener">
+          {data.title}
+        </a>
+      ) : (
+        data.title
+      )
+    }</Heading
+  >
+  <p class="card__summary">{data.summary}</p>
+  <ul class="tag-list" aria-label="Technologies">
+    {
+      data.technologies.map((key) => (
+        <li>
+          <span class="tag">{technologyLabel(key)}</span>
+        </li>
+      ))
+    }
+  </ul>
+  {
+    !compact && (
+      <dl class="facts automation-card__facts">
+        <dt>Problem</dt>
+        <dd>{data.problem}</dd>
+        <dt>Approach</dt>
+        <dd>{data.approach}</dd>
+        <dt>Safety controls</dt>
+        <dd>
+          <ul class="automation-card__list">
+            {data.safetyControls.map((control) => (
+              <li>{control}</li>
+            ))}
+          </ul>
+        </dd>
+        <dt>Tests</dt>
+        <dd>{data.tests}</dd>
+        <dt>Usage</dt>
+        <dd>{data.usage}</dd>
+        {data.platformVersion && (
+          <>
+            <dt>Versions</dt>
+            <dd>{data.platformVersion}</dd>
+          </>
+        )}
+      </dl>
+    )
+  }
+  {
+    !compact && hasBody && (
+      <details class="automation-card__more">
+        <summary>More detail</summary>
+        <div class="prose">
+          <slot />
+        </div>
+      </details>
+    )
+  }
+  <div class="card__footer">
+    <p class="automation-card__dates">
+      Completed <time datetime={isoDate(data.completedDate)}
+        >{formatMonthYear(data.completedDate)}</time
+      >
+      <span aria-hidden="true">·</span>
+      Reviewed <time datetime={isoDate(data.lastReviewedDate)}
+        >{formatMonthYear(data.lastReviewedDate)}</time
+      >
+    </p>
+    {
+      data.repositoryUrl && (
+        <a class="button button--secondary button--small" href={data.repositoryUrl} rel="noopener">
+          View repository on {repositoryHost}
+        </a>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .automation-card__facts {
+    margin-top: var(--space-2);
+  }
+
+  .automation-card__list {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .automation-card__dates {
+    margin: 0;
+  }
+
+  .automation-card__more summary {
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,191 @@
+---
+import type { LibraryFacets } from '@/lib/content';
+
+/**
+ * Search and filter controls for the lab library.
+ *
+ * Progressive enhancement: the form is hidden until the client script runs, so the
+ * server-rendered list and static category links remain the no-JavaScript path.
+ * Keyword search, filters and sorting are all served by the Pagefind index built after
+ * `astro build`; in `astro dev` the index does not exist and the form reports that.
+ */
+interface Props {
+  facets: LibraryFacets;
+  total: number;
+}
+
+const { facets, total } = Astro.props;
+---
+
+<section class="library-controls" aria-labelledby="filters-heading">
+  <form
+    id="library-filters"
+    class="library-filters"
+    role="search"
+    aria-labelledby="filters-heading"
+    hidden
+    data-total={total}
+  >
+    <h2 id="filters-heading">Search and filter</h2>
+    <div class="library-filters__grid">
+      <div class="field library-filters__search">
+        <label for="filter-q">Keyword search</label>
+        <input
+          id="filter-q"
+          name="q"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="e.g. Conditional Access"
+        />
+      </div>
+      <div class="field">
+        <label for="filter-type">Evidence type</label>
+        <select id="filter-type" name="type">
+          <option value="">All types</option>
+          {
+            facets.evidenceTypes.map((f) => (
+              <option value={f.label}>
+                {f.label} ({f.count})
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-category">Category</label>
+        <select id="filter-category" name="category">
+          <option value="">All categories</option>
+          {
+            facets.categories.map((f) => (
+              <option value={f.label}>
+                {f.label} ({f.count})
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-technology">Technology</label>
+        <select id="filter-technology" name="technology">
+          <option value="">All technologies</option>
+          {
+            facets.technologies.map((f) => (
+              <option value={f.label}>
+                {f.label} ({f.count})
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-role">Target role</label>
+        <select id="filter-role" name="role">
+          <option value="">All roles</option>
+          {
+            facets.targetRoles.map((f) => (
+              <option value={f.label}>
+                {f.label} ({f.count})
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-year">Completion year</label>
+        <select id="filter-year" name="year">
+          <option value="">All years</option>
+          {
+            facets.years.map((f) => (
+              <option value={f.label}>
+                {f.label} ({f.count})
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-sort">Sort by</label>
+        <select id="filter-sort" name="sort">
+          <option value="featured">Featured first</option>
+          <option value="reviewed">Newest reviewed</option>
+          <option value="relevance">Relevance (keyword)</option>
+        </select>
+      </div>
+    </div>
+    <div class="library-filters__actions">
+      <button type="submit" class="button button--small">Apply</button>
+      <button type="button" class="button button--quiet button--small" id="filter-reset"
+        >Reset filters</button
+      >
+      <p
+        id="library-status"
+        class="library-filters__status"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </p>
+    </div>
+  </form>
+  <noscript>
+    <p class="notice">
+      Keyword search and filters need JavaScript. Without it, browse the complete list below or use
+      the category and technology links, which are all ordinary pages.
+    </p>
+  </noscript>
+</section>
+
+<script>
+  import { initLabLibrary } from '@/scripts/lab-library';
+
+  initLabLibrary();
+</script>
+
+<style>
+  .library-controls {
+    margin-bottom: var(--space-5);
+  }
+
+  .library-filters {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+  }
+
+  .library-filters h2 {
+    font-size: var(--text-md);
+    margin-bottom: var(--space-4);
+  }
+
+  .library-filters__grid {
+    display: grid;
+    gap: var(--space-3) var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  }
+
+  .library-filters__search {
+    grid-column: 1 / -1;
+  }
+
+  .library-filters__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .library-filters__status {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 56rem) {
+    .library-filters__search {
+      grid-column: span 2;
+    }
+  }
+</style>

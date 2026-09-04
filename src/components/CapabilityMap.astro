@@ -1,0 +1,87 @@
+---
+import type { CapabilityEvidence } from '@/lib/content';
+import { evidenceTypeLabel } from '@/data/taxonomy';
+import { pluralise } from '@/lib/format';
+
+/**
+ * Capability-to-evidence map. Every card answers "What can Palminder demonstrate?"
+ * with published items only; capabilities without evidence are not rendered.
+ */
+interface Props {
+  entries: CapabilityEvidence[];
+}
+
+const { entries } = Astro.props;
+
+function describe(entry: CapabilityEvidence): string {
+  const counts = new Map<string, number>();
+  for (const item of entry.items) {
+    const label = evidenceTypeLabel(item.evidenceType).toLowerCase();
+    counts.set(label, (counts.get(label) ?? 0) + 1);
+  }
+  const parts = [...counts.entries()].map(([label, count]) => pluralise(count, label));
+  if (entry.automation.length > 0) {
+    parts.push(
+      pluralise(
+        entry.automation.length,
+        'public automation repository',
+        'public automation repositories',
+      ),
+    );
+  }
+  return parts.join(', ');
+}
+---
+
+{
+  entries.length > 0 && (
+    <div class="grid grid--3 capability-map">
+      {entries.map((entry) => (
+        <article class="card capability-card">
+          <h3>{entry.capability.title}</h3>
+          <p class="capability-card__question">What can Palminder demonstrate?</p>
+          <p class="card__summary">
+            {pluralise(entry.total, 'published item')}: {describe(entry)}.
+          </p>
+          <ul class="capability-card__links">
+            {entry.items.slice(0, 3).map((item) => (
+              <li>
+                <a href={item.url}>{item.title}</a>
+              </li>
+            ))}
+            {entry.automation.slice(0, 2).map((project) => (
+              <li>
+                <a href={project.data.repositoryUrl} rel="noopener">
+                  {project.data.title} (repository)
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p class="card__footer">
+            <a class="text-link" href={entry.browseUrl}>
+              Browse all {entry.capability.title.toLowerCase()} evidence
+            </a>
+          </p>
+        </article>
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .capability-card__question {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  .capability-card__links {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .capability-card__links li + li {
+    margin-top: var(--space-1);
+  }
+</style>

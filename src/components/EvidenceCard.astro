@@ -1,0 +1,73 @@
+---
+import Badge from './Badge.astro';
+import ProofIcons from './ProofIcons.astro';
+import { categoryLabel, evidenceTypeLabel, technologyLabel } from '@/data/taxonomy';
+import { routes, type LibraryItem } from '@/lib/content';
+import { formatMonthYear, isoDate } from '@/lib/format';
+
+interface Props {
+  item: LibraryItem;
+  headingLevel?: 'h2' | 'h3' | undefined;
+}
+
+const { item, headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
+const shownTechnologies = item.technologies.slice(0, 4);
+const extraTechnologies = item.technologies.length - shownTechnologies.length;
+---
+
+<article class="card evidence-card" data-evidence-type={item.evidenceType} data-kind={item.kind}>
+  <div class="card__meta">
+    <Badge variant={item.evidenceType} label={evidenceTypeLabel(item.evidenceType)} />
+    {item.archived && <Badge variant="archived" label="Archived evidence" />}
+    <a class="evidence-card__category" href={routes.category(item.category)}
+      >{categoryLabel(item.category)}</a
+    >
+  </div>
+  <Heading><a href={item.url}>{item.title}</a></Heading>
+  <p class="card__summary">{item.summary}</p>
+  <ul class="tag-list" aria-label="Key technologies">
+    {
+      shownTechnologies.map((key) => (
+        <li>
+          <span class="tag">{technologyLabel(key)}</span>
+        </li>
+      ))
+    }
+    {
+      extraTechnologies > 0 && (
+        <li>
+          <span class="tag">+{extraTechnologies} more</span>
+        </li>
+      )
+    }
+  </ul>
+  <div class="card__footer">
+    <p class="evidence-card__dates">
+      Completed <time datetime={isoDate(item.completedDate)}
+        >{formatMonthYear(item.completedDate)}</time
+      >
+      <span aria-hidden="true">·</span>
+      Reviewed <time datetime={isoDate(item.lastReviewedDate)}
+        >{formatMonthYear(item.lastReviewedDate)}</time
+      >
+    </p>
+    <ProofIcons proof={item.proof} repositoryUrl={item.repositoryUrl} />
+  </div>
+</article>
+
+<style>
+  .evidence-card__category {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .evidence-card__category:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+  }
+
+  .evidence-card__dates {
+    margin: 0;
+  }
+</style>
