@@ -1,0 +1,12 @@
+# Gitleaks configuration: default rules plus allowlists for generated, non-secret content.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Generated assets and lockfile"
+paths = [
+  '''package-lock\.json''',
+  '''public/og-default\.png''',
+  '''public/apple-touch-icon\.png''',
+  '''src/styles/shiki\.css''',
+]

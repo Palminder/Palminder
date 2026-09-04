@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # CI always builds as a preview: noindex metadata, robots disallow. Production builds run on Cloudflare.
+  PUBLIC_SITE_ENV: preview
+  PUBLIC_SITE_URL: https://ci-preview.invalid
+
+jobs:
+  quality:
+    name: Format, types, build, verification, tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Formatting check
+        run: npm run format:check
+
+      - name: Type and Astro check
+        run: npm run check
+
+      - name: Production build with content-schema validation and search index
+        run: npm run build
+
+      - name: Verify dist (drafts, forbidden strings, metrics, CSP, SEO)
+        run: npm run verify:dist
+
+      - name: Internal link check
+        run: npm run check:links
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Smoke, accessibility and print tests
+        run: npm test
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  audit:
+    name: Dependency audit (informational)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit production and development dependencies
+        run: npm audit --audit-level=high

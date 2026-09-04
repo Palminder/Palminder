@@ -1,0 +1,20 @@
+# Dependency updates are proposed as pull requests and reviewed by hand.
+# Nothing is auto-merged; major (breaking) updates are grouped separately so they stand out.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+      major:
+        update-types: [major]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
