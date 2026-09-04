@@ -1,0 +1,40 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Page not found"
+  description="The page you requested does not exist on Palminder Dhariwal's portfolio. Links to the evidence hub, lab library, credentials and recruiter pack."
+  eyebrow="Error 404"
+  lede="The page you asked for does not exist or has moved. Nothing here is hidden behind a login; if a link brought you here, it is out of date."
+  noindex
+>
+  <section class="section">
+    <div class="container">
+      <h2>Where to go next</h2>
+      <ul class="not-found__links">
+        <li><a href="/">Home</a> — headline, availability and the current evidence snapshot.</li>
+        <li>
+          <a href="/evidence/">Technical evidence</a> — case studies, automation and organisation projects.
+        </li>
+        <li><a href="/labs/">Lab library</a> — search and filter every published lab.</li>
+        <li>
+          <a href="/credentials/">Credentials</a> — exact status of each credential and current study.
+        </li>
+        <li><a href="/recruiter-pack/">Recruiter pack</a> — two-page printable summary.</li>
+        <li><a href="/contact/">Contact</a> — recruitment contact routes.</li>
+      </ul>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .not-found__links {
+    max-width: var(--prose-width);
+    padding-left: 1.2rem;
+  }
+
+  .not-found__links li + li {
+    margin-top: var(--space-2);
+  }
+</style>

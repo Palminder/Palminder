@@ -1,0 +1,42 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import LabFilters from '@/components/LabFilters.astro';
+import LibraryListing from '@/components/LibraryListing.astro';
+import { getLibraryItems, libraryFacets } from '@/lib/content';
+import { extraPageNumbers, paginate } from '@/lib/paginate';
+
+export async function getStaticPaths() {
+  const items = await getLibraryItems();
+  return extraPageNumbers(items.length).map((n) => ({ params: { page: String(n) } }));
+}
+
+const pageNumber = Number(Astro.params.page);
+const items = await getLibraryItems();
+const facets = libraryFacets(items);
+const page = paginate(items, pageNumber, '/labs/');
+---
+
+<PageLayout
+  title={`Lab library — page ${page.currentPage} of ${page.totalPages}`}
+  heading="Lab library"
+  description={`Page ${page.currentPage} of ${page.totalPages}: published labs and integrated case studies by Palminder Dhariwal, filterable by evidence type, category, technology, role and year.`}
+  eyebrow="Lab library"
+  lede={`Page ${page.currentPage} of ${page.totalPages}. Every published lab and integrated case study, labelled by evidence type and reviewed for currency.`}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Labs', href: '/labs/' },
+    { label: `Page ${page.currentPage}`, href: page.urlFor(page.currentPage) },
+  ]}
+  currentNav="labs"
+>
+  <div class="container labs-controls">
+    <LabFilters facets={facets} total={items.length} />
+  </div>
+  <LibraryListing page={page} facets={facets} heading="All evidence" />
+</PageLayout>
+
+<style>
+  .labs-controls {
+    padding-top: var(--space-6);
+  }
+</style>

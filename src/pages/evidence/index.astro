@@ -1,0 +1,199 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import AutomationCard from '@/components/AutomationCard.astro';
+import EvidenceCard from '@/components/EvidenceCard.astro';
+import { evidenceTypeKeys, evidenceTypes } from '@/data/taxonomy';
+import { site } from '@/data/site';
+import {
+  getEvidenceHighlights,
+  getLibraryItems,
+  getPublishedAutomationProjects,
+  getPublishedCaseStudies,
+  getPublishedOrganisationProjects,
+} from '@/lib/content';
+import { pluralise } from '@/lib/format';
+
+const [highlights, caseStudies, automation, organisationProjects, library] = await Promise.all([
+  getEvidenceHighlights(6),
+  getPublishedCaseStudies(),
+  getPublishedAutomationProjects(),
+  getPublishedOrganisationProjects(),
+  getLibraryItems(),
+]);
+
+const taxonomy = evidenceTypeKeys.map((key) => ({ key, ...evidenceTypes[key] }));
+
+const areas = [
+  {
+    title: 'Integrated case studies',
+    href: '/evidence/case-studies/',
+    count: caseStudies.length,
+    noun: 'case study',
+    plural: 'case studies',
+    description:
+      'End-to-end scenarios with architecture, decisions, testing, troubleshooting and rollback.',
+  },
+  {
+    title: 'Automation and code',
+    href: '/evidence/automation/',
+    count: automation.length,
+    noun: 'repository',
+    plural: 'repositories',
+    description:
+      'Public, sanitised repositories with a stated problem, approach, safety controls and tests.',
+  },
+  ...(organisationProjects.length > 0
+    ? [
+        {
+          title: 'Organisation projects',
+          href: '/evidence/organisation-projects/',
+          count: organisationProjects.length,
+          noun: 'project',
+          plural: 'projects',
+          description:
+            'Authorised work in genuine organisational environments, published with permission.',
+        },
+      ]
+    : []),
+  {
+    title: 'Lab library',
+    href: '/labs/',
+    count: library.length,
+    noun: 'item',
+    plural: 'items',
+    description:
+      'Every published lab and case study, searchable and filterable by type, category, technology, role and year.',
+  },
+];
+---
+
+<PageLayout
+  title="Technical evidence"
+  description="Gateway to Palminder Dhariwal's strongest technical proof: integrated case studies, automation repositories and authorised organisation projects, each labelled by evidence type."
+  eyebrow="Evidence hub"
+  lede={site.evidenceIntro}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Evidence', href: '/evidence/' },
+  ]}
+  currentNav="evidence"
+>
+  <section class="section" aria-labelledby="highlights-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="highlights-heading">Highlighted evidence</h2>
+        <p class="section-heading__lede">
+          The strongest published items across case studies, code and organisation projects. No more
+          than six are highlighted here; the lab library holds everything.
+        </p>
+      </div>
+      {
+        highlights.length > 0 ? (
+          <div class="grid grid--3">
+            {highlights.map((highlight) =>
+              highlight.kind === 'library' && highlight.item ? (
+                <EvidenceCard item={highlight.item} />
+              ) : highlight.automation ? (
+                <AutomationCard project={highlight.automation} compact />
+              ) : null,
+            )}
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p>
+              <strong>No evidence has been published yet.</strong> Case studies, repositories and
+              organisation projects appear here only once they are complete, tested and sanitised.
+              Work in progress is never shown as finished evidence.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="areas-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="areas-heading">Evidence areas</h2>
+      </div>
+      <div class="grid grid--2">
+        {
+          areas.map((area) => (
+            <article class="card card--flat">
+              <h3>
+                <a href={area.href}>{area.title}</a>
+              </h3>
+              <p class="card__summary">{area.description}</p>
+              <p class="card__footer">
+                {area.count > 0 ? (
+                  <span>{pluralise(area.count, area.noun, area.plural)} published</span>
+                ) : (
+                  <span>Not yet published</span>
+                )}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="taxonomy-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="taxonomy-heading">How evidence is labelled</h2>
+        <p class="section-heading__lede">
+          Plain, factual context labels replace self-awarded scores. The label is always displayed,
+          and a lab never becomes professional experience.
+        </p>
+      </div>
+      <dl class="taxonomy">
+        {
+          taxonomy.map((type) => (
+            <div class="taxonomy__item">
+              <dt>
+                <span class={`badge badge--${type.key}`}>{type.label}</span>
+              </dt>
+              <dd>{type.description}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="muted taxonomy__note">
+        Every technical item records its completion date, last review date and, where meaningful,
+        the platform version. Work that has not been revalidated after a material product change is
+        marked as archived evidence and removed from featured areas.
+      </p>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .taxonomy {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    margin: 0 0 var(--space-4);
+  }
+
+  .taxonomy__item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+  }
+
+  .taxonomy dt {
+    margin-bottom: var(--space-2);
+  }
+
+  .taxonomy dd {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .taxonomy__note {
+    max-width: var(--prose-width);
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import { render } from 'astro:content';
+import EvidenceDetailLayout from '@/layouts/EvidenceDetailLayout.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import EvidenceCard from '@/components/EvidenceCard.astro';
+import OrganisationProjectFacts from '@/components/OrganisationProjectFacts.astro';
+import {
+  getPublishedOrganisationProjects,
+  resolveRelated,
+  sortFeaturedFirst,
+  toLibraryItem,
+  type OrganisationProject,
+} from '@/lib/content';
+
+/**
+ * The organisation-project area is generated only when at least one approved project is
+ * published. With none, neither the index nor any detail page exists in the build output.
+ */
+export async function getStaticPaths() {
+  const projects = await getPublishedOrganisationProjects();
+  if (projects.length === 0) return [];
+  return [
+    { params: { slug: undefined }, props: { mode: 'index' as const, entry: undefined } },
+    ...projects.map((entry) => ({
+      params: { slug: entry.id },
+      props: { mode: 'detail' as const, entry },
+    })),
+  ];
+}
+
+interface Props {
+  mode: 'index' | 'detail';
+  entry: OrganisationProject | undefined;
+}
+
+const { mode, entry } = Astro.props;
+
+const projects = sortFeaturedFirst(
+  (await getPublishedOrganisationProjects()).map((project) =>
+    toLibraryItem(project, 'organisation-project'),
+  ),
+);
+
+const detail = mode === 'detail' && entry ? await render(entry) : null;
+const item = entry ? toLibraryItem(entry, 'organisation-project') : null;
+const related = entry ? await resolveRelated(entry.data.related) : [];
+---
+
+{
+  mode === 'index' ? (
+    <PageLayout
+      title="Organisation projects"
+      description="Authorised Microsoft 365, endpoint, identity and Azure projects delivered by Palminder Dhariwal in genuine organisational environments, published with written permission."
+      eyebrow="Technical evidence"
+      lede="Real, authorised work in genuine organisational environments. Each project is published only with written permission, sanitised facts and a truthful outcome."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Evidence', href: '/evidence/' },
+        { label: 'Organisation projects', href: '/evidence/organisation-projects/' },
+      ]}
+      currentNav="evidence"
+    >
+      <section class="section" aria-labelledby="projects-heading">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="projects-heading">Published projects</h2>
+          </div>
+          <div class="grid grid--3">
+            {projects.map((project) => (
+              <EvidenceCard item={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </PageLayout>
+  ) : (
+    entry &&
+    item &&
+    detail && (
+      <EvidenceDetailLayout
+        item={item}
+        entry={entry}
+        related={related}
+        currentNav="evidence"
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Evidence', href: '/evidence/' },
+          { label: 'Organisation projects', href: '/evidence/organisation-projects/' },
+          { label: entry.data.title, href: item.url },
+        ]}
+      >
+        <OrganisationProjectFacts slot="before-body" entry={entry} />
+        <detail.Content />
+      </EvidenceDetailLayout>
+    )
+  )
+}

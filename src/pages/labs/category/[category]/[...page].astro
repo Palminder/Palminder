@@ -1,0 +1,51 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import LibraryListing from '@/components/LibraryListing.astro';
+import { categories, type CategoryKey } from '@/data/taxonomy';
+import { getLibraryItems, libraryFacets, routes } from '@/lib/content';
+import { extraPageNumbers, paginate } from '@/lib/paginate';
+
+/** Category pages exist only for categories with published items. */
+export async function getStaticPaths() {
+  const items = await getLibraryItems();
+  const facets = libraryFacets(items);
+  return facets.categories.flatMap((facet) => {
+    const count = items.filter((item) => item.category === facet.key).length;
+    return [
+      { params: { category: facet.key, page: undefined }, props: { pageNumber: 1 } },
+      ...extraPageNumbers(count).map((n) => ({
+        params: { category: facet.key, page: `page/${n}` },
+        props: { pageNumber: n },
+      })),
+    ];
+  });
+}
+
+const category = Astro.params.category as CategoryKey;
+const { pageNumber } = Astro.props;
+const all = await getLibraryItems();
+const facets = libraryFacets(all);
+const items = all.filter((item) => item.category === category);
+const page = paginate(items, pageNumber, routes.category(category));
+const label = categories[category].label;
+const pageSuffix = page.totalPages > 1 ? ` — page ${page.currentPage} of ${page.totalPages}` : '';
+---
+
+<PageLayout
+  title={`${label} labs${pageSuffix}`}
+  heading={`${label}`}
+  description={`${categories[category].description} Published labs and case studies by Palminder Dhariwal in the ${label} category${pageSuffix}.`}
+  eyebrow="Lab library · category"
+  lede={categories[category].description}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Labs', href: '/labs/' },
+    { label, href: routes.category(category) },
+    ...(page.currentPage > 1
+      ? [{ label: `Page ${page.currentPage}`, href: page.urlFor(page.currentPage) }]
+      : []),
+  ]}
+  currentNav="labs"
+>
+  <LibraryListing page={page} facets={facets} heading={label} activeCategory={category} />
+</PageLayout>

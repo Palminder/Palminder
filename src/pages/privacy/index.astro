@@ -1,0 +1,86 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { site, suppliedContactRoutes } from '@/data/site';
+
+const email = suppliedContactRoutes().find((route) => route.key === 'email');
+const noticeDate = '2026-09-04';
+---
+
+<PageLayout
+  title="Privacy notice"
+  description="Plain-language privacy notice for Palminder Dhariwal's static portfolio site: hosting, server logs, outbound links, downloads and contact, with no analytics, cookies or forms."
+  eyebrow="Privacy"
+  lede="What this site does and does not collect, written from how it is actually built."
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Privacy notice', href: '/privacy/' },
+  ]}
+  noindex={false}
+>
+  <section class="section">
+    <div class="container prose">
+      <p>
+        This notice covers the personal portfolio website of {site.name}. It was written from the
+        site's actual implementation and is updated whenever that implementation changes. Last
+        updated{' '}
+        <time datetime={noticeDate}>4 September 2026</time>.
+      </p>
+
+      <h2>What this site is</h2>
+      <p>
+        A static website: a set of pre-built pages and files with no database, user accounts, login,
+        comments, contact form or server-side application code. The site's own code sets no cookies
+        and uses no analytics, advertising or third-party scripts, fonts or embedded widgets. Search
+        on the lab library runs entirely in your browser using an index file served from this site.
+      </p>
+
+      <h2>Hosting and server logs</h2>
+      <p>
+        The site is served by Cloudflare Pages on Cloudflare's network. To deliver pages and protect
+        against abuse, Cloudflare processes connection data such as your IP address, the pages
+        requested, the time of the request and browser information, and may keep short-term logs of
+        that data. This processing is carried out by Cloudflare as the hosting provider under its
+        own privacy policy. This site does not receive or keep individual visitor logs and does not
+        use Cloudflare Web Analytics or any other visitor analytics product.
+      </p>
+
+      <h2>Outbound links</h2>
+      <p>
+        Pages link to external services such as GitHub, Microsoft Learn credential verification and
+        LinkedIn. Once you follow a link you are subject to that service's privacy practices. Links
+        are plain links; nothing is loaded from those services while you are on this site.
+      </p>
+
+      <h2>Downloads</h2>
+      <p>
+        Where a PDF recruiter pack or CV is offered, it is a static file served from this site in
+        the same way as any page. Downloading it is not tracked.
+      </p>
+
+      <h2>Contacting me</h2>
+      <p>
+        {
+          email
+            ? `The only contact route on this site is an ordinary email link to ${email.display}. Anything you send by email is held in that mailbox for the purpose of responding to you and, for recruitment enquiries, for as long as the discussion is active.`
+            : 'The only contact route this site will offer is an ordinary email link. Anything sent by email is held in that mailbox for the purpose of responding to you and, for recruitment enquiries, for as long as the discussion is active.'
+        }
+        No contact form or third-party messaging service is used.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Under UK data protection law you can ask what personal data I hold about you, ask for it to
+        be corrected or deleted, and complain to the Information Commissioner's Office if you are
+        unhappy with how a request is handled. For this site that would normally only apply to email
+        you have sent me.
+      </p>
+
+      <h2>Changes to this notice</h2>
+      <p>
+        If analytics, a contact form or any other data-collecting feature is ever added, this notice
+        will be updated first and the date above changed. No such feature is present in the current
+        version.
+      </p>
+    </div>
+  </section>
+</PageLayout>

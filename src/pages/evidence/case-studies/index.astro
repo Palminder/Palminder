@@ -1,0 +1,51 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import EvidenceCard from '@/components/EvidenceCard.astro';
+import { getPublishedCaseStudies, sortFeaturedFirst, toLibraryItem } from '@/lib/content';
+
+const items = sortFeaturedFirst(
+  (await getPublishedCaseStudies()).map((entry) => toLibraryItem(entry, 'case-study')),
+);
+---
+
+<PageLayout
+  title="Integrated case studies"
+  description="Flagship integrated case studies by Palminder Dhariwal: multi-component Microsoft endpoint, identity, Azure and automation scenarios with design decisions, testing, troubleshooting and rollback."
+  eyebrow="Technical evidence"
+  lede="Multi-component scenarios designed and documented end to end. Each one shows decisions, testing and operational thinking, not just a completed portal workflow."
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Evidence', href: '/evidence/' },
+    { label: 'Case studies', href: '/evidence/case-studies/' },
+  ]}
+  currentNav="evidence"
+>
+  <section class="section" aria-labelledby="list-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="list-heading">Published case studies</h2>
+        <p class="section-heading__lede">
+          A case study is published only when it includes a scenario, architecture, decisions,
+          implementation evidence, a test matrix with results, troubleshooting, rollback and lessons
+          learned.
+        </p>
+      </div>
+      {
+        items.length > 0 ? (
+          <div class="grid grid--3">
+            {items.map((item) => (
+              <EvidenceCard item={item} />
+            ))}
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p>
+              <strong>No case studies have been published yet.</strong> Flagship case studies are in
+              preparation and will be listed here once completed, tested and sanitised.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</PageLayout>

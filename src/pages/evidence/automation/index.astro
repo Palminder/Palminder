@@ -1,0 +1,70 @@
+---
+import { render } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import AutomationCard from '@/components/AutomationCard.astro';
+import { site } from '@/data/site';
+import { getPublishedAutomationProjects } from '@/lib/content';
+
+const projects = (await getPublishedAutomationProjects()).sort(
+  (a, b) =>
+    Number(a.data.archived) - Number(b.data.archived) ||
+    Number(b.data.featured) - Number(a.data.featured) ||
+    b.data.lastReviewedDate.getTime() - a.data.lastReviewedDate.getTime(),
+);
+const rendered = await Promise.all(
+  projects.map(async (project) => ({
+    project,
+    Content: project.body?.trim() ? (await render(project)).Content : null,
+  })),
+);
+---
+
+<PageLayout
+  title="Automation and code"
+  description="Curated PowerShell, Microsoft Graph, Intune, Azure and Terraform automation by Palminder Dhariwal. Each public repository states the problem, approach, safety controls, tests and usage."
+  eyebrow="Technical evidence"
+  lede="Engineering and repeatability rather than portal-only administration. Every repository listed here is public, sanitised and documented with a useful README."
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Evidence', href: '/evidence/' },
+    { label: 'Automation and code', href: '/evidence/automation/' },
+  ]}
+  currentNav="evidence"
+>
+  <section class="section" aria-labelledby="repos-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="repos-heading">Public repositories</h2>
+        {
+          site.contact.github && (
+            <a class="text-link" href={site.contact.github} rel="me noopener">
+              GitHub profile
+            </a>
+          )
+        }
+        <p class="section-heading__lede">
+          Each card states the problem, the approach, the safety controls, how the code was tested
+          and how to run it. Secrets, tenant identifiers and unexplained generated code are never
+          published.
+        </p>
+      </div>
+      {
+        rendered.length > 0 ? (
+          <div class="grid grid--2">
+            {rendered.map(({ project, Content }) => (
+              <AutomationCard project={project}>{Content && <Content />}</AutomationCard>
+            ))}
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p>
+              <strong>No repositories have been published yet.</strong> Automation and code appear
+              here only once a public, sanitised repository with working code and a useful README
+              exists.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,131 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { site } from '@/data/site';
+import { personJsonLd } from '@/lib/seo';
+---
+
+<PageLayout
+  title="About"
+  description="Professional context for Palminder Dhariwal, Microsoft Cloud & Infrastructure Engineer in Scotland: focus areas, working principles, the evidence-integrity standard behind this portfolio and availability for fully remote UK roles."
+  eyebrow="About"
+  lede={site.heroSubheadline}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about/' },
+  ]}
+  currentNav="about"
+  jsonLd={[personJsonLd(Astro.site)]}
+>
+  <section class="section" aria-labelledby="summary-heading">
+    <div class="container about">
+      <div class="about__main">
+        <h2 id="summary-heading">Professional summary</h2>
+        <p>
+          I work across endpoint management, Microsoft 365, identity, Azure and automation, building
+          on previous enterprise infrastructure and support experience with Windows, Microsoft
+          technologies and virtualisation/VDI.
+          {site.experienceLine}
+        </p>
+        <p>
+          My current focus is a structured return to professional IT: studying for Exam MD-102,
+          documenting hands-on environments as labs and integrated case studies, and publishing
+          automation that others can read, run and check. {site.currentDevelopment}
+        </p>
+
+        <h2 id="principles-heading">Working principles</h2>
+        <ul>
+          <li>
+            <strong>Show the work.</strong> Decisions, test results, failures and rollback plans are documented
+            alongside the finished configuration.
+          </li>
+          <li>
+            <strong>Security and least privilege by default.</strong> Identity, access, encryption and
+            logging are designed in from the start, not added at the end.
+          </li>
+          <li>
+            <strong>Repeatable over manual.</strong> Where a task will be done twice, it is scripted,
+            reviewed and tested, with a read-only mode before any change is applied.
+          </li>
+          <li>
+            <strong>Plan the change and the way back.</strong> Every implementation records how it would
+            be staged, validated and reversed.
+          </li>
+        </ul>
+
+        <h2 id="integrity-heading">Evidence-integrity statement</h2>
+        <p>
+          Everything on this site is labelled as a focused lab, a validated lab, an integrated case
+          study or an external organisation project. Labs are never presented as commercial or
+          production experience. Credentials are shown with their exact status, and in-progress
+          study is never listed as earned. Screenshots and diagrams are sanitised before
+          publication, and organisation projects appear only with written permission. Nothing is
+          published before it has been completed, reviewed and, where relevant, tested.
+        </p>
+
+        <h2 id="availability-heading">Availability</h2>
+        <p>{site.availability}. Routine hybrid or onsite arrangements are not suitable.</p>
+        <div class="cluster">
+          <a class="button" href="/recruiter-pack/">Open recruiter pack</a>
+          <a class="button button--secondary" href="/contact/">Contact routes</a>
+        </div>
+      </div>
+      {
+        site.headshot && (
+          <aside class="about__aside">
+            <img
+              src={site.headshot.src}
+              alt={site.headshot.alt}
+              width="320"
+              height="320"
+              loading="lazy"
+              decoding="async"
+            />
+          </aside>
+        )
+      }
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .about {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .about__main {
+    max-width: var(--prose-width);
+  }
+
+  .about__main h2 + p,
+  .about__main h2 + ul {
+    margin-top: 0;
+  }
+
+  .about__main h2 {
+    margin-top: var(--space-6);
+  }
+
+  .about__main h2:first-child {
+    margin-top: 0;
+  }
+
+  .about__main ul {
+    padding-left: 1.2rem;
+  }
+
+  .about__main li + li {
+    margin-top: var(--space-2);
+  }
+
+  .about__aside img {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  @media (min-width: 56rem) {
+    .about {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+</style>

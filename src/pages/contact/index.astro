@@ -1,0 +1,127 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { site, suppliedContactRoutes } from '@/data/site';
+
+const routes = suppliedContactRoutes();
+---
+
+<PageLayout
+  title="Contact"
+  description="Recruitment contact routes for Palminder Dhariwal, Microsoft Cloud & Infrastructure Engineer based in Scotland and available for genuinely fully remote UK roles."
+  eyebrow="Contact"
+  lede={`${site.availability}. Recruitment enquiries from recruiters and hiring managers are welcome.`}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Contact', href: '/contact/' },
+  ]}
+  currentNav="contact"
+>
+  <section class="section" aria-labelledby="routes-heading">
+    <div class="container contact">
+      <div class="contact__main">
+        <h2 id="routes-heading">Recruitment contact</h2>
+        {
+          routes.length > 0 ? (
+            <dl class="facts contact__routes">
+              {routes.map((route) => (
+                <>
+                  <dt>{route.label}</dt>
+                  <dd>
+                    <a href={route.href} rel={route.key === 'email' ? undefined : 'me noopener'}>
+                      {route.display}
+                    </a>
+                  </dd>
+                </>
+              ))}
+            </dl>
+          ) : (
+            <p class="notice">
+              Contact routes for this preview are being finalised and will be published here as a
+              plain email link, with LinkedIn and GitHub links once confirmed. The{' '}
+              <a href="/recruiter-pack/">recruiter pack</a> is available now.
+            </p>
+          )
+        }
+
+        <h2>Helpful in a first message</h2>
+        <ul>
+          <li>
+            The role title and the technical focus (endpoint, Microsoft 365, identity, Azure,
+            automation).
+          </li>
+          <li>
+            Confirmation that the role is genuinely fully remote within the UK. Routine hybrid or
+            onsite work is not suitable.
+          </li>
+          <li>Whether it is permanent or contract, and the expected start.</li>
+          <li>
+            Which items in the <a href="/evidence/">technical evidence</a> you would like discussed at
+            interview.
+          </li>
+        </ul>
+
+        <h2>What is not published here</h2>
+        <p>
+          No contact form, tracking scripts, scheduling widgets or reference contact details. Email
+          is the only contact route on this site. {site.recruiterPack.referencesStatement}
+        </p>
+
+        {
+          site.projectEnquiries.enabled && (
+            <>
+              <h2 id="projects-heading">Project enquiries</h2>
+              <p>{site.projectEnquiries.wording}</p>
+            </>
+          )
+        }
+      </div>
+      <aside class="contact__aside">
+        <div class="card">
+          <h3>Recruiter pack</h3>
+          <p class="card__summary">
+            A two-page summary of evidence, credentials, experience and availability, printable to
+            A4.
+          </p>
+          <a class="button" href="/recruiter-pack/">Open recruiter pack</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .contact {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .contact__main {
+    max-width: var(--prose-width);
+  }
+
+  .contact__main h2 {
+    margin-top: var(--space-6);
+  }
+
+  .contact__main h2:first-child {
+    margin-top: 0;
+  }
+
+  .contact__main ul {
+    padding-left: 1.2rem;
+  }
+
+  .contact__main li + li {
+    margin-top: var(--space-2);
+  }
+
+  .contact__routes {
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 56rem) {
+    .contact {
+      grid-template-columns: minmax(0, 1fr) 20rem;
+    }
+  }
+</style>

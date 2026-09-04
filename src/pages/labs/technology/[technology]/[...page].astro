@@ -1,0 +1,51 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import LibraryListing from '@/components/LibraryListing.astro';
+import { technologies, type TechnologyKey } from '@/data/taxonomy';
+import { getLibraryItems, libraryFacets, routes } from '@/lib/content';
+import { extraPageNumbers, paginate } from '@/lib/paginate';
+
+/** Technology pages exist only for technologies demonstrated in published items. */
+export async function getStaticPaths() {
+  const items = await getLibraryItems();
+  const facets = libraryFacets(items);
+  return facets.technologies.flatMap((facet) => {
+    const count = items.filter((item) => item.technologies.includes(facet.key)).length;
+    return [
+      { params: { technology: facet.key, page: undefined }, props: { pageNumber: 1 } },
+      ...extraPageNumbers(count).map((n) => ({
+        params: { technology: facet.key, page: `page/${n}` },
+        props: { pageNumber: n },
+      })),
+    ];
+  });
+}
+
+const technology = Astro.params.technology as TechnologyKey;
+const { pageNumber } = Astro.props;
+const all = await getLibraryItems();
+const facets = libraryFacets(all);
+const items = all.filter((item) => item.technologies.includes(technology));
+const page = paginate(items, pageNumber, routes.technology(technology));
+const label = technologies[technology];
+const pageSuffix = page.totalPages > 1 ? ` — page ${page.currentPage} of ${page.totalPages}` : '';
+---
+
+<PageLayout
+  title={`${label} labs${pageSuffix}`}
+  heading={label}
+  description={`Published labs and integrated case studies by Palminder Dhariwal that demonstrate ${label}${pageSuffix}.`}
+  eyebrow="Lab library · technology"
+  lede={`Published labs and case studies that demonstrate ${label}, with evidence type, dates and proof shown on every card.`}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Labs', href: '/labs/' },
+    { label, href: routes.technology(technology) },
+    ...(page.currentPage > 1
+      ? [{ label: `Page ${page.currentPage}`, href: page.urlFor(page.currentPage) }]
+      : []),
+  ]}
+  currentNav="labs"
+>
+  <LibraryListing page={page} facets={facets} heading={label} activeTechnology={technology} />
+</PageLayout>

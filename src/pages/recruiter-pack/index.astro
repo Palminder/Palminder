@@ -1,0 +1,419 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site, suppliedContactRoutes } from '@/data/site';
+import { credentialStatuses, evidenceTypeLabel } from '@/data/taxonomy';
+import {
+  getCapabilityEvidence,
+  getEvidenceHighlights,
+  getPublishedAutomationProjects,
+  getPublishedCredentials,
+  getPublishedExperience,
+  getPublishedOrganisationProjects,
+} from '@/lib/content';
+import { absoluteUrl } from '@/lib/seo';
+import { formatDate, isoDate } from '@/lib/format';
+
+/**
+ * Two-page-equivalent recruiter summary. Everything here comes from the same content
+ * collections and verified site data as the rest of the site; nothing is maintained separately.
+ */
+const [capabilityEvidence, highlights, automation, credentials, experience, organisationProjects] =
+  await Promise.all([
+    getCapabilityEvidence(),
+    getEvidenceHighlights(3),
+    getPublishedAutomationProjects(),
+    getPublishedCredentials(),
+    getPublishedExperience(),
+    getPublishedOrganisationProjects(),
+  ]);
+
+const routes = suppliedContactRoutes();
+const employment = experience.filter((entry) => entry.data.kind === 'employment');
+const earned = credentials.filter((credential) => credential.data.status !== 'in-progress');
+const inProgress = credentials.filter((credential) => credential.data.status === 'in-progress');
+const liveAutomation = automation.filter((project) => !project.data.archived);
+const liveProjects = organisationProjects.filter((project) => !project.data.archived);
+const siteUrl = absoluteUrl('/', Astro.site);
+const lastUpdated = new Date(`${site.recruiterPack.lastUpdated}T00:00:00Z`);
+---
+
+<BaseLayout
+  title="Recruiter pack"
+  description="Two-page recruiter summary for Palminder Dhariwal: Microsoft cloud and infrastructure capability, strongest evidence, credential status, verified experience and availability for fully remote UK roles. Printable to A4."
+  currentNav="recruiter-pack"
+  bodyClass="recruiter-pack-page"
+>
+  <article class="pack container">
+    <header class="pack__header">
+      <div>
+        <p class="eyebrow">Recruiter pack · {site.eyebrow}</p>
+        <h1>{site.name}</h1>
+        <p class="pack__headline">{site.headline}</p>
+        <p class="pack__capabilities">{site.capabilityLine}</p>
+        <p class="pack__availability">{site.availability}</p>
+      </div>
+      <dl class="pack__contact facts">
+        {
+          routes.map((route) => (
+            <>
+              <dt>{route.label}</dt>
+              <dd>
+                <a href={route.href} rel={route.key === 'email' ? undefined : 'me noopener'}>
+                  {route.display}
+                </a>
+              </dd>
+            </>
+          ))
+        }
+        <dt>Portfolio</dt>
+        <dd><a href="/">{siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></dd>
+        <dt>Version</dt>
+        <dd>
+          {site.recruiterPack.version} · updated <time datetime={isoDate(lastUpdated)}
+            >{formatDate(lastUpdated)}</time
+          >
+        </dd>
+      </dl>
+    </header>
+
+    <p class="pack__print no-print">
+      Use your browser's print function (Ctrl+P or ⌘P) to print this page to A4 or save it as a PDF.
+      {
+        site.downloads.recruiterPackPdf && (
+          <a href={site.downloads.recruiterPackPdf}>Download the approved PDF version.</a>
+        )
+      }
+      {site.downloads.cvPdf && <a href={site.downloads.cvPdf}>Download the approved CV (PDF).</a>}
+    </p>
+
+    <section class="pack__section" aria-labelledby="pack-summary">
+      <h2 id="pack-summary">Summary</h2>
+      <p>{site.heroSubheadline}</p>
+      <p>
+        Current focus: a structured return to professional IT supported by current Microsoft study,
+        documented hands-on environments, automation and, where authorised, real organisational
+        delivery. Every item in this pack is labelled as a lab, an earned credential or authorised
+        organisational work.
+      </p>
+    </section>
+
+    <section class="pack__section" aria-labelledby="pack-capabilities">
+      <h2 id="pack-capabilities">Capability map</h2>
+      {
+        capabilityEvidence.length > 0 ? (
+          <ul class="pack__list">
+            {capabilityEvidence.map((entry) => (
+              <li>
+                <strong>{entry.capability.title}:</strong>{' '}
+                {entry.items
+                  .slice(0, 2)
+                  .map(
+                    (item) =>
+                      `${item.title} (${evidenceTypeLabel(item.evidenceType).toLowerCase()})`,
+                  )
+                  .join('; ')}
+                {entry.automation.length > 0 &&
+                  `; ${entry.automation.length} public repositor${entry.automation.length === 1 ? 'y' : 'ies'}`}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>
+            Capability evidence is published as integrated case studies, validated labs and public
+            repositories complete. The current state of the evidence library is at{' '}
+            <a href="/evidence/">the technical evidence hub</a>.
+          </p>
+        )
+      }
+    </section>
+
+    {
+      highlights.length > 0 && (
+        <section class="pack__section" aria-labelledby="pack-evidence">
+          <h2 id="pack-evidence">Strongest evidence</h2>
+          <ol class="pack__list">
+            {highlights.map((highlight) =>
+              highlight.kind === 'library' && highlight.item ? (
+                <li>
+                  <a href={highlight.item.url}>{highlight.item.title}</a> —{' '}
+                  {evidenceTypeLabel(highlight.item.evidenceType)}. {highlight.item.summary}
+                </li>
+              ) : highlight.automation ? (
+                <li>
+                  <a href={highlight.automation.data.repositoryUrl} rel="noopener">
+                    {highlight.automation.data.title}
+                  </a>{' '}
+                  — public automation repository. {highlight.automation.data.summary}
+                </li>
+              ) : null,
+            )}
+          </ol>
+        </section>
+      )
+    }
+
+    <section class="pack__section" aria-labelledby="pack-credentials">
+      <h2 id="pack-credentials">Credentials and current study</h2>
+      <ul class="pack__list">
+        {
+          earned.map((credential) => (
+            <li>
+              <strong>{credential.data.title}</strong> — {credential.data.issuer};{' '}
+              {credentialStatuses[credential.data.status].label.toLowerCase()}
+              {credential.data.earnedDate && <>, earned {formatDate(credential.data.earnedDate)}</>}
+              {credential.data.verificationUrl && (
+                <>
+                  ;{' '}
+                  <a href={credential.data.verificationUrl} rel="noopener">
+                    verify
+                  </a>
+                </>
+              )}
+            </li>
+          ))
+        }
+        {
+          inProgress.map((credential) => (
+            <li>
+              <span class="badge badge--in-progress">{site.inProgressLabel}</span>{' '}
+              <strong>{credential.data.title}</strong> — {credential.data.issuer}; currently
+              studying for Exam {credential.data.examCode}. Not yet earned.
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="pack__section" aria-labelledby="pack-experience">
+      <h2 id="pack-experience">Experience</h2>
+      <p>{site.experienceLine}</p>
+      <p>{site.backgroundLine}</p>
+      {
+        employment.length > 0 && (
+          <ul class="pack__list">
+            {employment.map((entry) => (
+              <li>
+                <strong>{entry.data.organisation}</strong>
+                {entry.data.role && <> — {entry.data.role}</>}
+                {entry.data.startDate && (
+                  <>
+                    {' '}
+                    ({formatDate(entry.data.startDate)} –{' '}
+                    {entry.data.current
+                      ? 'present'
+                      : entry.data.endDate
+                        ? formatDate(entry.data.endDate)
+                        : ''}
+                    )
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <p>
+        Full details: <a href="/experience/">{siteUrl.replace(/\/$/, '')}/experience/</a>
+      </p>
+    </section>
+
+    {
+      liveAutomation.length > 0 && (
+        <section class="pack__section" aria-labelledby="pack-automation">
+          <h2 id="pack-automation">Automation and code</h2>
+          <ul class="pack__list">
+            {liveAutomation.map((project) => (
+              <li>
+                <a href={project.data.repositoryUrl} rel="noopener">
+                  {project.data.title}
+                </a>{' '}
+                — {project.data.summary}
+              </li>
+            ))}
+          </ul>
+          {site.contact.github && (
+            <p>
+              GitHub profile:{' '}
+              <a href={site.contact.github} rel="me noopener">
+                {site.contact.github.replace(/^https?:\/\//, '')}
+              </a>
+            </p>
+          )}
+        </section>
+      )
+    }
+
+    <section class="pack__section" aria-labelledby="pack-projects">
+      <h2 id="pack-projects">Organisation projects and references</h2>
+      {
+        liveProjects.length > 0 && (
+          <ul class="pack__list">
+            {liveProjects.map((project) => (
+              <li>
+                <a href={`/evidence/organisation-projects/${project.id}/`}>{project.data.title}</a>{' '}
+                — {project.data.measuredResult}
+                {project.data.referenceAvailable && ' Reference available on request.'}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <p>{site.recruiterPack.referencesStatement}</p>
+    </section>
+
+    <footer class="pack__footer">
+      <p>
+        {site.name} · recruiter pack version {site.recruiterPack.version} · last updated{' '}
+        <time datetime={isoDate(lastUpdated)}>{formatDate(lastUpdated)}</time> · <a href="/"
+          >{siteUrl}</a
+        >
+      </p>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .pack {
+    padding-block: var(--space-6);
+    max-width: 56rem;
+  }
+
+  .pack__header {
+    display: grid;
+    gap: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+
+  .pack__header h1 {
+    margin-bottom: var(--space-1);
+  }
+
+  .pack__headline {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  .pack__capabilities {
+    font-family: var(--font-mono);
+    color: var(--color-accent-strong);
+    margin-bottom: var(--space-2);
+  }
+
+  .pack__availability {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .pack__contact {
+    align-content: start;
+  }
+
+  .pack__print {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .pack__section {
+    margin-bottom: var(--space-5);
+  }
+
+  .pack__section h2 {
+    font-size: var(--text-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-1);
+  }
+
+  .pack__section p {
+    max-width: none;
+  }
+
+  .pack__list {
+    padding-left: 1.2rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .pack__list li + li {
+    margin-top: var(--space-1);
+  }
+
+  .pack__footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 40rem) {
+    .pack__header {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+    }
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+
+    .pack {
+      padding: 0;
+      max-width: none;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+
+    .pack h1 {
+      font-size: 20pt;
+    }
+
+    .pack__section {
+      margin-bottom: 8pt;
+      break-inside: avoid;
+    }
+
+    .pack__section h2 {
+      font-size: 11pt;
+      margin-bottom: 4pt;
+    }
+
+    .pack__list li + li {
+      margin-top: 2pt;
+    }
+
+    .pack a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .pack a[href^='http']::after,
+    .pack a[href^='mailto']::after {
+      content: ' (' attr(href) ')';
+      font-size: 8.5pt;
+      color: #4b5563;
+      word-break: break-all;
+    }
+
+    .pack a[href^='mailto']::after {
+      content: '';
+    }
+
+    .pack__header {
+      border-bottom-color: #000000;
+    }
+
+    .badge {
+      border: 1px solid #000000;
+      background: transparent;
+      color: #000000;
+    }
+  }
+</style>

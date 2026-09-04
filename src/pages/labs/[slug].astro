@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+import EvidenceDetailLayout from '@/layouts/EvidenceDetailLayout.astro';
+import { getPublishedLabs, resolveRelated, toLibraryItem } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const entries = await getPublishedLabs();
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const item = toLibraryItem(entry, 'lab');
+const related = await resolveRelated(entry.data.related);
+---
+
+<EvidenceDetailLayout
+  item={item}
+  entry={entry}
+  related={related}
+  currentNav="labs"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Labs', href: '/labs/' },
+    { label: entry.data.title, href: item.url },
+  ]}
+>
+  <Content />
+</EvidenceDetailLayout>

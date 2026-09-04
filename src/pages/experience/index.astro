@@ -1,0 +1,81 @@
+---
+import { render } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import ExperienceEntry from '@/components/ExperienceEntry.astro';
+import { site } from '@/data/site';
+import { getPublishedExperience } from '@/lib/content';
+
+const entries = await getPublishedExperience();
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({
+    entry,
+    Content: entry.body?.trim() ? (await render(entry)).Content : null,
+  })),
+);
+const employment = entries.filter((entry) => entry.data.kind === 'employment');
+const undated = employment.some((entry) => !entry.data.startDate);
+---
+
+<PageLayout
+  title="Experience"
+  description="Verified professional experience of Palminder Dhariwal: enterprise infrastructure and support roles including SSE, Queen Margaret University, Prudential via Xtravirt, AVEVA and Wescot, plus a structured technical return since 2023."
+  eyebrow="Professional history"
+  lede={site.experienceLine}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Experience', href: '/experience/' },
+  ]}
+  currentNav="experience"
+>
+  <section class="section" aria-labelledby="timeline-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="timeline-heading">Timeline</h2>
+        <p class="section-heading__lede">{site.backgroundLine}</p>
+      </div>
+      <div class="stack experience-timeline">
+        {
+          rendered.map(({ entry, Content }) => (
+            <ExperienceEntry entry={entry}>{Content && <Content />}</ExperienceEntry>
+          ))
+        }
+      </div>
+      {
+        undated && (
+          <p class="muted experience-note">
+            Role dates, scope and responsibilities are published only once they have been verified
+            against the approved CV. Organisations are listed as verified facts in the meantime.
+          </p>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="evidence-link-heading">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="evidence-link-heading">Current evidence</h2>
+        <p class="section-heading__lede">
+          Previous employment is separate from the current lab and case-study evidence. Labs are
+          always labelled as labs and never presented as professional experience.
+        </p>
+      </div>
+      <div class="cluster">
+        <a class="button" href="/evidence/">View technical evidence</a>
+        <a class="button button--secondary" href="/recruiter-pack/">Open recruiter pack</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .experience-timeline {
+    max-width: 52rem;
+  }
+
+  .experience-note {
+    margin-top: var(--space-4);
+    max-width: var(--prose-width);
+    font-size: var(--text-sm);
+  }
+</style>
