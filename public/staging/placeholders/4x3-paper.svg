@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-label="Staging placeholder image">
+<rect width="1600" height="1200" fill="#EAE5D9"/>
+<rect x="42" y="42" width="1516" height="1116" fill="none" stroke="#242722" stroke-opacity="0.22" stroke-width="2"/>
+<line x1="42" y1="42" x2="1558" y2="1158" stroke="#242722" stroke-opacity="0.12" stroke-width="2"/>
+<line x1="1558" y1="42" x2="42" y2="1158" stroke="#242722" stroke-opacity="0.12" stroke-width="2"/>
+<text x="67.2" y="1128.6" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="34" letter-spacing="2.7" fill="rgba(36,39,34,0.62)">STAGING PLACEHOLDER · 4:3</text>
+</svg>

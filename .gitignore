@@ -1,0 +1,30 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# next.js
+.next
+out
+next-env.d.ts
+
+# production
+build
+
+# testing
+coverage
+playwright-report
+test-results
+.lighthouseci
+
+# env — never commit real values
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.pem
+*.log
+.vercel
+.sanity
+*.tsbuildinfo
