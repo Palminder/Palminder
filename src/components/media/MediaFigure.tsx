@@ -41,8 +41,7 @@ export function MediaFigure({
   fetchPriority,
 }: MediaFigureProps) {
   const label = MEDIA_TYPE_LABELS[image.mediaType];
-  const isPlaceholder = Boolean(image.placeholder);
-  const hasCaption = !hideCaption && (showLabel || image.caption || image.credit || isPlaceholder);
+  const hasCaption = !hideCaption && (showLabel || image.caption || image.credit);
   const fixed = ratio !== 'intrinsic';
 
   return (
@@ -71,9 +70,6 @@ export function MediaFigure({
           {showLabel ? <span className="font-medium text-ink">{label}</span> : null}
           {showLabel && image.caption ? <span aria-hidden="true"> — </span> : null}
           {image.caption ? <span>{image.caption}</span> : null}
-          {isPlaceholder && image.intended ? (
-            <span className="block text-terracotta">Replace with: {image.intended}</span>
-          ) : null}
           {image.credit ? <span className="block">{image.credit}</span> : null}
         </figcaption>
       ) : null}

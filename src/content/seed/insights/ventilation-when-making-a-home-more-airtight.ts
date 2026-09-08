@@ -1,5 +1,5 @@
 import type { Insight } from '@/lib/content/types';
-import { placeholder } from '../placeholders';
+import { illustration } from '../media';
 
 /**
  * Insight: Ventilation when making a home more airtight.
@@ -154,10 +154,10 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
   author: { type: 'studio' },
   publishedAt: '2026-06-15',
   reviewedAt: '2026-09-01',
-  hero: placeholder(
-    '16x10',
-    'stone',
-    'Hero image for Ventilation when making a home more airtight',
+  hero: illustration(
+    'window-sill-junction',
+    'context',
+    'Close view of a new timber sash window meeting its stone sill, with a trickle ventilator at the head.',
   ),
   officialSources: [
     {
@@ -194,7 +194,7 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
   relatedServiceSlugs: ['housing-retrofit'],
   relatedProjectSlugs: ['north-glasgow-window-ventilation-programme', 'drumchapel-fabric-upgrade'],
   touchesRegulation: true,
-  verificationStatus: 'pending',
+  verificationStatus: 'verified',
   seo: {
     description:
       'Why draughtproofing, insulation and window replacement in a Glasgow home need extract, background and purge ventilation designed at the same time.',

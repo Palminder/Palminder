@@ -32,10 +32,10 @@ Always read content through `src/lib/content/index.ts` (`getProjects`, `getProje
 `getFeaturedProjects`, `getAdjacentProjects`, `getTeam`, `getServices`, `getService`,
 `getInsights`, `getInsight`, `getStudioNotes`, `getTestimonials`, `getLegalDocument`,
 `getRelatedProjects`, `getRelatedInsights`, `getProjectsForService`, `getInsightsForService`,
-`stage`). Records come back as `Gated<T>` with a `gate` describing why a record is held back;
-in staging held records render with `StagingBadge`, in production they are filtered out already.
-Never import seed files directly from a page (the homepage imports `placeholder()` only for its
-own staging hero slots).
+`stage`). Records come back as `Gated<T>` with a `gate` describing why a record would be held
+back; held records are filtered out before they reach a page. Never import seed records directly
+from a page; pages may import `illustration()` from `src/content/seed/media.ts` for page-level
+context imagery.
 
 Types live in `src/lib/content/types.ts`. Rich bodies use the `Block[]` model rendered by
 `RichText`.

@@ -41,8 +41,7 @@ export type MediaType =
   | 'survey-drawing'
   | 'material-study'
   | 'context'
-  | 'portrait'
-  | 'placeholder';
+  | 'portrait';
 
 export const MEDIA_TYPE_LABELS: Record<MediaType, string> = {
   'completed-view': 'Completed view',
@@ -60,7 +59,6 @@ export const MEDIA_TYPE_LABELS: Record<MediaType, string> = {
   'material-study': 'Material study',
   context: 'Context',
   portrait: 'Portrait',
-  placeholder: 'Staging placeholder',
 };
 
 export const DRAWING_MEDIA_TYPES: ReadonlySet<MediaType> = new Set<MediaType>([
@@ -75,7 +73,7 @@ export const DRAWING_MEDIA_TYPES: ReadonlySet<MediaType> = new Set<MediaType>([
 ]);
 
 export interface ImageRights {
-  sourceType: 'practice' | 'commissioned' | 'licensed' | 'synthetic' | 'placeholder';
+  sourceType: 'practice' | 'commissioned' | 'licensed' | 'synthetic';
   creator?: string;
   sourcePlatform?: string;
   sourceIdentifier?: string;
@@ -106,13 +104,9 @@ export interface ImageAsset {
   credit?: string;
   drawing?: DrawingMeta;
   rights?: ImageRights;
-  /** Staging placeholder — never publishable in production. */
-  placeholder?: boolean;
-  /** Description of the image that should replace a placeholder (staging only). */
-  intended?: string;
 }
 
-export type RoleType = 'director' | 'architect' | 'technologist' | 'assistant' | 'administrator';
+export type RoleType = 'director' | 'designer' | 'technologist' | 'assistant' | 'administrator';
 
 export interface Person {
   id: string;

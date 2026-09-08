@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d">
+<title id="t">Drawing 02 — Section through garden room and clerestory — Kelvinside Garden Room</title>
+<desc id="d">Section from the garden through the new single-storey garden room to the existing two-storey rear wall, showing the stepped roof with a clerestory band against the house, insulated floor and roof build-ups and the rainwater outlet at the low edge.</desc>
+<defs><pattern id="newwork" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0" stroke="#8C4F3D" stroke-width="1.2"/></pattern><pattern id="stipple" patternUnits="userSpaceOnUse" width="6" height="6"><circle cx="1.5" cy="1.5" r="0.9" fill="#242722"/><circle cx="4.5" cy="4.5" r="0.9" fill="#242722"/></pattern><pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0M0 0L8 8" stroke="#242722" stroke-width="0.8"/></pattern><pattern id="grey" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="#242722" fill-opacity="0.35"/></pattern></defs>
+<rect width="1600" height="900" fill="#F3F0E8"/>
+<line x1="40" y1="660" x2="1560" y2="660" stroke="#242722" stroke-width="2" stroke-opacity="1"/>
+<line x1="40" y1="660" x2="30" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="66" y1="660" x2="56" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="92" y1="660" x2="82" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="118" y1="660" x2="108" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="144" y1="660" x2="134" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="170" y1="660" x2="160" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="196" y1="660" x2="186" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="222" y1="660" x2="212" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="248" y1="660" x2="238" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="274" y1="660" x2="264" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="300" y1="660" x2="290" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="326" y1="660" x2="316" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="352" y1="660" x2="342" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="378" y1="660" x2="368" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="404" y1="660" x2="394" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="430" y1="660" x2="420" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="456" y1="660" x2="446" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="482" y1="660" x2="472" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="508" y1="660" x2="498" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="534" y1="660" x2="524" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="560" y1="660" x2="550" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="586" y1="660" x2="576" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="612" y1="660" x2="602" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="638" y1="660" x2="628" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="664" y1="660" x2="654" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="690" y1="660" x2="680" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="716" y1="660" x2="706" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="742" y1="660" x2="732" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="768" y1="660" x2="758" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="794" y1="660" x2="784" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="820" y1="660" x2="810" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="846" y1="660" x2="836" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="872" y1="660" x2="862" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="898" y1="660" x2="888" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="924" y1="660" x2="914" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="950" y1="660" x2="940" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="976" y1="660" x2="966" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1002" y1="660" x2="992" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1028" y1="660" x2="1018" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1054" y1="660" x2="1044" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1080" y1="660" x2="1070" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1106" y1="660" x2="1096" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1132" y1="660" x2="1122" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1158" y1="660" x2="1148" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1184" y1="660" x2="1174" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1210" y1="660" x2="1200" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1236" y1="660" x2="1226" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1262" y1="660" x2="1252" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1288" y1="660" x2="1278" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1314" y1="660" x2="1304" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1340" y1="660" x2="1330" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1366" y1="660" x2="1356" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1392" y1="660" x2="1382" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1418" y1="660" x2="1408" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1444" y1="660" x2="1434" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1470" y1="660" x2="1460" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1496" y1="660" x2="1486" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1522" y1="660" x2="1512" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<line x1="1548" y1="660" x2="1538" y2="670" stroke="#242722" stroke-width="0.6" stroke-opacity="0.6"/>
+<rect x="1102" y="108" width="48" height="592" fill="#242722"/>
+<path d="M1096 114l12 -12" fill="none" stroke="#F3F0E8" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="1102" y="452" width="48" height="184" fill="#F3F0E8"/>
+<line x1="1102" y1="452" x2="1150" y2="452" stroke="#8C4F3D" stroke-width="2" stroke-opacity="1"/>
+<rect x="1098" y="432" width="56" height="20" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="1160" y="444" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">New steel lintel to opened rear wall</text>
+<rect x="1102" y="196" width="48" height="120" fill="#F3F0E8"/>
+<rect x="1116.4" y="196" width="12" height="120" fill="#F3F0E8" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="1098" y="316" width="56" height="9.6" fill="#242722"/>
+<rect x="1102" y="184" width="48" height="12" fill="#242722"/>
+<text x="1162" y="188" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Existing first-floor window retained</text>
+<rect x="1150" y="632" width="480" height="28" fill="#242722"/>
+<rect x="1150" y="376" width="480" height="28" fill="#242722"/>
+<rect x="1150" y="404" width="480" height="228" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="0.5"/>
+<text x="1180" y="532" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">KITCHEN (EXISTING REAR ROOM)</text>
+<text x="1180" y="292" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">BEDROOM OVER</text>
+<text x="1180" y="616" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Existing suspended timber floor</text>
+<rect x="454" y="652" width="648" height="25.6" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="456" y="654" width="644" height="11.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M456 654L466 665.2L476 654L486 665.2L496 654L506 665.2L516 654L526 665.2L536 654L546 665.2L556 654L566 665.2L576 654L586 665.2L596 654L606 665.2L616 654L626 665.2L636 654L646 665.2L656 654L666 665.2L676 654L686 665.2L696 654L706 665.2L716 654L726 665.2L736 654L746 665.2L756 654L766 665.2L776 654L786 665.2L796 654L806 665.2L816 654L826 665.2L836 654L846 665.2L856 654L866 665.2L876 654L886 665.2L896 654L906 665.2L916 654L926 665.2L936 654L946 665.2L956 654L966 665.2L976 654L986 665.2L996 654L1006 665.2L1016 654L1026 665.2L1036 654L1046 665.2L1056 654L1066 665.2L1076 654L1086 665.2L1096 654" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<text x="466" y="696" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Insulated ground-bearing floor · timber floor finish</text>
+<rect x="448" y="444" width="12" height="216" fill="#242722"/>
+<rect x="442" y="428" width="24" height="16" fill="#242722" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<text x="432" y="556" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Dark metal-framed glazing to garden</text>
+<rect x="442" y="420" width="388" height="24" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="446" y="426" width="380" height="11.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M446 426L456 437.2L466 426L476 437.2L486 426L496 437.2L506 426L516 437.2L526 426L536 437.2L546 426L556 437.2L566 426L576 437.2L586 426L596 437.2L606 426L616 437.2L626 426L636 437.2L646 426L656 437.2L666 426L676 437.2L686 426L696 437.2L706 426L716 437.2L726 426L736 437.2L746 426L756 437.2L766 426L776 437.2L786 426L796 437.2L806 426L816 437.2L826 426" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<rect x="824" y="364" width="12" height="56" fill="#242722"/>
+<rect x="816" y="360" width="28" height="9.6" fill="#242722" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<rect x="824" y="340" width="278" height="24" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="828" y="346" width="270" height="11.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M828 346L838 357.2L848 346L858 357.2L868 346L878 357.2L888 346L898 357.2L908 346L918 357.2L928 346L938 357.2L948 346L958 357.2L968 346L978 357.2L988 346L998 357.2L1008 346L1018 357.2L1028 346L1038 357.2L1048 346L1058 357.2L1068 346L1078 357.2L1088 346L1098 357.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="454" y1="446" x2="824" y2="446" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="836" y1="366" x2="1102" y2="366" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="1100" y1="326" x2="1100" y2="376" stroke="#242722" stroke-width="1.5" stroke-opacity="1"/>
+<line x1="1100" y1="348" x2="1042" y2="284" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="1100" cy="348" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="1036" y="289" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Lead flashing chased into sandstone</text>
+<line x1="448" y1="424" x2="448" y2="656" stroke="#242722" stroke-width="1.6" stroke-opacity="1"/>
+<circle cx="448" cy="426" r="5" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="432" y="414" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Rainwater outlet and downpipe</text>
+<text x="432" y="430" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">set out as part of the elevation</text>
+<line x1="424" y1="660" x2="448" y2="660" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<text x="418" y="652" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Level threshold to garden</text>
+<text x="526" y="540" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">GARDEN ROOM · DINING</text>
+<text x="862" y="540" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">THRESHOLD</text>
+<line x1="910" y1="352" x2="846" y2="236" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="910" cy="352" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="840" y="241" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Roof: membrane · insulation · deck · timber lining</text>
+<line x1="622" y1="432" x2="606" y2="316" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="622" cy="432" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="600" y="321" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Low roof over dining, falls to garden edge</text>
+<line x1="830" y1="392" x2="702" y2="338" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="830" cy="392" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="696" y="343" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Clerestory glazing carries daylight past the low roof</text>
+<text x="334" y="688" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="end" fill="#242722" fill-opacity="0.8">Garden</text>
+<rect x="80" y="730" width="26" height="14" fill="#242722"/>
+<text x="116" y="741" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Existing fabric (cut)</text>
+<rect x="80" y="754" width="26" height="14" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="116" y="765" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">New work</text>
+<rect x="80" y="778" width="26" height="14" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M80 778L90 792L100 778" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<text x="116" y="789" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Insulation</text>
+<rect x="600" y="760" width="80" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<rect x="680" y="760" width="80" height="8" fill="#F3F0E8" stroke="#242722" stroke-width="0.8"/>
+<rect x="760" y="760" width="80" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<text x="600" y="755" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">0</text>
+<text x="680" y="755" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">1</text>
+<text x="760" y="755" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">2</text>
+<text x="840" y="755" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">3</text>
+<text x="848" y="768" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">m</text>
+<line x1="0" y1="832" x2="1600" y2="832" stroke="#242722" stroke-width="1" stroke-opacity="0.35"/>
+<text x="48" y="874.16" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#242722">Bracken &amp; Roe</text>
+<text x="800" y="874.16" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" text-anchor="middle" fill="#242722">Drawing 02 — Section through garden room and clerestory</text>
+<text x="1552" y="874.16" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.75">Kelvinside Garden Room</text>
+</svg>

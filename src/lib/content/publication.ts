@@ -12,21 +12,21 @@ import type {
 } from './types';
 
 /**
- * Publication stage. "production" enforces every verification gate as a hard rule.
- * "staging" renders seed and unverified records with a conspicuous label so the
- * layouts can be built and reviewed without fiction ever reaching the public site.
+ * Publication stage. "production" (the default) enforces every verification gate as a hard
+ * rule, so a CMS record that has not been verified never reaches the public site. "staging"
+ * is an editorial review mode, enabled only by CONTENT_STAGE=staging, in which held records
+ * render so that layouts can be checked before verification.
  */
 export type ContentStage = 'staging' | 'production';
 
 export function contentStage(): ContentStage {
   const explicit = process.env.CONTENT_STAGE?.trim().toLowerCase();
-  if (explicit === 'production' || explicit === 'staging') return explicit;
-  return process.env.VERCEL_ENV === 'production' ? 'production' : 'staging';
+  return explicit === 'staging' ? 'staging' : 'production';
 }
 
 export interface GateResult {
   publishable: boolean;
-  /** Human-readable reasons a record is held back (surfaced in staging labels and CMS validation). */
+  /** Human-readable reasons a record is held back (surfaced in CMS validation). */
   reasons: string[];
 }
 
@@ -43,7 +43,6 @@ export function evaluatePerson(person: Person): GateResult {
   if (roleClaimsQualification(person.rolePublic) && !person.qualificationVerified) {
     reasons.push('Stated qualification has not been verified.');
   }
-  if (person.portrait?.placeholder) reasons.push('Portrait is a staging placeholder.');
   return reasons.length ? { publishable: false, reasons } : ok;
 }
 
@@ -54,13 +53,8 @@ const PHOTOGRAPHIC_LABELS = new Set([
   'construction-progress',
 ]);
 
-export function isStagingAsset(image: Pick<ImageAsset, 'src' | 'placeholder'>): boolean {
-  return Boolean(image.placeholder) || image.src.startsWith('/staging/');
-}
-
 export function evaluateImage(image: ImageAsset): GateResult {
   const reasons: string[] = [];
-  if (isStagingAsset(image)) reasons.push('Image is a staging asset.');
   if (!image.alt?.trim()) reasons.push('Image has no alt text.');
   const synthetic = Boolean(image.rights?.synthetic) || image.rights?.sourceType === 'synthetic';
   if (synthetic && PHOTOGRAPHIC_LABELS.has(image.mediaType)) {
@@ -128,7 +122,7 @@ export function evaluateTestimonial(t: Testimonial): GateResult {
   return reasons.length ? { publishable: false, reasons } : ok;
 }
 
-/** Whether a record may render for the current stage. In staging, held records render with a label. */
+/** Whether a record may render for the current stage. In staging review mode, held records render too. */
 export function mayRender(gate: GateResult, stage: ContentStage): boolean {
   return stage === 'staging' ? true : gate.publishable;
 }

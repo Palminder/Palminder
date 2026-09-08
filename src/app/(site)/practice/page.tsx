@@ -8,8 +8,8 @@ import { SectionHeading } from '@/components/editorial/SectionHeading';
 import { TeamCard } from '@/components/editorial/TeamCard';
 import { ImagePair } from '@/components/media/ImagePair';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { placeholder } from '@/content/seed/placeholders';
-import { getSocialLinks, getTeam, stagingImage } from '@/lib/content';
+import { illustration } from '@/content/seed/media';
+import { getSocialLinks, getTeam } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo/metadata';
 import { organizationJsonLd } from '@/lib/seo/organization';
 import { site } from '@/lib/site';
@@ -37,25 +37,24 @@ const principles = [
   },
 ];
 
-/**
- * Staging slots for working-method imagery. Each is a labelled placeholder that records what the
- * real photograph must show; neither can pass the production image gate.
- */
-const drawingBoardImage = placeholder(
-  '4x3',
-  'stone',
-  'Drawing board with existing survey and proposed plans overlaid on tracing paper, scale rule and pencil in view',
+/** Working-method imagery: at the drawing board and on site. */
+const drawingBoardImage = illustration(
+  'drawing-board-overlay',
+  'context',
+  'A drawing board seen from above: a floor plan on paper with a tracing-paper overlay of the proposal, a scale rule and a pencil.',
+  {
+    caption: 'At the drawing board: existing survey and proposed plans overlaid on tracing paper.',
+  },
 );
-const siteInspectionImage = placeholder(
-  '4x3',
-  'sandstone',
-  'Site inspection of a sandstone window reveal, showing the tooled margin, sill and a lime-pointed joint',
+const siteInspectionImage = illustration(
+  'site-inspection-reveal',
+  'context',
+  'A sandstone wall with an area of the outer stone opened up to show its construction, with a ladder against it.',
+  { caption: 'On site: opening up the fabric to check a detail against what is actually there.' },
 );
 
 export default async function PracticePage() {
   const team = await getTeam();
-  const methodImages = [stagingImage(drawingBoardImage), stagingImage(siteInspectionImage)];
-  const showMethodImages = methodImages.every((i) => i !== null);
 
   return (
     <>
@@ -123,8 +122,8 @@ export default async function PracticePage() {
           ) : (
             <div className="mt-12">
               <EmptyState
-                title="Team profiles are being prepared."
-                body={`Profiles will be published here once they have been confirmed. In the meantime the practice can be reached at ${site.email}.`}
+                title="Meet the team in person."
+                body={`The practice can be reached at ${site.email} to arrange a first conversation or a meeting at the building.`}
               />
             </div>
           )}
@@ -140,11 +139,9 @@ export default async function PracticePage() {
             drawing board and on site, where a detail can be checked against the fabric it has to
             meet.
           </p>
-          {showMethodImages ? (
-            <div className="mt-10">
-              <ImagePair images={[drawingBoardImage, siteInspectionImage]} />
-            </div>
-          ) : null}
+          <div className="mt-10">
+            <ImagePair images={[drawingBoardImage, siteInspectionImage]} />
+          </div>
         </div>
       </section>
 

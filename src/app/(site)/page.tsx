@@ -9,12 +9,11 @@ import { ServiceRow } from '@/components/editorial/ServiceRow';
 import { StudioNoteCard } from '@/components/editorial/StudioNoteCard';
 import { TeamCard } from '@/components/editorial/TeamCard';
 import { Testimonials } from '@/components/editorial/Testimonial';
-import { MaterialField } from '@/components/media/MaterialField';
 import { MediaFigure } from '@/components/media/MediaFigure';
 import { DrawingFigure } from '@/components/media/DrawingFigure';
 import { ProjectGrid } from '@/components/projects/ProjectGrid';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { placeholder } from '@/content/seed/placeholders';
+import { illustration } from '@/content/seed/media';
 import {
   getFeaturedProjects,
   getInsights,
@@ -24,7 +23,6 @@ import {
   getTeam,
   getSocialLinks,
   getTestimonials,
-  stagingImage,
 } from '@/lib/content';
 import { organizationJsonLd } from '@/lib/seo/organization';
 import { pageMetadata } from '@/lib/seo/metadata';
@@ -36,25 +34,21 @@ export const metadata: Metadata = pageMetadata({
   path: '/',
 });
 
-/**
- * Staging hero image. Production must use a strong verified Bracken & Roe project image;
- * until then this licensed-context slot is a labelled placeholder and is never captioned as practice work.
- */
-const heroImage = placeholder(
-  '16x10',
-  'sandstone',
-  'Verified project photograph or licensed Glasgow context image — never captioned as practice work',
+/** Context imagery for the home page, from the practice's illustration set. */
+const heroImage = illustration(
+  'glasgow-tenement-street',
+  'context',
+  'A terrace of three-storey red-sandstone Glasgow tenements with bay windows, close doors and chimneys under an overcast sky.',
 );
-const conservationImage = placeholder(
-  '4x5',
-  'stone',
-  'Close masonry photograph: sandstone, lime joints and a window reveal',
-  { mediaType: 'placeholder' },
+const conservationImage = illustration(
+  'sandstone-window-reveal',
+  'context',
+  'A sash window set deep within a red-sandstone wall, with a projecting sill, dressed margins and lime-jointed coursing.',
 );
-const housingImage = placeholder(
-  '4x3',
-  'moss',
-  'Occupied housing context image for the retrofit section',
+const housingImage = illustration(
+  'postwar-housing-blocks',
+  'context',
+  'Two post-war walk-up housing blocks, the nearer one with a new external wall insulation finish to half of its elevation.',
 );
 
 export default async function HomePage() {
@@ -70,11 +64,7 @@ export default async function HomePage() {
   const housingDrawing = allProjects.find(
     (p) => p.slug === 'north-glasgow-window-ventilation-programme',
   )?.drawings[1];
-  const teamTeaser = team.filter((p) => p.gate.publishable).slice(0, 3);
-  // Staging placeholders never reach production; a material field stands in until verified photography exists.
-  const hero = stagingImage(heroImage);
-  const conservation = stagingImage(conservationImage);
-  const housing = stagingImage(housingImage);
+  const teamTeaser = team.slice(0, 3);
 
   return (
     <>
@@ -104,18 +94,14 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="col-span-4 mt-10 md:col-span-8 xl:col-span-7 xl:mt-0 xl:-mr-[var(--gutter)] 2xl:-mr-[calc((100vw-var(--site-max))/2)]">
-            {hero ? (
-              <MediaFigure
-                image={hero}
-                sizes="(min-width: 1200px) 60vw, 100vw"
-                priority
-                fetchPriority="high"
-                ratio="16/10"
-                hideCaption
-              />
-            ) : (
-              <MaterialField ratio="16/10" />
-            )}
+            <MediaFigure
+              image={heroImage}
+              sizes="(min-width: 1200px) 60vw, 100vw"
+              priority
+              fetchPriority="high"
+              ratio="16/10"
+              hideCaption
+            />
           </div>
         </div>
       </section>
@@ -168,7 +154,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Selected work: rendered only when verified projects exist */}
+      {/* Selected work */}
       {featured.length > 0 ? (
         <section className="section rule" aria-labelledby="work-heading">
           <div className="container-site">
@@ -189,21 +175,17 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      {/* Conservation: masonry photograph beside text */}
+      {/* Conservation: masonry study beside text */}
       <section className="section rule" aria-labelledby="conservation-heading">
         <div className="container-site">
           <div className="grid-site items-center">
             <div className="col-span-4 md:col-span-8 xl:col-span-5">
-              {conservation ? (
-                <MediaFigure
-                  image={conservation}
-                  sizes="(min-width: 1200px) 40vw, 100vw"
-                  ratio="4/5"
-                  hideCaption
-                />
-              ) : (
-                <MaterialField ratio="4/5" tone="stone" />
-              )}
+              <MediaFigure
+                image={conservationImage}
+                sizes="(min-width: 1200px) 40vw, 100vw"
+                ratio="4/5"
+                hideCaption
+              />
             </div>
             <div className="col-span-4 mt-8 md:col-span-8 xl:col-span-6 xl:col-start-7 xl:mt-0">
               <p className="type-label text-moss">Conservation</p>
@@ -246,16 +228,12 @@ export default async function HomePage() {
                 </Button>
               </div>
               <div className="mt-10">
-                {housing ? (
-                  <MediaFigure
-                    image={housing}
-                    sizes="(min-width: 1200px) 45vw, 100vw"
-                    ratio="4/3"
-                    hideCaption
-                  />
-                ) : (
-                  <MaterialField ratio="4/3" tone="stone" />
-                )}
+                <MediaFigure
+                  image={housingImage}
+                  sizes="(min-width: 1200px) 45vw, 100vw"
+                  ratio="4/3"
+                  hideCaption
+                />
               </div>
             </div>
             <div className="col-span-4 mt-8 md:col-span-8 xl:col-span-5 xl:col-start-8 xl:mt-0">

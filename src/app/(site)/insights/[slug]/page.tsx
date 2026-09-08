@@ -8,7 +8,6 @@ import { CTASection } from '@/components/editorial/CTASection';
 import { InsightCard } from '@/components/editorial/InsightCard';
 import { RichText } from '@/components/editorial/RichText';
 import { SectionHeading } from '@/components/editorial/SectionHeading';
-import { StagingBadge } from '@/components/layout/StagingNotice';
 import { MediaFigure } from '@/components/media/MediaFigure';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getInsight, getInsights, getServices, getTeam, type Gated } from '@/lib/content';
@@ -49,9 +48,8 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   });
 }
 
-/** Absolute URL for a hero that is real imagery; placeholders never leave the site. */
-function heroUrl(image: ImageAsset): string | undefined {
-  if (image.placeholder) return undefined;
+/** Absolute URL for the article hero. */
+function heroUrl(image: ImageAsset): string {
   return /^https?:\/\//.test(image.src) ? image.src : absoluteUrl(image.src);
 }
 
@@ -148,9 +146,6 @@ export default async function InsightPage({ params }: InsightPageProps) {
                 By <span className="font-medium text-ink">{authorName}</span>
                 {person ? `, ${person.rolePublic}` : null}
               </p>
-              {!insight.gate.publishable ? (
-                <StagingBadge reasons={insight.gate.reasons} className="mt-4" />
-              ) : null}
               <div className="mt-5 border-t border-ink/15 pt-5">
                 <ArticleMeta insight={insight} authorName={authorName} />
               </div>

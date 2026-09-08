@@ -1,4 +1,4 @@
-// Builds the staging drawing set into public/staging/drawings.
+// Builds the project drawing set into public/drawings.
 // Run: node scripts/drawings/build.mjs [--png]  (PNG previews go to the scratch dir given by PREVIEW_DIR)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,7 +15,7 @@ import { southsidePlan, southsideSection } from './projects/southside.mjs';
 import { northGlasgowTypology, northGlasgowDetails } from './projects/north-glasgow.mjs';
 import { drumchapelWallSection, drumchapelEavesBase } from './projects/drumchapel.mjs';
 
-const out = path.resolve('public/staging/drawings');
+const out = path.resolve('public/drawings');
 fs.mkdirSync(out, { recursive: true });
 
 export const sheets = {

@@ -1,5 +1,5 @@
 import type { Service } from '@/lib/content/types';
-import { placeholder } from './placeholders';
+import { illustration } from './media';
 
 export const services: Service[] = [
   {
@@ -48,10 +48,10 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: placeholder(
-      '4x3',
-      'sandstone',
-      'Rear of a sandstone house with a low timber-lined garden extension',
+    image: illustration(
+      'garden-room-interior',
+      'context',
+      'Inside a timber-lined garden room, looking out through a wide glazed opening to the lawn.',
     ),
     relatedProjectSlugs: [
       'kelvinside-garden-room',
@@ -113,7 +113,11 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: placeholder('4x3', 'stone', 'Close view of weathered red sandstone with lime pointing'),
+    image: illustration(
+      'sandstone-coursing',
+      'material-study',
+      'Ashlar sandstone coursing with lime joints, weathered stones and one fresh indent.',
+    ),
     relatedProjectSlugs: ['finnieston-shopfront-upper-floors', 'shawlands-sandstone-repair'],
     relatedInsightSlugs: [
       'understanding-category-b-listed-buildings-in-scotland',
@@ -175,7 +179,11 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: placeholder('4x3', 'moss', 'Occupied low-rise housing block with new windows'),
+    image: illustration(
+      'housing-block-entrance',
+      'context',
+      'The entrance of a post-war walk-up housing block after upgrade: new render, windows, door, canopy and ramp.',
+    ),
     relatedProjectSlugs: [
       'north-glasgow-window-ventilation-programme',
       'drumchapel-fabric-upgrade',
@@ -233,7 +241,11 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: placeholder('4x3', 'paper', 'Café interior with a glazed screen and perimeter bench'),
+    image: illustration(
+      'cafe-interior',
+      'context',
+      'A corner café interior with tall street windows, a glazed timber screen and a perimeter bench.',
+    ),
     relatedProjectSlugs: ['southside-corner-rooms', 'finnieston-shopfront-upper-floors'],
     relatedInsightSlugs: ['planning-permission-and-building-warrant-are-not-the-same-thing'],
     seo: {

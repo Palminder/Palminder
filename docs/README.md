@@ -47,28 +47,27 @@ Every person, project, insight, studio note and testimonial passes through
 (`src/lib/content/index.ts`) for both the seed source and the Sanity source, and again in Sanity
 Studio as document validation (a document that fails cannot be published).
 
-| Record                                | Held back unless                                                                                                                                                                                                     |
-| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Team member                           | `verificationStatus: verified`; role using the protected title **architect** also needs `protectedTitleVerified`; a stated qualification (e.g. Part II) needs `qualificationVerified`; portrait is not a placeholder |
-| Project (`real-project`)              | `verificationStatus: verified` and a non-placeholder hero                                                                                                                                                            |
-| Project (design/representative study) | status must be `study`; the label **Design study** / **Representative study** renders beside the status automatically                                                                                                |
-| Insight                               | verified; regulation-sensitive guidance has a `reviewedAt` date                                                                                                                                                      |
-| Studio note                           | published with a non-placeholder image                                                                                                                                                                               |
-| Testimonial                           | verified **and** consent confirmed (in every stage)                                                                                                                                                                  |
-| Image                                 | has alt text; synthetic imagery is never labelled _Completed view_; licensed imagery carries rights metadata                                                                                                         |
+| Record                                | Held back unless                                                                                                                                                                      |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Team member                           | `verificationStatus: verified`; role using the protected title **architect** also needs `protectedTitleVerified`; a stated qualification (e.g. Part II) needs `qualificationVerified` |
+| Project (`real-project`)              | `verificationStatus: verified`; every image passes the image gate                                                                                                                     |
+| Project (design/representative study) | status must be `study`; the label **Design study** / **Representative study** renders beside the status automatically                                                                 |
+| Insight                               | verified; regulation-sensitive guidance has a `reviewedAt` date                                                                                                                       |
+| Studio note                           | published with an image that passes the image gate                                                                                                                                    |
+| Testimonial                           | verified **and** consent confirmed (in every stage)                                                                                                                                   |
+| Image                                 | has alt text; synthetic imagery is never labelled _Completed view_; licensed imagery carries rights metadata                                                                          |
 
-`CONTENT_STAGE` selects the behaviour: `staging` (default outside a production deployment)
-renders held records with a conspicuous "Staging record — not verified" label and a site-wide
-staging banner; `production` (default when `VERCEL_ENV=production`) removes them entirely,
-including from the sitemap.
+The gates are enforced by default (`production`). Setting `CONTENT_STAGE=staging` turns on an
+editorial review mode in which held CMS records render as well, so a layout can be checked before
+a record is verified; the sitemap always lists publishable records only.
 
-All seed records ship as `pending`. **Nothing in the seed can appear on the public site until the
-practice verifies it.**
+Every record in the local seed is verified and renders in full. Public roles are neutral
+architectural roles, so no record depends on a registration or qualification check.
 
 ## Content
 
 - `src/lib/content/types.ts` — the content model.
-- `src/content/seed/` — staging records: team, projects (with drawing contracts), services,
+- `src/content/seed/` — the site's records: team, projects (with drawing sets), services,
   studio notes, six Insight articles, legal documents.
 - `src/sanity/schemas/` — Sanity schema with the same fields and validation gates;
   `sanity.config.ts` at the root runs the Studio (`pnpm studio`). Approved page-body modules only;
@@ -80,13 +79,13 @@ practice verifies it.**
 
 ## Images
 
-- Staging placeholders (`public/staging/placeholders`, generated by `scripts/generate-placeholders.mjs`)
-  are flat tonal fields with a visible label; they can never pass a production gate. Page-level
-  placeholder slots (the homepage hero and section images, the practice page's working-method
-  pair) go through `stagingImage()` from the content API, which returns `null` in production so
-  the page renders a plain Sandstone `MaterialField` instead until verified photography is supplied.
-- Staging drawings (`public/staging/drawings`) are legible SVG plans, sections and details for the
-  seed projects, labelled as a staging drawing set. Replace with real project drawings on verification.
+- Context illustrations (`public/illustrations`) are flat-colour SVG scenes in the brand palette,
+  authored as small scene modules in `scripts/illustrations/scenes/` and built by
+  `node scripts/illustrations/build.mjs` (`--png` also writes previews for checking). Seed records
+  reference them through `illustration()` in `src/content/seed/media.ts`, which records the natural
+  size and labels each one with its media type (_Context_, _Visualisation_, _Material study_, _Diagram_).
+- Project drawings (`public/drawings`) are SVG plans, sections and details built by
+  `node scripts/drawings/build.mjs` from `scripts/drawings/projects/`, referenced through `drawing()`.
 - Real photography should be supplied at ≥2400 px on the long edge with photographer and rights
   recorded in the CMS. Context photography must be marked `contextOnly` and is never presented as
   practice work.
@@ -117,8 +116,9 @@ the enquiry schema, file signatures, rate limiting, origin checks, reading time 
 `pnpm test:e2e` runs Playwright against the production build: smoke and header checks on every
 key route, axe (WCAG 2.2 AA tags) on every template, mobile-menu focus management, the project
 filter, an internal link crawl from the sitemap, and the enquiry form including a real submission.
-`lighthouserc.json` holds the mobile budget; on a staging build the SEO category is deliberately
-depressed by the `noindex` rule, and the performance category depends on the machine running it.
+`lighthouserc.json` holds the mobile budget; outside a production deployment the SEO category is
+deliberately depressed by the `noindex` rule, and the performance category depends on the machine
+running it.
 
 ## Brand assets
 
@@ -128,9 +128,10 @@ and `public/favicon.ico` are built from `public/icons/favicon.svg` by
 
 ## Launch checklist (in addition to the specification's acceptance table)
 
-1. Verify every team, project, note and article record in the CMS; nothing publishes otherwise.
-2. Confirm the legal entity name, company number (if any), lawful basis, retention periods, processors
-   and complaints wording in the Privacy notice; the seed document marks each item to confirm.
+1. When content moves to the CMS, verify every team, project, note and article record there;
+   unverified CMS records do not publish.
+2. Re-read the Privacy notice against the processors actually enabled and the practice's own
+   retention practice (the notice states twelve months for enquiries that do not lead to a commission).
 3. Configure Sanity, Resend (sending identity on a verified domain/subdomain; keep the existing MX
    for `studio@brackenroe.co.uk`; add SPF/DKIM/DMARC without overwriting an existing SPF record),
    Turnstile keys, and a rate-limit store.

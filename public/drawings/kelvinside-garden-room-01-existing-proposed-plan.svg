@@ -1,0 +1,304 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1131" width="1600" height="1131" role="img" aria-labelledby="t d">
+<title id="t">Drawing 01 — Existing and proposed ground-floor plans — Kelvinside Garden Room</title>
+<desc id="d">Existing plan with a fragmented rear kitchen, scullery and WC projection beside a proposed plan in which the rear rooms are reordered into a kitchen and utility and a new garden room extends across the full width of the house.</desc>
+<defs><pattern id="newwork" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0" stroke="#8C4F3D" stroke-width="1.2"/></pattern><pattern id="stipple" patternUnits="userSpaceOnUse" width="6" height="6"><circle cx="1.5" cy="1.5" r="0.9" fill="#242722"/><circle cx="4.5" cy="4.5" r="0.9" fill="#242722"/></pattern><pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0M0 0L8 8" stroke="#242722" stroke-width="0.8"/></pattern><pattern id="grey" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="#242722" fill-opacity="0.35"/></pattern></defs>
+<rect width="1600" height="1131" fill="#F3F0E8"/>
+<text x="80" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">EXISTING GROUND FLOOR</text>
+<text x="860" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">PROPOSED GROUND FLOOR</text>
+<line x1="80" y1="82" x2="700" y2="82" stroke="#242722" stroke-width="0.8" stroke-opacity="0.4"/>
+<line x1="860" y1="82" x2="1480" y2="82" stroke="#242722" stroke-width="0.8" stroke-opacity="0.4"/>
+<path d="M90 325L486 325L486 842L90 842Z M123 358L453 358L453 809L123 809Z" fill="#242722" fill-rule="evenodd" stroke="#242722" stroke-width="1"/>
+<polygon points="178,809 178,869.5 315.5,869.5 315.5,809 288,809 288,842 205.5,842 205.5,809" fill="#242722" stroke="#242722" stroke-width="1"/>
+<rect x="178" y="809" width="137.5" height="33" fill="#F3F0E8"/>
+<rect x="205.5" y="842" width="82.5" height="27.5" fill="#F3F0E8"/>
+<line x1="205.5" y1="851.63" x2="288" y2="851.63" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="205.5" y1="859.88" x2="288" y2="859.88" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="205.5" y1="842" x2="205.5" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="288" y1="842" x2="288" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="178" y="814.5" width="27.5" height="55" fill="#F3F0E8"/>
+<line x1="187.63" y1="814.5" x2="187.63" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="195.88" y1="814.5" x2="195.88" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="178" y1="814.5" x2="205.5" y2="814.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="178" y1="869.5" x2="205.5" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="288" y="814.5" width="27.5" height="55" fill="#F3F0E8"/>
+<line x1="297.63" y1="814.5" x2="297.63" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="305.88" y1="814.5" x2="305.88" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="288" y1="814.5" x2="315.5" y2="814.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="288" y1="869.5" x2="315.5" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="370.5" y="358" width="8.25" height="451" fill="#242722"/>
+<rect x="123" y="616.5" width="247.5" height="8.25" fill="#242722"/>
+<rect x="123" y="468" width="247.5" height="8.25" fill="#242722"/>
+<rect x="90" y="380" width="33" height="66" fill="#F3F0E8"/>
+<line x1="101.55" y1="380" x2="101.55" y2="446" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="111.45" y1="380" x2="111.45" y2="446" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="90" y1="380" x2="123" y2="380" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="90" y1="446" x2="123" y2="446" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="90" y="506.5" width="33" height="77" fill="#F3F0E8"/>
+<line x1="101.55" y1="506.5" x2="101.55" y2="583.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="111.45" y1="506.5" x2="111.45" y2="583.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="90" y1="506.5" x2="123" y2="506.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="90" y1="583.5" x2="123" y2="583.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="90" y="677" width="33" height="77" fill="#F3F0E8"/>
+<line x1="101.55" y1="677" x2="101.55" y2="754" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="111.45" y1="677" x2="111.45" y2="754" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="90" y1="677" x2="123" y2="677" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="90" y1="754" x2="123" y2="754" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="392.5" y="809" width="27.5" height="33" fill="#F3F0E8"/>
+<line x1="392.5" y1="820.55" x2="420" y2="820.55" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="392.5" y1="830.45" x2="420" y2="830.45" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="392.5" y1="809" x2="392.5" y2="842" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="420" y1="809" x2="420" y2="842" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="414.5" y="809" width="49.5" height="33" fill="#F3F0E8"/>
+<line x1="414.5" y1="809" x2="464" y2="809" stroke="#242722" stroke-width="1.6"/>
+<path d="M464 809A49.5 49.5 0 0 1 414.5 858.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="387" y="638.5" width="60.5" height="159.5" fill="none" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<line x1="387" y1="651.79" x2="447.5" y2="651.79" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="665.08" x2="447.5" y2="665.08" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="678.38" x2="447.5" y2="678.38" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="691.67" x2="447.5" y2="691.67" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="704.96" x2="447.5" y2="704.96" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="718.25" x2="447.5" y2="718.25" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="731.54" x2="447.5" y2="731.54" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="744.83" x2="447.5" y2="744.83" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="758.13" x2="447.5" y2="758.13" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="771.42" x2="447.5" y2="771.42" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="387" y1="784.71" x2="447.5" y2="784.71" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="417.25" y1="792" x2="417.25" y2="644.5" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<path d="M412.25 652.5L417.25 644.5L422.25 652.5" fill="none" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<text x="417.25" y="814.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">UP</text>
+<rect x="370.5" y="655" width="8.25" height="46.75" fill="#F3F0E8"/>
+<line x1="370.5" y1="655" x2="323.75" y2="655" stroke="#242722" stroke-width="1.6"/>
+<path d="M323.75 655A46.75 46.75 0 0 0 370.5 701.75" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="370.5" y="506.5" width="8.25" height="46.75" fill="#F3F0E8"/>
+<line x1="370.5" y1="506.5" x2="323.75" y2="506.5" stroke="#242722" stroke-width="1.6"/>
+<path d="M323.75 506.5A46.75 46.75 0 0 0 370.5 553.25" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="211" y="616.5" width="46.75" height="8.25" fill="#F3F0E8"/>
+<line x1="211" y1="624.75" x2="257.75" y2="624.75" stroke="#242722" stroke-width="1.6"/>
+<path d="M257.75 624.75A46.75 46.75 0 0 1 211 671.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<path d="M90 193L255 193L255 325L90 325Z M106.5 209.5L238.5 209.5L238.5 308.5L106.5 308.5Z" fill="#242722" fill-rule="evenodd" stroke="#242722" stroke-width="1"/>
+<rect x="194.5" y="209.5" width="6.6" height="115.5" fill="#242722"/>
+<rect x="139.5" y="292" width="49.5" height="33" fill="#F3F0E8"/>
+<rect x="139.5" y="325" width="49.5" height="33" fill="#F3F0E8"/>
+<line x1="139.5" y1="325" x2="189" y2="325" stroke="#242722" stroke-width="1.6"/>
+<path d="M189 325A49.5 49.5 0 0 0 139.5 275.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="90" y="231.5" width="16.5" height="49.5" fill="#F3F0E8"/>
+<line x1="95.78" y1="231.5" x2="95.78" y2="281" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="100.73" y1="231.5" x2="100.73" y2="281" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="90" y1="231.5" x2="106.5" y2="231.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="90" y1="281" x2="106.5" y2="281" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="216.5" y="193" width="27.5" height="16.5" fill="#F3F0E8"/>
+<line x1="216.5" y1="198.78" x2="244" y2="198.78" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="216.5" y1="203.73" x2="244" y2="203.73" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="216.5" y1="193" x2="216.5" y2="209.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="244" y1="193" x2="244" y2="209.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="238.5" y="242.5" width="16.5" height="44" fill="#F3F0E8"/>
+<line x1="255" y1="242.5" x2="255" y2="286.5" stroke="#242722" stroke-width="1.6"/>
+<path d="M255 286.5A44 44 0 0 0 299 242.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="209.75" y="217.75" width="30" height="12" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<ellipse cx="224.75" cy="247.75" rx="12" ry="17" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="113.65" y="253.5" width="35.2" height="22" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="131.25" cy="264.5" r="4.4" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="288" y="358" width="8.25" height="110" fill="#242722"/>
+<rect x="310" y="325" width="44" height="33" fill="#F3F0E8"/>
+<line x1="310" y1="336.55" x2="354" y2="336.55" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="310" y1="346.45" x2="354" y2="346.45" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="310" y1="325" x2="310" y2="358" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="354" y1="325" x2="354" y2="358" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="392.5" y="325" width="49.5" height="33" fill="#F3F0E8"/>
+<line x1="392.5" y1="325" x2="442" y2="325" stroke="#242722" stroke-width="1.6"/>
+<path d="M442 325A49.5 49.5 0 0 0 392.5 275.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="288" y="396.5" width="8.25" height="44" fill="#F3F0E8"/>
+<line x1="296.25" y1="396.5" x2="296.25" y2="440.5" stroke="#242722" stroke-width="1.6"/>
+<path d="M296.25 440.5A44 44 0 0 1 252.25 396.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="222" y="468" width="46.75" height="8.25" fill="#F3F0E8"/>
+<line x1="222" y1="476.25" x2="268.75" y2="476.25" stroke="#242722" stroke-width="1.6"/>
+<path d="M268.75 476.25A46.75 46.75 0 0 0 222 429.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="123" y="358" width="33" height="104.5" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="123" y1="441.6" x2="156" y2="441.6" stroke="#242722" stroke-width="0.5" stroke-opacity="0.6"/>
+<rect x="123.5" y="403" width="32" height="20" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="139.5" cy="413" r="4" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="115.5" y="361.25" width="48" height="32" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="127.5" cy="370.25" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="151.5" cy="370.25" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="127.5" cy="384.25" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="151.5" cy="384.25" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="178" y="512" width="99" height="49.5" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="197" y="486" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="197" y="567.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="230" y="486" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="230" y="567.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<text x="109.25" y="237" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">SCULLERY</text>
+<text x="202.75" y="311.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">WC</text>
+<text x="134" y="454.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">KITCHEN</text>
+<text x="299" y="454.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">STORE</text>
+<text x="384.25" y="402" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">PASSAGE</text>
+<text x="167" y="561.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">DINING</text>
+<text x="156" y="732" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">FRONT ROOM</text>
+<text x="384.25" y="619.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">HALL</text>
+<text x="277" y="179.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Garden</text>
+<text x="343" y="259" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Garden threshold via projection</text>
+<text x="494.25" y="600" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Party wall</text>
+<text x="494.25" y="609.9" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">(semi-detached)</text>
+<text x="288" y="897" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#242722" fill-opacity="0.8">Street</text>
+<path d="M870 325L1266 325L1266 842L870 842Z M903 358L1233 358L1233 809L903 809Z" fill="#242722" fill-rule="evenodd" stroke="#242722" stroke-width="1"/>
+<polygon points="958,809 958,869.5 1095.5,869.5 1095.5,809 1068,809 1068,842 985.5,842 985.5,809" fill="#242722" stroke="#242722" stroke-width="1"/>
+<rect x="958" y="809" width="137.5" height="33" fill="#F3F0E8"/>
+<rect x="985.5" y="842" width="82.5" height="27.5" fill="#F3F0E8"/>
+<line x1="985.5" y1="851.63" x2="1068" y2="851.63" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="985.5" y1="859.88" x2="1068" y2="859.88" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="985.5" y1="842" x2="985.5" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="1068" y1="842" x2="1068" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="958" y="814.5" width="27.5" height="55" fill="#F3F0E8"/>
+<line x1="967.63" y1="814.5" x2="967.63" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="975.88" y1="814.5" x2="975.88" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="958" y1="814.5" x2="985.5" y2="814.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="958" y1="869.5" x2="985.5" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="1068" y="814.5" width="27.5" height="55" fill="#F3F0E8"/>
+<line x1="1077.63" y1="814.5" x2="1077.63" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="1085.88" y1="814.5" x2="1085.88" y2="869.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="1068" y1="814.5" x2="1095.5" y2="814.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="1068" y1="869.5" x2="1095.5" y2="869.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="1150.5" y="358" width="8.25" height="451" fill="#242722"/>
+<rect x="903" y="616.5" width="247.5" height="8.25" fill="#242722"/>
+<rect x="903" y="468" width="247.5" height="8.25" fill="#242722"/>
+<rect x="870" y="380" width="33" height="66" fill="#F3F0E8"/>
+<line x1="881.55" y1="380" x2="881.55" y2="446" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="891.45" y1="380" x2="891.45" y2="446" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="870" y1="380" x2="903" y2="380" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="870" y1="446" x2="903" y2="446" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="870" y="506.5" width="33" height="77" fill="#F3F0E8"/>
+<line x1="881.55" y1="506.5" x2="881.55" y2="583.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="891.45" y1="506.5" x2="891.45" y2="583.5" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="870" y1="506.5" x2="903" y2="506.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="870" y1="583.5" x2="903" y2="583.5" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="870" y="677" width="33" height="77" fill="#F3F0E8"/>
+<line x1="881.55" y1="677" x2="881.55" y2="754" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="891.45" y1="677" x2="891.45" y2="754" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="870" y1="677" x2="903" y2="677" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="870" y1="754" x2="903" y2="754" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="1172.5" y="809" width="27.5" height="33" fill="#F3F0E8"/>
+<line x1="1172.5" y1="820.55" x2="1200" y2="820.55" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="1172.5" y1="830.45" x2="1200" y2="830.45" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="1172.5" y1="809" x2="1172.5" y2="842" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="1200" y1="809" x2="1200" y2="842" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="1194.5" y="809" width="49.5" height="33" fill="#F3F0E8"/>
+<line x1="1194.5" y1="809" x2="1244" y2="809" stroke="#242722" stroke-width="1.6"/>
+<path d="M1244 809A49.5 49.5 0 0 1 1194.5 858.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="1167" y="638.5" width="60.5" height="159.5" fill="none" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<line x1="1167" y1="651.79" x2="1227.5" y2="651.79" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="665.08" x2="1227.5" y2="665.08" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="678.38" x2="1227.5" y2="678.38" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="691.67" x2="1227.5" y2="691.67" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="704.96" x2="1227.5" y2="704.96" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="718.25" x2="1227.5" y2="718.25" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="731.54" x2="1227.5" y2="731.54" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="744.83" x2="1227.5" y2="744.83" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="758.13" x2="1227.5" y2="758.13" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="771.42" x2="1227.5" y2="771.42" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1167" y1="784.71" x2="1227.5" y2="784.71" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="1197.25" y1="792" x2="1197.25" y2="644.5" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<path d="M1192.25 652.5L1197.25 644.5L1202.25 652.5" fill="none" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<text x="1197.25" y="814.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">UP</text>
+<rect x="1150.5" y="655" width="8.25" height="46.75" fill="#F3F0E8"/>
+<line x1="1150.5" y1="655" x2="1103.75" y2="655" stroke="#242722" stroke-width="1.6"/>
+<path d="M1103.75 655A46.75 46.75 0 0 0 1150.5 701.75" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="1150.5" y="506.5" width="8.25" height="46.75" fill="#F3F0E8"/>
+<line x1="1150.5" y1="506.5" x2="1103.75" y2="506.5" stroke="#242722" stroke-width="1.6"/>
+<path d="M1103.75 506.5A46.75 46.75 0 0 0 1150.5 553.25" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="991" y="616.5" width="46.75" height="8.25" fill="#F3F0E8"/>
+<line x1="991" y1="624.75" x2="1037.75" y2="624.75" stroke="#242722" stroke-width="1.6"/>
+<path d="M1037.75 624.75A46.75 46.75 0 0 1 991 671.5" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="870" y="193" width="165" height="132" fill="none" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<line x1="1068" y1="358" x2="1068" y2="468" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<rect x="936" y="325" width="264" height="33" fill="#F3F0E8"/>
+<line x1="936" y1="325" x2="1200" y2="325" stroke="#8C4F3D" stroke-width="2" stroke-opacity="1"/>
+<line x1="936" y1="358" x2="1200" y2="358" stroke="#8C4F3D" stroke-width="2" stroke-opacity="1"/>
+<text x="1068" y="348.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#8C4F3D" fill-opacity="0.8">New steel over — existing wall opened</text>
+<path d="M870 138L1266 138L1266 325L870 325Z M886.5 154.5L1249.5 154.5L1249.5 308.5L886.5 308.5Z" fill="url(#newwork)" fill-rule="evenodd" stroke="#8C4F3D" stroke-width="1"/>
+<rect x="919.5" y="138" width="297" height="16.5" fill="#F3F0E8"/>
+<line x1="919.5" y1="146.25" x2="1216.5" y2="146.25" stroke="#242722" stroke-width="3" stroke-opacity="1"/>
+<line x1="919.5" y1="138" x2="919.5" y2="154.5" stroke="#242722" stroke-width="2" stroke-opacity="1"/>
+<line x1="993.75" y1="138" x2="993.75" y2="154.5" stroke="#242722" stroke-width="2" stroke-opacity="1"/>
+<line x1="1068" y1="138" x2="1068" y2="154.5" stroke="#242722" stroke-width="2" stroke-opacity="1"/>
+<line x1="1142.25" y1="138" x2="1142.25" y2="154.5" stroke="#242722" stroke-width="2" stroke-opacity="1"/>
+<line x1="1216.5" y1="138" x2="1216.5" y2="154.5" stroke="#242722" stroke-width="2" stroke-opacity="1"/>
+<text x="1068" y="129.75" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">Dark metal-framed glazing · sliding leaf</text>
+<rect x="870" y="204" width="16.5" height="66" fill="#F3F0E8"/>
+<line x1="878.25" y1="204" x2="878.25" y2="270" stroke="#242722" stroke-width="3" stroke-opacity="1"/>
+<line x1="903" y1="311.25" x2="1233" y2="311.25" stroke="#8C4F3D" stroke-width="1" stroke-opacity="1" stroke-dasharray="8 6"/>
+<text x="1068" y="304.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#8C4F3D" fill-opacity="0.8">High-level clerestory over</text>
+<rect x="1158.75" y="435" width="74.25" height="5.5" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="1150.5" y="380" width="8.25" height="44" fill="#F3F0E8"/>
+<line x1="1150.5" y1="380" x2="1106.5" y2="380" stroke="#242722" stroke-width="1.6"/>
+<path d="M1106.5 380A44 44 0 0 0 1150.5 424" fill="none" stroke="#242722" stroke-width="0.7"/>
+<line x1="1150.5" y1="380" x2="1150.5" y2="424" stroke="#8C4F3D" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="903" y="358" width="35.75" height="110" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="903" y1="446" x2="938.75" y2="446" stroke="#242722" stroke-width="0.5" stroke-opacity="0.6"/>
+<rect x="903" y="358" width="242" height="35.75" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="903" y1="386.6" x2="1145" y2="386.6" stroke="#242722" stroke-width="0.5" stroke-opacity="0.6"/>
+<rect x="995.4" y="364.6" width="35.2" height="22" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="1013" cy="375.6" r="4.4" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="1060.5" y="359.6" width="48" height="32" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="1072.5" cy="368.6" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="1096.5" cy="368.6" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="1072.5" cy="382.6" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="1096.5" cy="382.6" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="974.5" y="421.25" width="121" height="44" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<line x1="1035" y1="421.25" x2="1035" y2="465.25" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<rect x="886.5" y="162.75" width="30.25" height="132" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<line x1="886.5" y1="228.75" x2="916.75" y2="228.75" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<rect x="985.5" y="209.5" width="132" height="55" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="1004.5" y="183.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1004.5" y="270.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1037.5" y="183.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1037.5" y="270.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1070.5" y="183.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1070.5" y="270.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1164.25" y="358" width="66" height="33" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="1164.25" y1="384.4" x2="1230.25" y2="384.4" stroke="#242722" stroke-width="0.5" stroke-opacity="0.6"/>
+<rect x="1182.85" y="365.5" width="28.8" height="18" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="1197.25" cy="374.5" r="3.6" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="958" y="512" width="99" height="49.5" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="977" y="486" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="977" y="567.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1010" y="486" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="1010" y="567.5" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<text x="1013" y="286.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">GARDEN ROOM · DINING</text>
+<text x="914" y="462.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">KITCHEN</text>
+<text x="1164.25" y="421.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">UTILITY</text>
+<text x="1164.25" y="512" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">PASSAGE</text>
+<text x="947" y="561.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">DINING · LIVING</text>
+<text x="936" y="732" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">FRONT ROOM</text>
+<text x="1164.25" y="619.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">HALL</text>
+<text x="1068" y="113.25" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#242722" fill-opacity="0.8">Garden</text>
+<text x="1274.25" y="182" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Timber lining to</text>
+<text x="1274.25" y="191.9" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">garden room walls</text>
+<text x="1274.25" y="600" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Party wall</text>
+<text x="1274.25" y="609.9" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">(semi-detached)</text>
+<text x="1068" y="897" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#242722" fill-opacity="0.8">Street</text>
+<rect x="80" y="930" width="26" height="14" fill="#242722"/>
+<text x="116" y="941" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Existing fabric retained (poché)</text>
+<rect x="80" y="954" width="26" height="14" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="116" y="965" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">New work (hatch)</text>
+<line x1="80" y1="985" x2="106" y2="985" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<text x="116" y="989" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Removed</text>
+<rect x="560" y="960" width="55" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<rect x="615" y="960" width="55" height="8" fill="#F3F0E8" stroke="#242722" stroke-width="0.8"/>
+<rect x="670" y="960" width="55" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<rect x="725" y="960" width="55" height="8" fill="#F3F0E8" stroke="#242722" stroke-width="0.8"/>
+<rect x="780" y="960" width="55" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<text x="560" y="955" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">0</text>
+<text x="615" y="955" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">1</text>
+<text x="670" y="955" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">2</text>
+<text x="725" y="955" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">3</text>
+<text x="780" y="955" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">4</text>
+<text x="835" y="955" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">5</text>
+<text x="843" y="968" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">m</text>
+<circle cx="1500" cy="150" r="22" fill="none" stroke="#242722" stroke-width="1"/>
+<path d="M1500 132L1506 156L1500 152L1494 156Z" fill="#242722" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<text x="1500" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">N</text>
+<line x1="0" y1="1046" x2="1600" y2="1046" stroke="#242722" stroke-width="1" stroke-opacity="0.35"/>
+<text x="48" y="1098.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#242722">Bracken &amp; Roe</text>
+<text x="800" y="1098.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" text-anchor="middle" fill="#242722">Drawing 01 — Existing and proposed ground-floor plans</text>
+<text x="1552" y="1098.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.75">Kelvinside Garden Room</text>
+</svg>

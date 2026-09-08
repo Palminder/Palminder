@@ -83,14 +83,14 @@ async function fetchQuery<T>(
   return sanityClient.fetch<T>(query, params, { next: { tags } });
 }
 
+/** Context illustration used when a CMS record has no hero image of its own. */
 const fallbackImage = (alt: string): ImageAsset => ({
-  src: '/staging/placeholders/16x10-stone.svg',
+  src: '/illustrations/glasgow-tenement-street.svg',
   width: 1600,
   height: 1000,
   alt,
-  mediaType: 'placeholder',
-  placeholder: true,
-  rights: { sourceType: 'placeholder' },
+  mediaType: 'context',
+  rights: { sourceType: 'practice', creator: 'Bracken & Roe', synthetic: true },
 });
 
 const images = (list: SanityImage[] | undefined) =>

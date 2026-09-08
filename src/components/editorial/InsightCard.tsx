@@ -4,7 +4,6 @@ import type { Insight } from '@/lib/content/types';
 import { formatDate } from '@/lib/content/format';
 import { readingTimeMinutes } from '@/lib/content/reading-time';
 import { MediaFigure } from '@/components/media/MediaFigure';
-import { StagingBadge } from '@/components/layout/StagingNotice';
 
 interface InsightCardProps {
   insight: Gated<Insight>;
@@ -38,9 +37,6 @@ export function InsightCard({
       ) : null}
       <div className={withImage ? 'mt-5' : ''}>
         <p className="type-label text-moss">{insight.category}</p>
-        {!insight.gate.publishable ? (
-          <StagingBadge reasons={insight.gate.reasons} className="mt-2" />
-        ) : null}
         <Tag className="type-h4 mt-3">
           <Link
             href={`/insights/${insight.slug}`}

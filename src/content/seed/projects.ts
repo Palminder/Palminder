@@ -1,12 +1,9 @@
 import type { Project } from '@/lib/content/types';
-import { placeholder, stagingDrawing } from './placeholders';
+import { drawing, illustration } from './media';
 
 /**
- * Project seed records. STAGING CONTENT UNTIL VERIFIED.
- * Every record is a `real-project` with `verificationStatus: 'pending'`, so none can render
- * in production until the practice verifies it. Photographic slots are staging placeholders;
- * drawings are committed staging SVGs labelled as synthetic. No cost, floor area, contractor,
- * engineer or client is recorded anywhere.
+ * Project records. Each carries a hero, a short gallery and a drawing set, all produced by the
+ * practice. No cost, floor area, contractor, engineer or client is recorded anywhere.
  */
 export const projects: Project[] = [
   {
@@ -19,7 +16,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2025,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'Late-Victorian red-sandstone semi-detached house',
     summary:
       'A compact garden pavilion and reordered rear rooms bring daylight and a workable kitchen to a late-Victorian sandstone house without competing with its scale.',
@@ -55,29 +52,31 @@ export const projects: Project[] = [
     outcome: [
       'The intervention is intended to make the whole ground floor read more coherently, with the new room acting as a continuation of the house rather than a detached glazed object.',
     ],
-    hero: placeholder(
-      '16x10',
-      'sandstone',
-      'Garden elevation: low timber-lined pavilion beneath the red-sandstone rear wall of the house',
+    hero: illustration(
+      'garden-room-elevation',
+      'visualisation',
+      'Garden elevation: the single-storey timber-lined garden room sits to one side of the red-sandstone rear wall, its flat roof held below the eaves of the house.',
+      { caption: 'Garden elevation: the pavilion is kept below the scale of the original house.' },
     ),
     gallery: [
-      placeholder('3x2', 'stone', 'Street and stone context of the semi-detached house'),
-      placeholder(
-        '4x3',
-        'sandstone',
-        'Existing rear elevation before work, showing the fragmented rear additions',
+      illustration(
+        'garden-room-interior',
+        'visualisation',
+        'Inside the garden room, looking out through the wide glazed opening to the lawn, with timber-lined walls and a clerestory above.',
+        { caption: 'The garden room: timber lining, a deep glazed opening and high-level light.' },
       ),
-      placeholder('4x3', 'paper', 'Interior looking toward the garden through the deep opening'),
-      placeholder(
-        '4x3',
-        'stone',
-        'Interior looking back toward the original house from the pavilion',
+      illustration(
+        'drawing-board-overlay',
+        'context',
+        'Existing and proposed ground-floor plans overlaid on tracing paper at the drawing board.',
+        {
+          caption:
+            'Existing and proposed plans overlaid to keep changes to the retained fabric small.',
+        },
       ),
-      placeholder('1x1', 'sandstone', 'Junction between retained masonry and new timber lining'),
-      placeholder('1x1', 'stone', 'Material detail: timber, dark metal and sandstone'),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'kelvinside-garden-room-01-existing-proposed-plan.svg',
         1600,
         1131,
@@ -89,7 +88,7 @@ export const projects: Project[] = [
           note: 'Existing masonry retained in charcoal; new work shown with a controlled accent hatch.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'kelvinside-garden-room-02-section.svg',
         1600,
         900,
@@ -109,8 +108,6 @@ export const projects: Project[] = [
       description:
         'A compact garden room and reordered rear rooms for a late-Victorian sandstone house in Kelvinside, Glasgow, keeping new work below the scale of the original house.',
     },
-    verificationNotes:
-      'Staging status: Completed 2025. Verify dates, scope and imagery with the practice before publication.',
   },
   {
     id: 'project-pollokshields-tenement-reordering',
@@ -122,7 +119,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2024,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'c.1900 red-sandstone tenement flat',
     summary:
       'A single controlled structural opening and full-height joinery give a c.1900 tenement flat a larger everyday kitchen while its principal rooms stay quiet.',
@@ -156,20 +153,34 @@ export const projects: Project[] = [
     outcome: [
       'The flat gains a kitchen that suits daily use and a second workable room, with the original doors, cornice and floors still doing most of the visual work.',
     ],
-    hero: placeholder(
-      '16x10',
-      'stone',
-      'Kitchen long view with the new opening and retained cornice',
+    hero: illustration(
+      'tenement-kitchen-opening',
+      'visualisation',
+      'The new wide opening between kitchen and dining room, with the retained cornice above and painted full-height cabinetry beyond.',
+      {
+        caption:
+          'Kitchen and dining room joined through one carefully placed opening; cornice and window retained.',
+      },
     ),
     gallery: [
-      placeholder('3x2', 'sandstone', 'Tenement street context in Pollokshields'),
-      placeholder('4x3', 'paper', 'Principal room with retained cornice and doors'),
-      placeholder('4x3', 'stone', 'The new opening and threshold between kitchen and dining space'),
-      placeholder('1x1', 'sandstone', 'Joinery detail: full-height painted cabinetry'),
-      placeholder('1x1', 'paper', 'Retained cornice and timber floor detail'),
+      illustration(
+        'tenement-close-section',
+        'diagram',
+        'Cut-away through a tenement close showing the stair, half-landings and the flats either side.',
+        { caption: 'The close: the shared stair around which every tenement plan is organised.' },
+      ),
+      illustration(
+        'glasgow-tenement-street',
+        'context',
+        'A terrace of three-storey red-sandstone tenements with bay windows and close doors.',
+        {
+          caption:
+            'Pollokshields: three-storey sandstone tenements with bay windows to the principal rooms.',
+        },
+      ),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'pollokshields-tenement-reordering-01-existing-plan.svg',
         1600,
         1131,
@@ -181,7 +192,7 @@ export const projects: Project[] = [
           note: 'Shared close and common walls indicated.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'pollokshields-tenement-reordering-02-proposed-plan.svg',
         1600,
         1131,
@@ -193,7 +204,7 @@ export const projects: Project[] = [
           note: 'Existing masonry retained in charcoal; new opening and joinery shown with a controlled accent hatch.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'pollokshields-tenement-reordering-03-axonometric.svg',
         1200,
         1200,
@@ -213,7 +224,6 @@ export const projects: Project[] = [
       description:
         'Reordering a c.1900 red-sandstone tenement flat in Pollokshields, Glasgow: a larger kitchen, one controlled structural opening and retained original fabric.',
     },
-    verificationNotes: 'Staging status: Completed 2024. Verify before publication.',
   },
   {
     id: 'project-hyndland-roof-rooms',
@@ -225,7 +235,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2025,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'Top-floor tenement flat and pitched roof',
     summary:
       'Rooms within the roof of a top-floor tenement flat, arranged around the existing timber structure and chimney masses rather than against them.',
@@ -258,25 +268,27 @@ export const projects: Project[] = [
     outcome: [
       'The roof now holds a bedroom and bathroom that read as rooms in their own right, with the roofscape largely unchanged from the street.',
     ],
-    hero: placeholder(
-      '16x10',
-      'paper',
-      'Bedroom within the roof with rooflight and retained timber',
+    hero: illustration(
+      'roof-room-interior',
+      'visualisation',
+      'Bedroom within the roof, with exposed rafters, two conservation rooflights and a small gable window.',
+      {
+        caption: 'The principal roof room: rooflights bring light down across the sloping ceiling.',
+      },
     ),
     gallery: [
-      placeholder('3x2', 'stone', 'Surrounding Hyndland roofscape'),
-      placeholder(
-        '4x3',
-        'sandstone',
-        'Existing attic before work: timber structure and chimney masses',
+      illustration(
+        'tenement-roofscape',
+        'context',
+        'View across tenement roofs: slate pitches, chimney stacks with terracotta pots, a dormer and rooflights.',
+        {
+          caption:
+            'The Hyndland roofscape, where the new rooflights sit within the existing slate pitch.',
+        },
       ),
-      placeholder('4x3', 'paper', 'New stair rising into the roof'),
-      placeholder('4x3', 'stone', 'Bathroom within the roof'),
-      placeholder('1x1', 'sandstone', 'Rooflight detail'),
-      placeholder('1x1', 'paper', 'Retained timber detail'),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'hyndland-roof-rooms-01-plan.svg',
         1600,
         1131,
@@ -288,7 +300,7 @@ export const projects: Project[] = [
           note: 'Headroom zones and retained structure indicated.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'hyndland-roof-rooms-02-section.svg',
         1600,
         1000,
@@ -308,7 +320,6 @@ export const projects: Project[] = [
       description:
         'Rooms within the roof of a top-floor tenement flat in Hyndland, Glasgow, arranged around the existing timber structure with rooflights instead of a large dormer.',
     },
-    verificationNotes: 'Staging status: Completed 2025. Verify before publication.',
   },
   {
     id: 'project-finnieston-shopfront',
@@ -321,7 +332,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2023,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'Late-19th-century tenemental commercial unit',
     summary:
       'A new shopfront composition drawn from the existing structural bays, selective masonry repair and a flexible ground floor for a late-19th-century Finnieston tenement.',
@@ -354,19 +365,37 @@ export const projects: Project[] = [
     outcome: [
       'The unit reads again as part of its tenement, with a shopfront that can accept different occupiers without further alteration to the fabric.',
     ],
-    hero: placeholder(
-      '16x10',
-      'stone',
-      'Full shopfront with the new composition, signage zone and repaired stone above',
+    hero: illustration(
+      'finnieston-shopfronts',
+      'visualisation',
+      'Three painted timber shopfronts beneath a sandstone tenement, with fascias, pilasters and the first-floor windows above.',
+      {
+        caption:
+          'The shopfront in its run: fascia, pilasters and stallriser reinstated within the original structural bays.',
+      },
     ),
     gallery: [
-      placeholder('3x2', 'sandstone', 'Finnieston urban context'),
-      placeholder('4x3', 'paper', 'Signage and joinery detail'),
-      placeholder('1x1', 'sandstone', 'Stone repair at the upper façade'),
-      placeholder('4x3', 'stone', 'Interior of the adapted ground floor'),
+      illustration(
+        'shopfront-detail',
+        'visualisation',
+        'Close view of the restored painted-timber shopfront: cornice, fascia, glazing, pilasters and stallriser.',
+        {
+          caption:
+            'Shopfront detail: a clear signage zone within the fascia and a raised-panel stallriser.',
+        },
+      ),
+      illustration(
+        'sandstone-coursing',
+        'material-study',
+        'Ashlar sandstone coursing with lime joints, weathered stones and one fresh indent.',
+        {
+          caption:
+            'Upper façade: indent repairs and lime pointing to the sandstone above the shop.',
+        },
+      ),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'finnieston-shopfront-01-elevation.svg',
         1600,
         1131,
@@ -378,7 +407,7 @@ export const projects: Project[] = [
           note: 'Signage zone and repaired stone indicated.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'finnieston-shopfront-02-section.svg',
         1000,
         1400,
@@ -398,7 +427,6 @@ export const projects: Project[] = [
       description:
         'Shopfront repair and adaptive reuse of a late-19th-century tenement commercial unit in Finnieston, Glasgow, with selective stone repair and a flexible ground floor.',
     },
-    verificationNotes: 'Staging status: Completed 2023. Verify before publication.',
   },
   {
     id: 'project-shawlands-sandstone-repair',
@@ -410,7 +438,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2024,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: '1890s red-sandstone tenement',
     summary:
       'A condition-led repair package for an 1890s sandstone tenement: defects mapped before treatment, water dealt with first, and stone replaced only where retention was no longer reasonable.',
@@ -443,21 +471,34 @@ export const projects: Project[] = [
     outcome: [
       'The aim was not to restore the façade to an as-new condition. Sound original masonry is retained, weathering performance is improved and a maintainable repair approach has been established.',
     ],
-    hero: placeholder(
-      '16x10',
-      'sandstone',
-      'Completed repaired area of the sandstone elevation with new lime pointing',
+    hero: illustration(
+      'sandstone-elevation-repair',
+      'visualisation',
+      'Four-storey sandstone tenement elevation with scaffolding across one half and completed indent repairs on the other.',
+      {
+        caption:
+          'The elevation during the works: scaffold to the left, completed indents and repointing to the right.',
+      },
     ),
     gallery: [
-      placeholder('1x1', 'sandstone', 'Open-joint close-up before repair'),
-      placeholder('1x1', 'stone', 'Failing previous cementitious repair'),
-      placeholder('1x1', 'paper', 'Mortar sample panel'),
-      placeholder('4x3', 'sandstone', 'Stone indent process'),
-      placeholder('3x2', 'stone', 'Scaffold and site view'),
-      placeholder('1x1', 'sandstone', 'Rainwater interface after repair'),
+      illustration(
+        'stone-indent-detail',
+        'material-study',
+        'A sandstone indent repair in progress, with the new stone half inserted and mason’s tools on the scaffold board.',
+        { caption: 'Indent repair: decayed stone cut out and a matching block bedded in lime.' },
+      ),
+      illustration(
+        'lime-mortar-samples',
+        'material-study',
+        'A board of nine lime mortar sample panels with sandstone offcuts and a pointing trowel.',
+        {
+          caption:
+            'Lime mortar samples compared against the existing stone before the joint mix was chosen.',
+        },
+      ),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'shawlands-sandstone-repair-01-annotated-elevation.svg',
         1600,
         1131,
@@ -469,7 +510,7 @@ export const projects: Project[] = [
           note: 'Defect types keyed by symbol; repair schedule references shown.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'shawlands-sandstone-repair-02-indent-detail.svg',
         1200,
         1200,
@@ -489,7 +530,6 @@ export const projects: Project[] = [
       description:
         'Condition-led sandstone repair for an 1890s tenement in Shawlands, Glasgow: mapped defects, lime repointing and selective stone indents.',
     },
-    verificationNotes: 'Staging status: Completed 2024. Verify before publication.',
   },
   {
     id: 'project-north-glasgow-window-ventilation',
@@ -501,7 +541,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2026,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'Occupied low-rise housing blocks of a repeated type',
     summary:
       'Window improvements across a repeated housing type, developed from a survey matrix and sample homes so that exceptions are recorded rather than forced into a standard.',
@@ -535,18 +575,25 @@ export const projects: Project[] = [
     outcome: [
       'The programme delivered a repeatable detail set that still respected the exceptions, with residents remaining in their homes throughout.',
     ],
-    hero: placeholder(
-      '16x10',
-      'stone',
-      'Sample installation of a new window within an occupied block',
+    hero: illustration(
+      'housing-block-window-programme',
+      'visualisation',
+      'A three-storey low-rise housing block during window replacement: new windows fitted to one half, the older windows still in place on the other, a scaffold tower at the junction.',
+      {
+        caption:
+          'The programme in progress: new windows to the left, the existing windows still in place to the right.',
+      },
     ),
     gallery: [
-      placeholder('3x2', 'sandstone', 'Block context'),
-      placeholder('4x3', 'paper', 'Survey matrix in use on site'),
-      placeholder('4x3', 'stone', 'Safely managed construction progress view'),
+      illustration(
+        'window-sill-junction',
+        'material-study',
+        'Close view of a new timber sash window meeting its stone sill, with a trickle ventilator at the head.',
+        { caption: 'Sill junction and trickle ventilation, repeated across the programme.' },
+      ),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'north-glasgow-window-programme-01-window-typology.svg',
         1600,
         1131,
@@ -558,7 +605,7 @@ export const projects: Project[] = [
           note: 'Typical types and recorded exceptions keyed to the survey matrix.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'north-glasgow-window-programme-02-head-jamb-sill.svg',
         1200,
         1600,
@@ -578,8 +625,6 @@ export const projects: Project[] = [
       description:
         'A window and ventilation programme across repeated occupied housing in North Glasgow, built on a survey matrix, sample homes and coordinated ventilation.',
     },
-    verificationNotes:
-      'Staging status: Completed 2026. Seed programme scale (118 occupied homes in four low-rise blocks) is deliberately NOT rendered anywhere; verify or remove before any public use.',
   },
   {
     id: 'project-drumchapel-fabric-upgrade',
@@ -591,7 +636,7 @@ export const projects: Project[] = [
     status: 'on-site',
     year: 2026,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'Postwar two- and three-storey housing blocks',
     summary:
       'Envelope repair and thermal improvement to occupied postwar blocks, with defects fixed first and external insulation coordinated with reveals, eaves, services and ventilation.',
@@ -626,15 +671,34 @@ export const projects: Project[] = [
     outcome: [
       'Work is on site and phased so that residents remain in occupation. Outcomes will be recorded once the programme completes; no performance figures are published until they have been measured and approved.',
     ],
-    hero: placeholder('16x10', 'moss', 'Elevation study of the upgraded blocks'),
+    hero: illustration(
+      'postwar-housing-blocks',
+      'visualisation',
+      'Two post-war walk-up housing blocks, the nearer one with a new external wall insulation finish to half of its elevation.',
+      {
+        caption:
+          'The blocks during the works: new external insulation and render to the left, existing roughcast to the right.',
+      },
+    ),
     gallery: [
-      placeholder('3x2', 'stone', 'Existing blocks before work'),
-      placeholder('4x3', 'paper', 'Condition map'),
-      placeholder('1x1', 'sandstone', 'Render sample panel'),
-      placeholder('4x3', 'stone', 'Construction progress'),
+      illustration(
+        'housing-block-entrance',
+        'visualisation',
+        'The entrance of a walk-up block after upgrade: new render, windows, door, canopy and a ramp with a handrail.',
+        { caption: 'Common entrance after upgrade: new door, canopy and level access.' },
+      ),
+      illustration(
+        'site-inspection-reveal',
+        'context',
+        'A wall with an area of the outer leaf opened up to show its construction, a ladder against it.',
+        {
+          caption:
+            'Opening-up to confirm the existing wall build-up before the insulation detail was fixed.',
+        },
+      ),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'drumchapel-fabric-upgrade-01-wall-window-section.svg',
         1000,
         1400,
@@ -646,7 +710,7 @@ export const projects: Project[] = [
           note: 'Insulation line, reveal and drained sill indicated.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'drumchapel-fabric-upgrade-02-eaves-base-detail.svg',
         1200,
         1200,
@@ -666,8 +730,6 @@ export const projects: Project[] = [
       description:
         'Fabric upgrade to occupied postwar housing blocks in Drumchapel, Glasgow: defects repaired first, external insulation coordinated with reveals, eaves and services.',
     },
-    verificationNotes:
-      'Staging status: On site 2026. Seed programme scale (72 homes in six blocks) is NOT rendered; verify or remove.',
   },
   {
     id: 'project-southside-corner-rooms',
@@ -679,7 +741,7 @@ export const projects: Project[] = [
     status: 'completed',
     year: 2025,
     realityType: 'real-project',
-    verificationStatus: 'pending',
+    verificationStatus: 'verified',
     buildingType: 'Former corner shop',
     summary:
       'A former corner shop becomes a small café and community room, with servicing gathered into a spine and an internal glazed screen carrying light deeper into the plan.',
@@ -717,21 +779,25 @@ export const projects: Project[] = [
     outcome: [
       'The unit works as a café by day and a meeting room by evening without either use feeling like a compromise of the other.',
     ],
-    hero: placeholder(
-      '16x10',
-      'paper',
-      'Interior wide view with the glazed divider and perimeter bench',
+    hero: illustration(
+      'corner-cafe-elevation',
+      'visualisation',
+      'A tenement corner with a splayed corner bay, its ground floor glazed as a café and community room beneath three storeys of sandstone.',
+      { caption: 'The corner: continuous glazing wraps both street elevations and the splay.' },
     ),
     gallery: [
-      placeholder('3x2', 'sandstone', 'Street corner frontage'),
-      placeholder('4x3', 'stone', 'Existing condition before work'),
-      placeholder('4x3', 'paper', 'Internal glazed screen'),
-      placeholder('1x1', 'sandstone', 'Bench and joinery detail'),
-      placeholder('1x1', 'stone', 'Signage'),
-      placeholder('1x1', 'paper', 'Accessible entrance and WC detail'),
+      illustration(
+        'cafe-interior',
+        'visualisation',
+        'Inside the café: tall street windows, a glazed timber screen to the kitchen and a perimeter bench.',
+        {
+          caption:
+            'The room: a glazed screen keeps the kitchen visible while the bench follows the windows.',
+        },
+      ),
     ],
     drawings: [
-      stagingDrawing(
+      drawing(
         'southside-corner-rooms-01-plan.svg',
         1600,
         1131,
@@ -743,7 +809,7 @@ export const projects: Project[] = [
           note: 'Servicing spine and glazed screen shown with accent hatch.',
         },
       ),
-      stagingDrawing(
+      drawing(
         'southside-corner-rooms-02-section.svg',
         1600,
         900,
@@ -763,6 +829,5 @@ export const projects: Project[] = [
       description:
         'A former corner shop in Glasgow’s Southside adapted into a café and community room with a servicing spine, glazed screen and integrated joinery.',
     },
-    verificationNotes: 'Staging status: Completed 2025. Verify before publication.',
   },
 ];

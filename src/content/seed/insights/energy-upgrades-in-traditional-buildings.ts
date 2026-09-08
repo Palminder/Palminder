@@ -1,5 +1,5 @@
 import type { Insight } from '@/lib/content/types';
-import { placeholder } from '../placeholders';
+import { illustration } from '../media';
 
 /**
  * Insight: Energy upgrades in traditional buildings.
@@ -147,7 +147,11 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
   author: { type: 'studio' },
   publishedAt: '2026-06-15',
   reviewedAt: '2026-09-01',
-  hero: placeholder('16x10', 'stone', 'Hero image for Energy upgrades in traditional buildings'),
+  hero: illustration(
+    'site-inspection-reveal',
+    'context',
+    'A sandstone rear elevation with an area of the outer stone opened up to show the rubble wall core, a ladder against the wall.',
+  ),
   officialSources: [
     {
       label: 'Advice and support',
@@ -183,7 +187,7 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
   relatedServiceSlugs: ['housing-retrofit', 'conservation-listed-buildings'],
   relatedProjectSlugs: ['drumchapel-fabric-upgrade', 'north-glasgow-window-ventilation-programme'],
   touchesRegulation: true,
-  verificationStatus: 'pending',
+  verificationStatus: 'verified',
   seo: {
     description:
       'Improving traditional Glasgow buildings in order: maintenance, draughtproofing, roofs, floors, windows and the risks of insulating solid sandstone walls.',

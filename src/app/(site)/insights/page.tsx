@@ -40,8 +40,8 @@ export default async function InsightsPage() {
             </ul>
           ) : (
             <EmptyState
-              title="Notes will appear here as they are reviewed."
-              body="Each article is checked by the practice before it is published. In the meantime, the services pages describe how we approach existing buildings, and you are welcome to get in touch about a project of your own."
+              title="Practical notes on Glasgow’s buildings."
+              body="The services pages describe how we approach existing buildings, and you are welcome to get in touch about a project of your own."
             />
           )}
         </div>

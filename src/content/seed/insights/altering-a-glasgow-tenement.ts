@@ -1,5 +1,5 @@
 import type { Insight } from '@/lib/content/types';
-import { placeholder } from '../placeholders';
+import { illustration } from '../media';
 
 /**
  * Insight: Altering a Glasgow tenement — where to begin.
@@ -156,7 +156,11 @@ export const alteringAGlasgowTenement: Insight = {
   author: { type: 'studio' },
   publishedAt: '2026-06-15',
   reviewedAt: '2026-09-01',
-  hero: placeholder('16x10', 'stone', 'Hero image for Altering a Glasgow tenement: where to begin'),
+  hero: illustration(
+    'glasgow-tenement-street',
+    'context',
+    'A terrace of three-storey red-sandstone tenements with bay windows, close doors and chimneys under an overcast sky.',
+  ),
   officialSources: [
     {
       label: 'Building warrants',
@@ -192,7 +196,7 @@ export const alteringAGlasgowTenement: Insight = {
   relatedServiceSlugs: ['residential'],
   relatedProjectSlugs: ['pollokshields-tenement-reordering', 'hyndland-roof-rooms'],
   touchesRegulation: true,
-  verificationStatus: 'pending',
+  verificationStatus: 'verified',
   seo: {
     description:
       'Where to start when altering a Glasgow tenement flat: shared fabric, listed status, wet services, structural openings, escape, consents and a building warrant.',

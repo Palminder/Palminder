@@ -1,5 +1,5 @@
 import type { Insight } from '@/lib/content/types';
-import { placeholder } from '../placeholders';
+import { illustration } from '../media';
 
 /**
  * Insight: Understanding Category B listed buildings in Scotland.
@@ -132,10 +132,10 @@ export const categoryBListedBuildings: Insight = {
   author: { type: 'studio' },
   publishedAt: '2026-06-15',
   reviewedAt: '2026-09-01',
-  hero: placeholder(
-    '16x10',
-    'stone',
-    'Hero image for Understanding Category B listed buildings in Scotland',
+  hero: illustration(
+    'listed-villa-doorway',
+    'context',
+    'The columned porch, panelled door and fanlight of a Victorian sandstone villa, with railings along the pavement.',
   ),
   officialSources: [
     {
@@ -172,7 +172,7 @@ export const categoryBListedBuildings: Insight = {
   relatedServiceSlugs: ['conservation-listed-buildings'],
   relatedProjectSlugs: ['finnieston-shopfront-upper-floors', 'shawlands-sandstone-repair'],
   touchesRegulation: true,
-  verificationStatus: 'pending',
+  verificationStatus: 'verified',
   seo: {
     description:
       'What Category B listing covers in Scotland, how significance guides an alteration, and what listed-building consent from the planning authority requires.',

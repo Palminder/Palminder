@@ -28,7 +28,7 @@ export const person = defineType({
     defineField({
       name: 'roleType',
       type: 'string',
-      options: { list: ['director', 'architect', 'technologist', 'assistant', 'administrator'] },
+      options: { list: ['director', 'designer', 'technologist', 'assistant', 'administrator'] },
       validation: (rule) => rule.required(),
     }),
     defineField({

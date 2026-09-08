@@ -4,7 +4,6 @@ import { SECTOR_LABELS, type Project } from '@/lib/content/types';
 import { projectStatusLabel } from '@/lib/content/format';
 import { realityLabel } from '@/lib/content/publication';
 import { MediaFigure } from '@/components/media/MediaFigure';
-import { StagingBadge } from '@/components/layout/StagingNotice';
 
 interface ProjectCardProps {
   project: Gated<Project>;
@@ -41,9 +40,6 @@ export function ProjectCard({
         />
       </Link>
       <div className="mt-4">
-        {!project.gate.publishable ? (
-          <StagingBadge reasons={project.gate.reasons} className="mb-2" />
-        ) : null}
         <Tag className="type-h4">
           <Link
             href={`/projects/${project.slug}`}

@@ -13,6 +13,11 @@ test.describe('key routes', () => {
       const html = await page.content();
       expect(html).not.toMatch(/lorem ipsum/i);
       expect(html).not.toMatch(/\+44|\b0\d{3}\s?\d{3}\s?\d{4}\b|tel:/i);
+      // Nothing on the public site may read as provisional, seeded or awaiting verification.
+      const text = await page.locator('body').innerText();
+      expect(text).not.toMatch(
+        /staging (build|record|placeholder|drawing)|placeholder|to be confirmed|awaiting verification|not verified|unverified|seed (content|record)|coming soon|under construction|replace with:|indicative drawing|before launch|\[[^\]]*\]/i,
+      );
     });
   }
 

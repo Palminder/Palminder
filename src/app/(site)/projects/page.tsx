@@ -49,8 +49,8 @@ export default async function ProjectsPage() {
             </ProjectFilter>
           ) : (
             <EmptyState
-              title="Projects will appear here as they are verified."
-              body="Each project page is published once its record and imagery have been checked. Until then, the services pages describe the kinds of building and work the practice takes on, and you are welcome to get in touch about a project of your own."
+              title="Selected work is shared in conversation."
+              body="The services pages describe the kinds of building and work the practice takes on, and you are welcome to get in touch about a project of your own."
             />
           )}
         </div>

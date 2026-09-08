@@ -6,7 +6,6 @@ import { fontClassName } from '@/styles/fonts';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
-import { StagingNotice } from '@/components/layout/StagingNotice';
 import { isProductionDeployment } from '@/lib/seo/metadata';
 import { site, siteUrl } from '@/lib/site';
 
@@ -68,7 +67,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="en-GB" className={fontClassName}>
       <body className="min-h-dvh bg-paper text-ink antialiased">
         <SkipLink />
-        <StagingNotice />
         {isDraft ? (
           <div className="bg-moss text-paper" role="note">
             <p className="container-site type-meta flex flex-wrap items-center justify-between gap-3 py-2">

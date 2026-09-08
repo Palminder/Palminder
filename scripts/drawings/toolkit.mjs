@@ -1,4 +1,4 @@
-// Small SVG drawing toolkit used to author the staging drawing set so every sheet shares one
+// Small SVG drawing toolkit used to author the project drawing set so every sheet shares one
 // graphic language: Paper ground, Ink poché for existing fabric, Terracotta hatch for new work,
 // dashed lines for removed elements, sans-serif labels, a title strip, legend, scale bar and north.
 export const INK = '#242722';
@@ -400,14 +400,14 @@ export class Sheet {
       );
       if (this.w < 1300) {
         this.add(
-          `<text x="${n(this.w * 0.97)}" y="${n(ty)}" font-family="${FONT}" font-size="12" text-anchor="end" fill="${INK}" fill-opacity="0.75">Staging drawing set</text>`,
+          `<text x="${n(this.w * 0.97)}" y="${n(ty)}" font-family="${FONT}" font-size="12" text-anchor="end" fill="${INK}" fill-opacity="0.75">${esc(this.projectTitle)}</text>`,
         );
         this.add(
           `<text x="${n(this.w * 0.03)}" y="${n(ty + 18)}" font-family="${FONT}" font-size="12" fill="${INK}" fill-opacity="0.75">${esc(this.projectTitle)}</text>`,
         );
       } else {
         this.add(
-          `<text x="${n(this.w * 0.97)}" y="${n(ty)}" font-family="${FONT}" font-size="12" text-anchor="end" fill="${INK}" fill-opacity="0.75">${esc(this.projectTitle)} · Staging drawing set</text>`,
+          `<text x="${n(this.w * 0.97)}" y="${n(ty)}" font-family="${FONT}" font-size="12" text-anchor="end" fill="${INK}" fill-opacity="0.75">${esc(this.projectTitle)}</text>`,
         );
       }
     } else {
@@ -415,7 +415,7 @@ export class Sheet {
         `<text x="${n(this.w * 0.97)}" y="${n(y + this.stripH * 0.42)}" font-family="${FONT}" font-size="13" text-anchor="end" fill="${INK}">${esc(this.number)} — ${esc(this.title)}</text>`,
       );
       this.add(
-        `<text x="${n(this.w * 0.97)}" y="${n(y + this.stripH * 0.72)}" font-family="${FONT}" font-size="11" text-anchor="end" fill="${INK}" fill-opacity="0.75">${esc(this.projectTitle)} · Staging drawing set</text>`,
+        `<text x="${n(this.w * 0.97)}" y="${n(y + this.stripH * 0.72)}" font-family="${FONT}" font-size="11" text-anchor="end" fill="${INK}" fill-opacity="0.75">${esc(this.projectTitle)}</text>`,
       );
     }
     return this;

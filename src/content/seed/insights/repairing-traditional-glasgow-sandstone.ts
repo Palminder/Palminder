@@ -1,5 +1,5 @@
 import type { Insight } from '@/lib/content/types';
-import { placeholder } from '../placeholders';
+import { illustration } from '../media';
 
 /**
  * Insight: Repairing traditional Glasgow sandstone.
@@ -128,7 +128,11 @@ export const repairingTraditionalGlasgowSandstone: Insight = {
   author: { type: 'studio' },
   publishedAt: '2026-06-15',
   reviewedAt: '2026-09-01',
-  hero: placeholder('16x10', 'stone', 'Hero image for Repairing traditional Glasgow sandstone'),
+  hero: illustration(
+    'sandstone-elevation-repair',
+    'context',
+    'A sandstone tenement elevation with scaffolding across one half and completed indent repairs on the other.',
+  ),
   officialSources: [
     {
       label: 'Advice and support',
@@ -158,7 +162,7 @@ export const repairingTraditionalGlasgowSandstone: Insight = {
   relatedServiceSlugs: ['conservation-listed-buildings'],
   relatedProjectSlugs: ['shawlands-sandstone-repair', 'finnieston-shopfront-upper-floors'],
   touchesRegulation: true,
-  verificationStatus: 'pending',
+  verificationStatus: 'verified',
   seo: {
     description:
       'Condition-led sandstone repair in Glasgow: defect mapping, lime mortar, when to indent or replace stone, cleaning caution, sample panels and maintenance.',

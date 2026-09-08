@@ -5,7 +5,6 @@ import type { ReactNode } from 'react';
 import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
 import { Button } from '@/components/editorial/Button';
 import { CTASection } from '@/components/editorial/CTASection';
-import { StagingBadge } from '@/components/layout/StagingNotice';
 import { DrawingFigure } from '@/components/media/DrawingFigure';
 import { ImagePair } from '@/components/media/ImagePair';
 import { MediaFigure } from '@/components/media/MediaFigure';
@@ -222,9 +221,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="grid-site mt-10 items-end md:mt-12">
           <div className="col-span-4 md:col-span-8 xl:col-span-7">
-            {!project.gate.publishable ? (
-              <StagingBadge reasons={project.gate.reasons} className="mb-4" />
-            ) : null}
             <h1 className="type-h1">{project.title}</h1>
             <p className="type-meta mt-4 text-ink/75">
               <span className="serif-italic text-[1rem] text-ink/85">

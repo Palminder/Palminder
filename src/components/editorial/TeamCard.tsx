@@ -1,39 +1,39 @@
 import type { Gated } from '@/lib/content';
 import type { Person } from '@/lib/content/types';
 import { MediaFigure } from '@/components/media/MediaFigure';
-import { StagingBadge } from '@/components/layout/StagingNotice';
 
 interface TeamCardProps {
   person: Gated<Person>;
-  /** Teaser omits the biography. */
+  /** Teaser omits the expertise line and biography. */
   compact?: boolean;
 }
 
-/** Portrait, name, public role, expertise and biography. */
+/**
+ * Name, public role, expertise and biography, set typographically above a rule. A portrait is
+ * shown when the record carries one.
+ */
 export function TeamCard({ person, compact = false }: TeamCardProps) {
   return (
-    <article className="flex flex-col">
+    <article className="flex flex-col border-t border-ink/20 pt-6">
       {person.portrait ? (
         <MediaFigure
           image={person.portrait}
           sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
           ratio="4/5"
           hideCaption
+          className="mb-5"
         />
       ) : null}
-      <div className="mt-5">
-        {!person.gate.publishable ? (
-          <StagingBadge reasons={person.gate.reasons} className="mb-3" />
-        ) : null}
-        <h3 className="type-h4">{person.name}</h3>
-        <p className="type-meta mt-1 text-ink/75">{person.rolePublic}</p>
-        {!compact ? (
-          <>
-            <p className="type-meta mt-3 text-ink/75">{person.expertise.join(' · ')}</p>
-            <p className="type-body mt-4 text-ink/85">{person.bio}</p>
-          </>
-        ) : null}
-      </div>
+      <p className="type-label text-moss">{person.rolePublic}</p>
+      <h3 className="type-h3 mt-3">{person.name}</h3>
+      {!compact ? (
+        <>
+          <p className="type-meta mt-3 text-ink/75">{person.expertise.join(' · ')}</p>
+          <p className="type-body mt-4 max-w-[46ch] text-ink/85">{person.bio}</p>
+        </>
+      ) : (
+        <p className="type-meta mt-3 text-ink/75">{person.expertise.join(' · ')}</p>
+      )}
     </article>
   );
 }

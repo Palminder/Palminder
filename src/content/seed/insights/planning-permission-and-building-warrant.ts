@@ -1,5 +1,5 @@
 import type { Insight } from '@/lib/content/types';
-import { placeholder } from '../placeholders';
+import { illustration } from '../media';
 
 export const planningPermissionAndBuildingWarrant: Insight = {
   id: 'insight-planning-permission-and-building-warrant-are-not-the-same-thing',
@@ -146,10 +146,10 @@ export const planningPermissionAndBuildingWarrant: Insight = {
   author: { type: 'studio' },
   publishedAt: '2026-06-15',
   reviewedAt: '2026-09-01',
-  hero: placeholder(
-    '16x10',
-    'stone',
-    'Hero image for Planning permission and a building warrant are not the same thing',
+  hero: illustration(
+    'consent-drawings-study',
+    'context',
+    'Four drawing sheets pinned to a board: a site plan, an elevation, a floor plan and a section.',
   ),
   officialSources: [
     {
@@ -186,7 +186,7 @@ export const planningPermissionAndBuildingWarrant: Insight = {
   relatedServiceSlugs: ['residential', 'commercial-community'],
   relatedProjectSlugs: ['kelvinside-garden-room', 'southside-corner-rooms'],
   touchesRegulation: true,
-  verificationStatus: 'pending',
+  verificationStatus: 'verified',
   seo: {
     description:
       'How planning permission, building warrants and listed-building consent differ in Scotland, and why the answer depends on the property.',

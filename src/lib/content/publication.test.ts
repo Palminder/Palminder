@@ -18,7 +18,6 @@ const verifiedPerson = (over: Partial<Person> = {}): Person => ({
   verificationStatus: 'verified',
   protectedTitleVerified: true,
   qualificationVerified: true,
-  portrait: { ...team[0]!.portrait!, placeholder: false, src: '/x.jpg' },
   ...over,
 });
 
@@ -43,8 +42,15 @@ describe('protected title detection', () => {
 });
 
 describe('team publication gate', () => {
-  it('holds every seed team member back', () => {
-    for (const p of team) expect(evaluatePerson(p).publishable).toBe(false);
+  it('publishes every team record: neutral roles, no protected title or stated qualification', () => {
+    for (const p of team) {
+      expect(evaluatePerson(p).publishable).toBe(true);
+      expect(roleUsesProtectedTitle(p.rolePublic)).toBe(false);
+      expect(roleClaimsQualification(p.rolePublic)).toBe(false);
+    }
+  });
+  it('holds back an unverified person', () => {
+    expect(evaluatePerson({ ...team[0]!, verificationStatus: 'pending' }).publishable).toBe(false);
   });
   it('requires protected-title verification for architect roles', () => {
     const p = verifiedPerson({ rolePublic: 'Senior Architect', protectedTitleVerified: false });
@@ -67,29 +73,19 @@ describe('team publication gate', () => {
 });
 
 describe('project publication gate', () => {
-  const real = (img: Project['hero'], i = 0): Project['hero'] => ({
-    ...img,
-    placeholder: false,
-    src: `/real-${i}.jpg`,
-    rights: { sourceType: 'practice' },
+  const verified = (over: Partial<Project> = {}): Project => ({ ...projects[0]!, ...over });
+  it('publishes every project record with its illustrations and drawings', () => {
+    for (const p of projects) expect(evaluateProject(p).publishable).toBe(true);
   });
-  const verified = (over: Partial<Project> = {}): Project => ({
-    ...projects[0]!,
-    verificationStatus: 'verified',
-    hero: real(projects[0]!.hero),
-    gallery: projects[0]!.gallery.map(real),
-    drawings: projects[0]!.drawings.map((d, i) => ({ ...real(d, i), mediaType: d.mediaType })),
-    ...over,
+  it('holds back an unverified real project', () => {
+    expect(evaluateProject(verified({ verificationStatus: 'pending' })).publishable).toBe(false);
   });
-  it('holds every seed project back (all are unverified real projects)', () => {
-    for (const p of projects) expect(evaluateProject(p).publishable).toBe(false);
-  });
-  it('publishes a verified real project whose every image is real', () => {
-    expect(evaluateProject(verified()).publishable).toBe(true);
-  });
-  it('holds a verified project back while any gallery image or drawing is still a staging asset', () => {
-    expect(evaluateProject(verified({ gallery: projects[0]!.gallery })).publishable).toBe(false);
-    expect(evaluateProject(verified({ drawings: projects[0]!.drawings })).publishable).toBe(false);
+  it('holds a project back while any image lacks alt text or mislabels synthetic imagery', () => {
+    const hero = projects[0]!.hero;
+    expect(evaluateProject(verified({ hero: { ...hero, alt: '' } })).publishable).toBe(false);
+    expect(
+      evaluateProject(verified({ hero: { ...hero, mediaType: 'completed-view' } })).publishable,
+    ).toBe(false);
   });
   it('rejects a design study that claims completion', () => {
     expect(

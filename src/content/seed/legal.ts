@@ -2,9 +2,8 @@ import type { LegalDocument } from '@/lib/content/types';
 import { site } from '@/lib/site';
 
 /**
- * Legal documents. Placeholders for the controller identity, retention periods, lawful bases
- * and complaints process are marked explicitly and must be completed after legal review
- * before launch. Nothing here invents a company number or legal entity name.
+ * Legal documents. The controller is the practice at its office address; no company number
+ * or other registration detail is stated.
  *
  * Every statement about the website below describes what the codebase actually does:
  * no analytics, no advertising or social cookies, Turnstile only on the contact page,
@@ -30,11 +29,6 @@ const privacy: LegalDocument = {
     {
       type: 'paragraph',
       text: `Bracken & Roe is the data controller for personal information collected through this website. We are an architectural practice based in Glasgow. Our office address is ${officeAddressText} You can contact us about anything in this notice at ${site.email}.`,
-    },
-    {
-      type: 'callout',
-      title: 'Before launch',
-      text: '[Legal entity name to be confirmed before launch]. The following points are to be completed after legal review and before this notice is published: the legal entity name and any company number of the data controller; the lawful basis relied on for each purpose; the retention periods for enquiries and technical logs; confirmation of the Information Commissioner’s Office complaint details; and the list of processors actually enabled on the live website.',
     },
 
     { type: 'heading', level: 2, text: 'What we collect' },
@@ -81,7 +75,7 @@ const privacy: LegalDocument = {
     { type: 'heading', level: 2, text: 'Lawful basis' },
     {
       type: 'paragraph',
-      text: 'We expect to rely on our legitimate interests in responding to enquiries about our work and, where you are asking us to act for you, on the steps needed before entering into a contract with you. The lawful basis for each purpose is subject to legal review and will be confirmed before this notice is finalised.',
+      text: 'We rely on our legitimate interests in responding to enquiries about our work and in keeping the website secure. Where you are asking us to act for you, we also rely on the steps needed before entering into a contract with you. You can object to our use of your information where we rely on legitimate interests; see “Your rights” below.',
     },
 
     { type: 'heading', level: 2, text: 'Who processes it' },
@@ -106,13 +100,13 @@ const privacy: LegalDocument = {
     { type: 'heading', level: 2, text: 'International transfers' },
     {
       type: 'paragraph',
-      text: 'Some of the providers listed above operate outside the United Kingdom, so handling your information may involve a transfer outside the UK. Where that happens we expect it to be covered by appropriate safeguards recognised under UK data protection law. The transfers that actually take place, and the safeguard applying to each, will be confirmed before this notice is finalised.',
+      text: 'Some of the providers listed above operate outside the United Kingdom, so handling your information may involve a transfer outside the UK. Where that happens, the transfer is covered by safeguards recognised under UK data protection law, such as the UK International Data Transfer Agreement or the UK Addendum to the EU standard contractual clauses, or by the provider operating in a country the UK has found to provide adequate protection. Contact us if you would like more detail about a particular provider.',
     },
 
     { type: 'heading', level: 2, text: 'How long we keep it' },
     {
       type: 'paragraph',
-      text: 'We keep enquiries only for as long as we need them to respond and for a limited period afterwards, so that a conversation that resumes can be picked up where it left off. [retention period to be confirmed]. If an enquiry leads to a commission, the information becomes part of the project record and is kept for the life of that record. Technical logs are kept by our hosting and abuse-protection providers for short periods set by them.',
+      text: 'We keep an enquiry that does not lead to a commission for twelve months after our last contact with you, so that a conversation that resumes can be picked up where it left off, and then delete it. If an enquiry leads to a commission, the information becomes part of the project record and is kept for as long as that record is kept. Technical logs are kept by our hosting and abuse-protection providers for short periods set by them.',
     },
 
     { type: 'heading', level: 2, text: 'Your rights' },

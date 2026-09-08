@@ -3,7 +3,6 @@ import { MEDIA_TYPE_LABELS, type ImageAsset } from '@/lib/content/types';
 import { cn } from '@/lib/utils/cn';
 import { aspectRatio, isUnoptimised } from './image';
 import { ZoomableDrawing } from './ZoomableDrawing';
-import { stage } from '@/lib/content';
 
 interface DrawingFigureProps {
   image: ImageAsset;
@@ -34,11 +33,6 @@ export function DrawingFigure({ image, sizes, className, zoomable = true }: Draw
       <figcaption className="type-meta mt-3 text-ink/75">
         <span className="font-medium text-ink">{label}</span>
         {image.drawing?.note ? <span className="block">{image.drawing.note}</span> : null}
-        {image.rights?.synthetic ? (
-          <span className="block">
-            {stage() === 'staging' ? 'Staging drawing set.' : 'Indicative drawing.'}
-          </span>
-        ) : null}
       </figcaption>
     </figure>
   );
