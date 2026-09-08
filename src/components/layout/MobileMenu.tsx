@@ -98,7 +98,11 @@ export function MobileMenu({ primary, services, cta, email }: MobileMenuProps) {
           className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-paper text-ink lg:hidden"
         >
           <div className="container-site flex h-[68px] shrink-0 items-center justify-between border-b border-ink/20">
-            <Link href="/" className="inline-flex min-h-11 items-center" aria-label="Bracken & Roe — home">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center"
+              aria-label="Bracken & Roe — home"
+            >
               <Wordmark height={20} decorative />
             </Link>
             <button
@@ -132,7 +136,10 @@ export function MobileMenu({ primary, services, cta, email }: MobileMenuProps) {
               >
                 {cta.label}
               </Link>
-              <a href={`mailto:${email}`} className="mt-4 inline-flex min-h-11 items-center underline decoration-ink/40 underline-offset-[0.2em]">
+              <a
+                href={`mailto:${email}`}
+                className="mt-4 inline-flex min-h-11 items-center underline decoration-ink/40 underline-offset-[0.2em]"
+              >
                 {email}
               </a>
             </div>
@@ -142,7 +149,10 @@ export function MobileMenu({ primary, services, cta, email }: MobileMenuProps) {
               <ul className="mt-3 flex flex-col">
                 {services.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="inline-flex min-h-11 items-center text-[1.0625rem]">
+                    <Link
+                      href={item.href}
+                      className="inline-flex min-h-11 items-center text-[1.0625rem]"
+                    >
                       {item.label}
                     </Link>
                   </li>

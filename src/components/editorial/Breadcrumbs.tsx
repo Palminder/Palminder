@@ -31,7 +31,10 @@ export function Breadcrumbs({ items, current, className }: BreadcrumbsProps) {
       <ol className="type-meta flex flex-wrap items-center gap-x-2 gap-y-1 text-ink/75">
         {items.map((c) => (
           <li key={c.href} className="flex items-center gap-2">
-            <Link href={c.href} className="inline-flex min-h-8 items-center underline decoration-ink/30 underline-offset-[0.2em] hover:decoration-ink">
+            <Link
+              href={c.href}
+              className="inline-flex min-h-8 items-center underline decoration-ink/30 underline-offset-[0.2em] hover:decoration-ink"
+            >
               {c.label}
             </Link>
             <span aria-hidden="true">/</span>
@@ -41,7 +44,9 @@ export function Breadcrumbs({ items, current, className }: BreadcrumbsProps) {
           {current}
         </li>
       </ol>
-      <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement }} />
+      <JsonLd
+        data={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement }}
+      />
     </nav>
   );
 }

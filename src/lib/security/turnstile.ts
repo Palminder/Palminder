@@ -1,12 +1,17 @@
 const VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
-export type TurnstileResult = { ok: true } | { ok: false; reason: 'missing-token' | 'rejected' | 'unavailable' | 'not-configured' };
+export type TurnstileResult =
+  | { ok: true }
+  | { ok: false; reason: 'missing-token' | 'rejected' | 'unavailable' | 'not-configured' };
 
 /**
  * Server-side Turnstile validation. Tokens are short-lived and single-use, so the visual
  * widget completing on the client is never sufficient on its own.
  */
-export async function verifyTurnstile(token: string | null, remoteIp: string | undefined): Promise<TurnstileResult> {
+export async function verifyTurnstile(
+  token: string | null,
+  remoteIp: string | undefined,
+): Promise<TurnstileResult> {
   const secret = process.env.TURNSTILE_SECRET_KEY?.trim();
   if (!secret) return { ok: false, reason: 'not-configured' };
   if (!token) return { ok: false, reason: 'missing-token' };

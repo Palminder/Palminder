@@ -48,7 +48,10 @@ export function MediaFigure({
   return (
     <figure className={cn('m-0', className)}>
       <div
-        className={cn('relative w-full overflow-hidden bg-stone/40', fixed ? ratioClass[ratio] : '')}
+        className={cn(
+          'relative w-full overflow-hidden bg-stone/40',
+          fixed ? ratioClass[ratio] : '',
+        )}
         style={fixed ? undefined : { aspectRatio: aspectRatio(image) }}
       >
         <Image

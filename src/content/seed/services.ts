@@ -48,9 +48,20 @@ export const services: Service[] = [
         ],
       },
     ],
-    image: placeholder('4x3', 'sandstone', 'Rear of a sandstone house with a low timber-lined garden extension'),
-    relatedProjectSlugs: ['kelvinside-garden-room', 'pollokshields-tenement-reordering', 'hyndland-roof-rooms'],
-    relatedInsightSlugs: ['altering-a-glasgow-tenement-where-to-begin', 'planning-permission-and-building-warrant-are-not-the-same-thing'],
+    image: placeholder(
+      '4x3',
+      'sandstone',
+      'Rear of a sandstone house with a low timber-lined garden extension',
+    ),
+    relatedProjectSlugs: [
+      'kelvinside-garden-room',
+      'pollokshields-tenement-reordering',
+      'hyndland-roof-rooms',
+    ],
+    relatedInsightSlugs: [
+      'altering-a-glasgow-tenement-where-to-begin',
+      'planning-permission-and-building-warrant-are-not-the-same-thing',
+    ],
     seo: {
       title: 'Residential Architecture in Glasgow | Bracken & Roe',
       description:
@@ -104,7 +115,10 @@ export const services: Service[] = [
     ],
     image: placeholder('4x3', 'stone', 'Close view of weathered red sandstone with lime pointing'),
     relatedProjectSlugs: ['finnieston-shopfront-upper-floors', 'shawlands-sandstone-repair'],
-    relatedInsightSlugs: ['understanding-category-b-listed-buildings-in-scotland', 'repairing-traditional-glasgow-sandstone'],
+    relatedInsightSlugs: [
+      'understanding-category-b-listed-buildings-in-scotland',
+      'repairing-traditional-glasgow-sandstone',
+    ],
     seo: {
       title: 'Conservation & Listed Buildings | Bracken & Roe',
       description:
@@ -162,8 +176,14 @@ export const services: Service[] = [
       },
     ],
     image: placeholder('4x3', 'moss', 'Occupied low-rise housing block with new windows'),
-    relatedProjectSlugs: ['north-glasgow-window-ventilation-programme', 'drumchapel-fabric-upgrade'],
-    relatedInsightSlugs: ['energy-upgrades-in-traditional-buildings', 'ventilation-when-making-a-home-more-airtight'],
+    relatedProjectSlugs: [
+      'north-glasgow-window-ventilation-programme',
+      'drumchapel-fabric-upgrade',
+    ],
+    relatedInsightSlugs: [
+      'energy-upgrades-in-traditional-buildings',
+      'ventilation-when-making-a-home-more-airtight',
+    ],
     seo: {
       title: 'Housing & Retrofit Architecture | Bracken & Roe',
       description:

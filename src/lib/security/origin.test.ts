@@ -9,7 +9,9 @@ describe('origin check', () => {
     expect(isTrustedOrigin(new Headers({ origin: site }), site)).toBe(true);
   });
   it('rejects cross-site requests and foreign origins', () => {
-    expect(isTrustedOrigin(new Headers({ 'sec-fetch-site': 'cross-site', origin: site }), site)).toBe(false);
+    expect(
+      isTrustedOrigin(new Headers({ 'sec-fetch-site': 'cross-site', origin: site }), site),
+    ).toBe(false);
     expect(isTrustedOrigin(new Headers({ origin: 'https://evil.example' }), site)).toBe(false);
     expect(isTrustedOrigin(new Headers({ referer: 'https://evil.example/x' }), site)).toBe(false);
   });

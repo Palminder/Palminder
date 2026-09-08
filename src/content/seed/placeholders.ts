@@ -53,6 +53,10 @@ export function stagingDrawing(
     mediaType,
     drawing,
     caption,
-    rights: { sourceType: 'synthetic', synthetic: true, creator: 'Bracken & Roe staging drawing set' },
+    rights: {
+      sourceType: 'synthetic',
+      synthetic: true,
+      creator: 'Bracken & Roe staging drawing set',
+    },
   };
 }

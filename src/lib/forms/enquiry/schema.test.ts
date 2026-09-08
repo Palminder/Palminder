@@ -8,7 +8,8 @@ const valid = {
   projectType: 'Residential',
   projectStage: 'Exploring feasibility',
   timescale: '',
-  description: 'A ground-floor tenement flat in the West End with a small rear kitchen that we would like to open up.',
+  description:
+    'A ground-floor tenement flat in the West End with a small rear kitchen that we would like to open up.',
   privacy: 'on',
 };
 

@@ -8,7 +8,12 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
   title: 'Energy upgrades in traditional buildings',
   dek: 'Traditional buildings can often be improved, but moisture, ventilation and existing fabric need to be considered alongside headline thermal performance.',
   category: 'Retrofit',
-  body: [{ type: 'paragraph', text: 'Traditional buildings can often be improved, but moisture, ventilation and existing fabric need to be considered alongside headline thermal performance.' }],
+  body: [
+    {
+      type: 'paragraph',
+      text: 'Traditional buildings can often be improved, but moisture, ventilation and existing fabric need to be considered alongside headline thermal performance.',
+    },
+  ],
   author: { type: 'studio' },
   publishedAt: '2026-06-01',
   reviewedAt: '2026-09-01',

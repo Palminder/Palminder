@@ -26,23 +26,42 @@ export async function POST(request: NextRequest) {
         : NextResponse.redirect(new URL(THANKS, request.nextUrl.origin), 303);
     case 'invalid':
       return json
-        ? NextResponse.json({ ok: false, message: result.message, fieldErrors: result.fieldErrors }, { status: 400 })
+        ? NextResponse.json(
+            { ok: false, message: result.message, fieldErrors: result.fieldErrors },
+            { status: 400 },
+          )
         : NextResponse.redirect(new URL(BACK, request.nextUrl.origin), 303);
     case 'rejected': {
       const headers: Record<string, string> = {};
       if (result.retryAfterSeconds) headers['Retry-After'] = String(result.retryAfterSeconds);
       return json
-        ? NextResponse.json({ ok: false, message: result.message }, { status: result.httpStatus, headers })
-        : NextResponse.redirect(new URL(`/contact?enquiry=${result.httpStatus}#project-enquiry`, request.nextUrl.origin), 303);
+        ? NextResponse.json(
+            { ok: false, message: result.message },
+            { status: result.httpStatus, headers },
+          )
+        : NextResponse.redirect(
+            new URL(
+              `/contact?enquiry=${result.httpStatus}#project-enquiry`,
+              request.nextUrl.origin,
+            ),
+            303,
+          );
     }
     case 'unavailable':
       return json
         ? NextResponse.json({ ok: false, message: result.message }, { status: 503 })
-        : NextResponse.redirect(new URL('/contact?enquiry=unavailable#project-enquiry', request.nextUrl.origin), 303);
+        : NextResponse.redirect(
+            new URL('/contact?enquiry=unavailable#project-enquiry', request.nextUrl.origin),
+            303,
+          );
   }
 }
 
-const notAllowed = () => NextResponse.json({ message: 'Method not allowed.' }, { status: 405, headers: { Allow: 'POST' } });
+const notAllowed = () =>
+  NextResponse.json(
+    { message: 'Method not allowed.' },
+    { status: 405, headers: { Allow: 'POST' } },
+  );
 export const GET = notAllowed;
 export const PUT = notAllowed;
 export const PATCH = notAllowed;

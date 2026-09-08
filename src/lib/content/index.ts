@@ -46,16 +46,18 @@ async function getSource(): Promise<ContentSource> {
 export const stage = (): ContentStage => contentStage();
 
 /** Projects that may render for the current stage, in editorial order. */
-export const getProjects = cache(async (options: { sector?: Sector } = {}): Promise<Gated<Project>[]> => {
-  const s = stage();
-  const source = await getSource();
-  const all = await source.projects();
-  return all
-    .map((p) => withGate(p, evaluateProject(p)))
-    .filter((p) => mayRender(p.gate, s))
-    .filter((p) => (options.sector ? p.sector === options.sector : true))
-    .sort((a, b) => a.order - b.order);
-});
+export const getProjects = cache(
+  async (options: { sector?: Sector } = {}): Promise<Gated<Project>[]> => {
+    const s = stage();
+    const source = await getSource();
+    const all = await source.projects();
+    return all
+      .map((p) => withGate(p, evaluateProject(p)))
+      .filter((p) => mayRender(p.gate, s))
+      .filter((p) => (options.sector ? p.sector === options.sector : true))
+      .sort((a, b) => a.order - b.order);
+  },
+);
 
 export const getProject = cache(async (slug: string): Promise<Gated<Project> | null> => {
   const list = await getProjects();
@@ -69,7 +71,9 @@ export const getFeaturedProjects = cache(async (limit = 4): Promise<Gated<Projec
   return [...featured, ...fill].slice(0, limit);
 });
 
-export async function getAdjacentProjects(slug: string): Promise<{ previous: Gated<Project> | null; next: Gated<Project> | null }> {
+export async function getAdjacentProjects(
+  slug: string,
+): Promise<{ previous: Gated<Project> | null; next: Gated<Project> | null }> {
   const list = await getProjects();
   const i = list.findIndex((p) => p.slug === slug);
   if (i === -1) return { previous: null, next: null };
@@ -130,29 +134,43 @@ export const getTestimonials = cache(async (): Promise<Testimonial[]> => {
   return all.filter((t) => evaluateTestimonial(t).publishable);
 });
 
-export const getLegalDocument = cache(async (type: LegalDocument['type']): Promise<LegalDocument | null> => {
-  const source = await getSource();
-  return source.legalDocument(type);
-});
+export const getLegalDocument = cache(
+  async (type: LegalDocument['type']): Promise<LegalDocument | null> => {
+    const source = await getSource();
+    return source.legalDocument(type);
+  },
+);
 
 export async function getRelatedProjects(slugs: string[], limit = 3): Promise<Gated<Project>[]> {
   const list = await getProjects();
   const bySlug = new Map(list.map((p) => [p.slug, p]));
-  return slugs.map((s) => bySlug.get(s)).filter((p): p is Gated<Project> => Boolean(p)).slice(0, limit);
+  return slugs
+    .map((s) => bySlug.get(s))
+    .filter((p): p is Gated<Project> => Boolean(p))
+    .slice(0, limit);
 }
 
 export async function getRelatedInsights(slugs: string[], limit = 3): Promise<Gated<Insight>[]> {
   const list = await getInsights();
   const bySlug = new Map(list.map((i) => [i.slug, i]));
-  return slugs.map((s) => bySlug.get(s)).filter((i): i is Gated<Insight> => Boolean(i)).slice(0, limit);
+  return slugs
+    .map((s) => bySlug.get(s))
+    .filter((i): i is Gated<Insight> => Boolean(i))
+    .slice(0, limit);
 }
 
-export async function getProjectsForService(slug: ServiceSlug, limit = 3): Promise<Gated<Project>[]> {
+export async function getProjectsForService(
+  slug: ServiceSlug,
+  limit = 3,
+): Promise<Gated<Project>[]> {
   const list = await getProjects();
   return list.filter((p) => p.relatedService === slug).slice(0, limit);
 }
 
-export async function getInsightsForService(slug: ServiceSlug, limit = 3): Promise<Gated<Insight>[]> {
+export async function getInsightsForService(
+  slug: ServiceSlug,
+  limit = 3,
+): Promise<Gated<Insight>[]> {
   const list = await getInsights();
   return list.filter((i) => i.relatedServiceSlugs.includes(slug)).slice(0, limit);
 }

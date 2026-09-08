@@ -9,7 +9,11 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-ink/20 bg-paper">
       <div className="container-site flex h-[68px] items-center justify-between lg:h-[84px]">
-        <Link href="/" className="inline-flex min-h-11 items-center text-ink" aria-label="Bracken & Roe — home">
+        <Link
+          href="/"
+          className="inline-flex min-h-11 items-center text-ink"
+          aria-label="Bracken & Roe — home"
+        >
           <Wordmark height={22} decorative className="lg:hidden" />
           <Wordmark height={26} decorative className="hidden lg:block" />
         </Link>

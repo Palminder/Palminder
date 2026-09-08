@@ -10,7 +10,14 @@ interface SectionHeadingProps {
   id?: string;
 }
 
-export function SectionHeading({ eyebrow, title, as: Tag = 'h2', action, className, id }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  as: Tag = 'h2',
+  action,
+  className,
+  id,
+}: SectionHeadingProps) {
   return (
     <div className={cn('flex flex-wrap items-end justify-between gap-x-8 gap-y-4', className)}>
       <div>

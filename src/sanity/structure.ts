@@ -4,7 +4,10 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title('Bracken & Roe')
     .items([
-      S.listItem().title('Site settings').id('siteSettings').child(S.document().schemaType('siteSettings').documentId('siteSettings')),
+      S.listItem()
+        .title('Site settings')
+        .id('siteSettings')
+        .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
       S.divider(),
       S.documentTypeListItem('project').title('Projects'),
       S.documentTypeListItem('service').title('Services'),

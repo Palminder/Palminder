@@ -11,14 +11,20 @@ export function ServiceRow({ service }: { service: Service }) {
         <div className="col-span-4 md:col-span-8 xl:col-span-3">
           <p className="type-label text-ink/60">{service.number}</p>
           <h3 className="type-h3 mt-3">
-            <Link href={`/services/${service.slug}`} className="hover:underline focus-visible:underline">
+            <Link
+              href={`/services/${service.slug}`}
+              className="hover:underline focus-visible:underline"
+            >
               {service.title}
             </Link>
           </h3>
         </div>
         <div className="col-span-4 mt-4 md:col-span-8 xl:col-span-5 xl:mt-0">
           <p className="type-body-lg measure text-ink/85">{service.summary}</p>
-          <Link href={`/services/${service.slug}`} className="arrow-link type-meta mt-5 inline-flex min-h-11 font-medium text-ink">
+          <Link
+            href={`/services/${service.slug}`}
+            className="arrow-link type-meta mt-5 inline-flex min-h-11 font-medium text-ink"
+          >
             <span>
               {service.navLabel}
               <span className="visually-hidden"> — read about this service</span>
@@ -27,7 +33,12 @@ export function ServiceRow({ service }: { service: Service }) {
           </Link>
         </div>
         <div className="col-span-4 mt-6 md:col-span-8 xl:col-span-4 xl:col-start-9 xl:mt-0">
-          <MediaFigure image={service.image} sizes="(min-width: 1200px) 30vw, 100vw" ratio="4/3" hideCaption />
+          <MediaFigure
+            image={service.image}
+            sizes="(min-width: 1200px) 30vw, 100vw"
+            ratio="4/3"
+            hideCaption
+          />
         </div>
       </div>
     </article>

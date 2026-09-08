@@ -48,12 +48,24 @@ export class MemoryRateLimiter implements RateLimiter {
     if (list.length >= this.config.dayMax) {
       const oldest = list[0] ?? now;
       this.hits.set(key, list);
-      return { allowed: false, retryAfterSeconds: Math.max(1, Math.ceil((oldest + this.config.daySeconds * 1000 - now) / 1000)) };
+      return {
+        allowed: false,
+        retryAfterSeconds: Math.max(
+          1,
+          Math.ceil((oldest + this.config.daySeconds * 1000 - now) / 1000),
+        ),
+      };
     }
     if (inWindow.length >= this.config.windowMax) {
       const oldest = inWindow[0] ?? now;
       this.hits.set(key, list);
-      return { allowed: false, retryAfterSeconds: Math.max(1, Math.ceil((oldest + this.config.windowSeconds * 1000 - now) / 1000)) };
+      return {
+        allowed: false,
+        retryAfterSeconds: Math.max(
+          1,
+          Math.ceil((oldest + this.config.windowSeconds * 1000 - now) / 1000),
+        ),
+      };
     }
     list.push(now);
     this.hits.set(key, list);
@@ -93,8 +105,10 @@ export class UpstashRateLimiter implements RateLimiter {
       this.incr(`rl:w:${key}`, this.config.windowSeconds),
       this.incr(`rl:d:${key}`, this.config.daySeconds),
     ]);
-    if (day > this.config.dayMax) return { allowed: false, retryAfterSeconds: this.config.daySeconds };
-    if (win > this.config.windowMax) return { allowed: false, retryAfterSeconds: this.config.windowSeconds };
+    if (day > this.config.dayMax)
+      return { allowed: false, retryAfterSeconds: this.config.daySeconds };
+    if (win > this.config.windowMax)
+      return { allowed: false, retryAfterSeconds: this.config.windowSeconds };
     return { allowed: true };
   }
 }

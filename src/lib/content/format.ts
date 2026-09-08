@@ -13,7 +13,12 @@ export function projectStatusLabel(project: Pick<Project, 'status' | 'year'>): s
 
 export function formatDate(iso: string, options: Intl.DateTimeFormatOptions = {}): string {
   const d = new Date(iso);
-  return new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', ...options }).format(d);
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    ...options,
+  }).format(d);
 }
 
 export function formatMonthYear(iso: string): string {

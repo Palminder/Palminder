@@ -33,7 +33,8 @@ export const richText = defineType({
                 name: 'href',
                 type: 'url',
                 title: 'URL',
-                validation: (rule) => rule.uri({ scheme: ['http', 'https', 'mailto'], allowRelative: true }),
+                validation: (rule) =>
+                  rule.uri({ scheme: ['http', 'https', 'mailto'], allowRelative: true }),
               }),
             ],
           },

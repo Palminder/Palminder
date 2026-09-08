@@ -42,8 +42,14 @@ export const enquirySchema = z.object({
   name: z
     .string()
     .trim()
-    .min(ENQUIRY_LIMITS.nameMin, `Please enter your name (at least ${ENQUIRY_LIMITS.nameMin} characters).`)
-    .max(ENQUIRY_LIMITS.nameMax, `Your name should be no more than ${ENQUIRY_LIMITS.nameMax} characters.`),
+    .min(
+      ENQUIRY_LIMITS.nameMin,
+      `Please enter your name (at least ${ENQUIRY_LIMITS.nameMin} characters).`,
+    )
+    .max(
+      ENQUIRY_LIMITS.nameMax,
+      `Your name should be no more than ${ENQUIRY_LIMITS.nameMax} characters.`,
+    ),
   email: z
     .string()
     .trim()
@@ -52,7 +58,9 @@ export const enquirySchema = z.object({
     .pipe(z.email({ message: 'Please enter a valid email address, e.g. name@example.com.' })),
   area: trimmed(ENQUIRY_LIMITS.areaMax).min(1, 'Please tell us the project postcode or area.'),
   projectType: z.enum(PROJECT_TYPES, { message: 'Please choose a project type.' }),
-  projectStage: z.enum(PROJECT_STAGES, { message: 'Please choose the stage the project has reached.' }),
+  projectStage: z.enum(PROJECT_STAGES, {
+    message: 'Please choose the stage the project has reached.',
+  }),
   timescale: z
     .union([z.enum(TIMESCALES), z.literal('')])
     .optional()
@@ -64,7 +72,10 @@ export const enquirySchema = z.object({
       ENQUIRY_LIMITS.descriptionMin,
       `Please describe the project in at least ${ENQUIRY_LIMITS.descriptionMin} characters.`,
     )
-    .max(ENQUIRY_LIMITS.descriptionMax, `Please keep the description under ${ENQUIRY_LIMITS.descriptionMax} characters.`),
+    .max(
+      ENQUIRY_LIMITS.descriptionMax,
+      `Please keep the description under ${ENQUIRY_LIMITS.descriptionMax} characters.`,
+    ),
   privacy: z.literal('on', { message: 'Please confirm you have read the Privacy Notice.' }),
 });
 

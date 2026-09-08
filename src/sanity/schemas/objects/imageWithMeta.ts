@@ -29,7 +29,8 @@ export const imageWithMeta = defineType({
       name: 'alt',
       title: 'Alternative text',
       type: 'string',
-      description: 'Describe the content plainly, e.g. “Rear elevation of a sandstone house with a low timber-lined garden extension.”',
+      description:
+        'Describe the content plainly, e.g. “Rear elevation of a sandstone house with a low timber-lined garden extension.”',
       validation: (rule) => rule.required().min(8).max(300),
     }),
     defineField({ name: 'caption', title: 'Caption', type: 'string' }),
@@ -46,12 +47,29 @@ export const imageWithMeta = defineType({
       title: 'Drawing details',
       type: 'object',
       hidden: ({ parent }) =>
-        !['proposed-plan', 'existing-plan', 'section', 'elevation', 'axonometric', 'detail-drawing', 'diagram', 'survey-drawing'].includes(
-          (parent as { mediaType?: string } | undefined)?.mediaType ?? '',
-        ),
+        ![
+          'proposed-plan',
+          'existing-plan',
+          'section',
+          'elevation',
+          'axonometric',
+          'detail-drawing',
+          'diagram',
+          'survey-drawing',
+        ].includes((parent as { mediaType?: string } | undefined)?.mediaType ?? ''),
       fields: [
-        defineField({ name: 'number', title: 'Drawing number', type: 'string', description: 'e.g. Drawing 03' }),
-        defineField({ name: 'title', title: 'Drawing title', type: 'string', description: 'e.g. Proposed ground-floor plan' }),
+        defineField({
+          name: 'number',
+          title: 'Drawing number',
+          type: 'string',
+          description: 'e.g. Drawing 03',
+        }),
+        defineField({
+          name: 'title',
+          title: 'Drawing title',
+          type: 'string',
+          description: 'e.g. Proposed ground-floor plan',
+        }),
         defineField({ name: 'note', title: 'Legend / note', type: 'string' }),
       ],
     }),
@@ -85,14 +103,30 @@ export const imageWithMeta = defineType({
           type: 'boolean',
           initialValue: false,
         }),
-        defineField({ name: 'synthetic', title: 'Synthetic imagery', type: 'boolean', initialValue: false }),
+        defineField({
+          name: 'synthetic',
+          title: 'Synthetic imagery',
+          type: 'boolean',
+          initialValue: false,
+        }),
       ],
       validation: (rule) =>
         rule.custom((value) => {
-          const v = value as { sourceType?: string; creator?: string; sourceIdentifier?: string; license?: string; rightsCheckedAt?: string } | undefined;
+          const v = value as
+            | {
+                sourceType?: string;
+                creator?: string;
+                sourceIdentifier?: string;
+                license?: string;
+                rightsCheckedAt?: string;
+              }
+            | undefined;
           if (v?.sourceType === 'licensed') {
-            const missing = ['creator', 'sourceIdentifier', 'license', 'rightsCheckedAt'].filter((k) => !v[k as keyof typeof v]);
-            if (missing.length) return `Licensed images need rights metadata: ${missing.join(', ')}.`;
+            const missing = ['creator', 'sourceIdentifier', 'license', 'rightsCheckedAt'].filter(
+              (k) => !v[k as keyof typeof v],
+            );
+            if (missing.length)
+              return `Licensed images need rights metadata: ${missing.join(', ')}.`;
           }
           return true;
         }),
@@ -100,11 +134,18 @@ export const imageWithMeta = defineType({
   ],
   validation: (rule) =>
     rule.custom((value) => {
-      const v = value as { mediaType?: string; rights?: { synthetic?: boolean; sourceType?: string; contextOnly?: boolean } } | undefined;
+      const v = value as
+        | {
+            mediaType?: string;
+            rights?: { synthetic?: boolean; sourceType?: string; contextOnly?: boolean };
+          }
+        | undefined;
       if (!v) return true;
       const synthetic = v.rights?.synthetic || v.rights?.sourceType === 'synthetic';
-      if (synthetic && v.mediaType === 'completed-view') return 'Synthetic imagery must be labelled “Visualisation”, never “Completed view”.';
-      if (v.rights?.sourceType === 'licensed' && !v.rights?.contextOnly) return 'Licensed imagery must be marked context-only.';
+      if (synthetic && v.mediaType === 'completed-view')
+        return 'Synthetic imagery must be labelled “Visualisation”, never “Completed view”.';
+      if (v.rights?.sourceType === 'licensed' && !v.rights?.contextOnly)
+        return 'Licensed imagery must be marked context-only.';
       return true;
     }),
 });

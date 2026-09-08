@@ -13,8 +13,13 @@ export const moduleFullWidthImage = defineType({
   name: 'moduleFullWidthImage',
   title: 'Full-width image',
   type: 'object',
-  fields: [defineField({ name: 'image', type: 'imageWithMeta', validation: (rule) => rule.required() })],
-  preview: { select: { title: 'image.alt' }, prepare: ({ title }) => ({ title: `Full-width image — ${title ?? ''}` }) },
+  fields: [
+    defineField({ name: 'image', type: 'imageWithMeta', validation: (rule) => rule.required() }),
+  ],
+  preview: {
+    select: { title: 'image.alt' },
+    prepare: ({ title }) => ({ title: `Full-width image — ${title ?? ''}` }),
+  },
 });
 
 export const moduleImagePair = defineType({
@@ -43,15 +48,23 @@ export const moduleImageText = defineType({
       initialValue: 'left',
     }),
   ],
-  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: `Image and text — ${title ?? ''}` }) },
+  preview: {
+    select: { title: 'heading' },
+    prepare: ({ title }) => ({ title: `Image and text — ${title ?? ''}` }),
+  },
 });
 
 export const moduleDrawing = defineType({
   name: 'moduleDrawing',
   title: 'Drawing',
   type: 'object',
-  fields: [defineField({ name: 'drawing', type: 'imageWithMeta', validation: (rule) => rule.required() })],
-  preview: { select: { title: 'drawing.drawing.title' }, prepare: ({ title }) => ({ title: `Drawing — ${title ?? ''}` }) },
+  fields: [
+    defineField({ name: 'drawing', type: 'imageWithMeta', validation: (rule) => rule.required() }),
+  ],
+  preview: {
+    select: { title: 'drawing.drawing.title' },
+    prepare: ({ title }) => ({ title: `Drawing — ${title ?? ''}` }),
+  },
 });
 
 export const moduleFacts = defineType({
@@ -86,7 +99,10 @@ export const moduleCallout = defineType({
     defineField({ name: 'title', type: 'string' }),
     defineField({ name: 'text', type: 'text', rows: 4, validation: (rule) => rule.required() }),
   ],
-  preview: { select: { title: 'title' }, prepare: ({ title }) => ({ title: `Callout — ${title ?? ''}` }) },
+  preview: {
+    select: { title: 'title' },
+    prepare: ({ title }) => ({ title: `Callout — ${title ?? ''}` }),
+  },
 });
 
 export const moduleProjectSelection = defineType({
@@ -109,7 +125,14 @@ export const moduleStudioNotes = defineType({
   name: 'moduleStudioNotes',
   title: 'Studio notes',
   type: 'object',
-  fields: [defineField({ name: 'count', type: 'number', initialValue: 4, validation: (rule) => rule.min(1).max(8) })],
+  fields: [
+    defineField({
+      name: 'count',
+      type: 'number',
+      initialValue: 4,
+      validation: (rule) => rule.min(1).max(8),
+    }),
+  ],
   preview: { prepare: () => ({ title: 'Studio notes' }) },
 });
 
@@ -118,10 +141,17 @@ export const moduleCTA = defineType({
   title: 'Call to action',
   type: 'object',
   fields: [
-    defineField({ name: 'title', type: 'string', initialValue: 'Tell us what you are working on.' }),
+    defineField({
+      name: 'title',
+      type: 'string',
+      initialValue: 'Tell us what you are working on.',
+    }),
     defineField({ name: 'copy', type: 'text', rows: 2 }),
   ],
-  preview: { select: { title: 'title' }, prepare: ({ title }) => ({ title: `CTA — ${title ?? ''}` }) },
+  preview: {
+    select: { title: 'title' },
+    prepare: ({ title }) => ({ title: `CTA — ${title ?? ''}` }),
+  },
 });
 
 export const modularBody = defineType({

@@ -50,7 +50,9 @@ export function RichText({ blocks, className = '' }: { blocks: Block[]; classNam
             return (
               <blockquote key={i}>
                 <p>{block.text}</p>
-                {block.attribution ? <footer className="type-meta mt-2 text-ink/70">— {block.attribution}</footer> : null}
+                {block.attribution ? (
+                  <footer className="type-meta mt-2 text-ink/70">— {block.attribution}</footer>
+                ) : null}
               </blockquote>
             );
           case 'callout':
@@ -69,7 +71,11 @@ export function RichText({ blocks, className = '' }: { blocks: Block[]; classNam
             return (
               <div key={i} className="scroll-x">
                 <table>
-                  {block.caption ? <caption className="type-meta mb-2 text-left text-ink/75">{block.caption}</caption> : null}
+                  {block.caption ? (
+                    <caption className="type-meta mb-2 text-left text-ink/75">
+                      {block.caption}
+                    </caption>
+                  ) : null}
                   <thead>
                     <tr>
                       {block.header.map((h, j) => (

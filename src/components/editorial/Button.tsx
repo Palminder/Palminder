@@ -10,14 +10,28 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary: 'bg-moss text-paper hover:bg-deep-ink focus-visible:bg-deep-ink',
-  secondary: 'border border-ink text-ink hover:bg-ink hover:text-paper focus-visible:bg-ink focus-visible:text-paper',
+  secondary:
+    'border border-ink text-ink hover:bg-ink hover:text-paper focus-visible:bg-ink focus-visible:text-paper',
   text: 'arrow-link px-0 py-2 text-ink underline decoration-ink/40 underline-offset-[0.2em] hover:decoration-ink',
 };
 
 export function ArrowIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-      <path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+    <svg
+      className={className}
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M2 8h11M9 4l4 4-4 4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="square"
+      />
     </svg>
   );
 }
@@ -29,8 +43,14 @@ interface CommonProps {
   arrow?: boolean;
 }
 
-type LinkButtonProps = CommonProps & { href: Route } & Omit<ComponentPropsWithoutRef<typeof Link>, 'href' | 'className' | 'children'>;
-type NativeButtonProps = CommonProps & { href?: undefined } & Omit<ComponentPropsWithoutRef<'button'>, 'className' | 'children'>;
+type LinkButtonProps = CommonProps & { href: Route } & Omit<
+    ComponentPropsWithoutRef<typeof Link>,
+    'href' | 'className' | 'children'
+  >;
+type NativeButtonProps = CommonProps & { href?: undefined } & Omit<
+    ComponentPropsWithoutRef<'button'>,
+    'className' | 'children'
+  >;
 
 export type ButtonProps = LinkButtonProps | NativeButtonProps;
 
@@ -46,16 +66,38 @@ export function Button(props: ButtonProps) {
     </>
   );
   if (props.href !== undefined) {
-    const { href, variant: _variant, className: _className, children: _children, arrow: _arrow, ...rest } = props;
-    void _variant; void _className; void _children; void _arrow;
+    const {
+      href,
+      variant: _variant,
+      className: _className,
+      children: _children,
+      arrow: _arrow,
+      ...rest
+    } = props;
+    void _variant;
+    void _className;
+    void _children;
+    void _arrow;
     return (
       <Link href={href} className={classes} {...rest}>
         {content}
       </Link>
     );
   }
-  const { href: _href, variant: _variant, className: _className, children: _children, arrow: _arrow, type = 'button', ...rest } = props;
-  void _href; void _variant; void _className; void _children; void _arrow;
+  const {
+    href: _href,
+    variant: _variant,
+    className: _className,
+    children: _children,
+    arrow: _arrow,
+    type = 'button',
+    ...rest
+  } = props;
+  void _href;
+  void _variant;
+  void _className;
+  void _children;
+  void _arrow;
   return (
     <button type={type} className={classes} {...rest}>
       {content}

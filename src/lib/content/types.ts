@@ -23,10 +23,7 @@ export const SECTOR_SERVICE_SLUG: Record<Sector, ServiceSlug> = {
 };
 
 export type ServiceSlug =
-  | 'residential'
-  | 'conservation-listed-buildings'
-  | 'housing-retrofit'
-  | 'commercial-community';
+  'residential' | 'conservation-listed-buildings' | 'housing-retrofit' | 'commercial-community';
 
 /** Caption label vocabulary. `completed-view` is reserved for real, verified photography. */
 export type MediaType =
@@ -198,12 +195,7 @@ export interface Service {
 }
 
 export type InsightCategory =
-  | 'Tenements'
-  | 'Consents'
-  | 'Listed buildings'
-  | 'Masonry repair'
-  | 'Retrofit'
-  | 'Ventilation';
+  'Tenements' | 'Consents' | 'Listed buildings' | 'Masonry repair' | 'Retrofit' | 'Ventilation';
 
 export type Block =
   | { type: 'paragraph'; text: string }

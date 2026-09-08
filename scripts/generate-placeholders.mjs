@@ -37,4 +37,6 @@ for (const [ratio, [w, h]] of Object.entries(ratios)) {
     fs.writeFileSync(path.join(out, `${ratio}-${tone}.svg`), svg);
   }
 }
-console.log(`Wrote ${Object.keys(ratios).length * Object.keys(tones).length} placeholders to ${out}`);
+console.log(
+  `Wrote ${Object.keys(ratios).length * Object.keys(tones).length} placeholders to ${out}`,
+);

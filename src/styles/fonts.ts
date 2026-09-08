@@ -6,7 +6,9 @@ import localFont from 'next/font/local';
  * body copy, forms and metadata. The wordmark is an outlined SVG and never depends on these.
  */
 export const newsreader = localFont({
-  src: [{ path: '../fonts/newsreader-latin-variable-normal.woff2', style: 'normal', weight: '200 800' }],
+  src: [
+    { path: '../fonts/newsreader-latin-variable-normal.woff2', style: 'normal', weight: '200 800' },
+  ],
   variable: '--font-newsreader',
   display: 'swap',
   preload: true,
@@ -16,7 +18,9 @@ export const newsreader = localFont({
 
 /** Italic is used sparingly (project location, pull quote) so it is not preloaded. */
 export const newsreaderItalic = localFont({
-  src: [{ path: '../fonts/newsreader-latin-variable-italic.woff2', style: 'italic', weight: '200 800' }],
+  src: [
+    { path: '../fonts/newsreader-latin-variable-italic.woff2', style: 'italic', weight: '200 800' },
+  ],
   variable: '--font-newsreader-italic',
   display: 'swap',
   preload: false,

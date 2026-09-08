@@ -26,7 +26,18 @@ interface EnquiryFormProps {
   serverOutcome?: 'error' | '429' | '403' | '413' | '415' | 'unavailable';
 }
 
-const FIELD_ORDER: EnquiryFieldName[] = ['name', 'email', 'area', 'projectType', 'projectStage', 'timescale', 'description', 'file', 'privacy', 'turnstile'];
+const FIELD_ORDER: EnquiryFieldName[] = [
+  'name',
+  'email',
+  'area',
+  'projectType',
+  'projectStage',
+  'timescale',
+  'description',
+  'file',
+  'privacy',
+  'turnstile',
+];
 
 /**
  * Semantic form that posts to /api/enquiry. When JavaScript is available it validates
@@ -38,13 +49,23 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
   const formRef = useRef<HTMLFormElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
   // True only after hydration; the server-rendered form is a plain semantic form.
-  const enhanced = useSyncExternalStore(subscribeNoop, () => true, () => false);
+  const enhanced = useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false,
+  );
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>(serverOutcome ? 'error' : 'idle');
-  const [message, setMessage] = useState<string | null>(serverOutcome ? serverOutcomeMessage(serverOutcome) : null);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>(
+    serverOutcome ? 'error' : 'idle',
+  );
+  const [message, setMessage] = useState<string | null>(
+    serverOutcome ? serverOutcomeMessage(serverOutcome) : null,
+  );
   // Client-only values; the hidden inputs carrying them render only once enhanced.
   const [startedAt] = useState(() => (typeof window === 'undefined' ? '' : String(Date.now())));
-  const [submissionId, setSubmissionId] = useState(() => (typeof window === 'undefined' ? '' : crypto.randomUUID()));
+  const [submissionId, setSubmissionId] = useState(() =>
+    typeof window === 'undefined' ? '' : crypto.randomUUID(),
+  );
   const base = useId();
   const id = (name: string) => `${base}-${name}`;
 
@@ -61,9 +82,13 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
     const clientErrors: FieldErrors = parsed.success ? {} : fieldErrorsFromZod(parsed.error);
     const file = data.get('file');
     if (file instanceof File && file.size > 0) {
-      if (!uploadsEnabled) clientErrors.file = 'File uploads are not available at the moment. Please send the enquiry without a file.';
-      else if (file.size > maxUploadMb * 1024 * 1024) clientErrors.file = `The file is too large. The maximum size is ${maxUploadMb} MB.`;
-      else if (!/\.(pdf|jpe?g|png)$/i.test(file.name)) clientErrors.file = 'Please attach a PDF, JPG or PNG file.';
+      if (!uploadsEnabled)
+        clientErrors.file =
+          'File uploads are not available at the moment. Please send the enquiry without a file.';
+      else if (file.size > maxUploadMb * 1024 * 1024)
+        clientErrors.file = `The file is too large. The maximum size is ${maxUploadMb} MB.`;
+      else if (!/\.(pdf|jpe?g|png)$/i.test(file.name))
+        clientErrors.file = 'Please attach a PDF, JPG or PNG file.';
     }
     if (Object.keys(clientErrors).length > 0) {
       setErrors(clientErrors);
@@ -75,14 +100,25 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
     setMessage(null);
     setStatus('submitting');
     try {
-      const res = await fetch('/api/enquiry', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-      const body = (await res.json().catch(() => ({}))) as { ok?: boolean; redirectTo?: string; message?: string; fieldErrors?: FieldErrors };
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+      const body = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        redirectTo?: string;
+        message?: string;
+        fieldErrors?: FieldErrors;
+      };
       if (res.ok && body.ok) {
         router.push('/contact/thanks');
         return;
       }
       setErrors(body.fieldErrors ?? {});
-      setMessage(body.message ?? 'Your enquiry could not be sent just now. Please email us directly.');
+      setMessage(
+        body.message ?? 'Your enquiry could not be sent just now. Please email us directly.',
+      );
       setStatus('error');
       setSubmissionId(crypto.randomUUID());
     } catch {
@@ -108,10 +144,17 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
         All fields are required unless marked optional.
       </p>
 
-      <div ref={summaryRef} tabIndex={-1} role={status === 'error' ? 'alert' : undefined} className="outline-none">
+      <div
+        ref={summaryRef}
+        tabIndex={-1}
+        role={status === 'error' ? 'alert' : undefined}
+        className="outline-none"
+      >
         {status === 'error' && (message || errorList.length > 0) ? (
           <div className="border-l-2 border-terracotta pl-4">
-            <p className="type-body font-medium text-ink">{message ?? 'Some details need attention.'}</p>
+            <p className="type-body font-medium text-ink">
+              {message ?? 'Some details need attention.'}
+            </p>
             {errorList.length > 0 ? (
               <ul className="type-meta mt-2 list-disc pl-5 text-ink/85">
                 {errorList.map((f) => (
@@ -137,12 +180,30 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <FormField id={id('name')} label="Name" required error={errors.name}>
           {(attrs) => (
-            <input {...attrs} name="name" type="text" autoComplete="name" required minLength={ENQUIRY_LIMITS.nameMin} maxLength={ENQUIRY_LIMITS.nameMax} className={inputClass} />
+            <input
+              {...attrs}
+              name="name"
+              type="text"
+              autoComplete="name"
+              required
+              minLength={ENQUIRY_LIMITS.nameMin}
+              maxLength={ENQUIRY_LIMITS.nameMax}
+              className={inputClass}
+            />
           )}
         </FormField>
         <FormField id={id('email')} label="Email" required error={errors.email}>
           {(attrs) => (
-            <input {...attrs} name="email" type="email" autoComplete="email" inputMode="email" required maxLength={ENQUIRY_LIMITS.emailMax} className={inputClass} />
+            <input
+              {...attrs}
+              name="email"
+              type="email"
+              autoComplete="email"
+              inputMode="email"
+              required
+              maxLength={ENQUIRY_LIMITS.emailMax}
+              className={inputClass}
+            />
           )}
         </FormField>
       </div>
@@ -154,7 +215,17 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
         required
         error={errors.area}
       >
-        {(attrs) => <input {...attrs} name="area" type="text" autoComplete="off" required maxLength={ENQUIRY_LIMITS.areaMax} className={inputClass} />}
+        {(attrs) => (
+          <input
+            {...attrs}
+            name="area"
+            type="text"
+            autoComplete="off"
+            required
+            maxLength={ENQUIRY_LIMITS.areaMax}
+            className={inputClass}
+          />
+        )}
       </FormField>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -172,7 +243,12 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
             </select>
           )}
         </FormField>
-        <FormField id={id('projectStage')} label="Project stage" required error={errors.projectStage}>
+        <FormField
+          id={id('projectStage')}
+          label="Project stage"
+          required
+          error={errors.projectStage}
+        >
           {(attrs) => (
             <select {...attrs} name="projectStage" required defaultValue="" className={inputClass}>
               <option value="" disabled>
@@ -188,7 +264,13 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
         </FormField>
       </div>
 
-      <FormField id={id('timescale')} label="Preferred timescale" optional error={errors.timescale} className="md:max-w-[calc(50%-0.75rem)]">
+      <FormField
+        id={id('timescale')}
+        label="Preferred timescale"
+        optional
+        error={errors.timescale}
+        className="md:max-w-[calc(50%-0.75rem)]"
+      >
         {(attrs) => (
           <select {...attrs} name="timescale" defaultValue="" className={inputClass}>
             <option value="">No preference yet</option>
@@ -209,7 +291,15 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
         error={errors.description}
       >
         {(attrs) => (
-          <textarea {...attrs} name="description" rows={7} required minLength={ENQUIRY_LIMITS.descriptionMin} maxLength={ENQUIRY_LIMITS.descriptionMax} className={inputClass} />
+          <textarea
+            {...attrs}
+            name="description"
+            rows={7}
+            required
+            minLength={ENQUIRY_LIMITS.descriptionMin}
+            maxLength={ENQUIRY_LIMITS.descriptionMax}
+            className={inputClass}
+          />
         )}
       </FormField>
 
@@ -234,9 +324,19 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
       ) : null}
 
       {/* Honeypot: not visible, not focusable, hidden from assistive technology. */}
-      <div aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+      >
         <label htmlFor={id('company_website')}>Company website</label>
-        <input id={id('company_website')} name="company_website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
+        <input
+          id={id('company_website')}
+          name="company_website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
       </div>
       {enhanced ? (
         <>
@@ -258,7 +358,10 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
           />
           <label htmlFor={id('privacy')} className="type-body text-ink/90">
             I have read the{' '}
-            <Link href="/privacy" className="underline decoration-ink/40 underline-offset-[0.2em] hover:decoration-ink">
+            <Link
+              href="/privacy"
+              className="underline decoration-ink/40 underline-offset-[0.2em] hover:decoration-ink"
+            >
               Privacy Notice
             </Link>{' '}
             and understand how Bracken & Roe will use my information to respond to this enquiry.
@@ -292,7 +395,10 @@ export function EnquiryForm({ uploadsEnabled, maxUploadMb, serverOutcome }: Enqu
         </button>
         <p className="type-meta text-ink/70">
           We’ll reply by email. Read our{' '}
-          <Link href="/privacy" className="underline decoration-ink/40 underline-offset-[0.2em] hover:decoration-ink">
+          <Link
+            href="/privacy"
+            className="underline decoration-ink/40 underline-offset-[0.2em] hover:decoration-ink"
+          >
             privacy notice
           </Link>
           .

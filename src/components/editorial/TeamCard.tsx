@@ -14,10 +14,17 @@ export function TeamCard({ person, compact = false }: TeamCardProps) {
   return (
     <article className="flex flex-col">
       {person.portrait ? (
-        <MediaFigure image={person.portrait} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" ratio="4/5" hideCaption />
+        <MediaFigure
+          image={person.portrait}
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+          ratio="4/5"
+          hideCaption
+        />
       ) : null}
       <div className="mt-5">
-        {!person.gate.publishable ? <StagingBadge reasons={person.gate.reasons} className="mb-3" /> : null}
+        {!person.gate.publishable ? (
+          <StagingBadge reasons={person.gate.reasons} className="mb-3" />
+        ) : null}
         <h3 className="type-h4">{person.name}</h3>
         <p className="type-meta mt-1 text-ink/75">{person.rolePublic}</p>
         {!compact ? (

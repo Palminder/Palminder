@@ -15,7 +15,10 @@ export function CTASection({
   tight = false,
 }: CTASectionProps) {
   return (
-    <section className={tight ? 'section-tight rule' : 'section rule'} aria-labelledby="cta-heading">
+    <section
+      className={tight ? 'section-tight rule' : 'section rule'}
+      aria-labelledby="cta-heading"
+    >
       <div className="container-site">
         <div className="grid-site items-end">
           <div className="col-span-4 md:col-span-8 xl:col-span-7">

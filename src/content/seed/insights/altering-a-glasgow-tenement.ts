@@ -8,7 +8,12 @@ export const alteringAGlasgowTenement: Insight = {
   title: 'Altering a Glasgow tenement: where to begin',
   dek: 'A practical starting point for changing a traditional tenement flat, from shared fabric and structure to consent, services and buildability.',
   category: 'Tenements',
-  body: [{ type: 'paragraph', text: 'A practical starting point for changing a traditional tenement flat, from shared fabric and structure to consent, services and buildability.' }],
+  body: [
+    {
+      type: 'paragraph',
+      text: 'A practical starting point for changing a traditional tenement flat, from shared fabric and structure to consent, services and buildability.',
+    },
+  ],
   author: { type: 'studio' },
   publishedAt: '2026-06-01',
   reviewedAt: '2026-09-01',

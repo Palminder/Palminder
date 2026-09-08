@@ -28,12 +28,18 @@ export function SiteFooter() {
             <OfficeAddress className="mt-8 text-paper/85" tone="dark" />
           </div>
 
-          <nav className="col-span-4 mt-10 md:col-span-4 md:mt-0 xl:col-span-3 xl:col-start-8" aria-label="Footer">
+          <nav
+            className="col-span-4 mt-10 md:col-span-4 md:mt-0 xl:col-span-3 xl:col-start-8"
+            aria-label="Footer"
+          >
             <p className="type-label text-paper/60">Navigate</p>
             <ul className="mt-3 flex flex-col">
               {navigation.primary.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="inline-flex min-h-11 items-center text-[1.0625rem] hover:underline">
+                  <Link
+                    href={item.href}
+                    className="inline-flex min-h-11 items-center text-[1.0625rem] hover:underline"
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -62,11 +68,20 @@ export function SiteFooter() {
                 </ul>
               </>
             ) : null}
-            <p className={socials.length > 0 ? 'type-label mt-8 text-paper/60' : 'type-label text-paper/60'}>Legal</p>
+            <p
+              className={
+                socials.length > 0 ? 'type-label mt-8 text-paper/60' : 'type-label text-paper/60'
+              }
+            >
+              Legal
+            </p>
             <ul className="mt-3 flex flex-col">
               {navigation.legal.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="inline-flex min-h-11 items-center text-[1.0625rem] hover:underline">
+                  <Link
+                    href={item.href}
+                    className="inline-flex min-h-11 items-center text-[1.0625rem] hover:underline"
+                  >
                     {item.label}
                   </Link>
                 </li>

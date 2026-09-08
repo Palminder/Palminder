@@ -8,7 +8,12 @@ interface FormFieldProps {
   error?: string;
   required?: boolean;
   optional?: boolean;
-  children: (attrs: { id: string; 'aria-describedby'?: string; 'aria-invalid'?: true; 'aria-required'?: true }) => ReactNode;
+  children: (attrs: {
+    id: string;
+    'aria-describedby'?: string;
+    'aria-invalid'?: true;
+    'aria-required'?: true;
+  }) => ReactNode;
   className?: string;
 }
 
@@ -16,7 +21,16 @@ export const inputClass =
   'w-full min-h-12 border border-ink/40 bg-white px-3.5 py-2.5 text-[1.0625rem] text-ink rounded-sm placeholder:text-ink/40 focus:border-moss focus-visible:outline-2 focus-visible:outline-moss focus-visible:outline-offset-2 aria-[invalid=true]:border-terracotta';
 
 /** Persistent visible label, helper text and inline error, wired with aria-describedby. */
-export function FormField({ id, label, helper, error, required, optional, children, className }: FormFieldProps) {
+export function FormField({
+  id,
+  label,
+  helper,
+  error,
+  required,
+  optional,
+  children,
+  className,
+}: FormFieldProps) {
   const helperId = helper ? `${id}-helper` : undefined;
   const errorId = error ? `${id}-error` : undefined;
   const describedBy = [errorId, helperId].filter(Boolean).join(' ') || undefined;

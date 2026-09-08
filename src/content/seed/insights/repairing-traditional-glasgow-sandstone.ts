@@ -8,7 +8,12 @@ export const repairingTraditionalGlasgowSandstone: Insight = {
   title: 'Repairing traditional Glasgow sandstone',
   dek: 'Good masonry repair starts with water, condition and compatibility, not with making every stone look new.',
   category: 'Masonry repair',
-  body: [{ type: 'paragraph', text: 'Good masonry repair starts with water, condition and compatibility, not with making every stone look new.' }],
+  body: [
+    {
+      type: 'paragraph',
+      text: 'Good masonry repair starts with water, condition and compatibility, not with making every stone look new.',
+    },
+  ],
   author: { type: 'studio' },
   publishedAt: '2026-06-01',
   reviewedAt: '2026-09-01',

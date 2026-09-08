@@ -50,17 +50,33 @@ export function detectMime(bytes: Uint8Array): { ext: AllowedExtension; mime: st
 
 /** Keep only safe characters; used for private metadata, never as a storage name. */
 export function sanitiseFilename(name: string): string {
-  return name.replace(/[^\w.\- ]+/g, '_').replace(/\s+/g, ' ').trim().slice(0, 120) || 'file';
+  return (
+    name
+      .replace(/[^\w.\- ]+/g, '_')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 120) || 'file'
+  );
 }
 
 export type FileCheck =
-  | { ok: true; ext: AllowedExtension; mime: string; bytes: Uint8Array; originalName: string; storedName: string }
+  | {
+      ok: true;
+      ext: AllowedExtension;
+      mime: string;
+      bytes: Uint8Array;
+      originalName: string;
+      storedName: string;
+    }
   | { ok: false; message: string };
 
 export async function validateUpload(file: File, maxBytes = maxUploadBytes()): Promise<FileCheck> {
   if (file.size === 0) return { ok: false, message: 'The selected file is empty.' };
   if (file.size > maxBytes) {
-    return { ok: false, message: `The file is too large. The maximum size is ${Math.round(maxBytes / 1024 / 1024)} MB.` };
+    return {
+      ok: false,
+      message: `The file is too large. The maximum size is ${Math.round(maxBytes / 1024 / 1024)} MB.`,
+    };
   }
   const ext = extensionOf(file.name);
   if (!isAllowedExtension(ext)) {
@@ -68,11 +84,19 @@ export async function validateUpload(file: File, maxBytes = maxUploadBytes()): P
   }
   const bytes = new Uint8Array(await file.arrayBuffer());
   const detected = detectMime(bytes);
-  if (!detected) return { ok: false, message: 'The file does not appear to be a valid PDF, JPG or PNG.' };
+  if (!detected)
+    return { ok: false, message: 'The file does not appear to be a valid PDF, JPG or PNG.' };
   const normalisedExt = ext === 'jpeg' ? 'jpg' : ext;
   if (detected.ext !== normalisedExt) {
     return { ok: false, message: 'The file contents do not match its file type.' };
   }
   const storedName = `${crypto.randomUUID()}.${detected.ext}`;
-  return { ok: true, ext: detected.ext, mime: detected.mime, bytes, originalName: sanitiseFilename(file.name), storedName };
+  return {
+    ok: true,
+    ext: detected.ext,
+    mime: detected.mime,
+    bytes,
+    originalName: sanitiseFilename(file.name),
+    storedName,
+  };
 }

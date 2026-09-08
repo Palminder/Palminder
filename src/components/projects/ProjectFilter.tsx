@@ -31,7 +31,11 @@ export function ProjectFilter({ counts, children }: ProjectFilterProps) {
 
   return (
     <div>
-      <div role="group" aria-label="Filter projects by sector" className="flex flex-wrap gap-x-2 gap-y-2 border-b border-ink/20 pb-4">
+      <div
+        role="group"
+        aria-label="Filter projects by sector"
+        className="flex flex-wrap gap-x-2 gap-y-2 border-b border-ink/20 pb-4"
+      >
         {FILTERS.map((f) => {
           const pressed = active === f.value;
           return (
@@ -50,11 +54,15 @@ export function ProjectFilter({ counts, children }: ProjectFilterProps) {
         })}
       </div>
       <p id={statusId} role="status" aria-live="polite" className="type-meta mt-4 text-ink/70">
-        {active === 'all' ? `${count} projects` : `${count} ${count === 1 ? 'project' : 'projects'} — ${activeLabel}`}
+        {active === 'all'
+          ? `${count} projects`
+          : `${count} ${count === 1 ? 'project' : 'projects'} — ${activeLabel}`}
       </p>
       <div className="mt-8" data-filter={active}>
         <style>{`[data-filter]:not([data-filter="all"]) li[data-sector] { display: none; } ${
-          active === 'all' ? '' : `[data-filter="${active}"] li[data-sector="${active}"] { display: block; }`
+          active === 'all'
+            ? ''
+            : `[data-filter="${active}"] li[data-sector="${active}"] { display: block; }`
         }`}</style>
         {children}
       </div>

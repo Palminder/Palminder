@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1131" width="1600" height="1131" role="img" aria-labelledby="t d">
+<title id="t">Drawing 02 — Proposed plan — Pollokshields Tenement Reordering</title>
+<desc id="d">Proposed plan: kitchen and dining move into the enlarged back room, one structural opening connects it to the hall for movement and borrowed light, the former kitchen becomes a utility and study, and full-height joinery absorbs storage and services.</desc>
+<defs><pattern id="newwork" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0" stroke="#8C4F3D" stroke-width="1.2"/></pattern><pattern id="stipple" patternUnits="userSpaceOnUse" width="6" height="6"><circle cx="1.5" cy="1.5" r="0.9" fill="#242722"/><circle cx="4.5" cy="4.5" r="0.9" fill="#242722"/></pattern><pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0M0 0L8 8" stroke="#242722" stroke-width="0.8"/></pattern><pattern id="grey" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="#242722" fill-opacity="0.35"/></pattern></defs>
+<rect width="1600" height="1131" fill="#F3F0E8"/>
+<text x="80" y="70" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">PROPOSED PLAN · FIRST-FLOOR FLAT</text>
+<line x1="80" y1="82" x2="1000" y2="82" stroke="#242722" stroke-width="0.8" stroke-opacity="0.4"/>
+<rect x="220" y="130" width="595.2" height="37.2" fill="#242722"/>
+<rect x="220" y="774.8" width="595.2" height="37.2" fill="#242722"/>
+<rect x="220" y="130" width="31" height="682" fill="#242722"/>
+<rect x="784.2" y="130" width="31" height="682" fill="#242722"/>
+<polygon points="294.4,774.8 294.4,874 480.4,874 480.4,774.8 449.4,774.8 449.4,843 325.4,843 325.4,774.8" fill="#242722" stroke="#242722" stroke-width="1"/>
+<rect x="294.4" y="774.8" width="186" height="37.2" fill="#F3F0E8"/>
+<rect x="325.4" y="843" width="124" height="31" fill="#F3F0E8"/>
+<line x1="325.4" y1="853.85" x2="449.4" y2="853.85" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="325.4" y1="863.15" x2="449.4" y2="863.15" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="325.4" y1="843" x2="325.4" y2="874" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="449.4" y1="843" x2="449.4" y2="874" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="294.4" y="781" width="31" height="55.8" fill="#F3F0E8"/>
+<line x1="305.25" y1="781" x2="305.25" y2="836.8" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="314.55" y1="781" x2="314.55" y2="836.8" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="294.4" y1="781" x2="325.4" y2="781" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="294.4" y1="836.8" x2="325.4" y2="836.8" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="449.4" y="781" width="31" height="55.8" fill="#F3F0E8"/>
+<line x1="460.25" y1="781" x2="460.25" y2="836.8" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="469.55" y1="781" x2="469.55" y2="836.8" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="449.4" y1="781" x2="480.4" y2="781" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="449.4" y1="836.8" x2="480.4" y2="836.8" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="815.2" y="340.8" width="173.6" height="31" fill="#242722"/>
+<rect x="815.2" y="632.2" width="173.6" height="31" fill="#242722"/>
+<rect x="988.8" y="340.8" width="31" height="322.4" fill="#242722"/>
+<rect x="821.4" y="374.9" width="80.6" height="99.2" fill="none" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<line x1="821.4" y1="387.3" x2="902" y2="387.3" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="399.7" x2="902" y2="399.7" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="412.1" x2="902" y2="412.1" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="424.5" x2="902" y2="424.5" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="436.9" x2="902" y2="436.9" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="449.3" x2="902" y2="449.3" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="461.7" x2="902" y2="461.7" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="861.7" y1="380.9" x2="861.7" y2="468.1" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<path d="M856.7 460.1L861.7 468.1L866.7 460.1" fill="none" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<rect x="902" y="374.9" width="80.6" height="99.2" fill="none" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<line x1="902" y1="387.3" x2="982.6" y2="387.3" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="902" y1="399.7" x2="982.6" y2="399.7" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="902" y1="412.1" x2="982.6" y2="412.1" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="902" y1="424.5" x2="982.6" y2="424.5" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="902" y1="436.9" x2="982.6" y2="436.9" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="902" y1="449.3" x2="982.6" y2="449.3" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="902" y1="461.7" x2="982.6" y2="461.7" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="942.3" y1="468.1" x2="942.3" y2="380.9" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<path d="M937.3 388.9L942.3 380.9L947.3 388.9" fill="none" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<rect x="821.4" y="564" width="80.6" height="65.1" fill="none" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<line x1="821.4" y1="574.85" x2="902" y2="574.85" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="585.7" x2="902" y2="585.7" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="596.55" x2="902" y2="596.55" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="607.4" x2="902" y2="607.4" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="821.4" y1="618.25" x2="902" y2="618.25" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<line x1="861.7" y1="570" x2="861.7" y2="623.1" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<path d="M856.7 615.1L861.7 623.1L866.7 615.1" fill="none" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<text x="833.8" y="533" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">LANDING</text>
+<text x="902" y="688" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Common close</text>
+<rect x="784.2" y="502" width="31" height="55.8" fill="#F3F0E8"/>
+<line x1="784.2" y1="502" x2="784.2" y2="557.8" stroke="#242722" stroke-width="1.6"/>
+<path d="M784.2 557.8A55.8 55.8 0 0 1 728.4 502" fill="none" stroke="#242722" stroke-width="0.7"/>
+<text x="818.3" y="492.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Front door</text>
+<rect x="269.6" y="130" width="43.4" height="37.2" fill="#F3F0E8"/>
+<line x1="269.6" y1="143.02" x2="313" y2="143.02" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="269.6" y1="154.18" x2="313" y2="154.18" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="269.6" y1="130" x2="269.6" y2="167.2" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="313" y1="130" x2="313" y2="167.2" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="381.2" y="130" width="68.2" height="37.2" fill="#F3F0E8"/>
+<line x1="381.2" y1="143.02" x2="449.4" y2="143.02" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="381.2" y1="154.18" x2="449.4" y2="154.18" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="381.2" y1="130" x2="381.2" y2="167.2" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="449.4" y1="130" x2="449.4" y2="167.2" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="641.6" y="130" width="80.6" height="37.2" fill="#F3F0E8"/>
+<line x1="641.6" y1="143.02" x2="722.2" y2="143.02" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="641.6" y1="154.18" x2="722.2" y2="154.18" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="641.6" y1="130" x2="641.6" y2="167.2" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="722.2" y1="130" x2="722.2" y2="167.2" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="635.4" y="774.8" width="93" height="37.2" fill="#F3F0E8"/>
+<line x1="635.4" y1="787.82" x2="728.4" y2="787.82" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="635.4" y1="798.98" x2="728.4" y2="798.98" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="635.4" y1="774.8" x2="635.4" y2="812" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="728.4" y1="774.8" x2="728.4" y2="812" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="251" y="564" width="533.2" height="9.3" fill="#242722"/>
+<rect x="492.8" y="573.3" width="9.3" height="201.5" fill="#242722"/>
+<rect x="567.2" y="573.3" width="9.3" height="201.5" fill="#242722"/>
+<rect x="492.8" y="254" width="9.3" height="310" fill="#242722"/>
+<rect x="567.2" y="167.2" width="9.3" height="325.5" fill="#242722"/>
+<rect x="251" y="362.5" width="241.8" height="9.3" fill="#242722"/>
+<rect x="251" y="483.4" width="241.8" height="9.3" fill="#242722"/>
+<rect x="492.8" y="254" width="74.4" height="9.3" fill="#242722"/>
+<rect x="492.8" y="582.6" width="9.3" height="52.7" fill="#F3F0E8"/>
+<line x1="492.8" y1="582.6" x2="440.1" y2="582.6" stroke="#242722" stroke-width="1.6"/>
+<path d="M440.1 582.6A52.7 52.7 0 0 1 492.8 529.9" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="592" y="564" width="52.7" height="9.3" fill="#F3F0E8"/>
+<line x1="592" y1="573.3" x2="644.7" y2="573.3" stroke="#242722" stroke-width="1.6"/>
+<path d="M644.7 573.3A52.7 52.7 0 0 1 592 626" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="492.8" y="396.6" width="9.3" height="49.6" fill="#F3F0E8"/>
+<line x1="492.8" y1="396.6" x2="443.2" y2="396.6" stroke="#242722" stroke-width="1.6"/>
+<path d="M443.2 396.6A49.6 49.6 0 0 1 492.8 347" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="368.8" y="492.7" width="9.3" height="71.3" fill="#242722"/>
+<rect x="492.8" y="508.2" width="9.3" height="49.6" fill="#F3F0E8"/>
+<line x1="492.8" y1="508.2" x2="443.2" y2="508.2" stroke="#242722" stroke-width="1.6"/>
+<path d="M443.2 508.2A49.6 49.6 0 0 1 492.8 458.6" fill="none" stroke="#242722" stroke-width="0.7"/>
+<text x="384.3" y="536.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">PRESS</text>
+<text x="263.4" y="536.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">BED RECESS</text>
+<line x1="576.5" y1="413.34" x2="784.2" y2="413.34" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<line x1="658.34" y1="418.3" x2="658.34" y2="483.4" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<line x1="576.5" y1="487.74" x2="784.2" y2="487.74" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<rect x="576.5" y="483.4" width="207.7" height="9.3" fill="#242722"/>
+<rect x="567.2" y="266.4" width="9.3" height="136.4" fill="#F3F0E8"/>
+<line x1="567.2" y1="266.4" x2="567.2" y2="402.8" stroke="#8C4F3D" stroke-width="2" stroke-opacity="1"/>
+<line x1="576.5" y1="266.4" x2="576.5" y2="402.8" stroke="#8C4F3D" stroke-width="2" stroke-opacity="1"/>
+<rect x="561" y="257.1" width="21.7" height="9.3" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="561" y="402.8" width="21.7" height="9.3" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="572.16" y="244.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#8C4F3D" fill-opacity="0.8">New steel over · structural opening</text>
+<rect x="576.5" y="167.2" width="207.7" height="40.3" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="576.5" y1="199.44" x2="784.2" y2="199.44" stroke="#242722" stroke-width="0.5" stroke-opacity="0.6"/>
+<rect x="617.8" y="176.04" width="35.2" height="22" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="635.4" cy="187.04" r="4.4" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="704.4" y="171.04" width="48" height="32" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="716.4" cy="180.04" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="740.4" cy="180.04" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="716.4" cy="194.04" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<circle cx="740.4" cy="194.04" r="5" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="740.8" y="210.6" width="43.4" height="223.2" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<line x1="740.8" y1="266.4" x2="784.2" y2="266.4" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<line x1="740.8" y1="322.2" x2="784.2" y2="322.2" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<line x1="740.8" y1="378" x2="784.2" y2="378" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<rect x="598.2" y="297.4" width="117.8" height="55.8" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="623.47" y="271.4" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="623.47" y="359.2" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="662.73" y="271.4" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<rect x="662.73" y="359.2" width="28" height="20" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="1"/>
+<text x="778" y="474.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.8">Full-height joinery: storage, services</text>
+<line x1="728.4" y1="167.2" x2="728.4" y2="133.1" stroke="#8C4F3D" stroke-width="1" stroke-opacity="1"/>
+<path d="M723.4 142.4L728.4 133.1L733.4 142.4" fill="none" stroke="#8C4F3D" stroke-width="1" stroke-opacity="1"/>
+<text x="734.6" y="156.04" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" text-anchor="start" fill="#8C4F3D" fill-opacity="0.8">Extract</text>
+<rect x="334.7" y="167.2" width="9.3" height="195.3" fill="#242722"/>
+<line x1="251" y1="276.94" x2="334.7" y2="276.94" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<rect x="334.7" y="204.4" width="9.3" height="46.5" fill="#F3F0E8"/>
+<line x1="344" y1="204.4" x2="344" y2="250.9" stroke="#242722" stroke-width="1.6"/>
+<path d="M344 250.9A46.5 46.5 0 0 0 390.5 204.4" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="492.8" y="285" width="9.3" height="49.6" fill="#F3F0E8"/>
+<line x1="492.8" y1="285" x2="443.2" y2="285" stroke="#242722" stroke-width="1.6"/>
+<path d="M443.2 285A49.6 49.6 0 0 1 492.8 235.4" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="344" y="167.2" width="37.2" height="195.3" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<line x1="344" y1="232.3" x2="381.2" y2="232.3" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<line x1="344" y1="297.4" x2="381.2" y2="297.4" stroke="#8C4F3D" stroke-width="0.5" stroke-opacity="1"/>
+<rect x="348.2" y="220.2" width="28.8" height="18" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="362.6" cy="229.2" r="3.6" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="437" y="229.2" width="46.5" height="99.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="437" y1="308.56" x2="483.5" y2="308.56" stroke="#242722" stroke-width="0.5" stroke-opacity="0.6"/>
+<rect x="344" y="337.7" width="139.5" height="6.2" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="263.4" y="374.9" width="105.4" height="46.5" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="271.4" y="382.9" width="89.4" height="30.5" rx="10" fill="none" stroke="#242722" stroke-width="0.6"/>
+<rect x="279.4" y="431.1" width="30" height="12" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<ellipse cx="294.4" cy="413.1" rx="12" ry="17" fill="none" stroke="#242722" stroke-width="0.7"/>
+<rect x="410.8" y="438.4" width="40" height="28" fill="none" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<ellipse cx="430.8" cy="452.4" rx="12" ry="8" fill="none" stroke="#242722" stroke-width="0.6"/>
+<text x="260.3" y="223" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">STORE</text>
+<text x="381.2" y="278.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">UTILITY ·</text>
+<text x="381.2" y="292.44" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">STUDY</text>
+<text x="592" y="390.4" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">KITCHEN · DINING</text>
+<text x="378.1" y="467.9" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">BATHROOM</text>
+<text x="585.8" y="443.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Borrowed light to the hall</text>
+<text x="282" y="688" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">LIVING</text>
+<text x="592" y="688" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">BEDROOM 1</text>
+<text x="506.44" y="433.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">HALL</text>
+<text x="616.8" y="536.1" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">HALL</text>
+<text x="356.4" y="108.3" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Back court</text>
+<text x="387.4" y="911.2" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="start" fill="#242722" fill-opacity="0.8">Street</text>
+<text x="207.6" y="440" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.8">Mutual wall</text>
+<text x="263.4" y="632.2" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" text-anchor="start" fill="#242722" fill-opacity="0.8">Cornice and doors retained</text>
+<text x="585.8" y="632.2" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" text-anchor="start" fill="#242722" fill-opacity="0.8">Cornice and doors retained</text>
+<rect x="80" y="950" width="26" height="14" fill="#242722"/>
+<text x="116" y="961" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Existing fabric retained (poché)</text>
+<rect x="80" y="974" width="26" height="14" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="116" y="985" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">New work (hatch)</text>
+<line x1="80" y1="1005" x2="106" y2="1005" stroke="#242722" stroke-width="1.2" stroke-opacity="1" stroke-dasharray="8 6"/>
+<text x="116" y="1009" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Removed</text>
+<rect x="700" y="975" width="62" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<rect x="762" y="975" width="62" height="8" fill="#F3F0E8" stroke="#242722" stroke-width="0.8"/>
+<rect x="824" y="975" width="62" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<rect x="886" y="975" width="62" height="8" fill="#F3F0E8" stroke="#242722" stroke-width="0.8"/>
+<rect x="948" y="975" width="62" height="8" fill="#242722" stroke="#242722" stroke-width="0.8"/>
+<text x="700" y="970" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">0</text>
+<text x="762" y="970" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">1</text>
+<text x="824" y="970" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">2</text>
+<text x="886" y="970" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">3</text>
+<text x="948" y="970" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">4</text>
+<text x="1010" y="970" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle" fill="#242722" fill-opacity="0.8">5</text>
+<text x="1018" y="983" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">m</text>
+<circle cx="1500" cy="150" r="22" fill="none" stroke="#242722" stroke-width="1"/>
+<path d="M1500 132L1506 156L1500 152L1494 156Z" fill="#242722" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<text x="1500" y="190" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">N</text>
+<line x1="0" y1="1046" x2="1600" y2="1046" stroke="#242722" stroke-width="1" stroke-opacity="0.35"/>
+<text x="48" y="1098.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#242722">Bracken &amp; Roe</text>
+<text x="800" y="1098.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" text-anchor="middle" fill="#242722">Drawing 02 — Proposed plan</text>
+<text x="1552" y="1098.7" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.75">Pollokshields Tenement Reordering · Staging drawing set</text>
+</svg>

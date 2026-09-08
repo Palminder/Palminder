@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" role="img" aria-labelledby="t d">
+<title id="t">Drawing 03 — Axonometric of old and new — Pollokshields Tenement Reordering</title>
+<desc id="d">Axonometric of the rear half of the flat with walls cut low: retained fabric in grey, the new structural opening, kitchen joinery and utility run in terracotta hatch.</desc>
+<defs><pattern id="newwork" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0" stroke="#8C4F3D" stroke-width="1.2"/></pattern><pattern id="stipple" patternUnits="userSpaceOnUse" width="6" height="6"><circle cx="1.5" cy="1.5" r="0.9" fill="#242722"/><circle cx="4.5" cy="4.5" r="0.9" fill="#242722"/></pattern><pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0M0 0L8 8" stroke="#242722" stroke-width="0.8"/></pattern><pattern id="grey" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="#242722" fill-opacity="0.35"/></pattern></defs>
+<rect width="1200" height="1200" fill="#F3F0E8"/>
+<polygon points="520,300 985.5752570745143,568.8 694.5907214029428,736.8 229.0154643284286,468" fill="#242722" fill-opacity="0.05" stroke="#242722" stroke-width="0.8"/>
+<polygon points="587.9,372.8 435.1,461.0 435.1,399.4 587.9,311.2" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="427.9,456.8 435.1,461.0 435.1,399.4 427.9,395.2" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="580.6,307.0 587.9,311.2 435.1,399.4 427.9,395.2" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="515.2,330.8 253.3,482.0 253.3,420.4 515.2,269.2" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="229.0,468.0 253.3,482.0 253.3,420.4 229.0,406.4" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="490.9,255.2 515.2,269.2 253.3,420.4 229.0,406.4" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="694.6,512.8 687.3,517.0 687.3,455.4 694.6,451.2" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="629.1,483.4 687.3,517.0 687.3,455.4 629.1,421.8" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="636.4,417.6 694.6,451.2 687.3,455.4 629.1,421.8" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="769.8,477.8 692.2,522.6 692.2,461.0 769.8,416.2" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="684.9,518.4 692.2,522.6 692.2,461.0 684.9,456.8" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="762.5,412.0 769.8,416.2 692.2,461.0 684.9,456.8" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="551.5,528.2 544.2,532.4 544.2,470.8 551.5,466.6" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="355.1,423.2 544.2,532.4 544.2,470.8 355.1,361.6" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="362.4,357.4 551.5,466.6 544.2,470.8 355.1,361.6" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="360.0,535.2 352.7,539.4 352.7,477.8 360.0,473.6" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="345.4,535.2 352.7,539.4 352.7,477.8 345.4,473.6" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="352.7,469.4 360.0,473.6 352.7,477.8 345.4,473.6" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="985.6,568.8 956.5,585.6 956.5,524.0 985.6,507.2" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="490.9,316.8 956.5,585.6 956.5,524.0 490.9,255.2" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="520.0,238.4 985.6,507.2 956.5,524.0 490.9,255.2" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="457.0,582.8 449.7,587.0 449.7,525.4 457.0,521.2" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="260.5,477.8 449.7,587.0 449.7,525.4 260.5,416.2" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="267.8,412.0 457.0,521.2 449.7,525.4 260.5,416.2" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="643.7,483.4 449.7,595.4 449.7,533.8 643.7,421.8" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="442.4,591.2 449.7,595.4 449.7,533.8 442.4,529.6" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="636.4,417.6 643.7,421.8 449.7,533.8 442.4,529.6" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="585.5,584.2 507.9,629.0 507.9,567.4 585.5,522.6" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="500.6,624.8 507.9,629.0 507.9,567.4 500.6,563.2" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="578.2,518.4 585.5,522.6 507.9,567.4 500.6,563.2" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="684.9,714.4 677.6,718.6 677.6,657.0 684.9,652.8" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="515.2,624.8 677.6,718.6 677.6,657.0 515.2,563.2" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="522.4,559.0 684.9,652.8 677.6,657.0 515.2,563.2" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="956.5,585.6 694.6,736.8 694.6,675.2 956.5,524.0" fill="#242722" fill-opacity="0.55" stroke="#242722" stroke-width="0.8"/>
+<polygon points="670.3,722.8 694.6,736.8 694.6,675.2 670.3,661.2" fill="#242722" fill-opacity="0.4" stroke="#242722" stroke-width="0.8"/>
+<polygon points="932.2,510.0 956.5,524.0 694.6,675.2 670.3,661.2" fill="#242722" fill-opacity="0.28" stroke="#242722" stroke-width="0.8"/>
+<polygon points="694.6,455.8 587.9,517.4 587.9,509.0 694.6,447.4" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="575.8,510.4 587.9,517.4 587.9,509.0 575.8,502.0" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="682.5,440.4 694.6,447.4 587.9,509.0 575.8,502.0" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="898.3,591.2 723.7,692.0 723.7,641.6 898.3,540.8" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="689.7,672.4 723.7,692.0 723.7,641.6 689.7,622.0" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="864.3,521.2 898.3,540.8 723.7,641.6 689.7,622.0" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="617.0,389.6 464.2,477.8 464.2,427.4 617.0,339.2" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="435.1,461.0 464.2,477.8 464.2,427.4 435.1,410.6" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="587.9,322.4 617.0,339.2 464.2,427.4 435.1,410.6" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="932.2,571.6 900.7,589.8 900.7,539.4 932.2,521.2" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="738.2,496.0 900.7,589.8 900.7,539.4 738.2,445.6" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<polygon points="769.8,427.4 932.2,521.2 900.7,539.4 738.2,445.6" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1"/>
+<line x1="632.51" y1="482.56" x2="692.51" y2="282.56" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="632.51" cy="482.56" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="698.51" y="286.56" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">New steel over structural opening</text>
+<line x1="798.86" y1="578.6" x2="838.86" y2="728.6" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="798.86" cy="578.6" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="844.86" y="732.6" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Full-height joinery: storage and services</text>
+<line x1="524.85" y1="375.6" x2="374.85" y2="255.6" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="524.85" cy="375.6" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="368.85" y="259.6" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="end" fill="#242722" fill-opacity="0.8">Utility run in the former kitchen</text>
+<line x1="835.23" y1="482" x2="895.23" y2="312" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="835.23" cy="482" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="901.23" y="316" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Kitchen along the rear wall, window retained</text>
+<line x1="386.63" y1="329.4" x2="266.63" y2="369.4" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="386.63" cy="329.4" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="260.63" y="373.4" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="end" fill="#242722" fill-opacity="0.8">Mutual wall retained</text>
+<line x1="755.21" y1="626.2" x2="795.21" y2="746.2" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="755.21" cy="626.2" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<text x="801.21" y="750.2" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Wall to close retained</text>
+<text x="495.75" y="648.4" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#242722" fill-opacity="0.8">Hall</text>
+<text x="723.69" y="600.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#242722" fill-opacity="0.8">Kitchen · dining</text>
+<text x="403.61" y="500" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#242722" fill-opacity="0.8">Bathroom</text>
+<rect x="80" y="1000" width="26" height="14" fill="#242722" fill-opacity="0.35"/>
+<text x="116" y="1011" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Retained fabric (walls cut at 1.1 m)</text>
+<rect x="80" y="1024" width="26" height="14" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="116" y="1035" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">New work</text>
+<text x="1120" y="1020" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="end" fill="#242722" fill-opacity="0.8">Not to scale</text>
+<line x1="0" y1="1110" x2="1200" y2="1110" stroke="#242722" stroke-width="1" stroke-opacity="0.35"/>
+<text x="36" y="1150.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#242722">Bracken &amp; Roe</text>
+<text x="1164" y="1147.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="end" fill="#242722">Drawing 03 — Axonometric of old and new</text>
+<text x="1164" y="1174.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.75">Pollokshields Tenement Reordering · Staging drawing set</text>
+</svg>

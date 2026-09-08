@@ -30,18 +30,26 @@ export interface GateResult {
 const ok: GateResult = { publishable: true, reasons: [] };
 
 export function roleUsesProtectedTitle(rolePublic: string): boolean {
-  return /\barchitect\b/i.test(rolePublic) && !/\barchitectural\b/i.test(rolePublic.replace(/\barchitect\b/gi, ''));
+  return (
+    /\barchitect\b/i.test(rolePublic) &&
+    !/\barchitectural\b/i.test(rolePublic.replace(/\barchitect\b/gi, ''))
+  );
 }
 
 export function roleClaimsQualification(rolePublic: string): boolean {
-  return /\bpart\s*(i{1,3}|[123])\b/i.test(rolePublic) || /\b(RIBA|RIAS|ARB|MSc|MArch|BArch)\b/.test(rolePublic);
+  return (
+    /\bpart\s*(i{1,3}|[123])\b/i.test(rolePublic) ||
+    /\b(RIBA|RIAS|ARB|MSc|MArch|BArch)\b/.test(rolePublic)
+  );
 }
 
 export function evaluatePerson(person: Person): GateResult {
   const reasons: string[] = [];
   if (person.verificationStatus !== 'verified') reasons.push('Team member record is not verified.');
   if (roleUsesProtectedTitle(person.rolePublic) && !person.protectedTitleVerified) {
-    reasons.push('Role uses the protected title "architect" and entitlement has not been verified.');
+    reasons.push(
+      'Role uses the protected title "architect" and entitlement has not been verified.',
+    );
   }
   if (roleClaimsQualification(person.rolePublic) && !person.qualificationVerified) {
     reasons.push('Stated qualification has not been verified.');

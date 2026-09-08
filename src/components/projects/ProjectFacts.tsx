@@ -8,7 +8,10 @@ export function ProjectFacts({ project }: { project: Project }) {
   const rows: Array<[string, string]> = [
     ['Location', project.locationDisplay],
     ['Sector', project.sectorLabel ?? SECTOR_LABELS[project.sector]],
-    ['Status', reality ? `${projectStatusLabel(project)} · ${reality}` : projectStatusLabel(project)],
+    [
+      'Status',
+      reality ? `${projectStatusLabel(project)} · ${reality}` : projectStatusLabel(project),
+    ],
     ['Building', project.buildingType],
     ['Bracken & Roe services', project.services.join('; ')],
   ];

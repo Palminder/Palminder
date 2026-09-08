@@ -22,7 +22,10 @@ export function organizationJsonLd(): Record<string, unknown> {
       postalCode: site.address.postcode,
       addressCountry: site.address.countryCode,
     },
-    areaServed: [{ '@type': 'City', name: 'Glasgow' }, { '@type': 'AdministrativeArea', name: 'Scotland' }],
+    areaServed: [
+      { '@type': 'City', name: 'Glasgow' },
+      { '@type': 'AdministrativeArea', name: 'Scotland' },
+    ],
     ...(sameAs.length ? { sameAs } : {}),
   };
 }

@@ -12,7 +12,9 @@ export default function NotFound() {
       <div className="grid-site">
         <div className="col-span-4 md:col-span-8 xl:col-span-8">
           <h1 className="type-h1">That page isn’t here.</h1>
-          <p className="type-lead measure mt-6 text-ink/85">The page may have moved, or the address may be incorrect.</p>
+          <p className="type-lead measure mt-6 text-ink/85">
+            The page may have moved, or the address may be incorrect.
+          </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/projects">View projects</Button>
             <Button href="/" variant="secondary">

@@ -55,12 +55,24 @@ export const projects: Project[] = [
     outcome: [
       'The intervention is intended to make the whole ground floor read more coherently, with the new room acting as a continuation of the house rather than a detached glazed object.',
     ],
-    hero: placeholder('16x10', 'sandstone', 'Garden elevation: low timber-lined pavilion beneath the red-sandstone rear wall of the house'),
+    hero: placeholder(
+      '16x10',
+      'sandstone',
+      'Garden elevation: low timber-lined pavilion beneath the red-sandstone rear wall of the house',
+    ),
     gallery: [
       placeholder('3x2', 'stone', 'Street and stone context of the semi-detached house'),
-      placeholder('4x3', 'sandstone', 'Existing rear elevation before work, showing the fragmented rear additions'),
+      placeholder(
+        '4x3',
+        'sandstone',
+        'Existing rear elevation before work, showing the fragmented rear additions',
+      ),
       placeholder('4x3', 'paper', 'Interior looking toward the garden through the deep opening'),
-      placeholder('4x3', 'stone', 'Interior looking back toward the original house from the pavilion'),
+      placeholder(
+        '4x3',
+        'stone',
+        'Interior looking back toward the original house from the pavilion',
+      ),
       placeholder('1x1', 'sandstone', 'Junction between retained masonry and new timber lining'),
       placeholder('1x1', 'stone', 'Material detail: timber, dark metal and sandstone'),
     ],
@@ -97,7 +109,8 @@ export const projects: Project[] = [
       description:
         'A compact garden room and reordered rear rooms for a late-Victorian sandstone house in Kelvinside, Glasgow, keeping new work below the scale of the original house.',
     },
-    verificationNotes: 'Staging status: Completed 2025. Verify dates, scope and imagery with the practice before publication.',
+    verificationNotes:
+      'Staging status: Completed 2025. Verify dates, scope and imagery with the practice before publication.',
   },
   {
     id: 'project-pollokshields-tenement-reordering',
@@ -143,7 +156,11 @@ export const projects: Project[] = [
     outcome: [
       'The flat gains a kitchen that suits daily use and a second workable room, with the original doors, cornice and floors still doing most of the visual work.',
     ],
-    hero: placeholder('16x10', 'stone', 'Kitchen long view with the new opening and retained cornice'),
+    hero: placeholder(
+      '16x10',
+      'stone',
+      'Kitchen long view with the new opening and retained cornice',
+    ),
     gallery: [
       placeholder('3x2', 'sandstone', 'Tenement street context in Pollokshields'),
       placeholder('4x3', 'paper', 'Principal room with retained cornice and doors'),
@@ -158,7 +175,11 @@ export const projects: Project[] = [
         1131,
         'existing-plan',
         'Existing plan of the tenement flat with a small rear kitchen, box room and service spaces.',
-        { number: 'Drawing 01', title: 'Existing plan', note: 'Shared close and common walls indicated.' },
+        {
+          number: 'Drawing 01',
+          title: 'Existing plan',
+          note: 'Shared close and common walls indicated.',
+        },
       ),
       stagingDrawing(
         'pollokshields-tenement-reordering-02-proposed-plan.svg',
@@ -178,7 +199,11 @@ export const projects: Project[] = [
         1200,
         'axonometric',
         'Concise axonometric distinguishing retained fabric from the new opening and joinery.',
-        { number: 'Drawing 03', title: 'Axonometric of old and new', note: 'Retained fabric in charcoal; new work in accent.' },
+        {
+          number: 'Drawing 03',
+          title: 'Axonometric of old and new',
+          note: 'Retained fabric in charcoal; new work in accent.',
+        },
       ),
     ],
     featured: true,
@@ -233,10 +258,18 @@ export const projects: Project[] = [
     outcome: [
       'The roof now holds a bedroom and bathroom that read as rooms in their own right, with the roofscape largely unchanged from the street.',
     ],
-    hero: placeholder('16x10', 'paper', 'Bedroom within the roof with rooflight and retained timber'),
+    hero: placeholder(
+      '16x10',
+      'paper',
+      'Bedroom within the roof with rooflight and retained timber',
+    ),
     gallery: [
       placeholder('3x2', 'stone', 'Surrounding Hyndland roofscape'),
-      placeholder('4x3', 'sandstone', 'Existing attic before work: timber structure and chimney masses'),
+      placeholder(
+        '4x3',
+        'sandstone',
+        'Existing attic before work: timber structure and chimney masses',
+      ),
       placeholder('4x3', 'paper', 'New stair rising into the roof'),
       placeholder('4x3', 'stone', 'Bathroom within the roof'),
       placeholder('1x1', 'sandstone', 'Rooflight detail'),
@@ -249,7 +282,11 @@ export const projects: Project[] = [
         1131,
         'proposed-plan',
         'Proposed roof-level plan arranged around chimney masses, with stair, bedroom and bathroom.',
-        { number: 'Drawing 01', title: 'Proposed roof-level plan', note: 'Headroom zones and retained structure indicated.' },
+        {
+          number: 'Drawing 01',
+          title: 'Proposed roof-level plan',
+          note: 'Headroom zones and retained structure indicated.',
+        },
       ),
       stagingDrawing(
         'hyndland-roof-rooms-02-section.svg',
@@ -257,7 +294,11 @@ export const projects: Project[] = [
         1000,
         'section',
         'Section through the ridge showing the stair, rooflights and insulated roof build-up.',
-        { number: 'Drawing 02', title: 'Section through ridge', note: 'Insulated build-up and ventilation path indicated.' },
+        {
+          number: 'Drawing 02',
+          title: 'Section through ridge',
+          note: 'Insulated build-up and ventilation path indicated.',
+        },
       ),
     ],
     featured: false,
@@ -313,7 +354,11 @@ export const projects: Project[] = [
     outcome: [
       'The unit reads again as part of its tenement, with a shopfront that can accept different occupiers without further alteration to the fabric.',
     ],
-    hero: placeholder('16x10', 'stone', 'Full shopfront with the new composition, signage zone and repaired stone above'),
+    hero: placeholder(
+      '16x10',
+      'stone',
+      'Full shopfront with the new composition, signage zone and repaired stone above',
+    ),
     gallery: [
       placeholder('3x2', 'sandstone', 'Finnieston urban context'),
       placeholder('4x3', 'paper', 'Signage and joinery detail'),
@@ -327,7 +372,11 @@ export const projects: Project[] = [
         1131,
         'elevation',
         'Existing survey elevation and proposed elevation of the shopfront and upper floors, one above the other.',
-        { number: 'Drawing 01', title: 'Existing and proposed street elevations', note: 'Signage zone and repaired stone indicated.' },
+        {
+          number: 'Drawing 01',
+          title: 'Existing and proposed street elevations',
+          note: 'Signage zone and repaired stone indicated.',
+        },
       ),
       stagingDrawing(
         'finnieston-shopfront-02-section.svg',
@@ -335,7 +384,11 @@ export const projects: Project[] = [
         1400,
         'section',
         'Section through the façade and service zone showing how new services pass behind the retained frontage.',
-        { number: 'Drawing 02', title: 'Section through façade and service zone', note: 'Retained fabric in charcoal; new services in accent.' },
+        {
+          number: 'Drawing 02',
+          title: 'Section through façade and service zone',
+          note: 'Retained fabric in charcoal; new services in accent.',
+        },
       ),
     ],
     featured: true,
@@ -390,7 +443,11 @@ export const projects: Project[] = [
     outcome: [
       'The aim was not to restore the façade to an as-new condition. Sound original masonry is retained, weathering performance is improved and a maintainable repair approach has been established.',
     ],
-    hero: placeholder('16x10', 'sandstone', 'Completed repaired area of the sandstone elevation with new lime pointing'),
+    hero: placeholder(
+      '16x10',
+      'sandstone',
+      'Completed repaired area of the sandstone elevation with new lime pointing',
+    ),
     gallery: [
       placeholder('1x1', 'sandstone', 'Open-joint close-up before repair'),
       placeholder('1x1', 'stone', 'Failing previous cementitious repair'),
@@ -406,7 +463,11 @@ export const projects: Project[] = [
         1131,
         'survey-drawing',
         'Annotated elevation mapping open joints, surface loss, previous repairs and rainwater interfaces with a keyed legend.',
-        { number: 'Drawing 01', title: 'Annotated condition elevation', note: 'Defect types keyed by symbol; repair schedule references shown.' },
+        {
+          number: 'Drawing 01',
+          title: 'Annotated condition elevation',
+          note: 'Defect types keyed by symbol; repair schedule references shown.',
+        },
       ),
       stagingDrawing(
         'shawlands-sandstone-repair-02-indent-detail.svg',
@@ -414,7 +475,11 @@ export const projects: Project[] = [
         1200,
         'detail-drawing',
         'Detail of a stone indent showing the cut-back, bedding and pointing of a new stone piece.',
-        { number: 'Drawing 02', title: 'Stone indent detail', note: 'Indent depth, bedding and lime pointing indicated.' },
+        {
+          number: 'Drawing 02',
+          title: 'Stone indent detail',
+          note: 'Indent depth, bedding and lime pointing indicated.',
+        },
       ),
     ],
     featured: false,
@@ -470,7 +535,11 @@ export const projects: Project[] = [
     outcome: [
       'The programme delivered a repeatable detail set that still respected the exceptions, with residents remaining in their homes throughout.',
     ],
-    hero: placeholder('16x10', 'stone', 'Sample installation of a new window within an occupied block'),
+    hero: placeholder(
+      '16x10',
+      'stone',
+      'Sample installation of a new window within an occupied block',
+    ),
     gallery: [
       placeholder('3x2', 'sandstone', 'Block context'),
       placeholder('4x3', 'paper', 'Survey matrix in use on site'),
@@ -483,7 +552,11 @@ export const projects: Project[] = [
         1131,
         'survey-drawing',
         'Annotated window typology sheet showing the typical opening types across the blocks and the recorded exceptions.',
-        { number: 'Drawing 01', title: 'Annotated window typology', note: 'Typical types and recorded exceptions keyed to the survey matrix.' },
+        {
+          number: 'Drawing 01',
+          title: 'Annotated window typology',
+          note: 'Typical types and recorded exceptions keyed to the survey matrix.',
+        },
       ),
       stagingDrawing(
         'north-glasgow-window-programme-02-head-jamb-sill.svg',
@@ -491,7 +564,11 @@ export const projects: Project[] = [
         1600,
         'detail-drawing',
         'Head, jamb and sill details for the typical window with background ventilation and airtightness line indicated.',
-        { number: 'Drawing 02', title: 'Head, jamb and sill details', note: 'Airtightness line and background ventilation indicated.' },
+        {
+          number: 'Drawing 02',
+          title: 'Head, jamb and sill details',
+          note: 'Airtightness line and background ventilation indicated.',
+        },
       ),
     ],
     featured: true,
@@ -563,7 +640,11 @@ export const projects: Project[] = [
         1400,
         'section',
         'Wall and window section showing external wall insulation, the new reveal, sill and the continuous insulation line.',
-        { number: 'Drawing 01', title: 'Wall and window section', note: 'Insulation line, reveal and drained sill indicated.' },
+        {
+          number: 'Drawing 01',
+          title: 'Wall and window section',
+          note: 'Insulation line, reveal and drained sill indicated.',
+        },
       ),
       stagingDrawing(
         'drumchapel-fabric-upgrade-02-eaves-base-detail.svg',
@@ -571,7 +652,11 @@ export const projects: Project[] = [
         1200,
         'detail-drawing',
         'Eaves and base details showing how the insulation terminates at the roof edge and above ground level.',
-        { number: 'Drawing 02', title: 'Eaves and base details', note: 'Ventilated eaves and drained base rail indicated.' },
+        {
+          number: 'Drawing 02',
+          title: 'Eaves and base details',
+          note: 'Ventilated eaves and drained base rail indicated.',
+        },
       ),
     ],
     featured: false,
@@ -632,7 +717,11 @@ export const projects: Project[] = [
     outcome: [
       'The unit works as a café by day and a meeting room by evening without either use feeling like a compromise of the other.',
     ],
-    hero: placeholder('16x10', 'paper', 'Interior wide view with the glazed divider and perimeter bench'),
+    hero: placeholder(
+      '16x10',
+      'paper',
+      'Interior wide view with the glazed divider and perimeter bench',
+    ),
     gallery: [
       placeholder('3x2', 'sandstone', 'Street corner frontage'),
       placeholder('4x3', 'stone', 'Existing condition before work'),
@@ -648,7 +737,11 @@ export const projects: Project[] = [
         1131,
         'proposed-plan',
         'Proposed plan showing the recovered main volume, the servicing spine with kitchen and accessible WC, and the glazed screen.',
-        { number: 'Drawing 01', title: 'Proposed ground-floor plan', note: 'Servicing spine and glazed screen shown with accent hatch.' },
+        {
+          number: 'Drawing 01',
+          title: 'Proposed ground-floor plan',
+          note: 'Servicing spine and glazed screen shown with accent hatch.',
+        },
       ),
       stagingDrawing(
         'southside-corner-rooms-02-section.svg',
@@ -656,7 +749,11 @@ export const projects: Project[] = [
         900,
         'section',
         'Section through the unit showing the glazed screen, acoustic ceiling panels and the entrance level change.',
-        { number: 'Drawing 02', title: 'Section through café and community room', note: 'Acoustic panels and step-free entrance indicated.' },
+        {
+          number: 'Drawing 02',
+          title: 'Section through café and community room',
+          note: 'Acoustic panels and step-free entrance indicated.',
+        },
       ),
     ],
     featured: false,

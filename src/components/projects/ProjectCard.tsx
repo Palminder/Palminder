@@ -15,18 +15,40 @@ interface ProjectCardProps {
 }
 
 /** Image first, then title, location, sector and status. Nothing essential hides behind hover. */
-export function ProjectCard({ project, sizes, ratio = '4/3', priority = false, headingLevel: Tag = 'h3' }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  sizes,
+  ratio = '4/3',
+  priority = false,
+  headingLevel: Tag = 'h3',
+}: ProjectCardProps) {
   const reality = realityLabel(project.realityType);
   const sector = project.sectorLabel ?? SECTOR_LABELS[project.sector];
   return (
     <article className="card-link flex flex-col" data-sector={project.sector}>
-      <Link href={`/projects/${project.slug}`} tabIndex={-1} aria-hidden="true" className="card-media block">
-        <MediaFigure image={project.hero} sizes={sizes} ratio={ratio} priority={priority} hideCaption />
+      <Link
+        href={`/projects/${project.slug}`}
+        tabIndex={-1}
+        aria-hidden="true"
+        className="card-media block"
+      >
+        <MediaFigure
+          image={project.hero}
+          sizes={sizes}
+          ratio={ratio}
+          priority={priority}
+          hideCaption
+        />
       </Link>
       <div className="mt-4">
-        {!project.gate.publishable ? <StagingBadge reasons={project.gate.reasons} className="mb-2" /> : null}
+        {!project.gate.publishable ? (
+          <StagingBadge reasons={project.gate.reasons} className="mb-2" />
+        ) : null}
         <Tag className="type-h4">
-          <Link href={`/projects/${project.slug}`} className="hover:underline focus-visible:underline">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="hover:underline focus-visible:underline"
+          >
             {project.title}
           </Link>
         </Tag>

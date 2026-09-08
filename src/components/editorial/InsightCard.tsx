@@ -13,20 +13,39 @@ interface InsightCardProps {
 }
 
 /** Title, category, dek, publication and review dates and a real reading time. */
-export function InsightCard({ insight, withImage = true, headingLevel: Tag = 'h3' }: InsightCardProps) {
+export function InsightCard({
+  insight,
+  withImage = true,
+  headingLevel: Tag = 'h3',
+}: InsightCardProps) {
   const minutes = readingTimeMinutes(insight.body);
   return (
     <article className="card-link flex flex-col">
       {withImage ? (
-        <Link href={`/insights/${insight.slug}`} tabIndex={-1} aria-hidden="true" className="card-media block">
-          <MediaFigure image={insight.hero} sizes="(min-width: 1200px) 30vw, (min-width: 768px) 45vw, 100vw" ratio="4/3" hideCaption />
+        <Link
+          href={`/insights/${insight.slug}`}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="card-media block"
+        >
+          <MediaFigure
+            image={insight.hero}
+            sizes="(min-width: 1200px) 30vw, (min-width: 768px) 45vw, 100vw"
+            ratio="4/3"
+            hideCaption
+          />
         </Link>
       ) : null}
       <div className={withImage ? 'mt-5' : ''}>
         <p className="type-label text-moss">{insight.category}</p>
-        {!insight.gate.publishable ? <StagingBadge reasons={insight.gate.reasons} className="mt-2" /> : null}
+        {!insight.gate.publishable ? (
+          <StagingBadge reasons={insight.gate.reasons} className="mt-2" />
+        ) : null}
         <Tag className="type-h4 mt-3">
-          <Link href={`/insights/${insight.slug}`} className="hover:underline focus-visible:underline">
+          <Link
+            href={`/insights/${insight.slug}`}
+            className="hover:underline focus-visible:underline"
+          >
             {insight.title}
           </Link>
         </Tag>

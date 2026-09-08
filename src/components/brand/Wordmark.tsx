@@ -10,7 +10,12 @@ interface WordmarkProps {
 }
 
 /** The primary wordmark as an inline outlined SVG in currentColor. Minimum width 145px. */
-export function Wordmark({ height = 24, className, title = 'Bracken & Roe', decorative = false }: WordmarkProps) {
+export function Wordmark({
+  height = 24,
+  className,
+  title = 'Bracken & Roe',
+  decorative = false,
+}: WordmarkProps) {
   const [, , w, h] = WORDMARK_VIEWBOX.split(' ').map(Number);
   const width = Math.round(((w ?? 607) / (h ?? 100)) * height);
   return (

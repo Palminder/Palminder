@@ -20,4 +20,5 @@ export const processStages: ProcessStage[] = [
   },
 ];
 
-export const processNote = 'Scope varies by project. We agree the services required before work begins.';
+export const processNote =
+  'Scope varies by project. We agree the services required before work begins.';

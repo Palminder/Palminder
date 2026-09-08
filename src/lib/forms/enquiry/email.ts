@@ -55,7 +55,8 @@ export function acknowledgementText(): string {
   ].join('\n');
 }
 
-export type SendResult = { ok: true; id: string | null } | { ok: false; reason: 'not-configured' | 'provider-error' };
+export type SendResult =
+  { ok: true; id: string | null } | { ok: false; reason: 'not-configured' | 'provider-error' };
 
 export function emailConfigured(): boolean {
   return Boolean(process.env.RESEND_API_KEY?.trim() && process.env.ENQUIRY_FROM_EMAIL?.trim());
@@ -77,7 +78,13 @@ export async function sendEnquiryEmails(o: SendOptions): Promise<SendResult> {
       subject: notificationSubject(o.enquiry),
       text: notificationText(o),
       attachments: o.attachment
-        ? [{ filename: o.attachment.filename, content: Buffer.from(o.attachment.content), contentType: o.attachment.contentType }]
+        ? [
+            {
+              filename: o.attachment.filename,
+              content: Buffer.from(o.attachment.content),
+              contentType: o.attachment.contentType,
+            },
+          ]
         : undefined,
     },
     { idempotencyKey: `enquiry/${o.submissionId}/notify` },

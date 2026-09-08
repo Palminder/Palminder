@@ -16,7 +16,10 @@ const faviconSvg = fs.readFileSync(path.join(icons, 'favicon.svg'));
 const wordmarkSvg = fs.readFileSync(path.join(brand, 'wordmark.svg'), 'utf8');
 
 async function png(svg, size) {
-  return sharp(svg, { density: 384 }).resize(size, size, { fit: 'contain' }).png({ compressionLevel: 9 }).toBuffer();
+  return sharp(svg, { density: 384 })
+    .resize(size, size, { fit: 'contain' })
+    .png({ compressionLevel: 9 })
+    .toBuffer();
 }
 
 const sizes = [16, 32, 48];
@@ -53,17 +56,25 @@ function ico(entries) {
   });
   return Buffer.concat([header, dir, ...blobs]);
 }
-fs.writeFileSync(path.join(root, 'public/favicon.ico'), ico(sizes.map((size) => ({ size, data: buffers[size] }))));
+fs.writeFileSync(
+  path.join(root, 'public/favicon.ico'),
+  ico(sizes.map((size) => ({ size, data: buffers[size] }))),
+);
 
 // Default social image: Paper field, wordmark, positioning line drawn as a thin rule.
 const vb = wordmarkSvg.match(/viewBox="0 0 (\d+) (\d+)"/);
 const vbW = Number(vb[1]);
 const vbH = Number(vb[2]);
 const targetW = 760;
-const wordmarkPng = await sharp(Buffer.from(wordmarkSvg), { density: 300 }).resize({ width: targetW }).png().toBuffer();
+const wordmarkPng = await sharp(Buffer.from(wordmarkSvg), { density: 300 })
+  .resize({ width: targetW })
+  .png()
+  .toBuffer();
 const wmH = Math.round((targetW * vbH) / vbW);
 const og = sharp({ create: { width: 1200, height: 630, channels: 3, background: '#F3F0E8' } });
-const rule = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect x="96" y="96" width="1008" height="1" fill="#242722" fill-opacity="0.18"/><rect x="96" y="533" width="1008" height="1" fill="#242722" fill-opacity="0.18"/><rect x="96" y="452" width="56" height="2" fill="#8C4F3D"/></svg>`);
+const rule = Buffer.from(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect x="96" y="96" width="1008" height="1" fill="#242722" fill-opacity="0.18"/><rect x="96" y="533" width="1008" height="1" fill="#242722" fill-opacity="0.18"/><rect x="96" y="452" width="56" height="2" fill="#8C4F3D"/></svg>`,
+);
 await og
   .composite([
     { input: rule, left: 0, top: 0 },

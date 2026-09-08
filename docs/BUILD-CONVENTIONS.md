@@ -42,32 +42,32 @@ Types live in `src/lib/content/types.ts`. Rich bodies use the `Block[]` model re
 
 ## Components (all under `src/components`)
 
-| Component | Use |
-|---|---|
-| `editorial/PageHero` | Page opener: eyebrow, H1, lead, optional image (copy first on mobile). |
-| `editorial/EditorialIntro` | Eyebrow + serif H2 + body copy (+ link). `layout="split"` or `"stacked"`. |
-| `editorial/SectionHeading` | Eyebrow + H2 with optional action link on the right. |
-| `editorial/Button` | `variant="primary" | "secondary" | "text"`. `href` must be a typed route. |
-| `editorial/Breadcrumbs` | `items=[{label, href}]`, `current="…"`; emits BreadcrumbList JSON-LD. |
-| `editorial/ServiceRow` | Numbered full-width discipline row with image and arrow link. |
-| `editorial/ProcessSequence` | The four-stage working sequence section (self-contained). |
-| `editorial/CTASection` | Final enquiry call to action (`tight` for inner pages). |
-| `editorial/Callout` | Restrained guidance note. |
-| `editorial/RichText` | Renders `Block[]` (paragraphs, headings, lists, quotes, callouts, figures, tables). |
-| `editorial/TeamCard` | Portrait + role + bio (`compact` for teasers). |
-| `editorial/InsightCard`, `editorial/ArticleMeta` | Insight listing card; article metadata list. |
-| `editorial/StudioNoteCard` | One studio note. |
-| `editorial/Testimonial` (`Testimonials`) | Renders nothing unless verified records exist. |
-| `editorial/OfficeBlock` | Contact-page office information. |
-| `editorial/EmptyState` | Calm empty state; never debug wording. |
-| `media/MediaFigure` | Image/drawing with media-type label and caption. Pass `sizes`; use `ratio` for cards. |
-| `media/ImagePair` | Two complementary figures. |
-| `media/DrawingFigure` | Drawings at natural sheet ratio on Paper, with “Drawing 03 — …” caption and zoom. |
-| `projects/ProjectCard`, `projects/ProjectGrid` | Cards and grids (`variant="featured"` = 7/5 asymmetric). |
-| `projects/ProjectFacts` | Definition list of location, sector, status, building, services. |
-| `projects/ProjectFilter` | Client filter wrapper for the index grid (grid stays server rendered). |
-| `forms/EnquiryForm` | The enquiry form (client). Props: `uploadsEnabled`, `maxUploadMb`, `serverOutcome`. |
-| `seo/JsonLd` | JSON-LD script. |
+| Component                                        | Use                                                                                   |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| `editorial/PageHero`                             | Page opener: eyebrow, H1, lead, optional image (copy first on mobile).                |
+| `editorial/EditorialIntro`                       | Eyebrow + serif H2 + body copy (+ link). `layout="split"` or `"stacked"`.             |
+| `editorial/SectionHeading`                       | Eyebrow + H2 with optional action link on the right.                                  |
+| `editorial/Button`                               | `variant="primary"                                                                    | "secondary" | "text"`. `href` must be a typed route. |
+| `editorial/Breadcrumbs`                          | `items=[{label, href}]`, `current="…"`; emits BreadcrumbList JSON-LD.                 |
+| `editorial/ServiceRow`                           | Numbered full-width discipline row with image and arrow link.                         |
+| `editorial/ProcessSequence`                      | The four-stage working sequence section (self-contained).                             |
+| `editorial/CTASection`                           | Final enquiry call to action (`tight` for inner pages).                               |
+| `editorial/Callout`                              | Restrained guidance note.                                                             |
+| `editorial/RichText`                             | Renders `Block[]` (paragraphs, headings, lists, quotes, callouts, figures, tables).   |
+| `editorial/TeamCard`                             | Portrait + role + bio (`compact` for teasers).                                        |
+| `editorial/InsightCard`, `editorial/ArticleMeta` | Insight listing card; article metadata list.                                          |
+| `editorial/StudioNoteCard`                       | One studio note.                                                                      |
+| `editorial/Testimonial` (`Testimonials`)         | Renders nothing unless verified records exist.                                        |
+| `editorial/OfficeBlock`                          | Contact-page office information.                                                      |
+| `editorial/EmptyState`                           | Calm empty state; never debug wording.                                                |
+| `media/MediaFigure`                              | Image/drawing with media-type label and caption. Pass `sizes`; use `ratio` for cards. |
+| `media/ImagePair`                                | Two complementary figures.                                                            |
+| `media/DrawingFigure`                            | Drawings at natural sheet ratio on Paper, with “Drawing 03 — …” caption and zoom.     |
+| `projects/ProjectCard`, `projects/ProjectGrid`   | Cards and grids (`variant="featured"` = 7/5 asymmetric).                              |
+| `projects/ProjectFacts`                          | Definition list of location, sector, status, building, services.                      |
+| `projects/ProjectFilter`                         | Client filter wrapper for the index grid (grid stays server rendered).                |
+| `forms/EnquiryForm`                              | The enquiry form (client). Props: `uploadsEnabled`, `maxUploadMb`, `serverOutcome`.   |
+| `seo/JsonLd`                                     | JSON-LD script.                                                                       |
 
 Layout and metadata:
 

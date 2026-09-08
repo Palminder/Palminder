@@ -8,11 +8,20 @@ export const planningPermissionAndBuildingWarrant: Insight = {
   title: 'Planning permission and a building warrant are not the same thing',
   dek: 'Two different Scottish systems are often discussed as though they were interchangeable. They answer different questions.',
   category: 'Consents',
-  body: [{ type: 'paragraph', text: 'Two different Scottish systems are often discussed as though they were interchangeable. They answer different questions.' }],
+  body: [
+    {
+      type: 'paragraph',
+      text: 'Two different Scottish systems are often discussed as though they were interchangeable. They answer different questions.',
+    },
+  ],
   author: { type: 'studio' },
   publishedAt: '2026-06-01',
   reviewedAt: '2026-09-01',
-  hero: placeholder('16x10', 'stone', 'Hero image for Planning permission and a building warrant are not the same thing'),
+  hero: placeholder(
+    '16x10',
+    'stone',
+    'Hero image for Planning permission and a building warrant are not the same thing',
+  ),
   officialSources: [],
   relatedServiceSlugs: ['residential'],
   relatedProjectSlugs: [],

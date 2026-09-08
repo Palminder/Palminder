@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
-  robots: isProductionDeployment() ? { index: true, follow: true } : { index: false, follow: false },
+  robots: isProductionDeployment()
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   icons: {
     icon: [
       { url: '/icons/favicon.svg', type: 'image/svg+xml' },
@@ -30,10 +32,23 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: 'en_GB',
     type: 'website',
-    images: [{ url: '/brand/og-default.png', width: 1200, height: 630, alt: 'Bracken & Roe — Architecture rooted in Glasgow.' }],
+    images: [
+      {
+        url: '/brand/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bracken & Roe — Architecture rooted in Glasgow.',
+      },
+    ],
   },
   formatDetection: { telephone: false, email: false, address: false },
 };
+
+/**
+ * Pages render per request so that Next.js applies the per-request CSP nonce (from src/proxy.ts)
+ * to its own inline scripts. Content reads remain cached and tag-revalidated in the content layer.
+ */
+export const dynamic = 'force-dynamic';
 
 export const viewport: Viewport = {
   themeColor: '#F3F0E8',

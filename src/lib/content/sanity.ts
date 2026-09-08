@@ -49,7 +49,12 @@ function toImage(node: unknown): ImageAsset | null {
   const height = img.height ?? 1333;
   const cappedWidth = Math.min(width, 2400);
   // Capped at 2400px; the Sanity CDN serves negotiated AVIF/WebP through the image loader.
-  const src = builder.image(img as never).width(cappedWidth).fit('max').auto('format').url();
+  const src = builder
+    .image(img as never)
+    .width(cappedWidth)
+    .fit('max')
+    .auto('format')
+    .url();
   return {
     src,
     width: cappedWidth,
@@ -65,7 +70,11 @@ function toImage(node: unknown): ImageAsset | null {
   };
 }
 
-async function fetchQuery<T>(query: string, params: Record<string, unknown> = {}, tags: string[] = ['content']): Promise<T> {
+async function fetchQuery<T>(
+  query: string,
+  params: Record<string, unknown> = {},
+  tags: string[] = ['content'],
+): Promise<T> {
   const { isEnabled } = await draftMode();
   if (isEnabled) {
     return previewClient().fetch<T>(query, params, { cache: 'no-store' });
@@ -90,7 +99,18 @@ const images = (list: SanityImage[] | undefined) =>
 export const sanitySource: ContentSource = {
   name: 'sanity',
   async projects() {
-    type Doc = Omit<Project, 'id' | 'brief' | 'existing' | 'response' | 'technical' | 'outcome' | 'hero' | 'gallery' | 'drawings'> & {
+    type Doc = Omit<
+      Project,
+      | 'id'
+      | 'brief'
+      | 'existing'
+      | 'response'
+      | 'technical'
+      | 'outcome'
+      | 'hero'
+      | 'gallery'
+      | 'drawings'
+    > & {
       _id: string;
       brief?: PTNode[];
       context?: PTNode[];
@@ -178,7 +198,10 @@ export const sanitySource: ContentSource = {
       heroHeadline: d.hero,
       intro: portableTextToParagraphs(d.lead),
       scope: d.serviceScope ?? [],
-      sections: (d.sections ?? []).map((s) => ({ title: s.title, body: portableTextToParagraphs(s.body) })),
+      sections: (d.sections ?? []).map((s) => ({
+        title: s.title,
+        body: portableTextToParagraphs(s.body),
+      })),
       supportingCopy: d.supportingCopy ? portableTextToParagraphs(d.supportingCopy) : undefined,
       image: toImage(d.image) ?? fallbackImage(`${d.title} — image missing`),
       relatedProjectSlugs: d.relatedProjectSlugs ?? [],
@@ -190,7 +213,16 @@ export const sanitySource: ContentSource = {
     }));
   },
   async insights() {
-    type Doc = Omit<Insight, 'id' | 'body' | 'author' | 'hero' | 'officialSources' | 'relatedServiceSlugs' | 'relatedProjectSlugs'> & {
+    type Doc = Omit<
+      Insight,
+      | 'id'
+      | 'body'
+      | 'author'
+      | 'hero'
+      | 'officialSources'
+      | 'relatedServiceSlugs'
+      | 'relatedProjectSlugs'
+    > & {
       _id: string;
       body?: PTNode[];
       authorSlug?: string;
@@ -207,7 +239,9 @@ export const sanitySource: ContentSource = {
       dek: d.dek,
       category: d.category,
       body: portableTextToBlocks(d.body, toImage),
-      author: d.authorSlug ? { type: 'person' as const, personSlug: d.authorSlug } : { type: 'studio' as const },
+      author: d.authorSlug
+        ? { type: 'person' as const, personSlug: d.authorSlug }
+        : { type: 'studio' as const },
       publishedAt: d.publishedAt,
       reviewedAt: d.reviewedAt ?? undefined,
       hero: toImage(d.hero) ?? fallbackImage(`${d.title} — image missing`),

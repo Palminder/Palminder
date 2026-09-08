@@ -5,7 +5,12 @@ export const legalDocument = defineType({
   title: 'Legal document',
   type: 'document',
   fields: [
-    defineField({ name: 'type', type: 'string', options: { list: ['privacy', 'cookies', 'accessibility'] }, validation: (rule) => rule.required() }),
+    defineField({
+      name: 'type',
+      type: 'string',
+      options: { list: ['privacy', 'cookies', 'accessibility'] },
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: 'title', type: 'string', validation: (rule) => rule.required() }),
     defineField({ name: 'intro', type: 'text', rows: 3 }),
     defineField({ name: 'effectiveDate', type: 'date', validation: (rule) => rule.required() }),

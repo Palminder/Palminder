@@ -12,8 +12,18 @@ export function ImagePair({ images, split = 6 }: ImagePairProps) {
   const [a, b] = images;
   const first = split === 7 ? 'xl:col-span-7' : split === 5 ? 'xl:col-span-5' : 'xl:col-span-6';
   const second = split === 7 ? 'xl:col-span-5' : split === 5 ? 'xl:col-span-7' : 'xl:col-span-6';
-  const firstSizes = split === 7 ? '(min-width: 1200px) 58vw, 100vw' : split === 5 ? '(min-width: 1200px) 42vw, 100vw' : '(min-width: 1200px) 50vw, 100vw';
-  const secondSizes = split === 7 ? '(min-width: 1200px) 42vw, 100vw' : split === 5 ? '(min-width: 1200px) 58vw, 100vw' : '(min-width: 1200px) 50vw, 100vw';
+  const firstSizes =
+    split === 7
+      ? '(min-width: 1200px) 58vw, 100vw'
+      : split === 5
+        ? '(min-width: 1200px) 42vw, 100vw'
+        : '(min-width: 1200px) 50vw, 100vw';
+  const secondSizes =
+    split === 7
+      ? '(min-width: 1200px) 42vw, 100vw'
+      : split === 5
+        ? '(min-width: 1200px) 58vw, 100vw'
+        : '(min-width: 1200px) 50vw, 100vw';
   return (
     <div className="grid-site items-start">
       <MediaFigure image={a} sizes={firstSizes} className={`col-span-4 md:col-span-8 ${first}`} />

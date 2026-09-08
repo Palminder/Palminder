@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600" role="img" aria-labelledby="t d">
+<title id="t">Drawing 02 — Head, jamb and sill details — North Glasgow Window &amp; Ventilation Programme</title>
+<desc id="d">Typical window head, jamb and sill details through the existing cavity wall: new frame, insulated cavity closer, sealant and backer rod, the airtightness line taped to the inner leaf, a trickle ventilator in the head and a sill with drip; numbered callouts.</desc>
+<defs><pattern id="newwork" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0" stroke="#8C4F3D" stroke-width="1.2"/></pattern><pattern id="stipple" patternUnits="userSpaceOnUse" width="6" height="6"><circle cx="1.5" cy="1.5" r="0.9" fill="#242722"/><circle cx="4.5" cy="4.5" r="0.9" fill="#242722"/></pattern><pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0M0 0L8 8" stroke="#242722" stroke-width="0.8"/></pattern><pattern id="grey" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="#242722" fill-opacity="0.35"/></pattern></defs>
+<rect width="1200" height="1600" fill="#F3F0E8"/>
+<text x="100" y="110" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">HEAD</text>
+<rect x="380" y="140" width="60" height="168" fill="#242722"/>
+<rect x="440" y="140" width="36" height="168" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="0.5"/>
+<rect x="476" y="140" width="60" height="168" fill="#242722"/>
+<line x1="545" y1="140" x2="545" y2="308" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="458" y="290" width="54" height="18" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="446" y="308" width="48" height="42" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="458" y="350" width="24" height="12" fill="#242722" stroke="#242722" stroke-width="1" stroke-opacity="1"/>
+<line x1="470" y1="362" x2="470" y2="488" stroke="#242722" stroke-width="3" stroke-opacity="1"/>
+<rect x="452" y="315.2" width="36" height="12" fill="#F3F0E8" stroke="#8C4F3D" stroke-width="0.8" stroke-opacity="1"/>
+<path d="M428 321.2L452 321.2" fill="none" stroke="#8C4F3D" stroke-width="1" stroke-opacity="1"/>
+<path d="M436 316.2L428 321.2L436 326.2" fill="none" stroke="#8C4F3D" stroke-width="1" stroke-opacity="1"/>
+<line x1="488" y1="207.2" x2="488" y2="320" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<line x1="488" y1="320" x2="494" y2="320" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<circle cx="436" cy="329" r="5" fill="none" stroke="#242722" stroke-width="0.8"/>
+<rect x="545" y="300.8" width="72" height="7.2" fill="#F3F0E8" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<line x1="545" y1="308" x2="617" y2="308" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="545" y="300.8" width="72" height="7.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M545 300.8L555 308L565 300.8L575 308L585 300.8L595 308L605 300.8L615 308" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="470" y1="321.2" x2="760" y2="268" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="470" cy="321.2" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="268" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="272.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">1</text>
+<line x1="488" y1="257.6" x2="760" y2="224" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="488" cy="257.6" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="224" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="228.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">2</text>
+<line x1="464" y1="329" x2="760" y2="348" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="464" cy="329" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="348" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="352.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">3</text>
+<line x1="436" y1="329" x2="200" y2="348" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="436" cy="329" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="200" cy="348" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="200" y="352.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">4</text>
+<line x1="581" y1="304.4" x2="760" y2="408" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="581" cy="304.4" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="408" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="412.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">5</text>
+<text x="360" y="160" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.8">Outside</text>
+<text x="623" y="160" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Inside</text>
+<text x="100" y="590" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">JAMB (PLAN)</text>
+<rect x="380" y="620" width="60" height="168" fill="#242722"/>
+<rect x="440" y="620" width="36" height="168" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="0.5"/>
+<rect x="476" y="620" width="60" height="168" fill="#242722"/>
+<line x1="545" y1="620" x2="545" y2="788" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="458" y="770" width="54" height="18" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="446" y="788" width="48" height="42" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<line x1="470" y1="830" x2="470" y2="968" stroke="#242722" stroke-width="3" stroke-opacity="1"/>
+<line x1="488" y1="687.2" x2="488" y2="800" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<line x1="488" y1="800" x2="494" y2="800" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<circle cx="436" cy="809" r="5" fill="none" stroke="#242722" stroke-width="0.8"/>
+<rect x="545" y="780.8" width="72" height="7.2" fill="#F3F0E8" stroke="#242722" stroke-width="0.8" stroke-opacity="1"/>
+<rect x="545" y="780.8" width="72" height="7.2" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M545 780.8L555 788L565 780.8L575 788L585 780.8L595 788L605 780.8L615 788" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<line x1="482" y1="779" x2="760" y2="758" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="482" cy="779" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="758" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="762.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">6</text>
+<line x1="488" y1="737.6" x2="760" y2="704" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="488" cy="737.6" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="704" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="708.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">2</text>
+<line x1="436" y1="809" x2="200" y2="828" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="436" cy="809" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="200" cy="828" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="200" y="832.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">4</text>
+<line x1="581" y1="784.4" x2="760" y2="848" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="581" cy="784.4" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="848" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="852.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">5</text>
+<text x="360" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.8">Outside</text>
+<text x="623" y="640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Inside</text>
+<text x="100" y="1070" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="1.5" text-anchor="start" fill="#242722" fill-opacity="1">SILL</text>
+<line x1="470" y1="980" x2="470" y2="1088" stroke="#242722" stroke-width="3" stroke-opacity="1"/>
+<rect x="446" y="1088" width="48" height="36" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="356" y="1124" width="96" height="18" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<path d="M356 1142l0 8l6 0" fill="none" stroke="#8C4F3D" stroke-width="1.2" stroke-opacity="1"/>
+<rect x="458" y="1124" width="54" height="18" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<rect x="380" y="1160" width="60" height="144" fill="#242722"/>
+<rect x="440" y="1160" width="36" height="144" fill="none" stroke="#242722" stroke-width="0.6" stroke-opacity="0.5"/>
+<rect x="476" y="1160" width="60" height="144" fill="#242722"/>
+<line x1="545" y1="1160" x2="545" y2="1304" stroke="#242722" stroke-width="1.2" stroke-opacity="1"/>
+<line x1="488" y1="1112" x2="488" y2="1244" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<line x1="494" y1="1112" x2="488" y2="1112" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<rect x="545" y="1121" width="72" height="9" fill="#F3F0E8" stroke="#242722" stroke-width="0.9" stroke-opacity="1"/>
+<circle cx="436" cy="1118" r="5" fill="none" stroke="#242722" stroke-width="0.8"/>
+<line x1="368" y1="1133" x2="200" y2="1196" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="368" cy="1133" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="200" cy="1196" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="200" y="1200.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">7</text>
+<line x1="488" y1="1208" x2="760" y2="1208" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="488" cy="1208" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="1208" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="1212.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">2</text>
+<line x1="581" y1="1125.2" x2="760" y2="1112" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="581" cy="1125.2" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="760" cy="1112" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="760" y="1116.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">8</text>
+<line x1="436" y1="1118" x2="200" y2="1136" stroke="#242722" stroke-width="0.7" stroke-opacity="1"/>
+<circle cx="436" cy="1118" r="2.2" fill="#242722" stroke="#242722" stroke-width="0"/>
+<circle cx="200" cy="1136" r="11" fill="none" stroke="#242722" stroke-width="1"/>
+<text x="200" y="1140.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#242722">4</text>
+<text x="360" y="1180" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.8">Outside</text>
+<text x="623" y="1180" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="start" fill="#242722" fill-opacity="0.8">Inside</text>
+<text x="100" y="1380" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">1  Trickle ventilator in the head of the new frame, sized to the room</text>
+<text x="100" y="1398" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">2  Airtightness line: tape from the inner leaf onto the frame, continuous around the opening</text>
+<text x="100" y="1416" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">3  New window frame; unit sized from the survey, not from the nominal type</text>
+<text x="100" y="1434" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">4  Sealant on a backer rod to the outer leaf; not relied on for airtightness</text>
+<text x="100" y="1452" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">5  Plasterboard reveal on an insulated lining, sealed to the frame</text>
+<text x="100" y="1470" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">6  Insulated cavity closer replacing the existing uninsulated closer</text>
+<text x="100" y="1488" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">7  New sill with a drip clear of the outer face; existing sill made good</text>
+<text x="100" y="1506" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#242722" fill-opacity="0.8">8  Internal window board bedded on sealant</text>
+<rect x="820" y="1375" width="26" height="14" fill="#242722"/>
+<text x="856" y="1386" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Existing outer and inner leaves</text>
+<rect x="820" y="1399" width="26" height="14" fill="url(#newwork)" stroke="#8C4F3D" stroke-width="1.2"/>
+<text x="856" y="1410" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">New work</text>
+<line x1="820" y1="1430" x2="846" y2="1430" stroke="#242722" stroke-width="2.4" stroke-dasharray="2 6" stroke-linecap="round"/>
+<text x="856" y="1434" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Airtightness line</text>
+<rect x="820" y="1447" width="26" height="14" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/><path d="M820 1447L830 1461L840 1447" fill="none" stroke="#242722" stroke-width="0.8" stroke-opacity="0.6"/>
+<text x="856" y="1458" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="start" fill="#242722" fill-opacity="0.8">Insulation</text>
+<line x1="0" y1="1510" x2="1200" y2="1510" stroke="#242722" stroke-width="1" stroke-opacity="0.35"/>
+<text x="36" y="1550.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#242722">Bracken &amp; Roe</text>
+<text x="1164" y="1547.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" text-anchor="end" fill="#242722">Drawing 02 — Head, jamb and sill details</text>
+<text x="1164" y="1574.8" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="end" fill="#242722" fill-opacity="0.75">North Glasgow Window &amp; Ventilation Programme · Staging drawing set</text>
+</svg>
