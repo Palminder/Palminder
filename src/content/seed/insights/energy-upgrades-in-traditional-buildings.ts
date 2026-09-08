@@ -16,7 +16,7 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
   body: [
     {
       type: 'paragraph',
-      text: 'Much of Glasgow’s housing was built before the middle of the twentieth century: sandstone tenements and villas with solid lime-bonded walls, timber sash-and-case windows, suspended timber ground floors and slated roofs over ventilated lofts. These buildings can often be made more comfortable and easier to heat. The question is rarely whether to improve them, but how and in what order, so that the fabric keeps managing moisture as it was built to.',
+      text: 'Much of Glasgow’s housing is traditionally built: sandstone tenements and villas with solid lime-bonded walls, timber sash-and-case windows, suspended timber ground floors and slated roofs over ventilated lofts. They can often be improved; the question is how, and in what order, so that the fabric keeps managing moisture as it was built to.',
     },
     {
       type: 'paragraph',
@@ -33,53 +33,53 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
     { type: 'heading', level: 2, text: 'Maintenance first' },
     {
       type: 'paragraph',
-      text: 'A wet wall is a cold wall, and stone and lime that are kept wet decay sooner. Before insulation is discussed, the building should be shedding water as it was designed to: gutters and downpipes clear and discharging away from the wall, copes and flashings sound, joints pointed in a compatible lime mortar, ground levels below the internal floor. Inside, a failed bath seal, a leaking overflow or a blocked tenement rhone can keep a wall damp for years.',
+      text: 'A wet wall is a cold wall, and stone and lime that are kept wet decay sooner. Before insulation is discussed the building should be shedding water as designed: gutters and downpipes clear and discharging away from the wall, copes and flashings sound, joints pointed in a compatible lime mortar, ground levels below the internal floor. A failed bath seal or a blocked tenement rhone can do the same damage from inside.',
     },
     {
       type: 'paragraph',
-      text: 'These defects matter more once a lining goes over them. Behind insulation a damp patch cannot be seen, the wall dries more slowly, and embedded timber is left colder and wetter than before. Repair first, allow the fabric a drying period, and only then decide what the building needs next.',
+      text: 'These defects matter more once a lining goes over them. Behind insulation a damp patch cannot be seen, the wall dries more slowly, and embedded timber is left colder and wetter than before. Repair first, let the fabric dry, and only then decide what the building needs next.',
     },
     { type: 'heading', level: 2, text: 'Roofs and floors' },
     {
       type: 'paragraph',
-      text: 'Where there is a cold loft, insulation laid at ceiling level, between and over the joists, is often the most straightforward measure available. The condition is that the loft stays ventilated. Insulation should stop short of the eaves so that air still moves across the roof space; where the sarking was kept dry by that airflow, blocking it can leave condensation on its underside. Pipes and tanks above the insulation need their own protection, the hatch should be insulated and draught-stripped, and storage should sit on raised boards rather than compress the quilt.',
+      text: 'In a cold loft, insulation laid at ceiling level, between and over the joists, is often the most straightforward measure. The condition is that the loft stays ventilated. Insulation should stop short of the eaves so that air still moves across the roof space; block that airflow and condensation can form on the underside of the sarking. The hatch should be insulated and draught-stripped.',
     },
     {
       type: 'paragraph',
-      text: 'A room in the roof is a different problem. Insulation at rafter level, under slates on timber sarking, needs either a ventilated void above it or a build-up designed to manage vapour without one, and which is appropriate depends on the covering and how the ridge and eaves are formed.',
+      text: 'A room in the roof is a different problem: insulation at rafter level, under slates on sarking, needs either a ventilated void above it or a build-up designed to manage vapour without one, depending on the covering and how ridge and eaves are formed.',
     },
     { type: 'heading', level: 3, text: 'Suspended timber floors' },
     {
       type: 'paragraph',
-      text: 'Suspended timber ground floors can usually be insulated between the joists, supported on netting or battens, provided the subfloor void keeps its ventilation. Air bricks should be cleared, not blocked: the joist ends bear into the solid wall and rely on that air movement to stay dry. Check the joists for decay before they are enclosed, and seal gaps between boards and at skirtings as part of the same work.',
+      text: 'Suspended timber ground floors can usually be insulated between the joists, supported on netting or battens, provided the subfloor void keeps its ventilation. Air bricks should be cleared, not blocked: the joist ends bear into the solid wall and rely on that air movement to stay dry. Check the joists for decay before enclosing them, and seal gaps between boards and at skirtings at the same time.',
     },
     { type: 'heading', level: 2, text: 'Draughtproofing' },
     {
       type: 'paragraph',
-      text: 'Draughtproofing is not the same as sealing a building. Its purpose is to reduce uncontrolled air leakage, around sashes, under doors, between floorboards, behind skirtings, at service penetrations and up unused flues, while keeping the ventilation that is intended: trickle ventilators, extract fans in kitchens and bathrooms, and air for any open flue or appliance. An unused chimney is better capped and ventilated than sealed, because a closed flue holds moisture in the chimney breast. Where air leakage is reduced significantly, the ventilation strategy should be reconsidered at the same time; the companion article on ventilation covers this.',
+      text: 'Draughtproofing is not sealing a building. Its purpose is to reduce uncontrolled air leakage, around sashes, under doors, between floorboards and up unused flues, while keeping the ventilation that is intended: trickle ventilators, extract fans and air for any open flue. An unused chimney is better capped and ventilated than sealed, because a closed flue holds moisture in the chimney breast. Where air leakage is reduced significantly, ventilation should be reconsidered at the same time; a companion article covers this.',
     },
     { type: 'heading', level: 2, text: 'Existing windows' },
     {
       type: 'paragraph',
-      text: 'Timber sash-and-case windows are usually repairable. Rotten sections of sill, stile or bottom rail can be spliced, cords and weights replaced, putty renewed and the sashes eased so that they close properly. Draught-stripping, with brush or compression seals let into the parting beads, staff beads and meeting rail, reduces air leakage and rattle while retaining the original window. On many properties this is the first thing to do to the windows and may be all that is needed. Replacement is a separate decision, and in a conservation area or on a listed building it is one the council will take a view on.',
+      text: 'Timber sash-and-case windows are usually repairable. Rotten sections can be spliced, cords replaced, putty renewed and the sashes eased so that they close properly. Draught-stripping, with seals let into the parting beads, staff beads and meeting rail, reduces air leakage and rattle while retaining the window. On many properties this may be all that is needed. Replacement is a separate decision, and in a conservation area or on a listed building the council will take a view on it.',
     },
     { type: 'heading', level: 2, text: 'Secondary glazing where appropriate' },
     {
       type: 'paragraph',
-      text: 'Secondary glazing, an independent pane fitted on the room side of the existing window, keeps the original window in place, is reversible and can improve comfort and reduce noise. It is often an acceptable approach on listed buildings, but that does not mean consent is never required: depending on the fixing, the frame and how visible the new pane is, listed-building consent may be needed, and the council’s planning service should be asked before an order is placed. We do not predict consent outcomes.',
+      text: 'Secondary glazing, an independent pane on the room side of the existing window, is reversible, keeps the original window and can improve comfort and reduce noise. It is often an acceptable approach on listed buildings, but consent is not automatic: depending on the fixing and how visible the new frame is, listed-building consent may be needed, and the council’s planning service should be asked before an order is placed. We do not predict consent outcomes.',
     },
     {
       type: 'paragraph',
-      text: 'The details decide whether it works. Sight lines should follow the sash divisions, the original window must remain accessible for opening and maintenance, some ventilation between the panes is needed to limit condensation on the outer glass, and an escape window in a bedroom must still open readily.',
+      text: 'The details decide whether it works. Sight lines should follow the sash divisions, the original window must stay accessible for opening and maintenance, the space between the panes needs some ventilation to limit condensation, and an escape window in a bedroom must still open readily.',
     },
     { type: 'heading', level: 2, text: 'Wall insulation risk' },
     {
       type: 'paragraph',
-      text: 'A solid sandstone wall is typically lime-bonded ashlar or rubble, lined internally with plaster on lath fixed to timber straps, leaving a void between lining and stone. Floor joists, safe lintels, window grounds and those straps are all timber embedded in or fixed to the masonry. The wall stays sound because it can take up rain on the outside and dry in both directions, and because the heated room keeps its inner face warm.',
+      text: 'A solid sandstone wall is typically lime-bonded ashlar or rubble, lined internally with plaster on lath fixed to timber straps, leaving a void between lining and stone. Joist ends, safe lintels, window grounds and those straps are all timber in or against the masonry. The wall stays sound because it can take up rain on the outside and dry in both directions, and because the heated room keeps its inner face warm.',
     },
     {
       type: 'paragraph',
-      text: 'Internal wall insulation changes that. The masonry behind the insulation becomes colder and wetter, drying to the inside is reduced, and the risk of interstitial condensation, moisture forming within the wall or at the back of the insulation, increases. The embedded timber is where that risk lands. Elevations exposed to driving rain, walls with defective pointing and rooms with high moisture loads need the most care. Whether an insulated build-up is reasonable, and whether it should be vapour-open or vapour-closed, depends on the property and is a matter for a moisture-risk assessment of the actual wall, not a standard detail.',
+      text: 'Internal wall insulation changes that. The masonry behind the insulation becomes colder and wetter, drying to the inside is reduced, and the risk of interstitial condensation, moisture forming within the wall or at the back of the insulation, increases. The embedded timber is where that risk lands. Elevations exposed to driving rain and rooms with high moisture loads need the most care. Whether an insulated build-up is reasonable, and whether it should be vapour-open or vapour-closed, depends on the property and calls for a moisture-risk assessment of the actual wall, not a standard detail.',
     },
     { type: 'heading', level: 3, text: 'External insulation' },
     {
@@ -89,7 +89,7 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
     { type: 'heading', level: 2, text: 'Thermal bridges' },
     {
       type: 'paragraph',
-      text: 'Insulation has edges, and the edges matter. Where a lining stops at a window reveal, a floor junction, a party wall or a chimney breast, that surface becomes the coldest in the room; warm, moist air condenses on it and mould follows. Partial insulation can concentrate a problem that was previously spread across the whole wall. The junctions that usually need thought are:',
+      text: 'Where a lining stops at a window reveal, a floor junction, a party wall or a chimney breast, that surface becomes the coldest in the room; warm, moist air condenses on it and mould follows. Partial insulation can concentrate a problem previously spread across the whole wall. The junctions that usually need thought are:',
     },
     {
       type: 'list',
@@ -100,23 +100,19 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
         'Ceiling and floor perimeters where loft or floor insulation meets the wall.',
       ],
     },
-    {
-      type: 'paragraph',
-      text: 'Where a bridge cannot be avoided it should at least be understood, and the room ventilated accordingly.',
-    },
     { type: 'heading', level: 2, text: 'Moisture' },
     {
       type: 'paragraph',
-      text: 'Moisture comes from rain, from the ground, from leaks and from the people inside: cooking, washing, bathing and drying clothes all put water vapour into the air. Traditional fabric copes with this by absorbing and releasing moisture through permeable materials, and through the air movement a leaky building provides. Every upgrade described here reduces one of those routes. An intervention that blocks a path for moisture does not remove the moisture; it moves it to the next coldest surface.',
+      text: 'Moisture comes from rain, the ground, leaks and the people inside: cooking, washing and drying clothes all put water vapour into the air. Traditional fabric copes by absorbing and releasing moisture through permeable materials, and through the air movement a leaky building provides. An intervention that blocks a path for moisture does not remove it; it moves it to the next coldest surface.',
     },
     {
       type: 'paragraph',
-      text: 'That is why ventilation, heating pattern and fabric have to be considered together. Reducing air leakage without reliable extract ventilation, or insulating a room that is heated only occasionally, can leave a building damper than it was. On some projects it is worth monitoring temperature and humidity before and after work, so that decisions rest on how the building actually behaves.',
+      text: 'That is why ventilation, heating pattern and fabric have to be considered together. Reducing air leakage without reliable extract ventilation, or insulating a room that is heated only occasionally, can leave a building damper than it was. On some projects it is worth monitoring temperature and humidity before and after work.',
     },
     {
       type: 'callout',
       title: 'About performance figures',
-      text: 'We do not publish predicted U-values, energy or carbon savings, or changes to an EPC rating for measures described in general terms. Figures are only meaningful when calculated for an actual building from survey information, and we provide them to clients on that basis, with their assumptions stated.',
+      text: 'We do not publish predicted U-values, energy or carbon savings, or changes to an EPC rating for measures described in general terms. Figures are only meaningful when calculated for an actual building from survey information, and we provide them to clients on that basis.',
     },
     { type: 'heading', level: 2, text: 'Consents' },
     {
@@ -125,7 +121,7 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
     },
     {
       type: 'paragraph',
-      text: 'Some upgrade works also need a building warrant. Altering structure, forming or changing ventilation provision, insulating a roof in a way that changes its construction and certain window replacements are examples where the local authority building standards service, as verifier, should be asked; the relevant standards are set out in the building standards technical handbooks. None of this should be assumed either way. The position depends on the property and should be confirmed before work starts.',
+      text: 'Some upgrade works also need a building warrant. Altering structure, changing ventilation provision, insulating a roof in a way that changes its construction and some window replacements are examples where the local authority building standards service, as verifier, should be asked; the relevant standards are set out in the building standards technical handbooks. None of this should be assumed either way; it depends on the property and should be confirmed before work starts.',
     },
     { type: 'heading', level: 2, text: 'Staged upgrades' },
     {
@@ -145,7 +141,7 @@ export const energyUpgradesInTraditionalBuildings: Insight = {
     },
     {
       type: 'paragraph',
-      text: 'Staging does not mean working without a plan. A whole-building assessment at the outset sets out what each stage will do and what it must not compromise, so that a measure carried out this year does not make the next one harder. In a tenement the common parts, the roof, the rhones and the stone, need the agreement of the co-owners and usually the factor, which is one more reason to begin with the repairs everyone shares an interest in. Keep a record of what was done, where and with what materials. A traditional building improved carefully, in the right order and with its ventilation intact, can be a good deal more comfortable than it was, and still be the same building underneath.',
+      text: 'Staging does not mean working without a plan. A whole-building assessment at the outset sets out what each stage will do and what it must not compromise, so that this year’s measure does not make the next one harder. In a tenement the common parts need the agreement of the co-owners and usually the factor, one more reason to begin with the repairs everyone shares an interest in. A traditional building improved carefully, in the right order and with its ventilation intact, can be a good deal more comfortable than it was, and still be the same building underneath.',
     },
   ],
   author: { type: 'studio' },
