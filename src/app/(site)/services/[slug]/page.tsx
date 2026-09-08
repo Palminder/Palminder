@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title: service.seo.title,
     description: service.seo.description,
     path: `/services/${service.slug}`,
+    hasGeneratedImage: true,
   });
 }
 

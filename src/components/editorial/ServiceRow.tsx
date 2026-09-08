@@ -9,7 +9,7 @@ export function ServiceRow({ service }: { service: Service }) {
     <article className="border-t border-ink/20 py-8 md:py-10 xl:py-12">
       <div className="grid-site items-start">
         <div className="col-span-4 md:col-span-8 xl:col-span-3">
-          <p className="type-label text-ink/60">{service.number}</p>
+          <p className="type-label text-ink/70">{service.number}</p>
           <h3 className="type-h3 mt-3">
             <Link
               href={`/services/${service.slug}`}

@@ -1,7 +1,9 @@
 import type { NextConfig } from 'next';
 
 const isProd = process.env.NODE_ENV === 'production';
-const isProductionDeploy = process.env.VERCEL_ENV === 'production';
+const isProductionDeploy =
+  process.env.VERCEL_ENV === 'production' ||
+  process.env.CONTENT_STAGE?.trim().toLowerCase() === 'production';
 
 /** Static security headers. The Content-Security-Policy is set per request in src/proxy.ts. */
 const securityHeaders = [

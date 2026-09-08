@@ -45,6 +45,8 @@ test.describe('mobile menu', () => {
 });
 
 test.describe('desktop navigation', () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+
   test('marks the active section and the wordmark returns home', async ({ page }) => {
     await page.goto('/projects');
     const nav = page.getByRole('navigation', { name: 'Primary' });

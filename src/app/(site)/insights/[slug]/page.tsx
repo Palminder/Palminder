@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
     publishedTime: insight.publishedAt,
     modifiedTime: insight.reviewedAt ?? insight.publishedAt,
     image: openGraphImage(insight.hero),
+    hasGeneratedImage: true,
   });
 }
 

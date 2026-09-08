@@ -19,7 +19,7 @@ export function ProjectFacts({ project }: { project: Project }) {
     <dl className="grid grid-cols-1 gap-x-8 gap-y-4 border-t border-ink/20 pt-6 md:grid-cols-2">
       {rows.map(([term, detail]) => (
         <div key={term} className={term === 'Bracken & Roe services' ? 'md:col-span-2' : ''}>
-          <dt className="type-label text-ink/60">{term}</dt>
+          <dt className="type-label text-ink/70">{term}</dt>
           <dd className="type-body mt-1 text-ink/90">{detail}</dd>
         </div>
       ))}

@@ -8,7 +8,7 @@ test.describe('enquiry form', () => {
     await form.getByLabel('Name', { exact: true }).fill('A');
     await form.getByLabel('Email', { exact: true }).fill('not-an-email');
     await form.getByRole('button', { name: 'Send project enquiry' }).click();
-    const alert = page.getByRole('alert');
+    const alert = form.getByRole('alert');
     await expect(alert).toBeVisible();
     await expect(alert).toContainText('Name');
     await expect(alert).toContainText('Email');

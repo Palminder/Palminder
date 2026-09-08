@@ -1,3 +1,5 @@
+import { isProductionDeployment } from '@/lib/env';
+
 const VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 export type TurnstileResult =
@@ -27,6 +29,7 @@ export async function verifyTurnstile(
   }
 }
 
+/** Required whenever a secret is configured, and always on the production deployment (where it must be). */
 export function turnstileRequired(): boolean {
-  return process.env.NODE_ENV === 'production' || Boolean(process.env.TURNSTILE_SECRET_KEY?.trim());
+  return isProductionDeployment() || Boolean(process.env.TURNSTILE_SECRET_KEY?.trim());
 }

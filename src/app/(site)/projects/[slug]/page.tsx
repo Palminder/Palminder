@@ -63,6 +63,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     description: project.seo?.description ?? project.summary,
     path: `/projects/${project.slug}`,
     image: openGraphImage(project.hero),
+    hasGeneratedImage: true,
   });
 }
 

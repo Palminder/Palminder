@@ -19,7 +19,7 @@ export function ProcessSequence({ heading = 'How a project proceeds' }: { headin
                 key={stage.title}
                 className="grid grid-cols-[3rem_1fr] gap-x-4 border-t border-ink/20 py-6 first:border-t-0 first:pt-0 md:grid-cols-[4rem_1fr]"
               >
-                <span className="type-label pt-1.5 text-ink/60">
+                <span className="type-label pt-1.5 text-ink/70">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>

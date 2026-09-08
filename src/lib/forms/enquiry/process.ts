@@ -12,6 +12,7 @@ import { isTrustedOrigin } from '@/lib/security/origin';
 import { turnstileRequired, verifyTurnstile } from '@/lib/security/turnstile';
 import { scanFile, uploadsEnabled } from '@/lib/security/malware-scan';
 import { siteUrl } from '@/lib/site';
+import { isProductionDeployment } from '@/lib/env';
 
 export const MAX_REQUEST_BYTES = 9 * 1024 * 1024;
 export const HONEYPOT_FIELD = 'company_website';
@@ -189,7 +190,7 @@ export async function processEnquiry(request: Request): Promise<ProcessResult> {
         message: 'The enquiry form is temporarily unavailable. Please email us instead.',
       };
     }
-    // 13. Development only: log a redacted summary, never the message or file.
+    // 13. Non-production only: log a redacted summary, never the message or file.
     console.info('[enquiry] (dev, email not configured)', {
       submissionId,
       projectType: parsed.data.projectType,

@@ -45,7 +45,7 @@ export function ProjectFilter({ counts, children }: ProjectFilterProps) {
               aria-pressed={pressed}
               onClick={() => setActive(f.value)}
               className={`nav-link inline-flex min-h-11 items-center px-2 text-[0.9375rem] font-medium transition-colors ${
-                pressed ? 'text-ink' : 'text-ink/65 hover:text-ink'
+                pressed ? 'text-ink' : 'text-ink/70 hover:text-ink'
               }`}
             >
               {f.label}
@@ -59,11 +59,9 @@ export function ProjectFilter({ counts, children }: ProjectFilterProps) {
           : `${count} ${count === 1 ? 'project' : 'projects'} — ${activeLabel}`}
       </p>
       <div className="mt-8" data-filter={active}>
-        <style>{`[data-filter]:not([data-filter="all"]) li[data-sector] { display: none; } ${
-          active === 'all'
-            ? ''
-            : `[data-filter="${active}"] li[data-sector="${active}"] { display: block; }`
-        }`}</style>
+        {active !== 'all' ? (
+          <style>{`[data-filter="${active}"] li[data-sector]:not([data-sector="${active}"]) { display: none; }`}</style>
+        ) : null}
         {children}
       </div>
     </div>

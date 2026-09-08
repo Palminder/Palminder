@@ -38,7 +38,7 @@ export function FormField({
     <div className={cn('flex flex-col', className)}>
       <label htmlFor={id} className="type-meta font-medium text-ink">
         {label}
-        {optional ? <span className="font-normal text-ink/60"> (optional)</span> : null}
+        {optional ? <span className="font-normal text-ink/70"> (optional)</span> : null}
       </label>
       {helper ? (
         <p id={helperId} className="type-meta mt-1 text-ink/70">
