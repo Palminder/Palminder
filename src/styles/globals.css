@@ -122,6 +122,13 @@
     outline-offset: 3px;
   }
 
+  /* On dark fields the Moss ring would fall below 3:1; use Paper instead. */
+  .bg-deep-ink :focus-visible,
+  .bg-moss :focus-visible,
+  .bg-ink :focus-visible {
+    outline-color: var(--color-paper);
+  }
+
   h1,
   h2,
   h3,
@@ -129,6 +136,7 @@
     font-family: var(--font-serif);
     font-weight: 400;
     text-wrap: balance;
+    overflow-wrap: anywhere;
   }
 
   p {
@@ -448,7 +456,8 @@
   }
   .nav-link:hover::after,
   .nav-link:focus-visible::after,
-  .nav-link[aria-current='page']::after {
+  .nav-link[aria-current='page']::after,
+  .nav-link[aria-pressed='true']::after {
     transform: scaleX(1);
   }
 
@@ -481,11 +490,11 @@
   }
 }
 
+body[data-menu-open='true'] {
+  overflow: hidden;
+}
 @media (min-width: 1024px) {
   body[data-menu-open='true'] {
     overflow: auto;
   }
-}
-body[data-menu-open='true'] {
-  overflow: hidden;
 }

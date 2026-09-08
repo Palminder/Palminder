@@ -1,3 +1,6 @@
+import { roleClaimsQualification, roleUsesProtectedTitle } from './protected-titles';
+
+export { roleClaimsQualification, roleUsesProtectedTitle } from './protected-titles';
 import type {
   ImageAsset,
   Insight,
@@ -29,20 +32,6 @@ export interface GateResult {
 
 const ok: GateResult = { publishable: true, reasons: [] };
 
-export function roleUsesProtectedTitle(rolePublic: string): boolean {
-  return (
-    /\barchitect\b/i.test(rolePublic) &&
-    !/\barchitectural\b/i.test(rolePublic.replace(/\barchitect\b/gi, ''))
-  );
-}
-
-export function roleClaimsQualification(rolePublic: string): boolean {
-  return (
-    /\bpart\s*(i{1,3}|[123])\b/i.test(rolePublic) ||
-    /\b(RIBA|RIAS|ARB|MSc|MArch|BArch)\b/.test(rolePublic)
-  );
-}
-
 export function evaluatePerson(person: Person): GateResult {
   const reasons: string[] = [];
   if (person.verificationStatus !== 'verified') reasons.push('Team member record is not verified.');
@@ -58,17 +47,36 @@ export function evaluatePerson(person: Person): GateResult {
   return reasons.length ? { publishable: false, reasons } : ok;
 }
 
+/** Labels that assert real photography and may never be applied to synthetic imagery. */
+const PHOTOGRAPHIC_LABELS = new Set([
+  'completed-view',
+  'existing-condition',
+  'construction-progress',
+]);
+
+export function isStagingAsset(image: Pick<ImageAsset, 'src' | 'placeholder'>): boolean {
+  return Boolean(image.placeholder) || image.src.startsWith('/staging/');
+}
+
 export function evaluateImage(image: ImageAsset): GateResult {
   const reasons: string[] = [];
-  if (image.placeholder) reasons.push('Image is a staging placeholder.');
+  if (isStagingAsset(image)) reasons.push('Image is a staging asset.');
   if (!image.alt?.trim()) reasons.push('Image has no alt text.');
-  if (image.rights?.synthetic && image.mediaType === 'completed-view') {
-    reasons.push('Synthetic imagery cannot be labelled "Completed view".');
+  const synthetic = Boolean(image.rights?.synthetic) || image.rights?.sourceType === 'synthetic';
+  if (synthetic && PHOTOGRAPHIC_LABELS.has(image.mediaType)) {
+    reasons.push('Synthetic imagery must be labelled "Visualisation", never as photography.');
   }
   if (image.rights?.sourceType === 'licensed' && !image.rights.sourceIdentifier) {
     reasons.push('Licensed image lacks rights metadata.');
   }
   return reasons.length ? { publishable: false, reasons } : ok;
+}
+
+function evaluateImages(images: ImageAsset[], label: string, reasons: string[]): void {
+  images.forEach((image, i) => {
+    const gate = evaluateImage(image);
+    if (!gate.publishable) reasons.push(`${label} ${i + 1}: ${gate.reasons.join(' ')}`);
+  });
 }
 
 export function evaluateProject(project: Project): GateResult {
@@ -83,6 +91,8 @@ export function evaluateProject(project: Project): GateResult {
   if (project.verificationStatus === 'draft') reasons.push('Project record is a draft.');
   const heroGate = evaluateImage(project.hero);
   if (!heroGate.publishable) reasons.push(`Hero: ${heroGate.reasons.join(' ')}`);
+  evaluateImages(project.gallery, 'Gallery image', reasons);
+  evaluateImages(project.drawings, 'Drawing', reasons);
   return reasons.length ? { publishable: false, reasons } : ok;
 }
 
@@ -93,6 +103,13 @@ export function evaluateInsight(insight: Insight): GateResult {
     reasons.push('Guidance touching regulation has no review date.');
   }
   if (!insight.publishedAt) reasons.push('Insight has no publication date.');
+  const heroGate = evaluateImage(insight.hero);
+  if (!heroGate.publishable) reasons.push(`Hero: ${heroGate.reasons.join(' ')}`);
+  evaluateImages(
+    insight.body.flatMap((b) => (b.type === 'figure' ? [b.image] : [])),
+    'Figure',
+    reasons,
+  );
   return reasons.length ? { publishable: false, reasons } : ok;
 }
 

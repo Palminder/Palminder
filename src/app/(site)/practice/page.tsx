@@ -9,7 +9,7 @@ import { TeamCard } from '@/components/editorial/TeamCard';
 import { ImagePair } from '@/components/media/ImagePair';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { placeholder } from '@/content/seed/placeholders';
-import { getTeam, stagingImage } from '@/lib/content';
+import { getSocialLinks, getTeam, stagingImage } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo/metadata';
 import { organizationJsonLd } from '@/lib/seo/organization';
 import { site } from '@/lib/site';
@@ -59,7 +59,7 @@ export default async function PracticePage() {
 
   return (
     <>
-      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={organizationJsonLd(await getSocialLinks())} />
 
       <PageHero
         eyebrow="Practice"
@@ -154,7 +154,7 @@ export default async function PracticePage() {
           <SectionHeading eyebrow="Location" title="Office" id="office-heading" />
           <div className="grid-site mt-10 items-start">
             <div className="col-span-4 md:col-span-8 xl:col-span-5">
-              <OfficeBlock />
+              <OfficeBlock headingLevel="h3" />
             </div>
             <div className="col-span-4 mt-8 md:col-span-8 xl:col-span-6 xl:col-start-7 xl:mt-0">
               <p className="type-body-lg measure text-ink/85">

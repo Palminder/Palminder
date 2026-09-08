@@ -7,6 +7,7 @@ import {
   legalDocumentQuery,
   projectsQuery,
   servicesQuery,
+  siteSettingsQuery,
   studioNotesQuery,
   teamQuery,
   testimonialsQuery,
@@ -98,6 +99,17 @@ const images = (list: SanityImage[] | undefined) =>
 /** Sanity-backed content source. Gating still happens in the content API. */
 export const sanitySource: ContentSource = {
   name: 'sanity',
+  async siteSettings() {
+    const doc = await fetchQuery<{ instagramUrl?: string; linkedinUrl?: string } | null>(
+      siteSettingsQuery,
+      {},
+      ['content', 'siteSettings'],
+    );
+    return {
+      instagramUrl: doc?.instagramUrl ?? undefined,
+      linkedinUrl: doc?.linkedinUrl ?? undefined,
+    };
+  },
   async projects() {
     type Doc = Omit<
       Project,

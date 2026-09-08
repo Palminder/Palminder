@@ -1,6 +1,7 @@
 import 'server-only';
 import { cache } from 'react';
 import { localSource } from './local';
+import { socialLinks, type SocialLink } from '@/lib/site';
 import type { ContentSource } from './source';
 import {
   contentStage,
@@ -143,6 +144,23 @@ export const getTestimonials = cache(async (): Promise<Testimonial[]> => {
   const source = await getSource();
   const all = await source.testimonials();
   return all.filter((t) => evaluateTestimonial(t).publishable);
+});
+
+/**
+ * Social links: environment variables take precedence, then the CMS site settings.
+ * Only https URLs are accepted; nothing renders until a real account URL is configured.
+ */
+export const getSocialLinks = cache(async (): Promise<SocialLink[]> => {
+  const fromEnv = socialLinks();
+  if (fromEnv.length > 0) return fromEnv;
+  const source = await getSource();
+  const settings = await source.siteSettings();
+  const out: SocialLink[] = [];
+  if (settings.instagramUrl && /^https:\/\//.test(settings.instagramUrl))
+    out.push({ id: 'instagram', label: 'Instagram', href: settings.instagramUrl });
+  if (settings.linkedinUrl && /^https:\/\//.test(settings.linkedinUrl))
+    out.push({ id: 'linkedin', label: 'LinkedIn', href: settings.linkedinUrl });
+  return out;
 });
 
 export const getLegalDocument = cache(

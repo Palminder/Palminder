@@ -33,9 +33,12 @@ describe('protected title detection', () => {
     expect(roleUsesProtectedTitle('Part II Architectural Assistant')).toBe(false);
     expect(roleUsesProtectedTitle('Director')).toBe(false);
   });
-  it('flags stated qualifications', () => {
+  it('flags stated qualifications, memberships and chartered status', () => {
     expect(roleClaimsQualification('Part II Architectural Assistant')).toBe(true);
+    expect(roleClaimsQualification('Chartered Architectural Technologist MCIAT')).toBe(true);
+    expect(roleClaimsQualification('Conservation Architect FRIAS')).toBe(true);
     expect(roleClaimsQualification('Practice Administrator')).toBe(false);
+    expect(roleClaimsQualification('Director')).toBe(false);
   });
 });
 
@@ -64,36 +67,41 @@ describe('team publication gate', () => {
 });
 
 describe('project publication gate', () => {
+  const real = (img: Project['hero'], i = 0): Project['hero'] => ({
+    ...img,
+    placeholder: false,
+    src: `/real-${i}.jpg`,
+    rights: { sourceType: 'practice' },
+  });
+  const verified = (over: Partial<Project> = {}): Project => ({
+    ...projects[0]!,
+    verificationStatus: 'verified',
+    hero: real(projects[0]!.hero),
+    gallery: projects[0]!.gallery.map(real),
+    drawings: projects[0]!.drawings.map((d, i) => ({ ...real(d, i), mediaType: d.mediaType })),
+    ...over,
+  });
   it('holds every seed project back (all are unverified real projects)', () => {
     for (const p of projects) expect(evaluateProject(p).publishable).toBe(false);
   });
-  it('publishes a verified real project with a real hero', () => {
-    const p: Project = {
-      ...projects[0]!,
-      verificationStatus: 'verified',
-      hero: { ...projects[0]!.hero, placeholder: false, src: '/x.jpg' },
-    };
-    expect(evaluateProject(p).publishable).toBe(true);
+  it('publishes a verified real project whose every image is real', () => {
+    expect(evaluateProject(verified()).publishable).toBe(true);
+  });
+  it('holds a verified project back while any gallery image or drawing is still a staging asset', () => {
+    expect(evaluateProject(verified({ gallery: projects[0]!.gallery })).publishable).toBe(false);
+    expect(evaluateProject(verified({ drawings: projects[0]!.drawings })).publishable).toBe(false);
   });
   it('rejects a design study that claims completion', () => {
-    const p: Project = {
-      ...projects[0]!,
-      realityType: 'design-study',
-      status: 'completed',
-      verificationStatus: 'verified',
-      hero: { ...projects[0]!.hero, placeholder: false, src: '/x.jpg' },
-    };
-    expect(evaluateProject(p).publishable).toBe(false);
+    expect(
+      evaluateProject(verified({ realityType: 'design-study', status: 'completed' })).publishable,
+    ).toBe(false);
   });
   it('allows a labelled design study with study status', () => {
-    const p: Project = {
-      ...projects[0]!,
-      realityType: 'design-study',
-      status: 'study',
-      verificationStatus: 'pending',
-      hero: { ...projects[0]!.hero, placeholder: false, src: '/x.jpg' },
-    };
-    expect(evaluateProject(p).publishable).toBe(true);
+    expect(
+      evaluateProject(
+        verified({ realityType: 'design-study', status: 'study', verificationStatus: 'pending' }),
+      ).publishable,
+    ).toBe(true);
   });
 });
 

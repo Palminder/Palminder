@@ -1,9 +1,9 @@
 import { defineField, defineType } from 'sanity';
 
-const usesProtectedTitle = (role: string) =>
-  /\barchitect\b/i.test(role) && !/\barchitectural\b/i.test(role.replace(/\barchitect\b/gi, ''));
-const claimsQualification = (role: string) =>
-  /\bpart\s*(i{1,3}|[123])\b/i.test(role) || /\b(RIBA|RIAS|ARB|MSc|MArch|BArch)\b/.test(role);
+import {
+  roleClaimsQualification as claimsQualification,
+  roleUsesProtectedTitle as usesProtectedTitle,
+} from '../../../lib/content/protected-titles';
 
 export const person = defineType({
   name: 'person',

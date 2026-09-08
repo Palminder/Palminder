@@ -2,10 +2,10 @@ import { OfficeAddress } from '@/components/layout/OfficeAddress';
 import { mapsLink, site } from '@/lib/site';
 
 /** Contact-page office block: fixed address, appointment wording, email and an external maps link. */
-export function OfficeBlock() {
+export function OfficeBlock({ headingLevel: Tag = 'h2' }: { headingLevel?: 'h2' | 'h3' }) {
   return (
     <div>
-      <h2 className="type-h3">Glasgow</h2>
+      <Tag className="type-h3">Glasgow</Tag>
       <OfficeAddress className="type-body mt-5 text-ink/85" withName />
       <a
         href={`mailto:${site.email}`}

@@ -10,7 +10,7 @@ import { StagingNotice } from '@/components/layout/StagingNotice';
 import { isProductionDeployment } from '@/lib/seo/metadata';
 import { site, siteUrl } from '@/lib/site';
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
     default: 'Bracken & Roe | Architecture, Conservation & Retrofit in Glasgow',
@@ -49,6 +49,12 @@ export const metadata: Metadata = {
  * to its own inline scripts. Content reads remain cached and tag-revalidated in the content layer.
  */
 export const dynamic = 'force-dynamic';
+
+/** Draft preview is never indexable, whatever the deployment. */
+export async function generateMetadata(): Promise<Metadata> {
+  const { isEnabled } = await draftMode();
+  return isEnabled ? { ...baseMetadata, robots: { index: false, follow: false } } : baseMetadata;
+}
 
 export const viewport: Viewport = {
   themeColor: '#F3F0E8',

@@ -1,24 +1,16 @@
 import type { NextConfig } from 'next';
 
-const isProd = process.env.NODE_ENV === 'production';
-const isProductionDeploy =
-  process.env.VERCEL_ENV === 'production' ||
-  process.env.CONTENT_STAGE?.trim().toLowerCase() === 'production';
-
-/** Static security headers. The Content-Security-Policy is set per request in src/proxy.ts. */
+/**
+ * Static security headers. The Content-Security-Policy, HSTS and the non-production
+ * X-Robots-Tag are set per request in src/proxy.ts so that they follow the deployment
+ * rather than the build.
+ */
 const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'X-DNS-Prefetch-Control', value: 'off' },
-  // HSTS only on the production deployment, once every required subdomain serves HTTPS.
-  // `preload` is deliberately omitted until the preload requirements are completed on purpose.
-  ...(isProductionDeploy
-    ? [{ key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' }]
-    : []),
-  // Preview and staging deployments must never be indexed.
-  ...(!isProductionDeploy ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] : []),
 ];
 
 const nextConfig: NextConfig = {
@@ -61,7 +53,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  ...(isProd ? {} : {}),
 };
 
 export default nextConfig;

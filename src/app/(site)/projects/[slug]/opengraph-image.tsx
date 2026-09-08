@@ -1,5 +1,6 @@
 import { getProject } from '@/lib/content';
 import { projectStatusLabel } from '@/lib/content/format';
+import { realityLabel } from '@/lib/content/publication';
 import { SECTOR_LABELS } from '@/lib/content/types';
 import { renderDefaultOgImage, renderOgImage } from '@/lib/seo/og';
 
@@ -21,6 +22,11 @@ export default async function Image({ params }: ImageProps) {
   return renderOgImage({
     eyebrow: 'Project',
     title: project.title,
-    meta: [project.locationDisplay, sector, projectStatusLabel(project)].join(' · '),
+    meta: [
+      project.locationDisplay,
+      sector,
+      projectStatusLabel(project),
+      realityLabel(project.realityType),
+    ].join(' · '),
   });
 }

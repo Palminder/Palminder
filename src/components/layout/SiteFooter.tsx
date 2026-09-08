@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { Wordmark } from '@/components/brand/Wordmark';
-import { navigation, site, socialLinks } from '@/lib/site';
+import { navigation, site } from '@/lib/site';
+import { getSocialLinks } from '@/lib/content';
 import { OfficeAddress } from './OfficeAddress';
 
 /** Deep Ink footer with Paper text. No telephone, no newsletter, no credentials. */
-export function SiteFooter() {
-  const socials = socialLinks();
+export async function SiteFooter() {
+  const socials = await getSocialLinks();
   const year = new Date().getFullYear();
   return (
     <footer className="bg-deep-ink text-paper" aria-labelledby="footer-heading">
@@ -15,7 +16,11 @@ export function SiteFooter() {
       <div className="container-site section-tight">
         <div className="grid-site">
           <div className="col-span-4 md:col-span-8 xl:col-span-5">
-            <Link href="/" className="inline-flex text-paper" aria-label="Bracken & Roe — home">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center text-paper"
+              aria-label="Bracken & Roe — home"
+            >
               <Wordmark height={26} decorative />
             </Link>
             <p className="type-lead mt-5 text-paper/90">{site.positioning}</p>

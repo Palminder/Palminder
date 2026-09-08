@@ -18,6 +18,5 @@ export const seo = defineType({
       rows: 3,
       validation: (rule) => rule.max(170),
     }),
-    defineField({ name: 'image', title: 'Social image override', type: 'imageWithMeta' }),
   ],
 });

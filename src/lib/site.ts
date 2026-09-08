@@ -43,9 +43,15 @@ export function absoluteUrl(path: string): string {
   return `${siteUrl()}${p === '/' ? '' : p.replace(/\/+$/, '')}`;
 }
 
-/** Social links render only when a real URL is configured. */
-export function socialLinks(): { label: string; href: string; id: 'instagram' | 'linkedin' }[] {
-  const out: { label: string; href: string; id: 'instagram' | 'linkedin' }[] = [];
+export interface SocialLink {
+  id: 'instagram' | 'linkedin';
+  label: string;
+  href: string;
+}
+
+/** Social links from the environment; the content API also consults CMS site settings. */
+export function socialLinks(): SocialLink[] {
+  const out: SocialLink[] = [];
   const ig = process.env.SOCIAL_INSTAGRAM_URL?.trim();
   const li = process.env.SOCIAL_LINKEDIN_URL?.trim();
   if (ig && /^https:\/\//.test(ig)) out.push({ id: 'instagram', label: 'Instagram', href: ig });

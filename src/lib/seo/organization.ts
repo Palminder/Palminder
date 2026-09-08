@@ -1,11 +1,11 @@
-import { absoluteUrl, site, socialLinks } from '@/lib/site';
+import { absoluteUrl, site, type SocialLink } from '@/lib/site';
 
 /**
  * Organization structured data. Deliberately general (not LocalBusiness): the office is
  * by appointment, so no opening hours, reception or telephone are claimed.
  */
-export function organizationJsonLd(): Record<string, unknown> {
-  const sameAs = socialLinks().map((s) => s.href);
+export function organizationJsonLd(socials: SocialLink[] = []): Record<string, unknown> {
+  const sameAs = socials.map((s) => s.href);
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -16,7 +16,7 @@ export function organizationJsonLd(): Record<string, unknown> {
     description: site.description,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: `${site.address.line1}, ${site.address.line2}`,
+      streetAddress: `${site.address.line1}, ${site.address.line2}, ${site.address.locality}`,
       addressLocality: site.address.city,
       addressRegion: 'Scotland',
       postalCode: site.address.postcode,

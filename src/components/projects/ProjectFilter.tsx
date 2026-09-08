@@ -44,7 +44,7 @@ export function ProjectFilter({ counts, children }: ProjectFilterProps) {
               type="button"
               aria-pressed={pressed}
               onClick={() => setActive(f.value)}
-              className={`nav-link inline-flex min-h-11 items-center px-2 text-[0.9375rem] font-medium transition-colors ${
+              className={`nav-link inline-flex min-h-11 min-w-11 items-center px-3 text-[0.9375rem] font-medium transition-colors ${
                 pressed ? 'text-ink' : 'text-ink/70 hover:text-ink'
               }`}
             >

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Button } from '@/components/editorial/Button';
 import { CTASection } from '@/components/editorial/CTASection';
 import { EditorialIntro } from '@/components/editorial/EditorialIntro';
@@ -23,6 +22,7 @@ import {
   getServices,
   getStudioNotes,
   getTeam,
+  getSocialLinks,
   getTestimonials,
   stagingImage,
 } from '@/lib/content';
@@ -78,7 +78,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={organizationJsonLd(await getSocialLinks())} />
 
       {/* Hero: copy in columns 1–5, image in 6–12 extending toward the viewport edge. */}
       <section
@@ -124,6 +124,7 @@ export default async function HomePage() {
       <section className="section rule" aria-labelledby="intro-heading">
         <div className="container-site">
           <EditorialIntro
+            id="intro-heading"
             eyebrow="The practice"
             heading="Working with what is already there."
             link={
@@ -270,6 +271,7 @@ export default async function HomePage() {
       <section className="section rule" aria-labelledby="practice-heading">
         <div className="container-site">
           <EditorialIntro
+            id="practice-heading"
             eyebrow="Practice"
             heading="Small enough to stay close to the work."
             link={
@@ -347,10 +349,6 @@ export default async function HomePage() {
       ) : null}
 
       <CTASection />
-
-      <p className="visually-hidden">
-        <Link href="/contact">Contact Bracken & Roe</Link>
-      </p>
     </>
   );
 }

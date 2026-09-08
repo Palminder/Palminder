@@ -46,8 +46,18 @@ export const siteSettings = defineType({
       initialValue: 'Meetings by appointment.',
       validation: (rule) => rule.required(),
     }),
-    defineField({ name: 'instagramUrl', type: 'url', description: 'Hidden site-wide until set.' }),
-    defineField({ name: 'linkedinUrl', type: 'url', description: 'Hidden site-wide until set.' }),
+    defineField({
+      name: 'instagramUrl',
+      type: 'url',
+      description:
+        'Hidden site-wide until set (an SOCIAL_INSTAGRAM_URL environment variable takes precedence).',
+    }),
+    defineField({
+      name: 'linkedinUrl',
+      type: 'url',
+      description:
+        'Hidden site-wide until set (an SOCIAL_LINKEDIN_URL environment variable takes precedence).',
+    }),
     defineField({ name: 'defaultSeo', type: 'seo' }),
     defineField({
       name: 'legalEntityName',

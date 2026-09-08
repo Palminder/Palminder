@@ -38,6 +38,12 @@ export function MobileMenu({ primary, services, cta, email }: MobileMenuProps) {
 
   useEffect(() => {
     if (!open) return;
+    // The panel and its trigger are hidden from the desktop breakpoint, so close it there.
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const onChange = (e: MediaQueryListEvent) => {
+      if (e.matches) close();
+    };
+    desktop.addEventListener('change', onChange);
     const body = document.body;
     const trigger = triggerRef.current;
     body.setAttribute('data-menu-open', 'true');
@@ -70,6 +76,7 @@ export function MobileMenu({ primary, services, cta, email }: MobileMenuProps) {
     document.addEventListener('keydown', onKeyDown);
     return () => {
       document.removeEventListener('keydown', onKeyDown);
+      desktop.removeEventListener('change', onChange);
       body.removeAttribute('data-menu-open');
       trigger?.focus();
     };

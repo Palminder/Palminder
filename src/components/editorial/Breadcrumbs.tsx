@@ -33,7 +33,7 @@ export function Breadcrumbs({ items, current, className }: BreadcrumbsProps) {
           <li key={c.href} className="flex items-center gap-2">
             <Link
               href={c.href}
-              className="inline-flex min-h-8 items-center underline decoration-ink/30 underline-offset-[0.2em] hover:decoration-ink"
+              className="inline-flex min-h-11 items-center underline decoration-ink/30 underline-offset-[0.2em] hover:decoration-ink"
             >
               {c.label}
             </Link>

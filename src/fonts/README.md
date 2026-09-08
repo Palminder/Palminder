@@ -3,11 +3,11 @@
 Both families are licensed under the SIL Open Font License 1.1 (see the LICENSE files
 alongside) and are self-hosted so that no request leaves the site's origin for type.
 
-| File | Family | Weight | Subset | Derived from |
-|---|---|---|---|---|
-| `newsreader-regular.woff2` | Newsreader | static 400 | Latin-1 + punctuation | `@fontsource-variable/newsreader` 5.3.0, instanced at `wght` 400 with fontTools |
-| `newsreader-italic.woff2` | Newsreader Italic | static 400 | Latin-1 + punctuation | as above |
-| `inter-variable.woff2` | Inter | variable `wght` 100–900 | Latin-1 + punctuation | `@fontsource-variable/inter` 5.3.0, subset with fontTools |
+| File                       | Family            | Weight                  | Subset                | Derived from                                                                    |
+| -------------------------- | ----------------- | ----------------------- | --------------------- | ------------------------------------------------------------------------------- |
+| `newsreader-regular.woff2` | Newsreader        | static 400              | Latin-1 + punctuation | `@fontsource-variable/newsreader` 5.3.0, instanced at `wght` 400 with fontTools |
+| `newsreader-italic.woff2`  | Newsreader Italic | static 400              | Latin-1 + punctuation | as above                                                                        |
+| `inter-variable.woff2`     | Inter             | variable `wght` 100–900 | Latin-1 + punctuation | `@fontsource-variable/inter` 5.3.0, subset with fontTools                       |
 
 The display serif is used at its regular weight only, so Newsreader ships as static Regular and
 Italic instances (21 KB and 23 KB) rather than the 130 KB variable files. Inter keeps its weight

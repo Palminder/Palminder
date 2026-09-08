@@ -39,13 +39,12 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   const insight = await getInsight(slug);
   if (!insight) return { title: 'Article not found', robots: { index: false, follow: false } };
   return pageMetadata({
-    title: `${insight.title} | Bracken & Roe`,
+    title: insight.seo?.title ?? `${insight.title} | Bracken & Roe`,
     description: insight.seo?.description ?? insight.dek,
     path: `/insights/${insight.slug}`,
     type: 'article',
     publishedTime: insight.publishedAt,
     modifiedTime: insight.reviewedAt ?? insight.publishedAt,
-    image: openGraphImage(insight.hero),
     hasGeneratedImage: true,
   });
 }
@@ -54,15 +53,6 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
 function heroUrl(image: ImageAsset): string | undefined {
   if (image.placeholder) return undefined;
   return /^https?:\/\//.test(image.src) ? image.src : absoluteUrl(image.src);
-}
-
-/** Only real raster imagery is offered as a share image; placeholders and SVG sheets fall back to the default. */
-function openGraphImage(
-  image: ImageAsset,
-): { url: string; width: number; height: number; alt: string } | undefined {
-  const url = heroUrl(image);
-  if (!url || image.src.endsWith('.svg')) return undefined;
-  return { url, width: image.width, height: image.height, alt: image.alt };
 }
 
 /**

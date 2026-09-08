@@ -10,6 +10,7 @@ import { legalDocuments } from '@/content/seed/legal';
 /** Local seed source used when no Sanity project is configured. */
 export const localSource: ContentSource = {
   name: 'local',
+  siteSettings: async () => ({}),
   projects: async () => projects,
   team: async () => team,
   services: async () => services,

@@ -99,8 +99,10 @@ practice verifies it.**
   layer instead. `style-src 'unsafe-inline'` is the single framework-required exception (inline
   `style` attributes written by `next/image`).
 - Static headers in `next.config.ts`: `nosniff`, `Referrer-Policy`, `Permissions-Policy`,
-  `X-Frame-Options: DENY`, HSTS on the production deployment only (no `preload`), and
-  `X-Robots-Tag: noindex` on every non-production deployment and on `/contact/thanks`.
+  `X-Frame-Options: DENY` and `X-Robots-Tag: noindex` on `/contact/thanks`. HSTS (production only,
+  no `preload`) and the `X-Robots-Tag: noindex` for non-production deployments and draft preview
+  are set per request in `src/proxy.ts`, and `robots.ts`/`sitemap.ts` are evaluated per request,
+  so all of them follow the deployment signal (`VERCEL_ENV` or `CONTENT_STAGE`) rather than the build.
 - Enquiry endpoint order: method → size → origin → Zod → honeypot/interval → rate limit →
   Turnstile → extension/signature/size → malware scan → idempotency → notify → acknowledge.
   Uploads are disabled unless `ENQUIRY_UPLOADS_ENABLED=true` **and** `MALWARE_SCAN_ENDPOINT` are set.

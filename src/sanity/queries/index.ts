@@ -47,3 +47,5 @@ export const legalDocumentQuery = `*[_type == "legalDocument" && type == $type][
 }`;
 
 export const redirectsQuery = `*[_type == "redirect"] { sourcePath, destinationPath, permanent }`;
+
+export const siteSettingsQuery = `*[_type == "siteSettings"][0] { instagramUrl, linkedinUrl }`;

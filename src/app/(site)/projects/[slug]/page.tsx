@@ -27,7 +27,6 @@ import {
   type Project,
 } from '@/lib/content/types';
 import { pageMetadata } from '@/lib/seo/metadata';
-import { absoluteUrl } from '@/lib/site';
 import { cn } from '@/lib/utils/cn';
 
 interface ProjectPageProps {
@@ -59,21 +58,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = await getProject(slug);
   if (!project) return { title: 'Project not found', robots: { index: false, follow: false } };
   return pageMetadata({
-    title: `${project.title} — ${project.locationDisplay} | Bracken & Roe`,
+    title:
+      project.seo?.title ??
+      `${project.title} — ${project.locationDisplay}${realityLabel(project.realityType) ? ` (${realityLabel(project.realityType)})` : ''} | Bracken & Roe`,
     description: project.seo?.description ?? project.summary,
     path: `/projects/${project.slug}`,
-    image: openGraphImage(project.hero),
     hasGeneratedImage: true,
   });
-}
-
-/** Only real raster photography is offered as a share image; placeholders and SVG sheets fall back to the default. */
-function openGraphImage(
-  image: ImageAsset,
-): { url: string; width: number; height: number; alt: string } | undefined {
-  if (image.placeholder || image.src.endsWith('.svg')) return undefined;
-  const url = /^https?:\/\//.test(image.src) ? image.src : absoluteUrl(image.src);
-  return { url, width: image.width, height: image.height, alt: image.alt };
 }
 
 function splitDrawings(drawings: ImageAsset[]): { leading: ImageAsset[]; remaining: ImageAsset[] } {

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { buildCsp, generateNonce } from '@/lib/security/csp';
+import { isProductionDeployment } from '@/lib/env';
 
 /**
  * Per-request Content Security Policy with a nonce. Next.js reads the `x-nonce`
@@ -17,6 +18,15 @@ export function proxy(request: NextRequest) {
 
   const response = NextResponse.next({ request: { headers: requestHeaders } });
   response.headers.set('content-security-policy', csp);
+
+  // Deployment-dependent headers are decided per request, like every other production gate.
+  const draftPreview = request.cookies.has('__prerender_bypass');
+  if (!isProductionDeployment() || draftPreview) {
+    response.headers.set('x-robots-tag', 'noindex, nofollow');
+  } else {
+    // HSTS only on the production deployment; `preload` is deliberately omitted.
+    response.headers.set('strict-transport-security', 'max-age=63072000; includeSubDomains');
+  }
   return response;
 }
 
