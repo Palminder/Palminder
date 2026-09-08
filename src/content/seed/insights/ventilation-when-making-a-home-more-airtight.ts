@@ -15,7 +15,7 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
   body: [
     {
       type: 'paragraph',
-      text: 'A Glasgow home built before the middle of the last century was ventilated mostly by accident. Sash and case windows leak at the meeting rail and around the pulley boxes, open fireplaces draw air up the flue, and suspended timber floors breathe through their ventilators. Replacing windows, sealing draughts or adding insulation removes some of that incidental air movement, which is the point of the work. What it leaves behind has to be planned.',
+      text: 'A Glasgow home built before the middle of the last century was ventilated mostly by accident: sash and case windows leak at the meeting rail and pulley boxes, open fireplaces draw air up the flue, and suspended timber floors breathe through their ventilators. Draughtproofing, insulation and new windows remove some of that incidental air movement. What it leaves behind has to be planned.',
     },
     {
       type: 'paragraph',
@@ -41,69 +41,69 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
     },
     {
       type: 'paragraph',
-      text: 'Photographs and a marked-up plan are usually enough. In a programme across many homes, a sample of properties surveyed this way shows the range of conditions the design has to cover.',
+      text: 'In a programme across many homes, a sample of properties surveyed this way shows the range of conditions the design has to cover.',
     },
     { type: 'heading', level: 2, text: 'Kitchens and bathrooms' },
     {
       type: 'paragraph',
-      text: 'Moisture is produced mostly in a few rooms: the kitchen, the bathroom, a shower room and any utility space. Extracting it at source, before it spreads to bedrooms and hallways, is the first line of a ventilation strategy, and it is the part most often found not working. Fans fitted years ago may be seized, switched off at the isolator or ducted into a ceiling void rather than to outside.',
+      text: 'Moisture is produced mostly in a few rooms: the kitchen, the bathroom, a shower room and any utility space. Extracting it at source, before it spreads to bedrooms and hallways, is the first line of a ventilation strategy, and the part most often found not working. Fans fitted years ago may be seized, switched off at the isolator or ducted into a ceiling void rather than to outside.',
     },
     {
       type: 'paragraph',
-      text: 'There are two broad approaches. Intermittent extract fans run when switched on, usually with the light, and sometimes for a period afterwards. Continuous extract runs at a low rate all the time and boosts when humidity rises; it may serve one room or several through ducts to a central unit. Intermittent fans are simpler to replace one at a time. Continuous systems depend less on the occupant but need a duct route, a place for the unit and proper commissioning. Which is appropriate depends on the property, the layout and how the home is likely to be used.',
+      text: 'There are two broad approaches. Intermittent extract fans run when switched on, usually with the light, sometimes with a run-on period. Continuous extract runs at a low rate all the time and boosts when humidity rises, serving one room or several through ducts to a central unit. Intermittent fans are simpler to replace one at a time; continuous systems depend less on the occupant but need a duct route and proper commissioning.',
     },
     {
       type: 'paragraph',
-      text: 'In either case the duct has to reach the outside by the shortest reasonable route, with a terminal that does not blow moist air into a roof space. Where a fan discharges through an external wall, the grille becomes visible on an elevation, and on a listed building or in a conservation area that may need consent.',
+      text: 'Either way the duct has to reach outside by the shortest reasonable route, not into a roof space. A grille through an external wall is visible on the elevation, and on a listed building or in a conservation area that may need consent.',
     },
     { type: 'heading', level: 2, text: 'Background air' },
     {
       type: 'paragraph',
-      text: 'Extract only works if replacement air can get in. In an older home it arrived through the sash gaps and the chimney. Once those are sealed, it needs a designed route. Trickle ventilators — small controllable slots in the window head or frame — are the usual answer in housing, giving a steady supply of background air that can be turned down in cold weather but not lost altogether.',
+      text: 'Extract only works if replacement air can get in. Once the sash gaps and the chimney are sealed, it needs a designed route. Trickle ventilators — small controllable slots in the window head or frame — are the usual answer in housing, giving a steady supply of background air that can be turned down but not lost.',
     },
     {
       type: 'paragraph',
-      text: 'Air also has to move between rooms, from the bedrooms where it enters to the kitchen and bathroom where it leaves. A gap under each internal door, or a transfer grille where that is not practical, keeps the path open once draughtproofing has closed the others. A new carpet or a replacement door can undo it.',
+      text: 'Air also has to move between rooms, from the bedrooms where it enters to the kitchen and bathroom where it leaves. A gap under each internal door, or a transfer grille where that is not practical, keeps the path open once draughtproofing has closed the others.',
     },
     {
       type: 'paragraph',
-      text: 'Purge ventilation is the third element: the ability to open a window and clear a room quickly after cooking or decorating. Replacement windows should open at least as usefully as the ones they replace. A fixed light where a sash used to be, or a restrictor that cannot be released, removes an option the occupant relied on.',
+      text: 'Purge ventilation is the third element: opening a window to clear a room quickly after cooking or decorating. Replacement windows should open at least as usefully as the ones they replace. A fixed light where a sash used to be removes an option the occupant relied on.',
     },
     { type: 'heading', level: 2, text: 'Window replacement' },
     {
       type: 'paragraph',
-      text: 'Replacing a timber sash and case window with a sealed modern unit is one of the largest single changes that can be made to how a home breathes. The leakage around the old sashes, parting beads and pulley boxes disappears at once. If the fireplaces have already been blocked and the bathroom fan does not work, a flat can go from well ventilated to barely ventilated in an afternoon.',
+      text: 'Replacing a timber sash and case window with a sealed modern unit is one of the largest single changes that can be made to how a home breathes. If the fireplaces are already blocked and the bathroom fan does not work, a flat can go from well ventilated to barely ventilated in an afternoon.',
     },
     {
       type: 'paragraph',
-      text: 'So the window specification is a ventilation decision. Trickle ventilators in the new frames restore a controllable part of what the old sashes provided; where they are omitted, something else has to take their place. The technical handbook guidance on replacement windows generally expects that the ventilation available before the work is not reduced by it, and the current edition should be checked for what that means in a particular case. Whether the replacement itself needs a building warrant depends on the property and the scope of the work; the council’s building standards service can confirm. Work that does not need a warrant must still comply with the building regulations.',
+      text: 'So the window specification is a ventilation decision. Trickle ventilators in the new frames restore a controllable part of what the old sashes provided. The technical handbook guidance on replacement windows generally expects that the ventilation available before the work is not reduced by it; check the current edition. Whether the replacement itself needs a building warrant depends on the property and the scope of work, and work that does not need one must still comply with the building regulations.',
     },
-    { type: 'heading', level: 3, text: 'Listed buildings and conservation areas' },
+    { type: 'heading', level: 3, text: 'Listed buildings' },
     {
       type: 'paragraph',
-      text: 'In a listed building, whether Category A, B or C, replacing original windows will normally need listed-building consent, and the council may ask that sash and case windows be repaired and draughtproofed rather than replaced. A repaired sash with brush seals at the meeting rail and parting beads, and secondary glazing inside, can reduce leakage considerably while retaining the fabric. Trickle ventilators cut into a Victorian sash change its appearance; concealed ventilators in the frame head, or a separate mechanical supply, may be more appropriate. In a conservation area the controls bear mainly on the elevations facing the street. In either case the argument for the change has to be made, and we do not predict the outcome of an application.',
+      text: 'In a listed building, whether Category A, B or C, replacing original windows will normally need listed-building consent, and the council may ask that sash and case windows be repaired and draughtproofed rather than replaced. Brush seals at the meeting rail and secondary glazing inside can reduce leakage considerably while retaining the fabric. Trickle ventilators cut into a Victorian sash change its appearance; concealed ventilators in the frame head, or a separate mechanical supply, may be more appropriate. The argument for any change has to be made, and we do not predict the outcome of an application.',
     },
     { type: 'heading', level: 2, text: 'Airtightness' },
     {
       type: 'paragraph',
-      text: 'Airtightness is not a product. It is a continuous line, drawn on the section from ground floor to roof, which the design commits to and every trade then has to respect. In a masonry wall the line is usually the internal plaster; at a window it is the seal between frame and reveal. It has to be continuous at every junction — window head, jamb and sill, eaves, floor edge, chimney breast, and every pipe, cable and duct that passes through it.',
+      text: 'Airtightness is not a product. It is a continuous line, drawn on the section from ground floor to roof, that every trade then has to respect. In a masonry wall the line is usually the internal plaster; at a window it is the seal between frame and reveal. It has to be continuous at every junction: window head, jamb and sill, eaves, floor edge, chimney breast, and every pipe, cable and duct that passes through it.',
     },
     {
       type: 'paragraph',
-      text: 'Junctions are where the work succeeds or fails. A window fitted with a foam-filled gap and a bead of mastic will leak around its perimeter for as long as the mastic lasts. A window fitted with a tape or a sealed reveal lining, detailed on the drawing and checked on site, will not. When we draw head, jamb and sill details for a housing programme, the airtightness line and the background ventilation are indicated on the same sheet, so that the two are decided together rather than in sequence. The failures are otherwise invisible: a gap behind the plasterboard at a reveal lets warm, moist air reach a cold surface it never touched before, and the mould appears where no one was looking.',
+      text: 'Junctions are where the work succeeds or fails. A window fitted with a foam-filled gap and a bead of mastic will leak around its perimeter; one fitted with a tape or a sealed reveal lining, detailed on the drawing and checked on site, will not. When we draw head, jamb and sill details for a housing programme, the airtightness line and the background ventilation are shown on the same sheet, so the two are decided together.',
     },
     { type: 'heading', level: 2, text: 'Moisture' },
     {
       type: 'paragraph',
-      text: 'Condensation forms where warm, moist air meets a surface cold enough to bring it to its dew point. Making a home more airtight raises the humidity indoors unless the moisture is removed; insulating some walls and not others changes which surfaces are the cold ones. A reveal beside a new window, the corner of a bedroom on a gable wall, the back of a wardrobe against an uninsulated external wall: these are where the risk moves to.',
+      text: 'Condensation forms where warm, moist air meets a surface cold enough to bring it to its dew point. Making a home more airtight raises the humidity indoors unless the moisture is removed, and insulating some walls and not others changes which surfaces are the cold ones. The risk moves to the reveal beside a new window, the corner of a bedroom on a gable wall, or the back of a wardrobe against an uninsulated wall.',
     },
     {
       type: 'paragraph',
-      text: 'Occupant behaviour is part of the calculation and should be an honest part. Drying clothes indoors on a rack or a radiator releases a great deal of water into the air, and in a flat with no outdoor drying space it is not a habit that can be designed away. Cooking with pans uncovered, showering with the door open, keeping the heating low because of cost — all of these are normal. A ventilation strategy that only works for a household that behaves ideally is not a strategy.',
+      text: 'Occupant behaviour is part of the calculation. Drying clothes indoors on a rack or a radiator releases a great deal of water into the air, and in a flat with no outdoor drying space it is not a habit that can be designed away. Uncovered pans, an open bathroom door and heating kept low because of cost are all normal; a strategy that only works for a household that behaves ideally is not a strategy.',
     },
     {
       type: 'paragraph',
-      text: 'The response varies with the property: a continuous extract that runs regardless of what anyone switches on, a drying space with its own fan, or simply making sure the existing fans run for long enough and the trickle ventilators stay open. A blocked chimney deserves a ventilated cap and a vent to the room, not a sealed void.',
+      text: 'The response varies with the property: continuous extract, a drying space with its own fan, or simply making sure the existing fans run for long enough and the trickle ventilators stay open. A blocked chimney needs a ventilated cap and a vent to the room, not a sealed void.',
     },
     { type: 'heading', level: 2, text: 'Commissioning' },
     {
@@ -113,7 +113,7 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
     {
       type: 'list',
       items: [
-        'Switching it on, confirming it runs, and checking it runs on for as long as it should.',
+        'Confirming it runs, and runs on for as long as it should.',
         'Measuring the airflow at the grille and, for continuous systems, balancing the rates room by room.',
         'Checking that the duct discharges outside and that the backdraught shutter opens.',
         'Recording the results in the handover file with the window schedule and the details.',
@@ -121,22 +121,22 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
     },
     {
       type: 'paragraph',
-      text: 'A completion certificate submitted to the building standards service may rely on this record, and whoever maintains the property later needs to know what was installed and what it was set to. Snagging in an occupied home is a visit, not a paper exercise, and it should include the fans.',
+      text: 'A completion certificate submitted to the building standards service may rely on this record, and whoever maintains the property later needs it. Snagging in an occupied home should include the fans.',
     },
     { type: 'heading', level: 2, text: 'Occupant information' },
     {
       type: 'paragraph',
-      text: 'The people who live in the home decide, every day, whether the ventilation works. They need to know what has changed and why: that the trickle ventilators should stay open in winter, that the bathroom fan is meant to run on after the light goes off, that the gap under the door is deliberate, and that a fan which has become noisy should be reported rather than switched off at the isolator. This is short, plain information, ideally on a page or two with a photograph of each control.',
+      text: 'The people who live in the home decide, every day, whether the ventilation works. They need to know what has changed and why: that the trickle ventilators should stay open in winter, that the bathroom fan is meant to run on after the light goes off, that the gap under the door is deliberate, and that a noisy fan should be reported rather than switched off at the isolator.',
     },
     {
       type: 'callout',
       title: 'Occupied-housing programmes',
-      text: 'Where windows or ventilation are changed across many occupied homes, resident-facing information is part of the construction package rather than an afterthought. A note left in each home, a contact for reporting a fan that has stopped, and a brief explanation of the new ventilators make it far more likely that the installed system is used as designed.',
+      text: 'Where windows or ventilation are changed across many occupied homes, resident-facing information is part of the construction package, not an afterthought. A note left in each home, a contact for reporting a fan that has stopped and a brief explanation of the new ventilators make it far more likely that the system is used as designed.',
     },
     { type: 'heading', level: 2, text: 'Coordination with current building standards' },
     {
       type: 'paragraph',
-      text: 'In Scotland the requirements for ventilation in dwellings are set by the building regulations and explained in the domestic technical handbook published by the Scottish Government. The environment section covers extract from kitchens, bathrooms and utility rooms, background and purge ventilation, and the supply of air to combustion appliances. The handbooks are revised periodically and the ventilation guidance has changed over time; the current edition applies and should be checked at the time of design.',
+      text: 'In Scotland the requirements for ventilation in dwellings are set by the building regulations and explained in the domestic technical handbook published by the Scottish Government. Its environment section covers extract from kitchens, bathrooms and utility rooms, background and purge ventilation, and air for combustion appliances. The handbooks are revised periodically; the current edition applies and should be checked.',
     },
     {
       type: 'paragraph',
@@ -144,7 +144,7 @@ export const ventilationWhenMakingAHomeMoreAirtight: Insight = {
     },
     {
       type: 'paragraph',
-      text: 'Historic Environment Scotland’s guidance on energy efficiency in traditional buildings makes the same point from the other side: measures that reduce air leakage in an older building should retain adequate ventilation, so that moisture is not trapped in the fabric. Solid masonry walls, lime plaster and timber floors rely on being able to dry out, and a traditional building sealed without a ventilation strategy can deteriorate in ways that take years to appear.',
+      text: 'Historic Environment Scotland’s guidance on energy efficiency in traditional buildings makes the same point from the other side: measures that reduce air leakage in an older building should retain adequate ventilation, so that moisture is not trapped in the fabric. A traditional building sealed without a ventilation strategy can deteriorate in ways that take years to appear.',
     },
     {
       type: 'paragraph',
