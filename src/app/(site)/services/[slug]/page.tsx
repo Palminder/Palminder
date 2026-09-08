@@ -14,6 +14,7 @@ import {
   getProjectsForService,
   getService,
   getServices,
+  stagingImage,
 } from '@/lib/content';
 import type { ServiceSlug } from '@/lib/content/types';
 import { pageMetadata } from '@/lib/seo/metadata';
@@ -140,7 +141,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <PageHero
         eyebrow={`${service.number} · ${service.title}`}
         title={service.heroHeadline}
-        image={service.image}
+        image={stagingImage(service.image) ?? undefined}
         lead={service.intro.map((text, i) => (
           <p key={i} className={i > 0 ? 'mt-6' : ''}>
             {text}

@@ -7,6 +7,9 @@ import { absoluteUrl } from '@/lib/site';
  * Preview and staging deployments disallow every user agent; next.config.ts also
  * sends `X-Robots-Tag: noindex, nofollow` on those deployments as a second guard.
  */
+/** Evaluated per request so the deployment stage and current content are always reflected. */
+export const dynamic = 'force-dynamic';
+
 export default function robots(): MetadataRoute.Robots {
   if (!isProductionDeployment()) {
     return {

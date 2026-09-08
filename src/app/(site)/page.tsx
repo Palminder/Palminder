@@ -167,24 +167,26 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Selected work */}
-      <section className="section rule" aria-labelledby="work-heading">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="Projects"
-            title="Selected work"
-            id="work-heading"
-            action={
-              <Button href="/projects" variant="text">
-                All projects
-              </Button>
-            }
-          />
-          <div className="mt-10">
-            <ProjectGrid projects={featured} variant="featured" />
+      {/* Selected work: rendered only when verified projects exist */}
+      {featured.length > 0 ? (
+        <section className="section rule" aria-labelledby="work-heading">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="Projects"
+              title="Selected work"
+              id="work-heading"
+              action={
+                <Button href="/projects" variant="text">
+                  All projects
+                </Button>
+              }
+            />
+            <div className="mt-10">
+              <ProjectGrid projects={featured} variant="featured" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {/* Conservation: masonry photograph beside text */}
       <section className="section rule" aria-labelledby="conservation-heading">

@@ -28,6 +28,9 @@ function toDate(iso: string | undefined): Date | undefined {
   return Number.isNaN(d.getTime()) ? undefined : d;
 }
 
+/** Evaluated per request so the deployment stage and current content are always reflected. */
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [services, projects, insights] = await Promise.all([
     getServices(),

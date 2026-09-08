@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import type { Service } from '@/lib/content/types';
+import { MaterialField } from '@/components/media/MaterialField';
 import { MediaFigure } from '@/components/media/MediaFigure';
+import { stagingImage } from '@/lib/content';
 import { ArrowIcon } from './Button';
 
 /** A full-width editorial row: number, discipline, summary, one image and a restrained arrow link. */
 export function ServiceRow({ service }: { service: Service }) {
+  const image = stagingImage(service.image);
   return (
     <article className="border-t border-ink/20 py-8 md:py-10 xl:py-12">
       <div className="grid-site items-start">
@@ -33,12 +36,16 @@ export function ServiceRow({ service }: { service: Service }) {
           </Link>
         </div>
         <div className="col-span-4 mt-6 md:col-span-8 xl:col-span-4 xl:col-start-9 xl:mt-0">
-          <MediaFigure
-            image={service.image}
-            sizes="(min-width: 1200px) 30vw, 100vw"
-            ratio="4/3"
-            hideCaption
-          />
+          {image ? (
+            <MediaFigure
+              image={image}
+              sizes="(min-width: 1200px) 30vw, 100vw"
+              ratio="4/3"
+              hideCaption
+            />
+          ) : (
+            <MaterialField ratio="4/3" tone="stone" />
+          )}
         </div>
       </div>
     </article>
