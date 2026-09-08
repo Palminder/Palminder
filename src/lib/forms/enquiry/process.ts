@@ -184,7 +184,7 @@ export async function processEnquiry(request: Request): Promise<ProcessResult> {
 
   // 11–12. Studio notification and optional acknowledgement.
   if (!emailConfigured()) {
-    if (process.env.NODE_ENV === 'production') {
+    if (isProductionDeployment()) {
       return {
         status: 'unavailable',
         message: 'The enquiry form is temporarily unavailable. Please email us instead.',
