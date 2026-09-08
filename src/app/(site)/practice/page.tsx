@@ -9,7 +9,7 @@ import { TeamCard } from '@/components/editorial/TeamCard';
 import { ImagePair } from '@/components/media/ImagePair';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { placeholder } from '@/content/seed/placeholders';
-import { getTeam } from '@/lib/content';
+import { getTeam, stagingImage } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo/metadata';
 import { organizationJsonLd } from '@/lib/seo/organization';
 import { site } from '@/lib/site';
@@ -54,6 +54,8 @@ const siteInspectionImage = placeholder(
 
 export default async function PracticePage() {
   const team = await getTeam();
+  const methodImages = [stagingImage(drawingBoardImage), stagingImage(siteInspectionImage)];
+  const showMethodImages = methodImages.every((i) => i !== null);
 
   return (
     <>
@@ -138,9 +140,11 @@ export default async function PracticePage() {
             drawing board and on site, where a detail can be checked against the fabric it has to
             meet.
           </p>
-          <div className="mt-10">
-            <ImagePair images={[drawingBoardImage, siteInspectionImage]} />
-          </div>
+          {showMethodImages ? (
+            <div className="mt-10">
+              <ImagePair images={[drawingBoardImage, siteInspectionImage]} />
+            </div>
+          ) : null}
         </div>
       </section>
 

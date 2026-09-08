@@ -14,6 +14,7 @@ import {
   type GateResult,
 } from './publication';
 import type {
+  ImageAsset,
   Insight,
   LegalDocument,
   Person,
@@ -44,6 +45,16 @@ async function getSource(): Promise<ContentSource> {
 }
 
 export const stage = (): ContentStage => contentStage();
+
+/**
+ * Page-level staging imagery (placeholders that stand in for photography not yet supplied).
+ * Returns the image in staging, or when the image is real; returns null in production so
+ * that a placeholder can never reach the public site. Callers render a material field instead.
+ */
+export function stagingImage(image: ImageAsset): ImageAsset | null {
+  if (!image.placeholder) return image;
+  return stage() === 'staging' ? image : null;
+}
 
 /** Projects that may render for the current stage, in editorial order. */
 export const getProjects = cache(

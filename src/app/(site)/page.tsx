@@ -10,6 +10,7 @@ import { ServiceRow } from '@/components/editorial/ServiceRow';
 import { StudioNoteCard } from '@/components/editorial/StudioNoteCard';
 import { TeamCard } from '@/components/editorial/TeamCard';
 import { Testimonials } from '@/components/editorial/Testimonial';
+import { MaterialField } from '@/components/media/MaterialField';
 import { MediaFigure } from '@/components/media/MediaFigure';
 import { DrawingFigure } from '@/components/media/DrawingFigure';
 import { ProjectGrid } from '@/components/projects/ProjectGrid';
@@ -23,6 +24,7 @@ import {
   getStudioNotes,
   getTeam,
   getTestimonials,
+  stagingImage,
 } from '@/lib/content';
 import { organizationJsonLd } from '@/lib/seo/organization';
 import { pageMetadata } from '@/lib/seo/metadata';
@@ -69,6 +71,10 @@ export default async function HomePage() {
     (p) => p.slug === 'north-glasgow-window-ventilation-programme',
   )?.drawings[1];
   const teamTeaser = team.filter((p) => p.gate.publishable).slice(0, 3);
+  // Staging placeholders never reach production; a material field stands in until verified photography exists.
+  const hero = stagingImage(heroImage);
+  const conservation = stagingImage(conservationImage);
+  const housing = stagingImage(housingImage);
 
   return (
     <>
@@ -98,14 +104,18 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="col-span-4 mt-10 md:col-span-8 xl:col-span-7 xl:mt-0 xl:-mr-[var(--gutter)] 2xl:-mr-[calc((100vw-var(--site-max))/2)]">
-            <MediaFigure
-              image={heroImage}
-              sizes="(min-width: 1200px) 60vw, 100vw"
-              priority
-              fetchPriority="high"
-              ratio="16/10"
-              hideCaption
-            />
+            {hero ? (
+              <MediaFigure
+                image={hero}
+                sizes="(min-width: 1200px) 60vw, 100vw"
+                priority
+                fetchPriority="high"
+                ratio="16/10"
+                hideCaption
+              />
+            ) : (
+              <MaterialField ratio="16/10" />
+            )}
           </div>
         </div>
       </section>
@@ -181,12 +191,16 @@ export default async function HomePage() {
         <div className="container-site">
           <div className="grid-site items-center">
             <div className="col-span-4 md:col-span-8 xl:col-span-5">
-              <MediaFigure
-                image={conservationImage}
-                sizes="(min-width: 1200px) 40vw, 100vw"
-                ratio="4/5"
-                hideCaption
-              />
+              {conservation ? (
+                <MediaFigure
+                  image={conservation}
+                  sizes="(min-width: 1200px) 40vw, 100vw"
+                  ratio="4/5"
+                  hideCaption
+                />
+              ) : (
+                <MaterialField ratio="4/5" tone="stone" />
+              )}
             </div>
             <div className="col-span-4 mt-8 md:col-span-8 xl:col-span-6 xl:col-start-7 xl:mt-0">
               <p className="type-label text-moss">Conservation</p>
@@ -229,12 +243,16 @@ export default async function HomePage() {
                 </Button>
               </div>
               <div className="mt-10">
-                <MediaFigure
-                  image={housingImage}
-                  sizes="(min-width: 1200px) 45vw, 100vw"
-                  ratio="4/3"
-                  hideCaption
-                />
+                {housing ? (
+                  <MediaFigure
+                    image={housing}
+                    sizes="(min-width: 1200px) 45vw, 100vw"
+                    ratio="4/3"
+                    hideCaption
+                  />
+                ) : (
+                  <MaterialField ratio="4/3" tone="stone" />
+                )}
               </div>
             </div>
             <div className="col-span-4 mt-8 md:col-span-8 xl:col-span-5 xl:col-start-8 xl:mt-0">
