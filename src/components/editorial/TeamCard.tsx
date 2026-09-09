@@ -9,8 +9,9 @@ interface TeamCardProps {
 }
 
 /**
- * Name, public role, expertise and biography, set typographically above a rule. A portrait is
- * shown when the record carries one.
+ * Name, public role, expertise and biography, set typographically above a rule. Where the record
+ * carries a portrait it is shown as a small square thumbnail above the role, kept deliberately
+ * modest so the text, not the picture, carries the card.
  */
 export function TeamCard({ person, compact = false }: TeamCardProps) {
   return (
@@ -18,10 +19,10 @@ export function TeamCard({ person, compact = false }: TeamCardProps) {
       {person.portrait ? (
         <MediaFigure
           image={person.portrait}
-          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
-          ratio="4/5"
+          sizes="72px"
+          ratio="1/1"
           hideCaption
-          className="mb-5"
+          className="mb-5 w-[72px]"
         />
       ) : null}
       <p className="type-label text-moss">{person.rolePublic}</p>

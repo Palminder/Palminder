@@ -1,4 +1,5 @@
 import type { Person } from '@/lib/content/types';
+import { portrait } from './media';
 
 /**
  * Team records. Public roles are neutral architectural roles: nobody is described with a
@@ -13,6 +14,7 @@ export const team: Person[] = [
     roleType: 'director',
     expertise: ['Residential', 'Conservation', 'Briefing and design'],
     bio: 'Mairi’s work focuses on the careful adaptation of existing homes and traditional buildings. She is particularly interested in how a plan can be made clearer without losing the proportions, material character and useful fabric that were already there. Her role combines early conversations with clients, survey-led design development and the coordination of proposals through consent and technical stages.',
+    portrait: portrait('mairi-bracken', 'Mairi Bracken'),
     order: 1,
     verificationStatus: 'verified',
     protectedTitleVerified: false,
@@ -26,6 +28,7 @@ export const team: Person[] = [
     roleType: 'director',
     expertise: ['Housing', 'Retrofit', 'Technical delivery'],
     bio: 'Thomas leads work involving housing programmes, retrofit and technical coordination. His focus is on turning survey evidence into practical information: understanding repeated building types, recording exceptions, resolving junctions and developing specifications that can be delivered in occupied properties. He also works across residential and refurbishment projects where buildability and sequencing are central to the design.',
+    portrait: portrait('thomas-roe', 'Thomas Roe'),
     order: 2,
     verificationStatus: 'verified',
     protectedTitleVerified: false,
@@ -39,6 +42,7 @@ export const team: Person[] = [
     roleType: 'designer',
     expertise: ['Traditional buildings', 'Listed-building work', 'Repair strategy'],
     bio: 'Ailsa works primarily with traditional and historic buildings, from early condition assessment to alterations and repair packages. Her approach begins with the significance and physical condition of existing fabric, with particular attention to stone, windows, internal finishes and previous interventions. She develops consent information and detailed repair proposals alongside the wider consultant team.',
+    portrait: portrait('ailsa-mclaren', 'Ailsa McLaren'),
     order: 3,
     verificationStatus: 'verified',
     protectedTitleVerified: false,
@@ -52,6 +56,7 @@ export const team: Person[] = [
     roleType: 'technologist',
     expertise: ['Building warrant', 'Detailing', 'Specifications'],
     bio: 'Jamie develops the technical information behind the practice’s projects. His work includes measured information, building-warrant packages, construction details, schedules and specifications, with a particular interest in the points where new work meets existing fabric. He works closely with designers and consultants to make sure proposed assemblies remain coherent as projects move toward construction.',
+    portrait: portrait('jamie-kerr', 'Jamie Kerr'),
     order: 4,
     verificationStatus: 'verified',
     protectedTitleVerified: false,
@@ -65,6 +70,7 @@ export const team: Person[] = [
     roleType: 'assistant',
     expertise: ['Survey', 'Drawing', 'Design development', 'Visualisation'],
     bio: 'Niamh supports projects from measured survey and precedent research through design development, drawing and visual communication. She is especially interested in the spatial possibilities of tenements and other constrained existing buildings, where relatively precise changes can alter daylight, circulation and use without unnecessary demolition.',
+    portrait: portrait('niamh-odonnell', 'Niamh O’Donnell'),
     order: 5,
     verificationStatus: 'verified',
     protectedTitleVerified: false,
@@ -78,6 +84,7 @@ export const team: Person[] = [
     roleType: 'administrator',
     expertise: ['Enquiries', 'Appointments', 'Project records'],
     bio: 'Fiona coordinates the practical running of the practice, including initial enquiries, appointment arrangements, project records and general studio administration. She is often the first point of contact for a new enquiry and helps make sure project information and communication remain organised as work moves between stages.',
+    portrait: portrait('fiona-campbell', 'Fiona Campbell'),
     order: 6,
     verificationStatus: 'verified',
     protectedTitleVerified: false,

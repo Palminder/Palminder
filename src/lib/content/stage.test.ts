@@ -59,6 +59,7 @@ describe('content API under the production stage', () => {
       ...(await api.getInsights()).map((i) => i.hero),
       ...(await api.getStudioNotes()).map((n) => n.media),
       ...(await api.getServices()).map((s) => s.image),
+      ...(await api.getTeam()).flatMap((p) => (p.portrait ? [p.portrait] : [])),
     ];
     expect(images.length).toBeGreaterThan(40);
     for (const image of images) {

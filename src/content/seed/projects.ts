@@ -1,5 +1,5 @@
 import type { Project } from '@/lib/content/types';
-import { drawing, illustration } from './media';
+import { drawing, illustration, photograph } from './media';
 
 /**
  * Project records. Each carries a hero, a short gallery and a drawing set, all produced by the
@@ -52,13 +52,24 @@ export const projects: Project[] = [
     outcome: [
       'The intervention is intended to make the whole ground floor read more coherently, with the new room acting as a continuation of the house rather than a detached glazed object.',
     ],
-    hero: illustration(
-      'garden-room-elevation',
+    hero: photograph(
+      'projects/kelvinside-garden-room-hero',
       'visualisation',
-      'Garden elevation: the single-storey timber-lined garden room sits to one side of the red-sandstone rear wall, its flat roof held below the eaves of the house.',
-      { caption: 'Garden elevation: the pavilion is kept below the scale of the original house.' },
+      'The garden room seen from the lawn: a single-storey extension with dark-framed sliding glazing set against the sandstone rear wall of the house, with a paved terrace in front.',
+      {
+        caption:
+          'The garden room from the lawn, its flat roof held below the eaves of the original house.',
+      },
     ),
     gallery: [
+      illustration(
+        'garden-room-elevation',
+        'visualisation',
+        'Garden elevation: the single-storey timber-lined garden room sits to one side of the red-sandstone rear wall, its flat roof held below the eaves of the house.',
+        {
+          caption: 'Garden elevation: the pavilion is kept below the scale of the original house.',
+        },
+      ),
       illustration(
         'garden-room-interior',
         'visualisation',
@@ -153,16 +164,25 @@ export const projects: Project[] = [
     outcome: [
       'The flat gains a kitchen that suits daily use and a second workable room, with the original doors, cornice and floors still doing most of the visual work.',
     ],
-    hero: illustration(
-      'tenement-kitchen-opening',
+    hero: photograph(
+      'projects/pollokshields-tenement-reordering-hero',
       'visualisation',
-      'The new wide opening between kitchen and dining room, with the retained cornice above and painted full-height cabinetry beyond.',
+      'The reordered principal floor: a bay window at one end, the retained cornice above, and an open kitchen beyond the new opening.',
       {
         caption:
-          'Kitchen and dining room joined through one carefully placed opening; cornice and window retained.',
+          'The reordered floor: one new opening links the principal room to the kitchen, with cornice and bay retained.',
       },
     ),
     gallery: [
+      illustration(
+        'tenement-kitchen-opening',
+        'visualisation',
+        'The new wide opening between kitchen and dining room, with the retained cornice above and painted full-height cabinetry beyond.',
+        {
+          caption:
+            'Kitchen and dining room joined through one carefully placed opening; cornice and window retained.',
+        },
+      ),
       illustration(
         'tenement-close-section',
         'diagram',
@@ -268,15 +288,24 @@ export const projects: Project[] = [
     outcome: [
       'The roof now holds a bedroom and bathroom that read as rooms in their own right, with the roofscape largely unchanged from the street.',
     ],
-    hero: illustration(
-      'roof-room-interior',
+    hero: photograph(
+      'projects/hyndland-roof-rooms-hero',
       'visualisation',
-      'Bedroom within the roof, with exposed rafters, two conservation rooflights and a small gable window.',
+      'A bedroom formed within the roof, with a dormer window over a built-in desk, a sloping ceiling and fitted joinery.',
       {
-        caption: 'The principal roof room: rooflights bring light down across the sloping ceiling.',
+        caption: 'The principal roof room: a dormer brings daylight to the desk beneath the slope.',
       },
     ),
     gallery: [
+      illustration(
+        'roof-room-interior',
+        'visualisation',
+        'Bedroom within the roof, with exposed rafters, two conservation rooflights and a small gable window.',
+        {
+          caption:
+            'The principal roof room: rooflights bring light down across the sloping ceiling.',
+        },
+      ),
       illustration(
         'tenement-roofscape',
         'context',
@@ -365,16 +394,22 @@ export const projects: Project[] = [
     outcome: [
       'The unit reads again as part of its tenement, with a shopfront that can accept different occupiers without further alteration to the fabric.',
     ],
-    hero: illustration(
-      'finnieston-shopfronts',
+    hero: photograph(
+      'projects/finnieston-shopfront-upper-floors-hero',
       'visualisation',
-      'Three painted timber shopfronts beneath a sandstone tenement, with fascias, pilasters and the first-floor windows above.',
-      {
-        caption:
-          'The shopfront in its run: fascia, pilasters and stallriser reinstated within the original structural bays.',
-      },
+      'Painted timber shopfronts at the base of a sandstone tenement on a wet street, with the repaired upper floors above.',
+      { caption: 'The shopfront in its run, with the repaired sandstone upper floors above.' },
     ),
     gallery: [
+      illustration(
+        'finnieston-shopfronts',
+        'visualisation',
+        'Three painted timber shopfronts beneath a sandstone tenement, with fascias, pilasters and the first-floor windows above.',
+        {
+          caption:
+            'The shopfront in its run: fascia, pilasters and stallriser reinstated within the original structural bays.',
+        },
+      ),
       illustration(
         'shopfront-detail',
         'visualisation',
@@ -471,16 +506,22 @@ export const projects: Project[] = [
     outcome: [
       'The aim was not to restore the façade to an as-new condition. Sound original masonry is retained, weathering performance is improved and a maintainable repair approach has been established.',
     ],
-    hero: illustration(
-      'sandstone-elevation-repair',
+    hero: photograph(
+      'projects/shawlands-sandstone-repair-hero',
       'visualisation',
-      'Four-storey sandstone tenement elevation with scaffolding across one half and completed indent repairs on the other.',
-      {
-        caption:
-          'The elevation during the works: scaffold to the left, completed indents and repointing to the right.',
-      },
+      'Scaffolding against a sandstone elevation during repair, with newly indented stone and repointed joints beside an existing window.',
+      { caption: 'Indent repairs and repointing under way beside a retained window.' },
     ),
     gallery: [
+      illustration(
+        'sandstone-elevation-repair',
+        'visualisation',
+        'Four-storey sandstone tenement elevation with scaffolding across one half and completed indent repairs on the other.',
+        {
+          caption:
+            'The elevation during the works: scaffold to the left, completed indents and repointing to the right.',
+        },
+      ),
       illustration(
         'stone-indent-detail',
         'material-study',
@@ -575,16 +616,22 @@ export const projects: Project[] = [
     outcome: [
       'The programme delivered a repeatable detail set that still respected the exceptions, with residents remaining in their homes throughout.',
     ],
-    hero: illustration(
-      'housing-block-window-programme',
+    hero: photograph(
+      'projects/north-glasgow-window-ventilation-programme-hero',
       'visualisation',
-      'A three-storey low-rise housing block during window replacement: new windows fitted to one half, the older windows still in place on the other, a scaffold tower at the junction.',
-      {
-        caption:
-          'The programme in progress: new windows to the left, the existing windows still in place to the right.',
-      },
+      'A low-rise housing block with newly installed windows, seen across the grass from the access path.',
+      { caption: 'A block with the new windows installed, the homes occupied throughout.' },
     ),
     gallery: [
+      illustration(
+        'housing-block-window-programme',
+        'visualisation',
+        'A three-storey low-rise housing block during window replacement: new windows fitted to one half, the older windows still in place on the other, a scaffold tower at the junction.',
+        {
+          caption:
+            'The programme in progress: new windows to the left, the existing windows still in place to the right.',
+        },
+      ),
       illustration(
         'window-sill-junction',
         'material-study',
@@ -671,16 +718,22 @@ export const projects: Project[] = [
     outcome: [
       'Work is on site and phased so that residents remain in occupation. Outcomes will be recorded once the programme completes; no performance figures are published until they have been measured and approved.',
     ],
-    hero: illustration(
-      'postwar-housing-blocks',
+    hero: photograph(
+      'projects/drumchapel-fabric-upgrade-hero',
       'visualisation',
-      'Two post-war walk-up housing blocks, the nearer one with a new external wall insulation finish to half of its elevation.',
-      {
-        caption:
-          'The blocks during the works: new external insulation and render to the left, existing roughcast to the right.',
-      },
+      'Post-war housing after fabric upgrade, with new render, new windows and planting along the front path.',
+      { caption: 'The blocks after upgrade: new render and windows to the existing fabric.' },
     ),
     gallery: [
+      illustration(
+        'postwar-housing-blocks',
+        'visualisation',
+        'Two post-war walk-up housing blocks, the nearer one with a new external wall insulation finish to half of its elevation.',
+        {
+          caption:
+            'The blocks during the works: new external insulation and render to the left, existing roughcast to the right.',
+        },
+      ),
       illustration(
         'housing-block-entrance',
         'visualisation',
@@ -779,13 +832,19 @@ export const projects: Project[] = [
     outcome: [
       'The unit works as a café by day and a meeting room by evening without either use feeling like a compromise of the other.',
     ],
-    hero: illustration(
-      'corner-cafe-elevation',
+    hero: photograph(
+      'projects/southside-corner-rooms-hero',
       'visualisation',
-      'A tenement corner with a splayed corner bay, its ground floor glazed as a café and community room beneath three storeys of sandstone.',
-      { caption: 'The corner: continuous glazing wraps both street elevations and the splay.' },
+      'The corner room lit from within at dusk, its dark-framed glazing wrapping both street elevations above a wet pavement.',
+      { caption: 'The corner at dusk: continuous glazing wraps both street elevations.' },
     ),
     gallery: [
+      illustration(
+        'corner-cafe-elevation',
+        'visualisation',
+        'A tenement corner with a splayed corner bay, its ground floor glazed as a café and community room beneath three storeys of sandstone.',
+        { caption: 'The corner: continuous glazing wraps both street elevations and the splay.' },
+      ),
       illustration(
         'cafe-interior',
         'visualisation',

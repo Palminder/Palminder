@@ -13,7 +13,7 @@ import { MediaFigure } from '@/components/media/MediaFigure';
 import { DrawingFigure } from '@/components/media/DrawingFigure';
 import { ProjectGrid } from '@/components/projects/ProjectGrid';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { illustration } from '@/content/seed/media';
+import { illustration, photograph } from '@/content/seed/media';
 import {
   getFeaturedProjects,
   getInsights,
@@ -35,10 +35,10 @@ export const metadata: Metadata = pageMetadata({
 });
 
 /** Context imagery for the home page, from the practice's illustration set. */
-const heroImage = illustration(
-  'glasgow-tenement-street',
+const heroImage = photograph(
+  'context/home-glasgow-sandstone-street',
   'context',
-  'A terrace of three-storey red-sandstone Glasgow tenements with bay windows, close doors and chimneys under an overcast sky.',
+  'A Glasgow street of sandstone tenements with bay windows, railings and front gardens under a soft grey sky.',
 );
 const conservationImage = illustration(
   'sandstone-window-reveal',
