@@ -155,9 +155,9 @@ export default async function PracticePage() {
             </div>
             <div className="col-span-4 mt-8 md:col-span-8 xl:col-span-6 xl:col-start-7 xl:mt-0">
               <p className="type-body-lg measure text-ink/85">
-                Bracken & Roe works from an office in {site.address.locality}, {site.address.city}.
-                Meetings are by appointment, at the office or on site, so that the right people and
-                the relevant drawings are to hand.
+                Bracken & Roe has a {site.address.city} correspondence address in{' '}
+                {site.address.locality}. Meetings are by appointment, at the office where arranged
+                or on site, so that the right people and relevant drawings are to hand.
               </p>
               <p className="type-body-lg measure mt-5 text-ink/85">
                 The practice’s work is rooted in Glasgow and its buildings: tenements, villas,
