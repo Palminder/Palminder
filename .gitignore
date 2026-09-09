@@ -28,3 +28,7 @@ test-results
 .vercel
 .sanity
 *.tsbuildinfo
+
+# python bytecode (Blender render scripts)
+__pycache__
+*.pyc
